@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!--Aqui el titulo para los buscadores-->
+  <title>{% block head_title %}Titulo base{% endblock %}</title>
+  
+  <!--Descripcion que sale al buscarlo en el navegador-->
+  <meta name="description" content="App creada por un fan para que la comunidad pueda subir contenido y disfrutar de Stellar Blade">
+
+  <!--Palabras claves para los buscadores en navegadores-->
+  <meta name="keywords" content="Stellar Blade, Eve, Adam, Lily, Raven, Naytibos, apocalipsis, dron, nier automata">
+
+  <!--Autor de la pagina-->
+  <meta name="autor" content="Fran">
+
+    <!--Favicon de la pagina(icono)-->
+  <link rel="" href="" type="">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+  <!--Codificacion-->
+  <meta charset="UTF-8">
+
+  <!--Para que la web sea resposinve(El tamaño segun el dispositivo)-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--Para algunos navegadores moviles(Color parte de arriba del HEADER)-->
+  <meta name="theme-color" content="FF0000">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>{% block page_title %}Titulo de la pagina{% endblock  %}</h1>
+        {% include '_includes/_header.html' %}
+        {% include '_includes/_messages.html' %}
+    </header>
+
+    {% block page_content %}
+
+    {% endblock %}
+
+    {% include '_includes/_footer.html' %}
+  </div>
+  <script>
+  </script>
+</body>
+</html>
