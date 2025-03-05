@@ -161,3 +161,6 @@ INTERNAL_IPS = [
 #para crispy forms con bootstrap5
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+#pagina donde se dirige cuando el login es necesario y no esta logeado
+LOGIN_URL = 'login'
