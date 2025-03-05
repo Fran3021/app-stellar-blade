@@ -1,0 +1,18 @@
+{% extends "general/layout.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}Stellar Blade{% endblock %}
+{% block page_title %}Registrate{% endblock  %}
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <form action="" method = 'POST'>
+                {% csrf_token %}
+                {{form.username | as_crispy_field}}
+                {{form.password | as_crispy_field}}
+                <button class="btn btn-primary">Acceder</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

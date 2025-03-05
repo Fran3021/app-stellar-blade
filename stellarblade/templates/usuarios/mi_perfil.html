@@ -1,0 +1,21 @@
+{% extends "general/layout.html" %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Mi Perfil{% endblock  %}
+{% block page_content %}
+    {% if perfil.imagen_perfil %}
+    <picture>
+        <img width='100px' height='100px' style='border-radius:200px' src="{{perfil.imagen_perfil.url}}" alt="">
+    </picture>
+    <article>
+        <h4>Biografia</h4>
+        <p>{{perfil.biografia}}</p>
+        <h4>Fecha de nacimiento</h4>
+        <p>{{perfil.fecha_nacimiento}}</p>
+        <h4>Seguidores: {{perfil.seguidores.count}} | Siguiendo: {{perfil.siguiendo.count}}</h4>
+    </article>
+    {% endif %}
+    {% if request.user.perfil.usuario == perfil.usuario %}
+    <a href="{% url 'usuarios:update' perfil.pk %}"><button type="button" class="btn btn-outline-info">Editar perfil</button></a>
+    <a href="{% url 'usuarios:delete' perfil.pk %}"><button type="button" class="btn btn-outline-danger">Eliminar perfil</button></a>
+    {% endif %}
+{% endblock  %}
