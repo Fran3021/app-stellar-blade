@@ -1,0 +1,14 @@
+{% extends "general/layout.html" %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Lista de perfiles{% endblock %}
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col d-flex gap-5 m-2">
+            {% for perfil in perfiles %}
+                {% include "_includes/_perfiles.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock  %}

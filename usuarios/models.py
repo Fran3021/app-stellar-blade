@@ -8,6 +8,12 @@ class PerfilUsuario(models.Model):
     fecha_nacimiento = models.DateField(verbose_name='Fecha de nacimiento:', null=True, blank=True, default='1900-01-01')
     seguidores = models.ManyToManyField('self', verbose_name='Seguidores', symmetrical=False, related_name='siguiendo', through='Follow')
 
+    def follow(self, perfil):
+        Follow.objects.get_or_create(seguidor = self, siguiendo = perfil)
+
+    def unfollow(self, perfil):
+        Follow.objects.filter(seguidor = self,  siguiendo = perfil).delete()
+
     class Meta:
         verbose_name = 'Perfil'
         verbose_name_plural = 'Perfiles'
@@ -19,7 +25,7 @@ class PerfilUsuario(models.Model):
 class Follow(models.Model):
     seguidor = models.ForeignKey(PerfilUsuario, verbose_name='Seguidor', on_delete=models.CASCADE, related_name='siguiendo_set')
     siguiendo = models.ForeignKey(PerfilUsuario, verbose_name='Siguiendo', on_delete=models.CASCADE, related_name='seguidores_set')
-    fecha_inicio = models.DateTimeField(verbose_name='Fecha de inicio', auto_now_add=False)
+    fecha_inicio = models.DateTimeField(verbose_name='Fecha de inicio', auto_now_add=True)
 
     class Meta:
         verbose_name = 'Seguidor'

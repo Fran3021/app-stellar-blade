@@ -11,11 +11,21 @@
         <p>{{perfil.biografia}}</p>
         <h4>Fecha de nacimiento</h4>
         <p>{{perfil.fecha_nacimiento}}</p>
-        <h4>Seguidores: {{perfil.seguidores.count}} | Siguiendo: {{perfil.siguiendo.count}}</h4>
+        <h4>Seguidores: {{perfil.siguiendo.count}} | Siguiendo: {{perfil.seguidores.count}}</h4>
     </article>
     {% endif %}
     {% if request.user.perfil.usuario == perfil.usuario %}
     <a href="{% url 'usuarios:update' perfil.pk %}"><button type="button" class="btn btn-outline-info">Editar perfil</button></a>
     <a href="{% url 'usuarios:delete' perfil.pk %}"><button type="button" class="btn btn-outline-danger">Eliminar perfil</button></a>
     {% endif %}
+        <div class="container">
+            <h3>Mis ultimas publicaciones</h3>
+            <div class="row">
+                <div class="col d-flex gap-5 m-2">
+                    {% for publicacion in publicaciones %}
+                        {% include "_includes/_publicaciones.html" %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
 {% endblock  %}

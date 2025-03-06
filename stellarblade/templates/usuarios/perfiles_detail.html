@@ -1,0 +1,39 @@
+{% extends "general/layout.html" %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Detalle del perfil{% endblock %}
+{% block page_content %}
+<div class="container">
+    {% if perfil.imagen_perfil %}
+        <picture>
+            <img width='100px' height='100px' style='border-radius:200px' src="{{perfil.imagen_perfil.url}}" alt="">
+        </picture>
+    {% endif %}
+    <h2>{{perfil.usuario}}</h2>
+    <article>
+        <h5>Biografia</h5>
+        <p>{{perfil.biografia}}</p>
+        <h5>Fecha de nacimiento</h5>
+        <p>{{perfil.fecha_nacimiento}}</p>
+        <h3 id='Nseguidores-{{perfil.pk}}'>Seguidores: {{perfil.siguiendo.count}}</h3>
+        <h3>Siguiendo: {{perfil.seguidores.count}}</h3>
+        <a class='ButtonFollows' data-perfil-id='{{perfil.pk}}' href="{% url 'usuarios:follow' perfil.pk %}">
+            {% if request.user.perfil in perfil.siguiendo.all %}
+                <button type="button" class="btn btn-outline-primary btn-sm">Dejar de seguir</button>
+            {% else %}
+                <button type="button" class="btn btn-outline-dark btn-sm">Seguir</button>
+            {% endif %}
+        </a>
+        <a href="{% url 'usuarios:lista' %}"><button type="button" class="btn btn-secondary btn-sm">Atras</button></a>
+    </article>
+    <div class="container">
+        <h3>Ultimas publicaciones</h3>
+        <div class="row">
+            <div class="col d-flex gap-5 m-2">
+                {% for publicacion in perfil.publicaciones.all %}
+                    {% include "_includes/_publicaciones.html" %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock  %}

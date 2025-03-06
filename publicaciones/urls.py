@@ -16,15 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import MyPerfilView, UpdatePerfilView, DeletePerfilView, ListPerfilesViews, follow_perfiles_ajax, PerfilesDetailView
+from .views import CrearPublicacionView, DetailPublicacionView, UpdatePublicacionView, DeletePublicacionView
 
-app_name = 'usuarios'
+
+app_name = 'publicaciones'
 
 urlpatterns = [
-    path('mi-perfil/<pk>/', MyPerfilView.as_view(), name = 'mi_perfil'),
-    path('update-perfil/<pk>/', UpdatePerfilView.as_view(), name = 'update'),
-    path('delete-perfil/<pk>/',DeletePerfilView.as_view() , name = 'delete'),
-    path('lista/',ListPerfilesViews.as_view() , name = 'lista'),
-    path('follow/<pk>',follow_perfiles_ajax , name = 'follow'),
-    path('perfiles-detail/<pk>',PerfilesDetailView.as_view() , name = 'detail'),
+    path('crear/', CrearPublicacionView.as_view(), name = 'crear'),
+    path('detalle/<pk>', DetailPublicacionView.as_view(), name = 'detalle'),
+    path('editar/<pk>', UpdatePublicacionView.as_view(), name = 'editar'),
+    path('eliminar/<pk>', DeletePublicacionView.as_view(), name = 'delete'),
 ] 

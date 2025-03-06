@@ -28,5 +28,6 @@ urlpatterns = [
     path('registro/', RegisterView.as_view(), name = 'registro'),
     path('login/', LoginView.as_view(), name = 'login'),
     path('usuarios/', include('usuarios.urls', namespace = 'usuarios')),
+    path('publicaciones/', include('publicaciones.urls', namespace = 'publicaciones')),
     path('admin/', admin.site.urls),
 ] + debug_toolbar_urls() + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

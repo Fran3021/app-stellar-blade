@@ -46,6 +46,30 @@
     {% include '_includes/_footer.html' %}
   </div>
   <script>
+    const buttonsFollows = document.querySelectorAll('.ButtonFollows')
+    let mensajeFollow = document.querySelector('.mensaje-follow')
+    if (buttonsFollows){
+      buttonsFollows.forEach(buttonFollow =>{
+        const perfilPk = buttonFollow.dataset.perfilId
+        let nSeguidores = document.getElementById(`Nseguidores-${perfilPk}`)
+        buttonFollow.addEventListener('click', event => {
+          event.preventDefault()
+          fetch(buttonFollow.href)
+          .then(response => response.json())
+          .then(data =>{
+            nSeguidores.innerHTML = `<h3>Seguidores: ${data.numero_seguidores} </h3>`
+            if(data.follow){
+              buttonFollow.innerHTML = '<button type="button" class="btn btn-outline-primary btn-sm">Dejar de seguir</button>'
+              mensajeFollow.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
+            }else{
+              buttonFollow.innerHTML = ' <button type="button" class="btn btn-outline-dark btn-sm">Seguir</button>'
+              mensajeFollow.innerHTML = `<p class="alert alert-danger">${data.mensaje}</p>`
+            }
+          })
+        })
+      })
+    }
   </script>
+  <p></p>
 </body>
 </html>

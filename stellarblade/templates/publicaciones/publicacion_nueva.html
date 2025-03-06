@@ -1,0 +1,13 @@
+{% extends "general/layout.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Publicacion nueva{% endblock  %}
+{% block page_content %}
+    <form action="" method = 'POST' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form.titulo | as_crispy_field}}
+        {{form.imagen | as_crispy_field}}
+        {{form.contenido | as_crispy_field}}
+        <button class="btn btn-primary">Crear publicacion</button>
+    </form>
+{% endblock  %}

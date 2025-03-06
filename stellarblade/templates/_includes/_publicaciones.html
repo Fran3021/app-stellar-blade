@@ -1,0 +1,20 @@
+<article>
+    <div class="d-flex align-items-center">
+        {% if publicacion.autor.imagen_perfil %}
+        <picture>
+            <img width='50px' height='50px' style='border-radius:30px' src="{{publicacion.autor.imagen_perfil.url}}" alt="">
+        </picture>
+        {% endif %}
+        <div>
+            <p>{{publicacion.autor}}</p>
+            <p>{{publicacion.fecha_publicacion}}</p>
+        </div>
+    </div>
+    {% if publicacion.imagen %}
+    <picture>
+        <img width='200px' height='200px' style='border-radius:10px' src="{{publicacion.imagen.url}}" alt="">
+    </picture>
+    {% endif %}
+    <p>{{publicacion.contenido}}</p>
+    <a href="{% url 'publicaciones:detalle' publicacion.pk %}"><button type="button" class="btn btn-primary btn-sm">Detalle de publicacion</button></a>
+</article>

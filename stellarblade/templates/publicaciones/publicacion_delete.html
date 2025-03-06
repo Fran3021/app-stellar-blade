@@ -1,0 +1,13 @@
+{% extends "general/layout.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Eliminar Publicacion{% endblock  %}
+{% block page_content %}
+<h4>¿Seguro que desea eliminar la publicacion: <strong>{{object.titulo}}</strong>?</h4>
+    <form action="" method = 'POST'>
+        {% csrf_token %}
+        {{form}}
+        <button class="btn btn-primary btn-sm">Eliminar</button>
+        <a href="{% url 'publicaciones:detalle' object.pk %}"><button type="button" class="btn btn-secondary btn-sm">Cancelar</button></a>
+    </form>
+{% endblock  %}
