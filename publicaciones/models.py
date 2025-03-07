@@ -10,6 +10,12 @@ class Publicacion(models.Model):
     fecha_publicacion = models.DateTimeField(verbose_name='Fecha de creacion:', auto_now_add=True)
     likes = models.ManyToManyField(PerfilUsuario, verbose_name='Likes de la publicacion:', related_name='likes_publicacion')
 
+    def like(self, usuario):    
+        self.likes.add(usuario)
+
+    def unlike(self, usuario):
+        self.likes.remove(usuario)
+
     class Meta:
         verbose_name = 'Publicacion'
         verbose_name_plural = 'Publicaciones'
@@ -21,7 +27,7 @@ class Publicacion(models.Model):
 class Comentario(models.Model):
     publicacion = models.ForeignKey(Publicacion, verbose_name='Publicacion a comentar:', on_delete=models.CASCADE, related_name='comentarios')
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='comentarios')
-    contenido = models.CharField(verbose_name='Comentario de la publicacion:', max_length=500)
+    texto = models.TextField(verbose_name='Nuevo comentario:', max_length=500)
     fecha_comentario = models.DateTimeField(verbose_name='Fecha del comentario:', auto_now_add=True)
     
     class Meta:

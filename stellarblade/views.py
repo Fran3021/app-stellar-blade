@@ -1,15 +1,33 @@
 from django.shortcuts import render
 from .forms import RegisterForm
-from django.views.generic import CreateView, FormView
+from django.views.generic import CreateView, FormView, ListView
 from django.contrib import messages
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.http import HttpResponse, HttpResponseRedirect
+from publicaciones.models import Publicacion
+from usuarios.models import Follow
 
 
-def home_view(request):
-    return render(request, 'general/home.html')
+
+class HomeView(ListView):
+    template_name = 'general/home.html'
+    model = Publicacion
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.user.is_authenticated:
+            #obtenemos el perfil de usuario logeado
+            perfil_usuario = self.request.user.perfil
+            #obtenemos a los usuarios que sigue el usuario logeado
+            usuario_seguidos = perfil_usuario.seguidores.all()
+            #lo filtramos para que salgan los que el autor de las publicaciones esten en los usuarios seguidos del usuario logeado
+            context ["publicaciones"] = Publicacion.objects.filter(autor__in=usuario_seguidos).order_by('-fecha_publicacion')
+        else:
+            context["publicaciones"] = Publicacion.objects.all().order_by('-fecha_publicacion') 
+        
+        return context
 
 def legal_view(request):
     return render(request, 'general/legal.html')

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class PerfilUsuario(models.Model):
     usuario = models.OneToOneField(User, verbose_name='Usuario:', on_delete=models.CASCADE, related_name='perfil')
     imagen_perfil = models.ImageField(verbose_name='Imagen de perfil:', upload_to='usuarios/img_perfil/', null=True, blank=True)
@@ -13,6 +14,12 @@ class PerfilUsuario(models.Model):
 
     def unfollow(self, perfil):
         Follow.objects.filter(seguidor = self,  siguiendo = perfil).delete()
+
+    def like_pub(self, publicacion):
+        publicacion.like(self)
+    
+    def unlike_pub(self, publicacion):
+        publicacion.unlike(self)
 
     class Meta:
         verbose_name = 'Perfil'

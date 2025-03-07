@@ -16,5 +16,26 @@
     </picture>
     {% endif %}
     <p>{{publicacion.contenido}}</p>
+    <div class="row">
+        <div class="col">
+            <span id="NumeroLikes-{{publicacion.pk}}">{{publicacion.likes.count}}</span>
+            <a class="LikesButtons" data-publicacion-id = {{publicacion.pk}} href="{% url 'publicaciones:like' publicacion.pk %}">
+                {% if request.user.perfil in publicacion.likes.all %}
+                    <i class="bi bi-heart-fill"></i>
+                {% else %}
+                    <i class="bi bi-heart"></i>
+                {% endif %}
+            </a>
+        </div>
+        <div class="col">
+            <span>{{publicacion.comentarios.count}}
+                {% if publicacion.comentarios.count %}
+                    <i class="bi bi-chat-dots-fill"></i>
+                {% else %}
+                    <i class="bi bi-chat-dots"></i>
+                {% endif %}
+            </span>
+        </div>
+    </div>
     <a href="{% url 'publicaciones:detalle' publicacion.pk %}"><button type="button" class="btn btn-primary btn-sm">Detalle de publicacion</button></a>
 </article>

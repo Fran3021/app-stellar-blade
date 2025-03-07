@@ -85,6 +85,7 @@ class ListPerfilesViews(ListView):
         
         return context
 
+
 @login_required
 def follow_perfiles_ajax(request, pk):
     perfil = PerfilUsuario.objects.get(pk = pk)

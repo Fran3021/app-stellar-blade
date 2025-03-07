@@ -69,6 +69,30 @@
         })
       })
     }
+
+    const LikesButtons = document.querySelectorAll('.LikesButtons')
+    let mensajeLikes = document.querySelector('.mensaje-likes')
+    if(LikesButtons){
+      LikesButtons.forEach(buttonLike => {
+        const publicacionPk = buttonLike.dataset.publicacionId
+        let nLikes = document.getElementById(`NumeroLikes-${publicacionPk}`)
+        buttonLike.addEventListener('click', event => {
+          event.preventDefault()
+          fetch(buttonLike.href)
+          .then(response => response.json())
+          .then( data => {
+            nLikes.innerHTML = data.numero_likes
+            if(data.like){
+              buttonLike.innerHTML = '<i class="bi bi-heart-fill"></i>'
+              mensajeLikes.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
+            }else{
+              buttonLike.innerHTML = '<i class="bi bi-heart"></i>'
+              mensajeLikes.innerHTML = `<p class="alert alert-danger">${data.mensaje}</p>`
+            }
+          })
+        })
+      })
+    }
   </script>
   <p></p>
 </body>

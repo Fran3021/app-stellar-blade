@@ -1,4 +1,5 @@
 {% extends "general/layout.html" %}
+{% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Detalle de Publicacion{% endblock %}
 {% block page_content %}
@@ -21,6 +22,54 @@
         </picture>
         {% endif %}
         <p>{{publicacion.contenido}}</p>
+        <div class="row">
+            <div class="col-2">
+                <span id="NumeroLikes-{{publicacion.pk}}">{{publicacion.likes.count}}</span>
+                <a class="LikesButtons" data-publicacion-id = {{publicacion.pk}} href="{% url 'publicaciones:like' publicacion.pk %}">
+                    {% if request.user.perfil in publicacion.likes.all %}
+                        <i class="bi bi-heart-fill"></i>
+                    {% else %}
+                        <i class="bi bi-heart"></i>
+                    {% endif %}
+                </a>
+            </div>
+            <div class="col-2">
+                <span>{{publicacion.comentarios.count}}
+                    {% if publicacion.comentarios.count %}
+                        <i class="bi bi-chat-dots-fill"></i>
+                    {% else %}
+                        <i class="bi bi-chat-dots"></i>
+                    {% endif %}
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <h3>Comentarios de la publicacion</h3>
+            <div class="col-6">
+                {% if publicacion.comentarios.count %}
+                    {% for comentario in publicacion.comentarios.all  %}
+                        <article>
+                            <h5>{{comentario.autor}} - {{comentario.fecha_comentario}}</h5>
+                            <p>{{comentario.texto}}</p>
+                        </article>
+                    {% endfor %}
+                {% else %}
+                    <h4>En esta publicacion todavia no hay comentarios</h4>
+                {% endif %}
+            </div>
+        </div>
+        <details>
+            <summary>Nuevo comentario</summary>
+            <div class="row">
+                <div class="col-6">
+                    <form action="" method='POST' >
+                        {% csrf_token %}
+                        {{form.texto | as_crispy_field}}
+                        <button class="btn btn-outline-info" >Comentar</button>
+                    </form>
+                </div>
+            </div>
+        </details>
     </article>
     {% if publicacion.autor == request.user.perfil %}
         <a href="{% url 'publicaciones:editar' publicacion.pk %}"><button class="btn btn-primary">Editar</button></a>

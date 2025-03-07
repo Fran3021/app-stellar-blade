@@ -2,5 +2,14 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Inicio{% endblock  %}
 {% block page_content %}
-
+<h2>Ultimas publicaciones de los usuarios</h2>
+<div class="container">
+    <div class="row">
+        <div class="col d-flex gap-5 m-2" >
+            {% for publicacion in publicaciones %}
+                {% include "_includes/_publicaciones.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock  %}

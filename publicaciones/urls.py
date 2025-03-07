@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import CrearPublicacionView, DetailPublicacionView, UpdatePublicacionView, DeletePublicacionView
+from .views import CrearPublicacionView, DetailPublicacionView, UpdatePublicacionView, DeletePublicacionView, like_ajax
 
 
 app_name = 'publicaciones'
 
 urlpatterns = [
+    path('like/<pk>/', like_ajax, name = 'like'),
     path('crear/', CrearPublicacionView.as_view(), name = 'crear'),
     path('detalle/<pk>', DetailPublicacionView.as_view(), name = 'detalle'),
     path('editar/<pk>', UpdatePublicacionView.as_view(), name = 'editar'),
