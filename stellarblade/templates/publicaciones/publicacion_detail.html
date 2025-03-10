@@ -58,18 +58,20 @@
                 {% endif %}
             </div>
         </div>
-        <details>
-            <summary>Nuevo comentario</summary>
-            <div class="row">
-                <div class="col-6">
-                    <form action="" method='POST' >
-                        {% csrf_token %}
-                        {{form.texto | as_crispy_field}}
-                        <button class="btn btn-outline-info" >Comentar</button>
-                    </form>
+        {% if request.user.is_authenticated %}
+            <details>
+                <summary>Nuevo comentario</summary>
+                <div class="row">
+                    <div class="col-6">
+                        <form action="" method='POST' >
+                            {% csrf_token %}
+                            {{form.texto | as_crispy_field}}
+                            <button class="btn btn-outline-info" >Comentar</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </details>
+            </details>
+        {% endif %}
     </article>
     {% if publicacion.autor == request.user.perfil %}
         <a href="{% url 'publicaciones:editar' publicacion.pk %}"><button class="btn btn-primary">Editar</button></a>

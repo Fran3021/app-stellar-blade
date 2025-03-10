@@ -10,6 +10,7 @@ from django.http import JsonResponse
 from .forms import CreatePublicacionForm, CreateComentarioForm
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from notificaciones.models import Notificacion
 
 @method_decorator(login_required, name='dispatch')
 class CrearPublicacionView(CreateView):
@@ -18,12 +19,21 @@ class CrearPublicacionView(CreateView):
     form_class = CreatePublicacionForm
 
     def form_valid(self, form):
-        form.instance.autor = self.request.user.perfil
+        nueva_publicacion = form.save(commit=False)
+        nueva_publicacion.autor = self.request.user.perfil
+        nueva_publicacion.save()
+        titulo = nueva_publicacion.titulo
+        perfil_usuario = self.request.user.perfil
+        seguidores = perfil_usuario.seguidores.all()
+        nueva_notificacion = Notificacion.objects.create(mensaje = f'El usuario {perfil_usuario} ha escrito {titulo}' )
+        nueva_notificacion.destinatarios.set(seguidores)
+        nueva_notificacion.url = reverse_lazy('publicaciones:detalle', kwargs= {'pk': nueva_publicacion.pk})
+        nueva_notificacion.save()
         messages.success(self.request, 'Publicacion creada correctamente')
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('usuarios:mi_perfil', kwargs={'pk': self.request.user.perfil.pk})
+        return reverse_lazy('publicaciones:detalle', kwargs={'pk': self.object.pk})
 
 
 class DetailPublicacionView(DetailView, CreateView):
@@ -67,6 +77,7 @@ class UpdatePublicacionView(UpdateView):
     def get_success_url(self):
         return reverse_lazy('publicaciones:detalle', kwargs={'pk': self.object.pk})
 
+
 @method_decorator(login_required, name='dispatch')
 class DeletePublicacionView(DeleteView):
     template_name = 'publicaciones/publicacion_delete.html'
@@ -85,7 +96,8 @@ class DeletePublicacionView(DeleteView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('usuarios:mi_perfil', kwargs={'pk': self.object.pk})
+        return reverse_lazy('usuarios:mi_perfil', kwargs={'pk': self.request.user.perfil.pk})
+
 
 @login_required
 def like_ajax(request, pk):

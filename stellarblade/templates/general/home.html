@@ -5,7 +5,7 @@
 <h2>Ultimas publicaciones de los usuarios</h2>
 <div class="container">
     <div class="row">
-        <div class="col d-flex gap-5 m-2" >
+        <div class="col d-flex gap-5 m-2 flex-wrap justify-content-between" >
             {% for publicacion in publicaciones %}
                 {% include "_includes/_publicaciones.html" %}
             {% endfor %}

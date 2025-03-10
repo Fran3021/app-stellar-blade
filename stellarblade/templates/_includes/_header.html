@@ -1,11 +1,17 @@
 <nav>
-    <ul>
+    <ul style="list-style:none" class="d-flex gap-3" >
         <li><a href="{% url 'home' %}">Inicio</a></li>
         <li><a href="{% url 'usuarios:lista' %}">Perfiles</a></li>
         {% if request.user.is_authenticated %}
             <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
             <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}">Mi perfil</a></li>
             <li><a href="{% url 'publicaciones:crear' %}">Crear publicacion</a></li>
+            {% if notificacion %}
+            <li><a href="">{{notificacion.count}}<i class="bi bi-circle-square"></i></a></li>
+            {% for noti in notificacion %}
+                <li><a href="{{noti.url}}">{{noti.mensaje}}</a></li>
+            {% endfor %}
+            {% endif %}
         {% else %}
             <li><a href="{% url 'registro' %}">Registrate</a></li>
             <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>

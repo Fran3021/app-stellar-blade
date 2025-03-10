@@ -28,7 +28,7 @@
     <div class="container">
         <h3>Ultimas publicaciones</h3>
         <div class="row">
-            <div class="col d-flex gap-5 m-2">
+            <div class="col d-flex gap-5 m-2 flex-wrap justify-content-between">
                 {% for publicacion in perfil.publicaciones.all %}
                     {% include "_includes/_publicaciones.html" %}
                 {% endfor %}

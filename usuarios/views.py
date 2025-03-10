@@ -23,7 +23,7 @@ class MyPerfilView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["perfil"] = PerfilUsuario.objects.get(pk=self.object.pk)
-        context["publicaciones"] = Publicacion.objects.filter(autor = self.request.user.perfil)
+        context["publicaciones"] = Publicacion.objects.filter(autor = self.request.user.perfil).order_by('-fecha_publicacion')
         return context
 
 

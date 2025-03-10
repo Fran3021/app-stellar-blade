@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     #apps de la aplicacion
     'publicaciones',
     'usuarios',
+    'notificaciones',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +75,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'usuarios.custom_processors.current_user',
+                'notificaciones.custom_processors.notificaciones',
             ],
         },
     },
