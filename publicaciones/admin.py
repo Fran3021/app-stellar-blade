@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Publicacion, Comentario
+from .models import Publicacion, Comentario, RespuestaComentario
 
 # Register your models here.
 
@@ -8,7 +8,8 @@ class PublicacionAdmin(admin.ModelAdmin):
     list_display = [
         'titulo',
         'autor',
-        'fecha_publicacion'
+        'fecha_publicacion',
+        'pk',
     ]
     ordering = ['-fecha_publicacion']
 
@@ -16,6 +17,17 @@ class PublicacionAdmin(admin.ModelAdmin):
 class ComentarioAdmin(admin.ModelAdmin):
     list_display = [
         'autor',
-        'fecha_comentario'
+        'fecha_comentario',
+        'pk',
     ]
     ordering = ['-fecha_comentario']
+
+
+@admin.register(RespuestaComentario)
+class RespuestaComentarioAdmin(admin.ModelAdmin):
+    list_display = [
+        'autor',
+        'respuesta',
+        'fecha_respuesta'
+    ]
+    ordering = ['-fecha_respuesta']

@@ -36,3 +36,17 @@ class Comentario(models.Model):
 
     def __str__(self):
         return f'Comentario creado por el ususario {self.autor} en la fecha: {self.fecha_comentario}'
+
+
+class RespuestaComentario(models.Model):
+    comentario = models.ForeignKey(Comentario, verbose_name='Comentario a responder:', on_delete=models.CASCADE, related_name='respuestas')
+    autor = models.ForeignKey(PerfilUsuario, verbose_name="Autor:", on_delete=models.CASCADE, related_name='respuestas')
+    respuesta = models.TextField(verbose_name='Contenido de la respuesta:', max_length=300)
+    fecha_respuesta = models.DateTimeField(verbose_name='Fecha de respuesta:', auto_now_add=True)
+
+    class Meta:
+        verbose_name= 'Respuesta'
+        verbose_name_plural = 'Respuestas'
+
+    def __str__(self):
+        return f'{self.autor} ha respondido al comentario: {self.comentario}'

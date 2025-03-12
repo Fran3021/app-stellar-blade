@@ -93,7 +93,19 @@
         })
       })
     }
+    const ContestarButtons = document.querySelectorAll('.ContestarButtons')
+    if (ContestarButtons){
+      ContestarButtons.forEach(button =>{
+        button.addEventListener('click', event => {
+          event.preventDefault()
+          fetch(button.href)
+          .then(response => response.json())
+          .then(data => {
+            button.textContent = data.respuesta
+          })
+        })
+      })
+    }
   </script>
-  <p></p>
 </body>
 </html>

@@ -51,6 +51,11 @@
                         <article>
                             <h5>{{comentario.autor}} - {{comentario.fecha_comentario}}</h5>
                             <p>{{comentario.texto}}</p>
+                            <form name="respuesta" pk="{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">
+                                {% csrf_token %}
+                                {{contestar_form.respuesta | as_crispy_field}}
+                                <button>responder</button>
+                            </form>
                         </article>
                     {% endfor %}
                 {% else %}

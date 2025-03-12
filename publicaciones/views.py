@@ -1,16 +1,17 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, FormView, DetailView, UpdateView, DeleteView, ListView
 from usuarios.models import PerfilUsuario, Follow
-from .models import Publicacion
+from .models import Publicacion, Comentario, RespuestaComentario
 from django.core.exceptions import PermissionDenied
 from django.contrib import messages
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.models import User
 from django.http import JsonResponse
-from .forms import CreatePublicacionForm, CreateComentarioForm
+from .forms import CreatePublicacionForm, CreateComentarioForm, ContestarComentarioForm
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from notificaciones.models import Notificacion
+from notificaciones.models import NotificacionPublicacion
+from django.shortcuts import get_object_or_404
 
 @method_decorator(login_required, name='dispatch')
 class CrearPublicacionView(CreateView):
@@ -25,7 +26,7 @@ class CrearPublicacionView(CreateView):
         titulo = nueva_publicacion.titulo
         perfil_usuario = self.request.user.perfil
         seguidores = perfil_usuario.seguidores.all()
-        nueva_notificacion = Notificacion.objects.create(mensaje = f'El usuario {perfil_usuario} ha escrito {titulo}' )
+        nueva_notificacion = NotificacionPublicacion.objects.create(mensaje = f'El usuario {perfil_usuario} ha escrito {titulo}' )
         nueva_notificacion.destinatarios.set(seguidores)
         nueva_notificacion.url = reverse_lazy('publicaciones:detalle', kwargs= {'pk': nueva_publicacion.pk})
         nueva_notificacion.save()
@@ -76,6 +77,25 @@ class UpdatePublicacionView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('publicaciones:detalle', kwargs={'pk': self.object.pk})
+
+
+def contestar_comentario_ajax(request, pk):
+    if request.method == 'POST':
+        comentario = get_object_or_404(Comentario, pk=pk)  
+        respuesta = request.POST.get('respuesta')
+        if respuesta:
+            RespuestaComentario.objects.create(autor=request.user.perfil, comentario=comentario, respuesta=respuesta)
+
+            return JsonResponse({
+            'mensaje': f'Se ha contestado al comentario {comentario.pk}',
+            'respuesta': respuesta,
+            'autor': request.user.username,
+            })
+        else:
+            return JsonResponse({
+                'error': 'No puede enviar una respuesta vacia'
+            }, status=400)
+
 
 
 @method_decorator(login_required, name='dispatch')

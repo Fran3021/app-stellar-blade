@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import Notificacion
+from .models import NotificacionPublicacion
 
 # Register your models here.
 
-@admin.register(Notificacion)
-class NotificacionAdmin(admin.ModelAdmin):
+@admin.register(NotificacionPublicacion)
+class NotificacionPublicacionAdmin(admin.ModelAdmin):
     list_display = [
         'mensaje',
         'leida'
