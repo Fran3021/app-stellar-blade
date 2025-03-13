@@ -1,0 +1,40 @@
+.FormRespuesta{
+    display: none;
+}
+
+.FormComentario{
+    display: none;
+}
+
+.container-respuestas{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.BotonResponder{
+    border: 0;
+    background-color: transparent;
+}
+
+.TextoComentario{
+    margin: 0;
+}
+
+.ButtonNuevoComentario{
+    border: 0;
+    background-color: transparent;
+}
+
+.VerRespuestas{
+    border: 0;
+    background-color: transparent;
+}
+
+.container-comentarios-respuestas{
+    border-bottom: 1px dashed blue;
+}
+
+

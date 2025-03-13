@@ -34,27 +34,34 @@
                 </a>
             </div>
             <div class="col-2">
-                <span>{{publicacion.comentarios.count}}
+                <button class="ButtonNuevoComentario" >{{publicacion.comentarios.count}}
                     {% if publicacion.comentarios.count %}
                         <i class="bi bi-chat-dots-fill"></i>
                     {% else %}
                         <i class="bi bi-chat-dots"></i>
                     {% endif %}
-                </span>
+                </button>
             </div>
         </div>
-        <div class="row">
+        <div class="row container-comentarios-respuestas">
             <h3>Comentarios de la publicacion</h3>
             <div class="col-6">
                 {% if publicacion.comentarios.count %}
                     {% for comentario in publicacion.comentarios.all  %}
                         <article>
                             <h5>{{comentario.autor}} - {{comentario.fecha_comentario}}</h5>
-                            <p>{{comentario.texto}}</p>
-                            <form name="respuesta" pk="{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">
+                            <p class="TextoComentario" >{{comentario.texto}}</p>
+                            <span><button class="BotonResponder" >Responder</button> | <button class="VerRespuestas" >Ver respuestas</button></span>
+                            <div class="container-respuestas">
+                                <h5>Respuestas al comentario</h5>
+                                {% for respuesta in comentario.respuestas.all  %}
+                                    <p style="margin-left:20px">{{respuesta}}</p>
+                                {% endfor %}
+                            </div>
+                            <form class="FormRespuesta" pk="{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">
                                 {% csrf_token %}
                                 {{contestar_form.respuesta | as_crispy_field}}
-                                <button>responder</button>
+                                <button class="btn btn-primary btn-sm">Responder</button>
                             </form>
                         </article>
                     {% endfor %}
@@ -64,9 +71,7 @@
             </div>
         </div>
         {% if request.user.is_authenticated %}
-            <details>
-                <summary>Nuevo comentario</summary>
-                <div class="row">
+                <div class="row FormComentario">
                     <div class="col-6">
                         <form action="" method='POST' >
                             {% csrf_token %}
@@ -75,7 +80,6 @@
                         </form>
                     </div>
                 </div>
-            </details>
         {% endif %}
     </article>
     {% if publicacion.autor == request.user.perfil %}

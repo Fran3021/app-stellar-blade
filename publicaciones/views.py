@@ -87,14 +87,14 @@ def contestar_comentario_ajax(request, pk):
             RespuestaComentario.objects.create(autor=request.user.perfil, comentario=comentario, respuesta=respuesta)
 
             return JsonResponse({
-            'mensaje': f'Se ha contestado al comentario {comentario.pk}',
+            'mensaje': f'Se ha contestado al comentario de: {comentario.autor}',
             'respuesta': respuesta,
             'autor': request.user.username,
             })
         else:
             return JsonResponse({
-                'error': 'No puede enviar una respuesta vacia'
-            }, status=400)
+                'mensaje': f'No se ha podido contestar al comentario de: {comentario.autor}'
+            })
 
 
 

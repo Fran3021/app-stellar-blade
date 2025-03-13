@@ -17,8 +17,26 @@ class NotificacionPublicacion(models.Model):
         return f'{self.mensaje}'
 
 
-class NotificacionResponderComentario(models.Model):
-    #notifica al usuario que le han contestado un comentario
+class NotificacionComentario(models.Model):
+    autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='notificacion_comentario')
+    #notifica al usuario que le han escrito un comentario
     destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Destinatario:', on_delete=models.CASCADE, related_name='notificaciones_comentarios')
     mensaje = models.CharField(verbose_name='Mensaje de la notificacion:', max_length=150)
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
+
+    class Meta:
+        verbose_name = 'Notificacion comentario'
+        verbose_name_plural = 'Notificacion comentarios'
+
+    def __str__(self):
+        return f'{self.mensaje}'
+
+
+class NotificacionSeguir(models.Model):
+    usuario = models.ForeignKey(PerfilUsuario, verbose_name='Usuario:', on_delete=models.CASCADE, related_name='notificacion_usuario')
+    destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Usuario seguido:', on_delete=models.CASCADE, related_name='notificacion_destinatario')
+    mensaje = models.CharField(verbose_name='Le han empezado a seguir', max_length=150)
+    leida = models.BooleanField(verbose_name='¿Leida?', default=False)
+
+    def __str__(self):
+        return f'El usuario {self.usuario} ha empezado a seguirte.'
