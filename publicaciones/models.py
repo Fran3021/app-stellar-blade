@@ -16,6 +16,11 @@ class Publicacion(models.Model):
     def unlike(self, usuario):
         self.likes.remove(usuario)
 
+    def total_comentarios(self):
+        comentarios = Comentario.objects.filter(publicacion=self).count()
+        respuestas = RespuestaComentario.objects.filter(publicacion=self).count()
+        return comentarios + respuestas
+
     class Meta:
         verbose_name = 'Publicacion'
         verbose_name_plural = 'Publicaciones'
@@ -39,6 +44,7 @@ class Comentario(models.Model):
 
 
 class RespuestaComentario(models.Model):
+    publicacion = models.ForeignKey(Publicacion, verbose_name='Publicacion:', on_delete=models.CASCADE, related_name='respuestas_publicacion')
     comentario = models.ForeignKey(Comentario, verbose_name='Comentario a responder:', on_delete=models.CASCADE, related_name='respuestas')
     autor = models.ForeignKey(PerfilUsuario, verbose_name="Autor:", on_delete=models.CASCADE, related_name='respuestas')
     respuesta = models.TextField(verbose_name='Responder comentario:', max_length=300)

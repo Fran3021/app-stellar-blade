@@ -34,7 +34,7 @@
                 </a>
             </div>
             <div class="col-2">
-                <button class="ButtonNuevoComentario" >{{publicacion.comentarios.count}}
+                <button class="ButtonNuevoComentario" >{{publicacion.total_comentarios}}
                     {% if publicacion.comentarios.count %}
                         <i class="bi bi-chat-dots-fill"></i>
                     {% else %}
@@ -60,6 +60,7 @@
                             </div>
                             <form class='FormRespuesta' id="FormRespuesta-{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">
                                 {% csrf_token %}
+                                <input type="hidden" name="publicacion_pk" value="{{publicacion.pk}}">
                                 {{contestar_form.respuesta | as_crispy_field}}
                                 <button class="btn btn-primary btn-sm">Responder</button>
                             </form>

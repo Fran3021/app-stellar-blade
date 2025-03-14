@@ -10,7 +10,7 @@ from django.http import JsonResponse
 from .forms import CreatePublicacionForm, CreateComentarioForm, ContestarComentarioForm
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from notificaciones.models import NotificacionPublicacion
+from notificaciones.models import NotificacionPublicacion, NotificacionComentario
 from django.shortcuts import get_object_or_404
 
 @method_decorator(login_required, name='dispatch')
@@ -43,10 +43,13 @@ class DetailPublicacionView(DetailView, CreateView):
     context_object_name = 'publicacion'
     form_class = CreateComentarioForm
 
-
     def form_valid(self, form):
         form.instance.publicacion = self.get_object()
         form.instance.autor = self.request.user.perfil
+        perfil_usuario = self.request.user.perfil
+        publicacion = self.get_object()
+        destinatario = publicacion.autor
+        NotificacionComentario.objects.create(autor=perfil_usuario, destinatario=destinatario, publicacion=publicacion, mensaje=f'{perfil_usuario} te ha comentado en una publicacion.', url=reverse_lazy('publicaciones:detalle', kwargs= {'pk': publicacion.pk}))
         messages.success(self.request ,'Comentario añadido correctamente')
         return super().form_valid(form)
     
@@ -83,8 +86,10 @@ def contestar_comentario_ajax(request, pk):
     if request.method == 'POST':
         comentario = get_object_or_404(Comentario, pk=pk)  
         respuesta = request.POST.get('respuesta')
+        pkPublicacion = request.POST.get('publicacion_pk')
+        publicacion = Publicacion.objects.get(pk=pkPublicacion)
         if respuesta:
-            RespuestaComentario.objects.create(autor=request.user.perfil, comentario=comentario, respuesta=respuesta)
+            RespuestaComentario.objects.create(autor=request.user.perfil, publicacion=publicacion, comentario=comentario, respuesta=respuesta)
 
             return JsonResponse({
             'mensaje': f'Se ha contestado al comentario de: {comentario.autor}',

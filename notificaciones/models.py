@@ -19,10 +19,12 @@ class NotificacionPublicacion(models.Model):
 
 class NotificacionComentario(models.Model):
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='notificacion_comentario')
+    publicacion = models.ForeignKey(Publicacion, verbose_name="Publicacion:", on_delete=models.CASCADE)
     #notifica al usuario que le han escrito un comentario
     destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Destinatario:', on_delete=models.CASCADE, related_name='notificaciones_comentarios')
-    mensaje = models.CharField(verbose_name='Mensaje de la notificacion:', max_length=150)
+    mensaje = models.CharField(verbose_name='Mensaje de la notificacion:', max_length=350)
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
+    url = models.URLField(verbose_name='URL de la publicacion comentada:',null=True, blank=True)
 
     class Meta:
         verbose_name = 'Notificacion comentario'

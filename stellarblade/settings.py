@@ -76,6 +76,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'usuarios.custom_processors.current_user',
                 'notificaciones.custom_processors.notificaciones_publicacion',
+                'notificaciones.custom_processors.notificaciones_comentario',
                 'publicaciones.custom_processors.formulario_contestar_comentario',
             ],
         },

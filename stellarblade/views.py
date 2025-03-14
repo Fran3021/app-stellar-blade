@@ -6,7 +6,7 @@ from django.urls import reverse, reverse_lazy
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.http import HttpResponse, HttpResponseRedirect
-from publicaciones.models import Publicacion
+from publicaciones.models import Publicacion, Comentario, RespuestaComentario
 from usuarios.models import Follow
 
 
