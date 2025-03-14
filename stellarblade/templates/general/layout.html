@@ -139,20 +139,20 @@
 
     //evento para abrir formulario para responder comentarios
     let buttonResponderComentarios = document.querySelectorAll('.BotonResponder')
-    let FormRespuesta = document.querySelector('.FormRespuesta')
     buttonResponderComentarios.forEach(button => {
+      const comentarioPk = button.dataset.comentarioPk
+      const formRespuesta = document.getElementById(`FormRespuesta-${comentarioPk}`)
       button.addEventListener('click', () => {
-        FormRespuesta.classList.toggle('block')
+        formRespuesta.classList.toggle('block')
       })
     })
 
     //evento para ver todos las respuestas de un comentario
     let buttonVerRespuestas = document.querySelectorAll('.VerRespuestas')
-    let containerRespuestas = document.querySelector('.container-respuestas')
     buttonVerRespuestas.forEach(button => {
+      const comentarioPk = button.dataset.comentarioPk 
+      const containerRespuestas = document.getElementById(`container-respuestas-${comentarioPk}`)
       button.addEventListener('click', () => {
-        console.log(button)
-        console.log(containerRespuestas)
         containerRespuestas.classList.toggle('block')
       })
     })

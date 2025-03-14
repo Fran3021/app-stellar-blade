@@ -43,7 +43,7 @@
                 </button>
             </div>
         </div>
-        <div class="row container-comentarios-respuestas">
+        <div class="row">
             <h3>Comentarios de la publicacion</h3>
             <div class="col-6">
                 {% if publicacion.comentarios.count %}
@@ -51,14 +51,14 @@
                         <article>
                             <h5>{{comentario.autor}} - {{comentario.fecha_comentario}}</h5>
                             <p class="TextoComentario" >{{comentario.texto}}</p>
-                            <span><button class="BotonResponder" >Responder</button> | <button class="VerRespuestas" >Ver respuestas</button></span>
-                            <div class="container-respuestas">
+                            <span><button  data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button> | <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button></span>
+                            <div class="container-respuestas"  id="container-respuestas-{{comentario.pk}}">
                                 <h5>Respuestas al comentario</h5>
                                 {% for respuesta in comentario.respuestas.all  %}
                                     <p style="margin-left:20px">{{respuesta}}</p>
                                 {% endfor %}
                             </div>
-                            <form class="FormRespuesta" pk="{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">
+                            <form class='FormRespuesta' id="FormRespuesta-{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">
                                 {% csrf_token %}
                                 {{contestar_form.respuesta | as_crispy_field}}
                                 <button class="btn btn-primary btn-sm">Responder</button>
