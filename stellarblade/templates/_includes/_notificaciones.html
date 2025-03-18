@@ -1,0 +1,39 @@
+<span>{{request.user.perfil.total_notificaciones}}</span>
+<ul>
+    {% if notificacion_publicacion %}
+    {% for noti in notificacion_publicacion %}
+        <li><a href="{{noti.url}}">{{noti.mensaje}}</a></li>
+    {% endfor %}
+    {% endif %}
+</ul>
+<ul>
+    {% if notificacion_comentarios %}
+{% for noti in notificacion_comentarios %}
+    <li><a href="{{noti.url}}">{{noti}}</a></li>
+{% endfor %}
+{% endif %}
+</ul>
+
+<ul>
+    {% if notificacion_seguir %}
+{% for noti in notificacion_seguir %}
+    <li><a href="{{noti.url}}">{{noti}}</a></li>
+{% endfor %}
+{% endif %}
+</ul>
+
+<ul>
+    {% if notificacion_respuesta_comentario %}
+{% for noti in notificacion_respuesta_comentario %}
+    <li><a href="{{noti.url}}">{{noti}}</a></li>
+{% endfor %}
+{% endif %}
+</ul>
+
+<ul>
+    {% if notificacion_me_gusta%}
+{% for noti in notificacion_me_gusta %}
+    <li><a href="{{noti.url}}">{{noti}}</a></li>
+{% endfor %}
+{% endif %}
+</ul>

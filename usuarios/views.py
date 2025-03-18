@@ -9,6 +9,7 @@ from django.http import JsonResponse
 from publicaciones.models import Publicacion
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
+from notificaciones.models import NotificacionSeguir
 
 class MyPerfilView(DetailView):
     model = PerfilUsuario
@@ -91,6 +92,7 @@ def follow_perfiles_ajax(request, pk):
     perfil = PerfilUsuario.objects.get(pk = pk)
     if Follow.objects.filter(seguidor = request.user.perfil, siguiendo = perfil).count():
         request.user.perfil.unfollow(perfil)
+        NotificacionSeguir.objects.filter(destinatario=perfil, usuario=request.user.perfil, url=reverse_lazy('usuarios:detail', kwargs={'pk': request.user.perfil.pk}))
         return JsonResponse({
             'mensaje': f'Se ha dejado de seguir al usuario {perfil.usuario}',
             'follow': False,
@@ -98,6 +100,7 @@ def follow_perfiles_ajax(request, pk):
         })
     else:
         request.user.perfil.follow(perfil)
+        NotificacionSeguir.objects.create(destinatario=perfil, usuario=request.user.perfil, url=reverse_lazy('usuarios:detail', kwargs={'pk': request.user.perfil.pk}))
         return JsonResponse ({
             'mensaje': f'Se ha empezado a seguir al usuario {perfil.usuario}',
             'follow': True,

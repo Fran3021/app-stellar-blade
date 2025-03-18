@@ -1,14 +1,14 @@
 from django.conf import settings
-from .models import NotificacionPublicacion, NotificacionComentario, NotificacionSeguir
+from .models import NotificacionPublicacion, NotificacionComentario, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta
 
 def notificaciones_publicacion(request):
     if request.user.is_authenticated:
-        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatarios=request.user.perfil, leida=True)
+        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatarios=request.user.perfil)
     else:
         notificaciones_publicacion = []
 
     return {
-        'notificacion': notificaciones_publicacion
+        'notificacion_publicacion': notificaciones_publicacion
     }
 
 def notificaciones_comentario(request):
@@ -18,5 +18,35 @@ def notificaciones_comentario(request):
         notificaciones_comentarios = []
 
     return {
-        'notificacion': notificaciones_comentarios
+        'notificacion_comentarios': notificaciones_comentarios
+    }
+
+def notificaciones_seguir(request):
+    if request.user.is_authenticated:
+        notificaciones_seguir = NotificacionSeguir.objects.filter(destinatario=request.user.perfil)
+    else:
+        notificaciones_seguir = []
+
+    return {
+        'notificacion_seguir': notificaciones_seguir
+    }
+
+def notificaciones_respuesta_comentario(request):
+    if request.user.is_authenticated:
+        notificaciones_respuesta_comentario = NotificacionRespuestaComentario.objects.filter(destinatario=request.user.perfil)
+    else:
+        notificaciones_respuesta_comentario = []
+
+    return {
+        'notificacion_respuesta_comentario': notificaciones_respuesta_comentario
+    }
+
+def notificaciones_me_gusta(request):
+    if request.user.is_authenticated:
+        notificaciones_me_gusta = NotificacionMeGusta.objects.filter(destinatario=request.user.perfil)
+    else:
+        notificaciones_me_gusta = []
+
+    return {
+        'notificacion_me_gusta': notificaciones_me_gusta
     }

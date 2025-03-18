@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NotificacionPublicacion, NotificacionComentario, NotificacionSeguir
+from .models import NotificacionPublicacion, NotificacionComentario, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta
 
 # Register your models here.
 
@@ -21,6 +21,25 @@ class NotificacionComentarioAdmin(admin.ModelAdmin):
 
 @admin.register(NotificacionSeguir)
 class NotificacionSeguirAdmin(admin.ModelAdmin):
+    list_display = [
+        'usuario',
+        'destinatario',
+        'leida'
+    ]
+    ordering = ['leida']
+
+@admin.register(NotificacionRespuestaComentario)
+class NotificacionRespuestaComentarioAdmin(admin.ModelAdmin):
+    list_display = [
+        'usuario',
+        'destinatario',
+        'leida'
+    ]
+    ordering = ['leida']
+
+
+@admin.register(NotificacionMeGusta)
+class NotificacionMegusta(admin.ModelAdmin):
     list_display = [
         'usuario',
         'destinatario',

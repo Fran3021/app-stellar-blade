@@ -26,7 +26,7 @@ class Publicacion(models.Model):
         verbose_name_plural = 'Publicaciones'
 
     def __str__(self):
-        return f'Titulo: {self.titulo} - Autor: {self.autor} - Fecha publicacion: {self.fecha_publicacion}'
+        return f'{self.titulo}'
 
 
 class Comentario(models.Model):

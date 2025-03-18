@@ -10,7 +10,7 @@ from django.http import JsonResponse
 from .forms import CreatePublicacionForm, CreateComentarioForm, ContestarComentarioForm
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from notificaciones.models import NotificacionPublicacion, NotificacionComentario
+from notificaciones.models import NotificacionPublicacion, NotificacionComentario, NotificacionRespuestaComentario, NotificacionMeGusta
 from django.shortcuts import get_object_or_404
 
 @method_decorator(login_required, name='dispatch')
@@ -49,7 +49,7 @@ class DetailPublicacionView(DetailView, CreateView):
         perfil_usuario = self.request.user.perfil
         publicacion = self.get_object()
         destinatario = publicacion.autor
-        NotificacionComentario.objects.create(autor=perfil_usuario, destinatario=destinatario, publicacion=publicacion, mensaje=f'{perfil_usuario} te ha comentado en una publicacion.', url=reverse_lazy('publicaciones:detalle', kwargs= {'pk': publicacion.pk}))
+        NotificacionComentario.objects.create(autor=perfil_usuario, destinatario=destinatario, publicacion=publicacion, url=reverse_lazy('publicaciones:detalle', kwargs= {'pk': publicacion.pk}))
         messages.success(self.request ,'Comentario añadido correctamente')
         return super().form_valid(form)
     
@@ -91,6 +91,8 @@ def contestar_comentario_ajax(request, pk):
         if respuesta:
             RespuestaComentario.objects.create(autor=request.user.perfil, publicacion=publicacion, comentario=comentario, respuesta=respuesta)
 
+            NotificacionRespuestaComentario.objects.create(comentario=comentario, destinatario=comentario.autor, usuario=request.user.perfil,publicacion=publicacion, url=reverse_lazy('publicaciones:detalle', kwargs={'pk': pkPublicacion}))
+
             return JsonResponse({
             'mensaje': f'Se ha contestado al comentario de: {comentario.autor}',
             'respuesta': respuesta,
@@ -129,6 +131,7 @@ def like_ajax(request, pk):
     publicacion = Publicacion.objects.get(pk = pk)
     if request.user.perfil in publicacion.likes.all():
         request.user.perfil.unlike_pub(publicacion)
+        NotificacionMeGusta.objects.filter(publicacion=publicacion, destinatario=publicacion.autor, usuario=request.user.perfil, url= reverse_lazy('publicaciones:detalle', kwargs={'pk': publicacion.pk})).delete()
         return JsonResponse({
             'like': False,
             'mensaje': f'Se ha quitado el like en la siguiente publicacion: {publicacion.titulo}',
@@ -136,6 +139,7 @@ def like_ajax(request, pk):
         })
     else:
         request.user.perfil.like_pub(publicacion)
+        NotificacionMeGusta.objects.create(publicacion=publicacion, destinatario=publicacion.autor, usuario=request.user.perfil, url= reverse_lazy('publicaciones:detalle', kwargs={'pk': publicacion.pk}))
         return JsonResponse({
             'like': True,
             'mensaje': f'Se ha dado like en la siguiente publicacion: {publicacion.titulo}',

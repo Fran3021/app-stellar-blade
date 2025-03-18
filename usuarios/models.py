@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+
 class PerfilUsuario(models.Model):
     usuario = models.OneToOneField(User, verbose_name='Usuario:', on_delete=models.CASCADE, related_name='perfil')
     imagen_perfil = models.ImageField(verbose_name='Imagen de perfil:', upload_to='usuarios/img_perfil/', null=True, blank=True)
@@ -21,6 +22,14 @@ class PerfilUsuario(models.Model):
     def unlike_pub(self, publicacion):
         publicacion.unlike(self)
 
+    def total_notificaciones(self):
+        from notificaciones.models import NotificacionComentario, NotificacionPublicacion, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta
+        notificaciones_comentario = NotificacionComentario.objects.filter(destinatario=self).count()
+        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatarios=self).count()
+        notificaciones_seguir = NotificacionSeguir.objects.filter(destinatario=self).count()
+        notificaciones_respuestas_comentario = NotificacionRespuestaComentario.objects.filter(destinatario=self).count()
+        notificaciones_me_gusta = NotificacionMeGusta.objects.filter(destinatario=self).count()
+        return notificaciones_comentario + notificaciones_publicacion + notificaciones_seguir + notificaciones_respuestas_comentario + notificaciones_me_gusta
     class Meta:
         verbose_name = 'Perfil'
         verbose_name_plural = 'Perfiles'
