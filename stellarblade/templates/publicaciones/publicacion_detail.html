@@ -49,13 +49,18 @@
                 {% if publicacion.comentarios.count %}
                     {% for comentario in publicacion.comentarios.all  %}
                         <article>
-                            <h5>{{comentario.autor}} - {{comentario.fecha_comentario}}</h5>
-                            <p class="TextoComentario" >{{comentario.texto}}</p>
-                            <span><button  data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button> | <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button></span>
+                            <div id="container-comentario-{{comentario.pk}}">
+                                <h5>{{comentario.autor}} - {{comentario.fecha_comentario}}</h5>
+                                <p class="TextoComentario" >{{comentario.texto}}</p>
+                                {% if comentario.autor == request.user.perfil %}
+                                <span><button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}">Eliminar comentario</button> | </span>
+                                {% endif %}
+                                <span><button  data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button> | <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button></span>
+                            </div>
                             <div class="container-respuestas"  id="container-respuestas-{{comentario.pk}}">
                                 <h5>Respuestas al comentario</h5>
                                 {% for respuesta in comentario.respuestas.all  %}
-                                    <p style="margin-left:20px">{{respuesta}}</p>
+                                    <p class="TextoRespuestaComentario">{{respuesta}}</p>
                                 {% endfor %}
                             </div>
                             <form class='FormRespuesta' id="FormRespuesta-{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">

@@ -11,7 +11,7 @@ class NotificacionPublicacion(models.Model):
 
     class Meta:
         verbose_name = 'Notificacion publicacion'
-        verbose_name_plural = 'Notificacion publicaciones'
+        verbose_name_plural = 'Notificaciones de publicaciones'
 
     def __str__(self):
         return f'{self.mensaje}'
@@ -27,7 +27,7 @@ class NotificacionComentario(models.Model):
 
     class Meta:
         verbose_name = 'Notificacion comentario'
-        verbose_name_plural = 'Notificacion comentarios'
+        verbose_name_plural = 'Notificaciones de comentarios'
 
     def __str__(self):
         return f'{self.autor} ha escrito un comentario en tu publicacion: {self.publicacion}'
@@ -38,6 +38,10 @@ class NotificacionSeguir(models.Model):
     destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Usuario que ha empezado a seguir:', on_delete=models.CASCADE, related_name='notificacion_destinatario')
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
     url = models.URLField(verbose_name='url del perfil que empieza a seguir:', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Notificacion seguir'
+        verbose_name_plural = 'Notificaciones de seguir'
 
     def __str__(self):
         return f'El usuario {self.usuario} ha empezado a seguirte.'
@@ -51,6 +55,10 @@ class NotificacionRespuestaComentario(models.Model):
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
     url = models.URLField(verbose_name='url de la publicacion:', null=True, blank=True)
 
+    class Meta:
+        verbose_name = 'Notificacion de respuesta a comentario'
+        verbose_name_plural = 'Notificaciones de respuestas a comentarios'
+
     def __str__(self):
         return f'{self.usuario} ha contestado a tu comentario:{self.comentario}'
 
@@ -61,6 +69,10 @@ class NotificacionMeGusta(models.Model):
     publicacion = models.ForeignKey(Publicacion, verbose_name="Publicacion que pertenece el me gusta:", on_delete=models.CASCADE)
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
     url = models.URLField(verbose_name='url de la publicacion:', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Notificacion de me gusta'
+        verbose_name_plural = 'Notificaciones de me gusta'
 
     def __str__(self):
         return f'{self.usuario} ha dado a me gusta a tu publicacion:{self.publicacion}'

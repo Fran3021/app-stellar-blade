@@ -14,13 +14,13 @@
     display: block;
 }
 
-.BotonResponder{
-    border: 0;
-    background-color: transparent;
-}
 
 .TextoComentario{
     margin: 0;
+}
+
+.TextoRespuestaComentario{
+    margin-left: 20px;
 }
 
 .ButtonNuevoComentario{
@@ -29,6 +29,16 @@
 }
 
 .VerRespuestas{
+    border: 0;
+    background-color: transparent;
+}
+
+.BotonResponder{
+    border: 0;
+    background-color: transparent;
+}
+
+.EliminarComentario{
     border: 0;
     background-color: transparent;
 }

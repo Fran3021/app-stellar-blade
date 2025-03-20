@@ -15,6 +15,9 @@
   <!--Autor de la pagina-->
   <meta name="autor" content="Fran">
 
+  <!-- añadimos el csrftoken a todas las paginas para solicitudes ajax-->
+  <meta name="csrf-token" content="{{ csrf_token }}">
+
     <!--Favicon de la pagina(icono)-->
   <link rel="" href="" type="">
 
@@ -22,7 +25,7 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 
 
   <!--Codificacion-->
@@ -156,6 +159,44 @@
         containerRespuestas.classList.toggle('block')
       })
     })
+
+    //evento para eliminar comentario
+    let buttonEliminarComentario = document.querySelectorAll('.EliminarComentario')
+    let mensajesEliminarComentarios = document.querySelector('.mensajes-eliminar-comentarios')
+    buttonEliminarComentario.forEach(button => {
+      let pkComentario = button.dataset.comentarioPk
+      const containerComentario = document.getElementById(`container-comentario-${pkComentario}`)
+      button.addEventListener('click', event => {
+        event.preventDefault()
+        let urlEliminar = button.getAttribute('data-href')
+        fetch(urlEliminar, {
+          method: 'DELETE', 
+          headers:{
+            'X-CSRFToken': getCSRFToken(),
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+          }
+          return response.json(); // Si la respuesta no es JSON, esto fallará
+        })
+        .then(data => {
+          if(data.success){
+            mensajesEliminarComentarios.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
+            containerComentario.remove()
+          }else{
+            mensajesEliminarComentarios.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
+          }
+        })
+      })
+    })
+
+  // Función para obtener el CSRF Token desde el HTML
+  function getCSRFToken() {
+    return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+}
   </script>
 </body>
 </html>

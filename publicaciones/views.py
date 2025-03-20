@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 from notificaciones.models import NotificacionPublicacion, NotificacionComentario, NotificacionRespuestaComentario, NotificacionMeGusta
 from django.shortcuts import get_object_or_404
 
+
 @method_decorator(login_required, name='dispatch')
 class CrearPublicacionView(CreateView):
     template_name = 'publicaciones/publicacion_nueva.html'
@@ -145,3 +146,19 @@ def like_ajax(request, pk):
             'mensaje': f'Se ha dado like en la siguiente publicacion: {publicacion.titulo}',
             'numero_likes': publicacion.likes.all().count()
         })
+
+
+def eliminar_comentario(request, pk):
+    if request.method == 'DELETE':
+        comentario = Comentario.objects.get(pk = pk)
+        if request.user.perfil == comentario.autor:
+            comentario.delete()
+            return JsonResponse({
+                'success': True,
+                'mensaje': 'Se ha eliminado el comentario'
+            })
+        else:
+            return JsonResponse({
+                'success': False,
+                'mensaje': 'No se ha podido eliminar el comentario'
+            })

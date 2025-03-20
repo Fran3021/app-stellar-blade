@@ -30,4 +30,4 @@ urlpatterns = [
     path('usuarios/', include('usuarios.urls', namespace = 'usuarios')),
     path('publicaciones/', include('publicaciones.urls', namespace = 'publicaciones')),
     path('admin/', admin.site.urls),
-] + debug_toolbar_urls() + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+] + debug_toolbar_urls() + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

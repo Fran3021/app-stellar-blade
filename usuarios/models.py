@@ -24,11 +24,13 @@ class PerfilUsuario(models.Model):
 
     def total_notificaciones(self):
         from notificaciones.models import NotificacionComentario, NotificacionPublicacion, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta
+        
         notificaciones_comentario = NotificacionComentario.objects.filter(destinatario=self).count()
         notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatarios=self).count()
         notificaciones_seguir = NotificacionSeguir.objects.filter(destinatario=self).count()
         notificaciones_respuestas_comentario = NotificacionRespuestaComentario.objects.filter(destinatario=self).count()
         notificaciones_me_gusta = NotificacionMeGusta.objects.filter(destinatario=self).count()
+        
         return notificaciones_comentario + notificaciones_publicacion + notificaciones_seguir + notificaciones_respuestas_comentario + notificaciones_me_gusta
     class Meta:
         verbose_name = 'Perfil'
