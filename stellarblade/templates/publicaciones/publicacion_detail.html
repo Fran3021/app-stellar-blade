@@ -49,26 +49,45 @@
                 {% if publicacion.comentarios.count %}
                     {% for comentario in publicacion.comentarios.all  %}
                         <article>
+
                             <div id="container-comentario-{{comentario.pk}}">
                                 <h5>{{comentario.autor}} - {{comentario.fecha_comentario}}</h5>
                                 <p class="TextoComentario" >{{comentario.texto}}</p>
                                 {% if comentario.autor == request.user.perfil %}
-                                <span><button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}">Eliminar comentario</button> | </span>
+                                <span>
+                                    <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}">Eliminar comentario</button> | 
+                                </span>
                                 {% endif %}
-                                <span><button  data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button> | <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button></span>
+                                <span>
+                                    <button  data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button> | 
+                                    {% if comentario.respuestas.count %}
+                                        <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button>
+                                    {% endif %}
+                                </span>
                             </div>
+                            {% if comentario.respuestas.count %}
                             <div class="container-respuestas"  id="container-respuestas-{{comentario.pk}}">
                                 <h5>Respuestas al comentario</h5>
                                 {% for respuesta in comentario.respuestas.all  %}
-                                    <p class="TextoRespuestaComentario">{{respuesta}}</p>
+                                    <div id="container-respuesta-{{respuesta.pk}}">
+                                        <p class="TextoRespuestaComentario">{{respuesta}}</p>
+                                        {% if request.user.perfil == respuesta.autor %}
+                                        <span>
+                                            <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}">Eliminar respuesta</button>
+                                        </span>
+                                        {% endif %}
+                                    </div>
                                 {% endfor %}
                             </div>
+                            {% endif %}
+
                             <form class='FormRespuesta' id="FormRespuesta-{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">
                                 {% csrf_token %}
                                 <input type="hidden" name="publicacion_pk" value="{{publicacion.pk}}">
                                 {{contestar_form.respuesta | as_crispy_field}}
                                 <button class="btn btn-primary btn-sm">Responder</button>
                             </form>
+
                         </article>
                     {% endfor %}
                 {% else %}

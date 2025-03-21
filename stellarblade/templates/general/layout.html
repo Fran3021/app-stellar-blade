@@ -197,6 +197,58 @@
   function getCSRFToken() {
     return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 }
+
+    //evento para eliminar respuesta a comentario
+    let buttonEliminarRespuesta = document.querySelectorAll('.eliminarRespuesta')
+    let mensajesEliminarRespuestas =  document.querySelector('.mensajes-eliminar-respuestas')
+    buttonEliminarRespuesta.forEach(button => {
+      let pkRespuesta = button.dataset.respuestaPk
+      const containerRespuesta = document.getElementById(`container-respuesta-${pkRespuesta}`)
+      button.addEventListener('click', event =>{
+        event.preventDefault()
+        let urlEliminarRespuesta = button.getAttribute('data-href')
+        fetch(urlEliminarRespuesta, {
+          method: 'DELETE',
+          headers:{
+            'X-CSRFToken': getCSRFToken(),
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          if(!response.ok){
+            throw new Error(`HTTP Error! Status: ${response.status}`)
+          }
+          return response.json()
+        })
+        .then(data => {
+          if(data.success){
+            containerRespuesta.remove()
+              mensajesEliminarRespuestas.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
+          }else{
+              mensajesEliminarRespuestas.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
+          }
+        })
+      })
+    })
+
+    //evento para marcar leida las notificaciones
+    let buttonNotificacion = document.querySelectorAll('.notificacion')
+    buttonNotificacion.forEach(button => {
+      let notificacionPk = button.dataset.notiPk
+      const buttonNoti = document.getElementById(`notificacion-${notificacionPk}`)
+      button.addEventListener('click', () => {
+        let urlMarcarLeida = button.getAttribute('data-href')
+        const leida = button.getAttribute('data-leida')
+        fetch(urlMarcarLeida, {method: 'POST'})
+        .then(response => response.json())
+        .then(data => {
+          if(data.success){
+            buttonNoti.style.color = 'cyan'
+          }
+        })
+        .catch(error => console.error('Error en la petición:', error));
+      })
+    })
   </script>
 </body>
 </html>

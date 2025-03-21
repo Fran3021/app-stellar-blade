@@ -1,3 +1,9 @@
+* ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .FormRespuesta{
     display: none;
 }
@@ -21,6 +27,7 @@
 
 .TextoRespuestaComentario{
     margin-left: 20px;
+    margin-bottom: 0px;
 }
 
 .ButtonNuevoComentario{
@@ -41,4 +48,41 @@
 .EliminarComentario{
     border: 0;
     background-color: transparent;
+}
+
+.eliminarRespuesta{
+    margin-left: 40px;
+    border: 0;
+    background-color: transparent;
+}
+
+.menu-header{
+    ul{
+        display: flex;
+        gap: 20px;
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+.notificacion-header{
+    width: 30%;
+    ul{
+        display: flex;
+        flex-direction: column;
+        a{
+            text-decoration: none;
+            background-color: blue;
+            border-bottom: 1px solid white;
+            padding: 10px;
+            display: inline-block;
+            color: grey;
+        }
+    }
+}
+
+.container-menu-notificaciones{
+    display: flex;
+    justify-content: space-between;
 }

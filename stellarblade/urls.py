@@ -29,5 +29,6 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name = 'login'),
     path('usuarios/', include('usuarios.urls', namespace = 'usuarios')),
     path('publicaciones/', include('publicaciones.urls', namespace = 'publicaciones')),
+    path('notificaciones/', include('notificaciones.urls', namespace = 'notificaciones')),
     path('admin/', admin.site.urls),
 ] + debug_toolbar_urls() + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

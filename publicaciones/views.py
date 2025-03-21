@@ -83,29 +83,6 @@ class UpdatePublicacionView(UpdateView):
         return reverse_lazy('publicaciones:detalle', kwargs={'pk': self.object.pk})
 
 
-def contestar_comentario_ajax(request, pk):
-    if request.method == 'POST':
-        comentario = get_object_or_404(Comentario, pk=pk)  
-        respuesta = request.POST.get('respuesta')
-        pkPublicacion = request.POST.get('publicacion_pk')
-        publicacion = Publicacion.objects.get(pk=pkPublicacion)
-        if respuesta:
-            RespuestaComentario.objects.create(autor=request.user.perfil, publicacion=publicacion, comentario=comentario, respuesta=respuesta)
-
-            NotificacionRespuestaComentario.objects.create(comentario=comentario, destinatario=comentario.autor, usuario=request.user.perfil,publicacion=publicacion, url=reverse_lazy('publicaciones:detalle', kwargs={'pk': pkPublicacion}))
-
-            return JsonResponse({
-            'mensaje': f'Se ha contestado al comentario de: {comentario.autor}',
-            'respuesta': respuesta,
-            'autor': request.user.username,
-            })
-        else:
-            return JsonResponse({
-                'mensaje': f'No se ha podido contestar al comentario de: {comentario.autor}'
-            })
-
-
-
 @method_decorator(login_required, name='dispatch')
 class DeletePublicacionView(DeleteView):
     template_name = 'publicaciones/publicacion_delete.html'
@@ -125,6 +102,29 @@ class DeletePublicacionView(DeleteView):
 
     def get_success_url(self):
         return reverse_lazy('usuarios:mi_perfil', kwargs={'pk': self.request.user.perfil.pk})
+
+
+@login_required
+def contestar_comentario_ajax(request, pk):
+    if request.method == 'POST':
+        comentario = get_object_or_404(Comentario, pk=pk)  
+        respuesta = request.POST.get('respuesta')
+        pkPublicacion = request.POST.get('publicacion_pk')
+        publicacion = Publicacion.objects.get(pk=pkPublicacion)
+        if respuesta:
+            RespuestaComentario.objects.create(autor=request.user.perfil, publicacion=publicacion, comentario=comentario, respuesta=respuesta)
+
+            NotificacionRespuestaComentario.objects.create(comentario=comentario, destinatario=comentario.autor, usuario=request.user.perfil, publicacion=publicacion, url=reverse_lazy('publicaciones:detalle', kwargs={'pk': pkPublicacion}))
+
+            return JsonResponse({
+            'mensaje': f'Se ha contestado al comentario de: {comentario.autor}',
+            'respuesta': respuesta,
+            'autor': request.user.username,
+            })
+        else:
+            return JsonResponse({
+                'mensaje': f'No se ha podido contestar al comentario de: {comentario.autor}'
+            })
 
 
 @login_required
@@ -148,10 +148,12 @@ def like_ajax(request, pk):
         })
 
 
+@login_required
 def eliminar_comentario(request, pk):
     if request.method == 'DELETE':
         comentario = Comentario.objects.get(pk = pk)
         if request.user.perfil == comentario.autor:
+            NotificacionComentario.objects.filter(autor=comentario.autor, publicacion=comentario.publicacion).delete()
             comentario.delete()
             return JsonResponse({
                 'success': True,
@@ -162,3 +164,23 @@ def eliminar_comentario(request, pk):
                 'success': False,
                 'mensaje': 'No se ha podido eliminar el comentario'
             })
+
+
+@login_required
+def eliminar_respuesta_comentario(request, pk):
+    if request.method == 'DELETE':
+        respuesta_comentario = RespuestaComentario.objects.get(pk = pk)
+        if request.user.perfil == respuesta_comentario.autor:
+            NotificacionRespuestaComentario.objects.filter(usuario=respuesta_comentario.autor, publicacion=respuesta_comentario.publicacion).delete()
+            respuesta_comentario.delete()
+            return JsonResponse({
+                'success': True,
+                'mensaje': 'Se ha eliminado la respuesta',
+            })
+        else:
+            return JsonResponse({
+                'success': False,
+                'mensaje': 'No se ha podido eliminar la respuesta',
+            })
+
+

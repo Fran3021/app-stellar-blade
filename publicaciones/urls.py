@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import CrearPublicacionView, DetailPublicacionView, UpdatePublicacionView, DeletePublicacionView, like_ajax, contestar_comentario_ajax, eliminar_comentario
+from .views import CrearPublicacionView, DetailPublicacionView, UpdatePublicacionView, DeletePublicacionView, like_ajax, contestar_comentario_ajax, eliminar_comentario, eliminar_respuesta_comentario
 
 
 app_name = 'publicaciones'
@@ -25,6 +25,7 @@ urlpatterns = [
     path('like/<pk>/', like_ajax, name = 'like'),
     path('contestar-comentario/<pk>/', contestar_comentario_ajax, name = 'contestar_comentario'),
     path('eliminar-comentario/<pk>/', eliminar_comentario, name = 'eliminar_comentario'),
+    path('eliminar-respuesta-comentario/<pk>/', eliminar_respuesta_comentario, name = 'eliminar_respuesta'),
     path('crear/', CrearPublicacionView.as_view(), name = 'crear'),
     path('detalle/<pk>', DetailPublicacionView.as_view(), name = 'detalle'),
     path('editar/<pk>', UpdatePublicacionView.as_view(), name = 'editar'),

@@ -1,20 +1,22 @@
-<nav>
-    <ul style="list-style:none" class="d-flex gap-3" >
-        <li><a href="{% url 'home' %}">Inicio</a></li>
-        <li><a href="{% url 'usuarios:lista' %}">Perfiles</a></li>
-        {% if request.user.is_authenticated %}
-            <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
-            <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}">Mi perfil</a></li>
-            <li><a href="{% url 'publicaciones:crear' %}">Crear publicacion</a></li>
-        {% else %}
-            <li><a href="{% url 'registro' %}">Registrate</a></li>
-            <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>
-        {% endif %}
-    </ul>
-</nav>
-<nav>
-    {% include "_includes/_notificaciones.html" %}
-</nav>
+<div class="container-menu-notificaciones">
+    <nav class="menu-header">
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'usuarios:lista' %}">Perfiles</a></li>
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
+                <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}">Mi perfil</a></li>
+                <li><a href="{% url 'publicaciones:crear' %}">Crear publicacion</a></li>
+            {% else %}
+                <li><a href="{% url 'registro' %}">Registrate</a></li>
+                <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <nav class="notificacion-header">
+        {% include "_includes/_notificaciones.html" %}
+    </nav>
+</div>
 {% if request.user.is_authenticated %}
 <h4>Logeado con el usuario: <strong>{{current_user}}</strong></h4>
 {% endif %}
