@@ -16,11 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import marcar_notificacion_leida_comentario
+from .views import marcar_notificacion_leida_comentario, marcar_notificacion_leida_publicacion, marcar_notificacion_leida_respuesta_comentario, marcar_notificacion_leida_me_gusta, marcar_notificacion_leida_seguir, list_notificaciones
 
 
 app_name = 'notificaciones'
 
 urlpatterns = [
+    path('notificaciones/', list_notificaciones, name = 'lista'),
     path('marcar-leida-comentario/<pk>/', marcar_notificacion_leida_comentario, name = 'marcar_leida_comentario'),
+    path('marcar-leida-publicacion/<pk>/', marcar_notificacion_leida_publicacion, name = 'marcar_leida_publicacion'),
+    path('marcar-leida-respuesta-comentario/<pk>/', marcar_notificacion_leida_respuesta_comentario, name = 'marcar_leida_respuesta_comentario'),
+    path('marcar-leida-me-gusta/<pk>/', marcar_notificacion_leida_me_gusta, name = 'marcar_leida_me_gusta'),
+    path('marcar-leida-seguir/<pk>/', marcar_notificacion_leida_seguir, name = 'marcar_leida_seguir'),
 ] 

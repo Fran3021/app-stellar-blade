@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'crispy_forms',
     'crispy_bootstrap5',
+    'django_libsass',
 
     #apps de la aplicacion
     'publicaciones',
@@ -173,3 +174,12 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 #pagina donde se dirige cuando el login es necesario y no esta logeado
 LOGIN_URL = 'login'
+
+#para que funciona sass, en este proyecto has utilizado libsass
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+]
+
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+

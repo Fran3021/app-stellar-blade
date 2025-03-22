@@ -1,88 +1,95 @@
-* ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.FormRespuesta{
-    display: none;
+* ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.FormComentario{
-    display: none;
+.FormRespuesta {
+  display: none;
 }
 
-.container-respuestas{
-    display: none;
+.FormComentario {
+  display: none;
 }
 
-.block{
-    display: block;
+.container-respuestas {
+  display: none;
 }
 
-
-.TextoComentario{
-    margin: 0;
+.block {
+  display: block;
 }
 
-.TextoRespuestaComentario{
-    margin-left: 20px;
-    margin-bottom: 0px;
+.TextoComentario {
+  margin: 0;
 }
 
-.ButtonNuevoComentario{
-    border: 0;
-    background-color: transparent;
+.TextoRespuestaComentario {
+  margin-left: 20px;
+  margin-bottom: 0px;
 }
 
-.VerRespuestas{
-    border: 0;
-    background-color: transparent;
+.ButtonNuevoComentario {
+  border: 0;
+  background-color: transparent;
 }
 
-.BotonResponder{
-    border: 0;
-    background-color: transparent;
+.VerRespuestas {
+  border: 0;
+  background-color: transparent;
 }
 
-.EliminarComentario{
-    border: 0;
-    background-color: transparent;
+.BotonResponder {
+  border: 0;
+  background-color: transparent;
 }
 
-.eliminarRespuesta{
-    margin-left: 40px;
-    border: 0;
-    background-color: transparent;
+.EliminarComentario {
+  border: 0;
+  background-color: transparent;
 }
 
-.menu-header{
-    ul{
-        display: flex;
-        gap: 20px;
-        a{
-            text-decoration: none;
-        }
-    }
+.eliminarRespuesta {
+  margin-left: 40px;
+  border: 0;
+  background-color: transparent;
 }
 
-.notificacion-header{
-    width: 30%;
-    ul{
-        display: flex;
-        flex-direction: column;
-        a{
-            text-decoration: none;
-            background-color: blue;
-            border-bottom: 1px solid white;
-            padding: 10px;
-            display: inline-block;
-            color: grey;
-        }
-    }
+.menu-header ul {
+  display: flex;
+  gap: 20px;
+}
+.menu-header ul a {
+  text-decoration: none;
 }
 
-.container-menu-notificaciones{
-    display: flex;
-    justify-content: space-between;
+.main-notificaciones {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
+
+.notificaciones {
+  display: flex;
+  flex-direction: column;
+}
+.notificaciones a {
+  text-decoration: none;
+  background-color: blue;
+  border-bottom: 1px solid white;
+  padding: 20px 30px;
+  display: block;
+  color: grey;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*# sourceMappingURL=styles.css.map */

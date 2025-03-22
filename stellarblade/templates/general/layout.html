@@ -238,16 +238,25 @@
       const buttonNoti = document.getElementById(`notificacion-${notificacionPk}`)
       button.addEventListener('click', () => {
         let urlMarcarLeida = button.getAttribute('data-href')
-        const leida = button.getAttribute('data-leida')
-        fetch(urlMarcarLeida, {method: 'POST'})
+        fetch(urlMarcarLeida, {
+          method: 'POST',
+          headers:{
+            'X-CSRFToken': getCSRFToken(),
+            'Content-Type': 'application/json'
+          }
+        })
         .then(response => response.json())
         .then(data => {
           if(data.success){
-            buttonNoti.style.color = 'cyan'
+            buttonNoti.style.backgroundColor = 'cyan'
           }
         })
         .catch(error => console.error('Error en la petición:', error));
       })
+      const leida = button.getAttribute('data-leida')
+      if(leida == 'True'){
+        buttonNoti.style.backgroundColor = 'cyan'
+      }
     })
   </script>
 </body>

@@ -1,0 +1,85 @@
+@use '../abstracts/abstracts' as abs;
+@use '../base/base' as base;
+@use '../components/components' as comp;
+
+.FormRespuesta{
+    display: none;
+}
+
+.FormComentario{
+    display: none;
+}
+
+.container-respuestas{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+
+.TextoComentario{
+    margin: 0;
+}
+
+.TextoRespuestaComentario{
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+
+.ButtonNuevoComentario{
+    border: 0;
+    background-color: transparent;
+}
+
+.VerRespuestas{
+    border: 0;
+    background-color: transparent;
+}
+
+.BotonResponder{
+    border: 0;
+    background-color: transparent;
+}
+
+.EliminarComentario{
+    border: 0;
+    background-color: transparent;
+}
+
+.eliminarRespuesta{
+    margin-left: 40px;
+    border: 0;
+    background-color: transparent;
+}
+
+.menu-header{
+    ul{
+        display: flex;
+        gap: 20px;
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+.main-notificaciones{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.notificaciones{
+    display: flex;
+    flex-direction: column;
+    a{
+        text-decoration: none;
+        background-color: blue;
+        border-bottom: 1px solid white;
+        padding: 20px 30px;
+        display: block;
+        color: grey;
+    }
+}

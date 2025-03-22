@@ -1,0 +1,40 @@
+@use "_variables" as var;
+
+
+@mixin breakpoint($bp){
+    @if $bp == tablet{
+        @media (min-width: var.$bp-tablet){
+            @content;
+        }
+    }
+
+    @if $bp == tablethorizontal{
+        @media (min-width: var.$bp-tablet-horizontal){
+            @content;
+        }
+    }
+
+    @if $bp == desktop{
+        @media (min-width: var.$bp-desktop){
+            @content;
+        }
+    }
+
+    @if $bp == desktopxl{
+        @media (min-width: var.$bp-desktop-xl){
+            @content;
+        }
+    }
+
+    @if $bp == desktopxxl{
+        @media (min-width: var.$bp-desktop-xxl){
+            @content;
+        }
+    }
+}
+
+@mixin reset-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
