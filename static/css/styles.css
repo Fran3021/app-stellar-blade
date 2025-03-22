@@ -10,31 +10,6 @@
   list-style: none;
 }
 
-.FormRespuesta {
-  display: none;
-}
-
-.FormComentario {
-  display: none;
-}
-
-.container-respuestas {
-  display: none;
-}
-
-.block {
-  display: block;
-}
-
-.TextoComentario {
-  margin: 0;
-}
-
-.TextoRespuestaComentario {
-  margin-left: 20px;
-  margin-bottom: 0px;
-}
-
 .ButtonNuevoComentario {
   border: 0;
   background-color: transparent;
@@ -61,12 +36,58 @@
   background-color: transparent;
 }
 
+.container-header {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-main {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-footer {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-respuestas {
+  display: none;
+}
+
+.FormRespuesta {
+  display: none;
+}
+
+.FormComentario {
+  display: none;
+}
+
 .menu-header ul {
   display: flex;
   gap: 20px;
 }
 .menu-header ul a {
   text-decoration: none;
+}
+
+.TextoComentario {
+  margin: 0;
+}
+
+.TextoRespuestaComentario {
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+
+main .container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-notificaciones {
@@ -90,6 +111,10 @@
 
 body {
   overflow-x: hidden;
+}
+
+.block {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */

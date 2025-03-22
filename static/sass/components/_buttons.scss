@@ -1,1 +1,27 @@
 @use '../abstracts/abstracts' as abs;
+
+.ButtonNuevoComentario{
+    border: 0;
+    background-color: transparent;
+}
+
+.VerRespuestas{
+    border: 0;
+    background-color: transparent;
+}
+
+.BotonResponder{
+    border: 0;
+    background-color: transparent;
+}
+
+.EliminarComentario{
+    border: 0;
+    background-color: transparent;
+}
+
+.eliminarRespuesta{
+    margin-left: 40px;
+    border: 0;
+    background-color: transparent;
+}

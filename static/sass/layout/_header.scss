@@ -2,3 +2,13 @@
 @use '../base/base' as base;
 @use '../components/components' as comp;
 
+
+.menu-header{
+    ul{
+        display: flex;
+        gap: 20px;
+        a{
+            text-decoration: none;
+        }
+    }
+}

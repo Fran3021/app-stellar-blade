@@ -38,19 +38,27 @@
   <meta name="theme-color" content="FF0000">
 </head>
 <body>
-  <div class="container">
     <header>
-      <h1>{% block page_title %}Titulo de la pagina{% endblock  %}</h1>
+      <div class="container-header">
+        <h1>{% block page_title %}Titulo de la pagina{% endblock  %}</h1>
         {% include '_includes/_header.html' %}
         {% include '_includes/_messages.html' %}
+      </div>
     </header>
 
-    {% block page_content %}
+    <main>
+      <div class="container-main">
+        {% block page_content %}
 
-    {% endblock %}
+        {% endblock %}
+      </div>
+    </main>
 
-    {% include '_includes/_footer.html' %}
-  </div>
+    <footer>
+      <div class="container-footer">
+        {% include '_includes/_footer.html' %}
+      </div>
+    </footer>
   <script>
 
     //evento para seguir y dejar de seguir a usuarios
