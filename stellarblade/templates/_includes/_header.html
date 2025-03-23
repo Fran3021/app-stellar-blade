@@ -1,12 +1,12 @@
     <nav class="menu-header">
         <ul>
-            <li><a href="{% url 'home' %}">Inicio</a></li>
-            <li><a href="{% url 'usuarios:lista' %}">Perfiles</a></li>
+            <li><a href="{% url 'home' %}"><i class="bi bi-house"></i></a></li>
+            <li><a href="{% url 'usuarios:lista' %}"><i class="bi bi-person-add"></i></a></li>
             {% if request.user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Cerrar sesion</a></li>
-                <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}">Mi perfil</a></li>
-                <li><a href="{% url 'publicaciones:crear' %}">Crear publicacion</a></li>
-                <li><a href="{% url 'notificaciones:lista' %}">{{request.user.perfil.total_notificaciones}}</a></li>
+                <li><a href="{% url 'logout' %}"><i class="bi bi-box-arrow-in-right"></i></a></li>
+                <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}"><i class="bi bi-person-circle"></i></a></li>
+                <li><a href="{% url 'publicaciones:crear' %}"><i class="bi bi-plus-circle"></i></a></li>
+                <li><a href="{% url 'notificaciones:lista' %}">{{request.user.perfil.total_notificaciones}}<i class="bi bi-bell"></i></a></li>
             {% else %}
                 <li><a href="{% url 'registro' %}">Registrate</a></li>
                 <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>
