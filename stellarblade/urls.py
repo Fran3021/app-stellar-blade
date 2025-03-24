@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from debug_toolbar.toolbar import debug_toolbar_urls
-from .views import legal_view, logout_view, RegisterView, LoginView, HomeView
+from .views import legal_view, logout_view, RegisterView, LoginView, HomeView, search_view
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -25,6 +25,7 @@ urlpatterns = [
     path('', HomeView.as_view(), name = 'home'),
     path('legal/', legal_view, name = 'legal'),
     path('logout/', logout_view, name = 'logout'),
+    path('search/', search_view, name = 'search'),
     path('registro/', RegisterView.as_view(), name = 'registro'),
     path('login/', LoginView.as_view(), name = 'login'),
     path('usuarios/', include('usuarios.urls', namespace = 'usuarios')),

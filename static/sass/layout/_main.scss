@@ -25,6 +25,7 @@
     align-items: center;
     gap: 30px;
     .publicacion{
+        max-width: 50%;
         border-bottom: 1px solid silver;
         .imagen-hora-titulo{
             display: flex;

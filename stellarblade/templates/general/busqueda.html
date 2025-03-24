@@ -1,0 +1,32 @@
+{% extends "general/layout.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Busqueda{% endblock  %}
+{% block page_content %}
+<h2 class="title-home" >Introduce tu busqueda</h2>
+<div class="container-busqueda">
+    <form action="" method="GET">
+        {{formulario.value| as_crispy_field}}
+        <button>Buscar</button>
+    </form>
+
+    {% for publicacion in publicaciones %}
+        {% include "_includes/_publicaciones.html" %}
+    {% endfor %}
+
+    {% for usuario in usuarios %}
+        <article>
+            <h5>{{usuario.perfil}}</h5>
+            <a href="{% url 'usuarios:detail' usuario.perfil.pk %}">Ir a su perfil</a>
+        </article>
+    {% endfor %}
+    
+    {% for comentario in comentarios %}
+        <article>
+            <h5>{{comentario | truncatechars:30}}</h5>
+        </article>
+    {% endfor %}
+
+
+</div>
+{% endblock  %}

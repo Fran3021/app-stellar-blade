@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .forms import RegisterForm
+from .forms import RegisterForm, SearchForm
 from django.views.generic import CreateView, FormView, ListView
 from django.contrib import messages
 from django.urls import reverse, reverse_lazy
@@ -7,7 +7,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from publicaciones.models import Publicacion, Comentario, RespuestaComentario
-from usuarios.models import Follow
+from usuarios.models import Follow, PerfilUsuario
+from django.contrib.auth.models import User
 
 
 
@@ -63,6 +64,36 @@ class LoginView(FormView):
         messages.error(self.request, 'Contraseña o usuario incorrectos.')
         return HttpResponseRedirect(reverse_lazy('login'))
         super().form_invalid(form)
+
+
+def search_view(request):
+    if request.GET:
+        formulario = SearchForm(request.GET)
+
+        busqueda = formulario.data['value']#obtenemos lo que haya en el campo value del formulario
+
+        publicaciones = Publicacion.objects.filter(titulo__icontains=busqueda)
+        usuarios = User.objects.filter(username__icontains=busqueda)
+        comentarios = Comentario.objects.filter(texto__icontains=busqueda)
+
+        context ={
+            'publicaciones': publicaciones,
+            'usuarios': usuarios,
+            'comentarios': comentarios,
+            'formulario': formulario,
+        }
+
+        return render(request, 'general/busqueda.html', context)
+    else:
+        formulario = SearchForm()
+
+        context = {
+            'formulario': formulario
+        }
+
+        return render(request, 'general/busqueda.html', context)
+
+
 
 
 
