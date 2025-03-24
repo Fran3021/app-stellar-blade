@@ -19,15 +19,9 @@ class HomeView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         if self.request.user.is_authenticated:
-            #obtenemos el perfil de usuario logeado
-            perfil_usuario = self.request.user.perfil
-            #obtenemos a los usuarios que sigue el usuario logeado
-            usuario_seguidos = perfil_usuario.seguidores.all()
-            #lo filtramos para que salgan los que el autor de las publicaciones esten en los usuarios seguidos del usuario logeado
-            context ["publicaciones"] = Publicacion.objects.filter(autor__in=usuario_seguidos).order_by('-fecha_publicacion')
+            context["publicaciones"] = Publicacion.objects.all().exclude(autor=self.request.user.perfil).order_by('-fecha_publicacion') 
         else:
-            context["publicaciones"] = Publicacion.objects.all().order_by('-fecha_publicacion') 
-        
+            context["publicaciones"] = Publicacion.objects.all().order_by('-fecha_publicacion')
         return context
 
 def legal_view(request):
@@ -73,7 +67,7 @@ def search_view(request):
         busqueda = formulario.data['value']#obtenemos lo que haya en el campo value del formulario
 
         publicaciones = Publicacion.objects.filter(titulo__icontains=busqueda)
-        usuarios = User.objects.filter(username__icontains=busqueda)
+        usuarios = PerfilUsuario.objects.filter(usuario__username__icontains=busqueda).exclude(usuario=request.user)# de esta forma accedemos al modelo PerfilUsuario para utilizar el include de _perfiles.html
         comentarios = Comentario.objects.filter(texto__icontains=busqueda)
 
         context ={

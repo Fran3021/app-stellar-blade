@@ -11,14 +11,23 @@
     margin-bottom: 0px;
 }
 
-.title-home{
+.title-home, .title-contactos{
     font-size: 25px;
     text-align: center;
     margin-bottom: 50px;
 }
 
+.container-busqueda{
+    .perfiles-sugeridos{
+        .perfiles{
+            display: flex;
+            gap: 50px;
+        }
+    }
+}
 
-.container-home{
+
+.container-home, .container-publicaciones-mis-contactos{
     display: flex;
     flex-direction: column;
     justify-content: center;

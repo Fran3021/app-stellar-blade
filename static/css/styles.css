@@ -83,67 +83,72 @@
   margin-bottom: 0px;
 }
 
-.title-home {
+.title-home, .title-contactos {
   font-size: 25px;
   text-align: center;
   margin-bottom: 50px;
 }
 
-.container-home {
+.container-busqueda .perfiles-sugeridos .perfiles {
+  display: flex;
+  gap: 50px;
+}
+
+.container-home, .container-publicaciones-mis-contactos {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
-.container-home .publicacion {
+.container-home .publicacion, .container-publicaciones-mis-contactos .publicacion {
   max-width: 50%;
   border-bottom: 1px solid silver;
 }
-.container-home .publicacion .imagen-hora-titulo {
+.container-home .publicacion .imagen-hora-titulo, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
 }
-.container-home .publicacion .imagen-hora-titulo .imagen {
+.container-home .publicacion .imagen-hora-titulo .imagen, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen {
   width: 20%;
 }
-.container-home .publicacion .imagen-hora-titulo .imagen .imagen_perfil {
+.container-home .publicacion .imagen-hora-titulo .imagen .imagen_perfil, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen .imagen_perfil {
   width: 80%;
   border-radius: 20px;
 }
-.container-home .publicacion .imagen-hora-titulo .hora-titulo {
+.container-home .publicacion .imagen-hora-titulo .hora-titulo, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-titulo {
   width: 80%;
 }
-.container-home .publicacion .imagen-hora-titulo .hora-titulo .hora a {
+.container-home .publicacion .imagen-hora-titulo .hora-titulo .hora a, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-titulo .hora a {
   text-decoration: none;
   font-size: 12px;
   color: black;
 }
-.container-home .publicacion .imagen-hora-titulo .hora-titulo .hora span {
+.container-home .publicacion .imagen-hora-titulo .hora-titulo .hora span, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-titulo .hora span {
   font-size: 12px;
 }
-.container-home .publicacion .imagen-hora-titulo .hora-titulo .titulo {
+.container-home .publicacion .imagen-hora-titulo .hora-titulo .titulo, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-titulo .titulo {
   color: cyan;
   font-size: 17px;
 }
-.container-home .publicacion .imagen_publicacion {
+.container-home .publicacion .imagen_publicacion, .container-publicaciones-mis-contactos .publicacion .imagen_publicacion {
   width: 100%;
   margin-bottom: 10px;
 }
-.container-home .publicacion .contenido-publicacion {
+.container-home .publicacion .contenido-publicacion, .container-publicaciones-mis-contactos .publicacion .contenido-publicacion {
   font-size: 15px;
   color: silver;
   margin: 0;
   margin-bottom: 10px;
 }
-.container-home .publicacion .numero-likes-comentarios {
+.container-home .publicacion .numero-likes-comentarios, .container-publicaciones-mis-contactos .publicacion .numero-likes-comentarios {
   display: flex;
   gap: 20px;
   margin-bottom: 10px;
 }
-.container-home .publicacion .boton-detalle {
+.container-home .publicacion .boton-detalle, .container-publicaciones-mis-contactos .publicacion .boton-detalle {
   text-decoration: none;
   display: inline-block;
   font-size: 12px;
@@ -154,7 +159,7 @@
   margin-bottom: 10px;
   transition: background-color 1s ease, scale 1s ease;
 }
-.container-home .publicacion .boton-detalle:hover {
+.container-home .publicacion .boton-detalle:hover, .container-publicaciones-mis-contactos .publicacion .boton-detalle:hover {
   background-color: blue;
   scale: 0.9;
 }

@@ -76,6 +76,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'usuarios.custom_processors.current_user',
+                'usuarios.custom_processors.all_users',
                 'notificaciones.custom_processors.notificaciones_publicacion',
                 'notificaciones.custom_processors.notificaciones_comentario',
                 'notificaciones.custom_processors.notificaciones_seguir',

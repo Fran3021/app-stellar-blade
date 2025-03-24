@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import MyPerfilView, UpdatePerfilView, DeletePerfilView, ListPerfilesViews, follow_perfiles_ajax, PerfilesDetailView
+from .views import MyPerfilView, UpdatePerfilView, DeletePerfilView,PublicacionesMisContactosView, follow_perfiles_ajax, PerfilesDetailView
 
 app_name = 'usuarios'
 
@@ -24,7 +24,7 @@ urlpatterns = [
     path('mi-perfil/<pk>/', MyPerfilView.as_view(), name = 'mi_perfil'),
     path('update-perfil/<pk>/', UpdatePerfilView.as_view(), name = 'update'),
     path('delete-perfil/<pk>/',DeletePerfilView.as_view() , name = 'delete'),
-    path('lista/',ListPerfilesViews.as_view() , name = 'lista'),
+    path('publicaciones-mis-contactos/',PublicacionesMisContactosView.as_view() , name = 'mis_contactos'),
     path('follow/<pk>',follow_perfiles_ajax , name = 'follow'),
     path('perfiles-detail/<pk>',PerfilesDetailView.as_view() , name = 'detail'),
 ] 

@@ -10,23 +10,31 @@
         <button>Buscar</button>
     </form>
 
-    {% for publicacion in publicaciones %}
-        {% include "_includes/_publicaciones.html" %}
-    {% endfor %}
+    <section>
+        {% if publicaciones %}
+            <h2>Publicaciones encontradas</h2>
+        {% endif %}
+        {% for publicacion in publicaciones %}
+            {% include "_includes/_publicaciones.html" %}
+        {% endfor %}
+    </section>
 
-    {% for usuario in usuarios %}
-        <article>
-            <h5>{{usuario.perfil}}</h5>
-            <a href="{% url 'usuarios:detail' usuario.perfil.pk %}">Ir a su perfil</a>
-        </article>
-    {% endfor %}
-    
-    {% for comentario in comentarios %}
-        <article>
-            <h5>{{comentario | truncatechars:30}}</h5>
-        </article>
-    {% endfor %}
+    <section>
+        {% if usuarios %}
+            <h2>Usarios encontrados</h2>
+        {% endif %}
+        {% for perfil in usuarios %}
+            {% include "_includes/_perfiles.html" %}
+        {% endfor %}
+    </section>
 
-
+    <section class="perfiles-sugeridos">
+        <h2>Perfiles sugeridos</h2>
+        <section class="perfiles">
+            {% for perfil in all_users %}
+                {% include "_includes/_perfiles.html" %}
+            {% endfor %}
+        </section>
+    </section>
 </div>
 {% endblock  %}

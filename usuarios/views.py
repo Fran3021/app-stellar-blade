@@ -73,16 +73,18 @@ class DeletePerfilView(DeleteView):
         return super().form_valid(form)
 
 
-class ListPerfilesViews(ListView):
-    model = PerfilUsuario
-    template_name = 'usuarios/perfiles_list.html'
-
+class PublicacionesMisContactosView(ListView):
+    model = Publicacion
+    template_name = 'usuarios/publicaciones_mis_contactos.html'
+        
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        if self.request.user.is_authenticated:
-            context["perfiles"] = PerfilUsuario.objects.all().exclude(usuario = self.request.user)
-        else:
-            context["perfiles"] = PerfilUsuario.objects.all()
+        #obtenemos el perfil de usuario logeado
+        perfil_usuario = self.request.user.perfil
+        #obtenemos a los usuarios que sigue el usuario logeado
+        usuario_seguidos = perfil_usuario.seguidores.all()
+        #lo filtramos para que salgan los que el autor de las publicaciones esten en los usuarios seguidos del usuario logeado
+        context ["publicaciones"] = Publicacion.objects.filter(autor__in=usuario_seguidos).order_by('-fecha_publicacion')
         
         return context
 

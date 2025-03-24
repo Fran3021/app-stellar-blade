@@ -26,7 +26,7 @@ class CrearPublicacionView(CreateView):
         nueva_publicacion.save()
         titulo = nueva_publicacion.titulo
         perfil_usuario = self.request.user.perfil
-        seguidores = perfil_usuario.seguidores.all()
+        seguidores = perfil_usuario.siguiendo.all()
         nueva_notificacion = NotificacionPublicacion.objects.create(mensaje = f'El usuario {perfil_usuario} ha escrito {titulo}' )
         nueva_notificacion.destinatarios.set(seguidores)
         nueva_notificacion.url = reverse_lazy('publicaciones:detalle', kwargs= {'pk': nueva_publicacion.pk})
