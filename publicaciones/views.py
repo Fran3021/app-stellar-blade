@@ -27,10 +27,9 @@ class CrearPublicacionView(CreateView):
         titulo = nueva_publicacion.titulo
         perfil_usuario = self.request.user.perfil
         seguidores = perfil_usuario.siguiendo.all()
-        nueva_notificacion = NotificacionPublicacion.objects.create(mensaje = f'El usuario {perfil_usuario} ha escrito {titulo}' )
-        nueva_notificacion.destinatarios.set(seguidores)
-        nueva_notificacion.url = reverse_lazy('publicaciones:detalle', kwargs= {'pk': nueva_publicacion.pk})
-        nueva_notificacion.save()
+        for seguidor in seguidores:
+            NotificacionPublicacion.objects.create(autor=perfil_usuario, publicacion=nueva_publicacion, destinatario=seguidor, url= reverse_lazy('publicaciones:detalle', kwargs= {'pk': nueva_publicacion.pk}))
+
         messages.success(self.request, 'Publicacion creada correctamente')
         return super().form_valid(form)
 
@@ -96,6 +95,7 @@ class DeletePublicacionView(DeleteView):
 
     def form_valid(self, form):
         publicacion = Publicacion.objects.get(pk = self.object.pk)
+        NotificacionPublicacion.objects.filter(publicacion=publicacion).delete()
         publicacion.delete()
         messages.success(self.request, 'Publicacion eliminada correctamente.')
         return super().form_valid(form)

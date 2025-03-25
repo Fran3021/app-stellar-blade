@@ -3,9 +3,10 @@ from usuarios.models import PerfilUsuario
 from publicaciones.models import Publicacion, Comentario
 
 class NotificacionPublicacion(models.Model):
+    autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='notificacion_publicacion')
+    publicacion = models.ForeignKey(Publicacion, verbose_name="Publicacion:", on_delete=models.CASCADE)
     #notifica a todos los usuarios que sigue el creador de la publicacion
-    destinatarios = models.ManyToManyField(PerfilUsuario, verbose_name='Destinatarios:', related_name='notificaciones_publicaciones')
-    mensaje = models.CharField(verbose_name='Mensaje de la notificacion:', max_length=150)
+    destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Destinatario:', on_delete=models.CASCADE, related_name='notificaciones_publicaciones')
     leida = models.BooleanField(verbose_name='¿Leida?:', default=False)
     url = models.URLField(verbose_name='URL de la nueva publicacion',null=True, blank=True)
 
@@ -14,7 +15,7 @@ class NotificacionPublicacion(models.Model):
         verbose_name_plural = 'Notificaciones de publicaciones'
 
     def __str__(self):
-        return f'{self.mensaje}'
+        return f'{self.autor} ha publicaco una nueva publicacion:{self.publicacion}'
 
 
 class NotificacionComentario(models.Model):

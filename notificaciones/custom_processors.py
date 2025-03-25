@@ -3,7 +3,7 @@ from .models import NotificacionPublicacion, NotificacionComentario, Notificacio
 
 def notificaciones_publicacion(request):
     if request.user.is_authenticated:
-        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatarios=request.user.perfil)
+        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatario=request.user.perfil)
     else:
         notificaciones_publicacion = []
 

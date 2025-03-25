@@ -26,7 +26,7 @@ class PerfilUsuario(models.Model):
         from notificaciones.models import NotificacionComentario, NotificacionPublicacion, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta
         
         notificaciones_comentario = NotificacionComentario.objects.filter(destinatario=self).filter(leida=False).count()
-        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatarios=self).filter(leida=False).count()
+        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatario=self).filter(leida=False).count()
         notificaciones_seguir = NotificacionSeguir.objects.filter(destinatario=self).filter(leida=False).count()
         notificaciones_respuestas_comentario = NotificacionRespuestaComentario.objects.filter(destinatario=self).filter(leida=False).count()
         notificaciones_me_gusta = NotificacionMeGusta.objects.filter(destinatario=self).filter(leida=False).count()

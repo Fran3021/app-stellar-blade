@@ -1,7 +1,7 @@
 <ul class="notificaciones">
     {% if notificacion_publicacion %}
     {% for noti in notificacion_publicacion %}
-        <li><a data-href="{% url 'notificaciones:marcar_leida_publicacion' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti.mensaje}}</a></li>
+        <li><a data-href="{% url 'notificaciones:marcar_leida_publicacion' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}</a></li>
     {% endfor %}
 
     {% endif %}

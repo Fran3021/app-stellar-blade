@@ -6,7 +6,8 @@ from .models import NotificacionPublicacion, NotificacionComentario, Notificacio
 @admin.register(NotificacionPublicacion)
 class NotificacionPublicacionAdmin(admin.ModelAdmin):
     list_display = [
-        'mensaje',
+        'autor',
+        'publicacion',
         'leida'
     ]
     ordering = ['leida']
