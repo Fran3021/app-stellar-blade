@@ -1,0 +1,15 @@
+{% extends "general/layout.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Conversaciones{% endblock  %}
+{% block page_content %}
+<h4>{{mensaje.conversacion}}</h4>
+<p>{{mensaje.contenido}}</p>
+{% if mensaje.autor != request.user.perfil %}
+    <form class="form-contestar-mensaje" action="{% url 'mensajes:contestar_mensaje' mensaje.pk %}" method='POST'>
+        {% csrf_token %}
+        {{contestar_mensaje.contenido | as_crispy_field}}
+        <button >contestar</button>
+    </form>
+{% endif %}
+{% endblock  %}

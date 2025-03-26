@@ -266,6 +266,32 @@
         buttonNoti.style.backgroundColor = 'cyan'
       }
     })
+
+
+    //evento para poder responder a un mensaje por peticion ajax
+    const FormContestarMensajes = document.querySelectorAll('.form-contestar-mensaje')
+    FormContestarMensajes.forEach(form => {
+      form.addEventListener('submit', event => {
+        event.preventDefault()
+
+        const formData = new FormData(form)//aqui metemos todos los datos del formulario
+        
+        fetch(form.action, {//con esto evitamos que nos abra un json en otra pagina del navegador
+          method: 'POST',
+          body: formData,
+          header: {
+            'X-Request-Width': 'XMLHttpRequest'//le decimos a django que es una peticion Ajax
+          }
+        })
+        .then(response => response.json())
+        .then(data => {
+          if(data.success){
+            form.reset()//con esto limpiamos el formulario
+          }else{
+          }
+        })
+      })
+    })
   </script>
 </body>
 </html>

@@ -5,5 +5,12 @@ class CreateMensajeForm(forms.ModelForm):
     class Meta:
         model = Mensaje
         fields = [
-            'contenido'
+            'contenido',
+        ]
+
+class ContestarMensajeForm(forms.ModelForm):
+    class Meta:
+        model = Mensaje
+        fields = [
+            'contenido',
         ]

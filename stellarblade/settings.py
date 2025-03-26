@@ -85,6 +85,7 @@ TEMPLATES = [
                 'notificaciones.custom_processors.notificaciones_me_gusta',
                 'publicaciones.custom_processors.formulario_contestar_comentario',
                 'publicaciones.custom_processors.all_publicaciones',
+                'mensajes.custom_processors.formulario_contestar_mensaje',
             ],
         },
     },

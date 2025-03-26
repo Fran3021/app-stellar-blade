@@ -16,12 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import CreateMensajeView, ConversacionesView
+from .views import CreateMensajeView, ConversacionesView, ConversacionesDetailView, contestar_mensaje
 
 
 app_name = 'mensajes'
 
 urlpatterns = [
     path('conversaciones/', ConversacionesView.as_view(), name = 'conversaciones'),
+    path('conversaciones-detail/<pk>', ConversacionesDetailView.as_view(), name = 'conversaciones_detail'),
     path('nuevo/<pk>/', CreateMensajeView.as_view(), name = 'nuevo'),
+    path('contestar-mensaje/<pk>/', contestar_mensaje, name = 'contestar_mensaje'),
 ] 

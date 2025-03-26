@@ -22,7 +22,7 @@ class CreateMensajeView(CreateView):
     form_class = CreateMensajeForm
 
     def form_valid(self, form):
-        pk = self.kwargs.get('pk')
+        pk = self.kwargs.get('pk')#obtenemos el pk de la url, que guardamos antes que corresponde al perfil que estemos viendo
         destinatario = PerfilUsuario.objects.get(pk = pk)
         conversacion = Conversacion.objects.create(usuario1=self.request.user.perfil, usuario2 = destinatario)
         form.instance.autor = self.request.user.perfil
@@ -48,3 +48,35 @@ class ConversacionesView(ListView):
             )
         
         return context
+
+
+class ConversacionesDetailView(DetailView):
+    template_name = 'mensajes/conversaciones_detail.html'
+    model = Mensaje
+    context_object_name = 'mensaje'
+
+
+def contestar_mensaje(request, pk):
+    if request.method == 'POST':
+        mensaje = Mensaje.objects.get(pk = pk)
+
+        conversacion = Conversacion.objects.filter(
+            usuario1=mensaje.autor, usuario2=mensaje.destinatario
+        ).first() or Conversacion.objects.filter(
+            usuario1=mensaje.destinatario, usuario2=mensaje.autor
+        ).first()
+
+        if not conversacion:
+            return JsonResponse({'success': False, 'error': 'Conversación no encontrada'})
+        
+
+        respuesta_mensaje = request.POST.get('contenido')
+        if respuesta_mensaje:
+            Mensaje.objects.create(conversacion=conversacion, autor=mensaje.destinatario, destinatario=mensaje.autor, contenido=respuesta_mensaje)
+            return JsonResponse({
+                'success': True
+            })
+        else:
+            return JsonResponse({
+                'success': False
+            })
