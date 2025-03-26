@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from publicaciones.models import Publicacion, Comentario, RespuestaComentario
 from usuarios.models import Follow, PerfilUsuario
 from django.contrib.auth.models import User
-
+from django.contrib.auth.decorators import login_required
 
 
 class HomeView(ListView):
@@ -27,7 +27,7 @@ class HomeView(ListView):
 def legal_view(request):
     return render(request, 'general/legal.html')
 
-
+@login_required
 def logout_view(request):
     logout(request)
     messages.success(request, 'Sesion cerrada con exito')
@@ -59,7 +59,7 @@ class LoginView(FormView):
         return HttpResponseRedirect(reverse_lazy('login'))
         super().form_invalid(form)
 
-
+@login_required
 def search_view(request):
     if request.GET:
         formulario = SearchForm(request.GET)

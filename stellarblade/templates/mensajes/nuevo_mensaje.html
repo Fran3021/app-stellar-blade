@@ -1,0 +1,11 @@
+{% extends "general/layout.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Nuevo mensaje{% endblock  %}
+{% block page_content %}
+<form action="" method='POST'>
+    {% csrf_token %}
+    {{form.contenido | as_crispy_field}}
+    <button>Enviar</button>
+</form>
+{% endblock  %}

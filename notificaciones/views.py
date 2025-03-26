@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 from .models import NotificacionPublicacion, NotificacionComentario, NotificacionRespuestaComentario, NotificacionMeGusta, NotificacionSeguir
 from django.shortcuts import get_object_or_404
 
-
+@login_required
 def list_notificaciones(request):
     return render(request, 'notificaciones/notificaciones.html')
 

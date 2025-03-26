@@ -73,6 +73,7 @@ class DeletePerfilView(DeleteView):
         return super().form_valid(form)
 
 
+@method_decorator(login_required, name="dispatch")
 class PublicacionesMisContactosView(ListView):
     model = Publicacion
     template_name = 'usuarios/publicaciones_mis_contactos.html'

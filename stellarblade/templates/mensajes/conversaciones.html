@@ -1,0 +1,16 @@
+{% extends "general/layout.html" %}
+{% load crispy_forms_tags %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}Conversaciones{% endblock  %}
+{% block page_content %}
+{% if mensajes %}
+    {% for mensaje in mensajes %}
+        <article>
+            <h4>{{mensaje.conversacion}}</h4>
+            <span>{{mensaje.conversacion.usuario1}} dice:{{mensaje.contenido}}{{mensaje.pk}}</span>
+        </article>
+    {% endfor %}
+{% else %}
+    <h4>Aun no tienes conversaciones</h4>
+{% endif %}
+{% endblock  %}

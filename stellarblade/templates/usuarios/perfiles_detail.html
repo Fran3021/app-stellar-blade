@@ -9,6 +9,9 @@
         </picture>
     {% endif %}
     <h2>{{perfil.usuario}}</h2>
+    {% if perfil in request.user.perfil.siguiendo.all  %}
+    <span>Te sigue</span>
+    {% endif %}
     <article>
         <h5>Biografia</h5>
         <p>{{perfil.biografia}}</p>
@@ -24,6 +27,7 @@
             {% endif %}
         </a>
         <a href="{% url 'usuarios:mis_contactos' %}"><button type="button" class="btn btn-secondary btn-sm">Atras</button></a>
+        <a href="{% url 'mensajes:nuevo' perfil.pk %}">Mensaje</a>
     </article>
     <div class="container">
         <h3>Ultimas publicaciones</h3>

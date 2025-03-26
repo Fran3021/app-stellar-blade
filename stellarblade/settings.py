@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'publicaciones',
     'usuarios',
     'notificaciones',
+    'mensajes',
 ]
 
 MIDDLEWARE = [
