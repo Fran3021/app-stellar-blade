@@ -23,15 +23,16 @@ class PerfilUsuario(models.Model):
         publicacion.unlike(self)
 
     def total_notificaciones(self):
-        from notificaciones.models import NotificacionComentario, NotificacionPublicacion, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta
+        from notificaciones.models import NotificacionComentario, NotificacionPublicacion, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta, NotificacionMensaje
         
         notificaciones_comentario = NotificacionComentario.objects.filter(destinatario=self).filter(leida=False).count()
         notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatario=self).filter(leida=False).count()
         notificaciones_seguir = NotificacionSeguir.objects.filter(destinatario=self).filter(leida=False).count()
         notificaciones_respuestas_comentario = NotificacionRespuestaComentario.objects.filter(destinatario=self).filter(leida=False).count()
         notificaciones_me_gusta = NotificacionMeGusta.objects.filter(destinatario=self).filter(leida=False).count()
+        notificaciones_mensajes = NotificacionMensaje.objects.filter(destinatario=self).filter(leida=False).count()
         
-        return notificaciones_comentario + notificaciones_publicacion + notificaciones_seguir + notificaciones_respuestas_comentario + notificaciones_me_gusta
+        return notificaciones_comentario + notificaciones_publicacion + notificaciones_seguir + notificaciones_respuestas_comentario + notificaciones_me_gusta + notificaciones_mensajes
     class Meta:
         verbose_name = 'Perfil'
         verbose_name_plural = 'Perfiles'

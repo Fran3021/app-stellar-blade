@@ -1,5 +1,5 @@
 from django.conf import settings
-from .models import NotificacionPublicacion, NotificacionComentario, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta
+from .models import NotificacionPublicacion, NotificacionComentario, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta, NotificacionMensaje
 
 def notificaciones_publicacion(request):
     if request.user.is_authenticated:
@@ -49,4 +49,14 @@ def notificaciones_me_gusta(request):
 
     return {
         'notificacion_me_gusta': notificaciones_me_gusta
+    }
+
+def notificaciones_mensajes(request):
+    if request.user.is_authenticated:
+        notificaciones_mensajes = NotificacionMensaje.objects.filter(destinatario=request.user.perfil)
+    else:
+        notificaciones_mensajes= []
+
+    return {
+        'notificacion_mensajes': notificaciones_mensajes
     }

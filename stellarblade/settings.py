@@ -83,6 +83,7 @@ TEMPLATES = [
                 'notificaciones.custom_processors.notificaciones_seguir',
                 'notificaciones.custom_processors.notificaciones_respuesta_comentario',
                 'notificaciones.custom_processors.notificaciones_me_gusta',
+                'notificaciones.custom_processors.notificaciones_mensajes',
                 'publicaciones.custom_processors.formulario_contestar_comentario',
                 'publicaciones.custom_processors.all_publicaciones',
                 'mensajes.custom_processors.formulario_contestar_mensaje',

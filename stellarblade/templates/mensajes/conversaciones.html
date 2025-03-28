@@ -3,14 +3,14 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Conversaciones{% endblock  %}
 {% block page_content %}
-{% if mensajes %}
-    {% for mensaje in mensajes %}
-        <article id="conversacion-{{mensaje.conversacion.pk}}" data-pk-conversacion="{{mensaje.conversacion.pk}}">
+{% if conversaciones %}
+    {% for conversacion in conversaciones %}
+        <article id="conversacion-{{conversacion.pk}}" data-pk-conversacion="{{conversacion.pk}}">
             <picture>
-                <img width="50px" style="border-radius:10px" src="{{mensaje.autor.imagen_perfil.url}}" alt="">
+                <img width="50px" style="border-radius:10px" src="{{conversacion.usuario1.imagen_perfil.url}}" alt="">
             </picture>
-            <p>{{mensaje.conversacion}}</p>
-            <a href="{% url 'mensajes:conversaciones_detail' mensaje.pk %}">Ir a la conversacion</a>
+            <p>{{conversacion}}</p>
+            <a href="{% url 'mensajes:conversaciones_detail' conversacion.pk %}">Ir a la conversacion</a>
         </article>
     {% endfor %}
 {% else %}

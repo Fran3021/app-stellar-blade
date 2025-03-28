@@ -1,6 +1,7 @@
 from django.db import models
 from usuarios.models import PerfilUsuario
 from publicaciones.models import Publicacion, Comentario
+from mensajes.models import Mensaje, Conversacion
 
 class NotificacionPublicacion(models.Model):
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='notificacion_publicacion')
@@ -77,3 +78,19 @@ class NotificacionMeGusta(models.Model):
 
     def __str__(self):
         return f'{self.usuario} ha dado a me gusta a tu publicacion:{self.publicacion}'
+
+
+class NotificacionMensaje(models.Model):
+    usuario = models.ForeignKey(PerfilUsuario, verbose_name='Usuario que envia el mensaje:', on_delete=models.CASCADE, related_name='mensajes_usuarios')
+    destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Usuario que recibe el mensaje:', on_delete=models.CASCADE, related_name='mensajes_destinatario')
+    mensaje = models.ForeignKey(Mensaje, verbose_name='Mensaje:', on_delete=models.CASCADE)
+    conversacion = models.ForeignKey(Conversacion, verbose_name='Conversacion que pertenece el mensaje:', on_delete=models.CASCADE)
+    leida = models.BooleanField(verbose_name='¿Leida?', default=False)
+    url = models.URLField(verbose_name='URL de la conversacion', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Notificacion de mensaje'
+        verbose_name_plural = 'Notificaciones de mensajes'
+
+    def __str__(self):
+        return f'{self.usuario} te ha enviado un mensaje'

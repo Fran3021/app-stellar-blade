@@ -28,4 +28,10 @@
     <li><a data-href="{% url 'notificaciones:marcar_leida_me_gusta' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}</a></li>
 {% endfor %}
 {% endif %}
+
+{% if notificacion_mensajes%}
+{% for noti in notificacion_mensajes %}
+    <li><a data-href="{% url 'notificaciones:marcar_leida_mensaje' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}</a></li>
+{% endfor %}
+{% endif %}
 </ul>

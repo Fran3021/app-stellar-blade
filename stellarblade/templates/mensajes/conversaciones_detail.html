@@ -3,13 +3,17 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Conversaciones{% endblock  %}
 {% block page_content %}
-<h4>{{mensaje.conversacion}}</h4>
-<p>{{mensaje.contenido}}</p>
-{% if mensaje.autor != request.user.perfil %}
-    <form class="form-contestar-mensaje" action="{% url 'mensajes:contestar_mensaje' mensaje.pk %}" method='POST'>
-        {% csrf_token %}
-        {{contestar_mensaje.contenido | as_crispy_field}}
-        <button >contestar</button>
-    </form>
+<h4>{{conversacion}}</h4>
+{% for mensajes in conversacion.mensajes.all %}
+{% if mensajes.autor == request.user.perfil %}
+    <p class="{{mensajes.autor}}"style="margin-left:0" >{{mensajes.contenido}}</p>
+{% else %}
+    <p class="{{mensajes.autor}}" style="margin-left:300px" >{{mensajes.contenido}}</p>
 {% endif %}
+{% endfor %}
+<form class="form-contestar-mensaje" action="{% url 'mensajes:contestar_mensaje' conversacion.mensajes.last.pk %}" method='POST'>
+    {% csrf_token %}
+    {{contestar_mensaje.contenido | as_crispy_field}}
+    <button >contestar</button>
+</form>
 {% endblock  %}

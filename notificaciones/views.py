@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from .models import NotificacionPublicacion, NotificacionComentario, NotificacionRespuestaComentario, NotificacionMeGusta, NotificacionSeguir
+from .models import NotificacionPublicacion, NotificacionComentario, NotificacionRespuestaComentario, NotificacionMeGusta, NotificacionSeguir, NotificacionMensaje
 from django.shortcuts import get_object_or_404
 
 @login_required
@@ -88,6 +88,24 @@ def marcar_notificacion_leida_me_gusta(request, pk):
 @login_required
 def marcar_notificacion_leida_seguir(request, pk):
     notificacion = NotificacionSeguir.objects.get(pk = pk)
+    if notificacion:
+        notificacion.leida = True
+        notificacion.save()
+        return JsonResponse({
+            'success': True,
+            'mensaje': 'Notificacion leida correctamente'
+        })
+    else:
+        return JsonResponse({
+            'success': False,
+            'mensaje': 'Notificacion no encontrada'
+        })
+
+
+
+@login_required
+def marcar_notificacion_leida_mensajes(request, pk):
+    notificacion = NotificacionMensaje.objects.get(pk = pk)
     if notificacion:
         notificacion.leida = True
         notificacion.save()
