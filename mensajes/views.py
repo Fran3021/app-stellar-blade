@@ -83,9 +83,9 @@ def contestar_mensaje(request, pk):
             destinatario_respuesta = (
                 conversacion.usuario1 if autor_mensaje == conversacion.usuario2 else conversacion.usuario2
             )
-            Mensaje.objects.create(conversacion=conversacion, autor=autor_mensaje, destinatario=destinatario_respuesta, contenido=respuesta_mensaje)
+            mensaje_respuesta = Mensaje.objects.create(conversacion=conversacion, autor=autor_mensaje, destinatario=destinatario_respuesta, contenido=respuesta_mensaje)
 
-            NotificacionMensaje.objects.create(destinatario=destinatario_respuesta, usuario=autor_mensaje, mensaje=mensaje, conversacion=conversacion, url= reverse_lazy('mensajes:conversaciones_detail', kwargs={'pk': conversacion.pk}))
+            NotificacionMensaje.objects.create(destinatario=destinatario_respuesta, usuario=autor_mensaje, mensaje=mensaje_respuesta, conversacion=conversacion, url= reverse_lazy('mensajes:conversaciones_detail', kwargs={'pk': conversacion.pk}))
             
             return JsonResponse({
                 'success': True
@@ -93,4 +93,42 @@ def contestar_mensaje(request, pk):
         else:
             return JsonResponse({
                 'success': False
+            })
+
+
+@login_required
+def eliminar_mensaje(request, pk):
+    if request.method == 'DELETE':
+        mensaje = Mensaje.objects.get(pk = pk)
+        conversacion = Conversacion.objects.get(pk = mensaje.conversacion.pk)
+        if request.user.perfil == mensaje.autor:
+            notificacion = NotificacionMensaje.objects.filter(destinatario=mensaje.destinatario, usuario=mensaje.autor, conversacion=conversacion, mensaje=mensaje).first()
+            notificacion.delete()
+            mensaje.delete()
+            return JsonResponse({
+                'success': True,
+                'message': 'Mensaje eliminado corectamente',
+            })
+        else:
+            return JsonResponse({
+                'success': False,
+                'message': 'No se ha podido borrar el mensaje',
+            })
+
+
+@login_required
+def eliminar_conversacion(request, pk):
+    if request.method == 'DELETE':
+        conversacion = Conversacion.objects.get(pk = pk)
+        perfil_usuario = request.user.perfil
+        if conversacion.usuario1 == perfil_usuario or conversacion.usuario2 == perfil_usuario:
+            conversacion.delete()
+            return JsonResponse({
+                'success': True,
+                'message': 'Conversacion eliminida correctamente',
+            })
+        else:
+            return JsonResponse({
+                'success': True,
+                'message': 'No se ha podido eliminar la conversacion',
             })

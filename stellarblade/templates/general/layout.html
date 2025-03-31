@@ -292,6 +292,72 @@
         })
       })
     })
+
+        //evento para eliminar mensaje
+    let buttonEliminarMensajes = document.querySelectorAll('.eliminar-mensajes')
+    let mensajesEliminarMensajes = document.querySelector('.mensajes-eliminar-mensajes')
+    buttonEliminarMensajes.forEach(button => {
+      let pkMensaje = button.dataset.mensajePk
+      const eliminarMensaje = document.getElementById(`eliminar-mensaje${pkMensaje}`)
+      button.addEventListener('click', event => {
+        event.preventDefault()
+        let urlEliminar = button.getAttribute('data-href')
+        fetch(urlEliminar, {
+          method: 'DELETE', 
+          headers:{
+            'X-CSRFToken': getCSRFToken(),
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+          }
+          return response.json(); // Si la respuesta no es JSON, esto fallará
+        })
+        .then(data => {
+          if(data.success){
+            mensajesEliminarMensajes.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
+            containerComentario.remove()
+          }else{
+            mensajesEliminarMensajes.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
+          }
+        })
+      })
+    })
+
+
+    //evento para eliminar conversacion
+    let buttonEliminarConversaciones = document.querySelectorAll('.eliminar-conversaciones')
+    let mensajesEliminarConversaciones = document.querySelector('.mensajes-eliminar-conversaciones')
+    buttonEliminarConversaciones.forEach(button => {
+      let pkConversacion = button.dataset.conversacionPk
+      const eliminarConversacion = document.getElementById(`eliminar-conversacion${pkConversacion}`)
+      button.addEventListener('click', event => {
+        event.preventDefault()
+        let urlEliminar = button.getAttribute('data-href')
+        fetch(urlEliminar, {
+          method: 'DELETE', 
+          headers:{
+            'X-CSRFToken': getCSRFToken(),
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+          }
+          return response.json(); // Si la respuesta no es JSON, esto fallará
+        })
+        .then(data => {
+          if(data.success){
+            mensajesEliminarConversaciones.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
+          }else{
+            mensajesEliminarConversaciones.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
+          }
+        })
+      })
+    })
   </script>
 </body>
 </html>

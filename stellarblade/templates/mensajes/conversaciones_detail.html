@@ -6,14 +6,27 @@
 <h4>{{conversacion}}</h4>
 {% for mensajes in conversacion.mensajes.all %}
 {% if mensajes.autor == request.user.perfil %}
-    <p class="{{mensajes.autor}}"style="margin-left:0" >{{mensajes.contenido}}</p>
+    <p class="mensajes-no-margin"style="margin-left:0" >{{mensajes.contenido}}
+        {% if request.user.perfil == mensajes.autor %}
+            <button data-href="{% url 'mensajes:eliminar_mensaje' mensajes.pk %}" class="eliminar-mensajes" data-mensaje-pk="{{mensajes.pk}}" id="eliminar-mensaje-{{mensajes.pk}}"><i class="bi bi-trash3"></i></button>
+        {% endif %}
+    </p>
 {% else %}
-    <p class="{{mensajes.autor}}" style="margin-left:300px" >{{mensajes.contenido}}</p>
+    <p class="mensajes-margin" style="margin-left:300px" >{{mensajes.contenido}}
+        {% if request.user.perfil == mensajes.autor %}
+            <button data-href="{% url 'mensajes:eliminar_mensaje' mensajes.pk %}" class="eliminar-mensajes" data-mensaje-pk="{{mensajes.pk}}" id="eliminar-mensaje-{{mensajes.pk}}"><i class="bi bi-trash3"></i></button>
+        {% endif %}
+    </p>
 {% endif %}
 {% endfor %}
-<form class="form-contestar-mensaje" action="{% url 'mensajes:contestar_mensaje' conversacion.mensajes.last.pk %}" method='POST'>
-    {% csrf_token %}
-    {{contestar_mensaje.contenido | as_crispy_field}}
-    <button >contestar</button>
-</form>
+{% if conversacion.mensajes.all %}
+    <form class="form-contestar-mensaje" action="{% url 'mensajes:contestar_mensaje' conversacion.mensajes.last.pk %}" method='POST'>
+        {% csrf_token %}
+        {{contestar_mensaje.contenido | as_crispy_field}}
+        <button >contestar</button>
+    </form>
+{% else %}
+    <h5>Se han borrado los mensajes de esta conversacion</h5>
+    <button data-href="{% url 'mensajes:eliminar_conversacion' conversacion.pk %}" class="eliminar-conversaciones" data-conversacion-pk="{{conversacion.pk}}" id="eliminar-conversacion-{{conversacion.pk}}" >Eliminar conversacion</button>
+{% endif %}
 {% endblock  %}

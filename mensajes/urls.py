@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import CreateMensajeView, ConversacionesView, ConversacionesDetailView, contestar_mensaje
+from .views import CreateMensajeView, ConversacionesView, ConversacionesDetailView, contestar_mensaje, eliminar_mensaje, eliminar_conversacion
 
 
 app_name = 'mensajes'
@@ -26,4 +26,6 @@ urlpatterns = [
     path('conversaciones-detail/<pk>', ConversacionesDetailView.as_view(), name = 'conversaciones_detail'),
     path('nuevo/<pk>/', CreateMensajeView.as_view(), name = 'nuevo'),
     path('contestar-mensaje/<pk>/', contestar_mensaje, name = 'contestar_mensaje'),
+    path('eliminar-mensaje/<pk>/', eliminar_mensaje, name = 'eliminar_mensaje'),
+    path('eliminar-conversacion/<pk>/', eliminar_conversacion, name = 'eliminar_conversacion'),
 ] 

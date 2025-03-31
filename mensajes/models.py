@@ -28,4 +28,4 @@ class Mensaje(models.Model):
         verbose_name_plural = 'Mensajes'
 
     def __str__(self):
-        return f'Mensaje de {self.autor} a {self.destinatario}, que pertenece a la conversacion {self.conversacion}'
+        return f'{self.contenido}'
