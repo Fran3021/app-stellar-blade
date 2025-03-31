@@ -4,7 +4,7 @@
             {% if publicacion.autor.imagen_perfil %}
             <picture>
                 <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
-                    <img class="imagen_perfil" src="{{publicacion.autor.imagen_perfil.url}}" alt="">
+                    <img class="imagen_perfil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="">
                 </a>
             </picture>
             {% endif %}

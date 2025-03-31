@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'django_libsass',
+    'thumbnails',
 
     #apps de la aplicacion
     'publicaciones',
@@ -187,4 +188,36 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
+
+#renderizado de imagenes con thumbnails
+THUMBNAILS = {
+    'METADATA': {
+        'BACKEND': 'thumbnails.backends.metadata.DatabaseBackend',
+    },
+    'STORAGE': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+        # You can also use Amazon S3 or any other Django storage backends
+    },
+    'SIZES': {
+        'small': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 150, 'height': 150, 'method': 'fill'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 100, 'height': 100},
+            ],
+        },
+        'large': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 20, 'height': 20},
+                {'PATH': 'thumbnails.processors.flip', 'direction': 'horizontal'}
+            ],
+        },
+        'watermarked': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 20, 'height': 20},
+                #Solo se admite PNG. El archivo debe tener el mismo tamaño que la miniatura (20 x 20 en este caso).
+                {'PATH': 'thumbnails.processors.add_watermark', 'watermark_path': 'watermark.png'}
+            ],
+        }
+    }
+}
 

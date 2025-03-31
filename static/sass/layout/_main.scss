@@ -44,7 +44,7 @@
             .imagen{
                 width: 20%;
                 .imagen_perfil{
-                    width: 80%;
+                    width: 20%;
                     border-radius: 20px;
                 }
             }
@@ -253,6 +253,47 @@
                     }
                 }
             }
+        }
+    }
+}
+
+.container-conversaciones{
+    .mensaje-1{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .imagen-perfil-usuario{
+            width: 2%;
+            height: 2%;
+            border-radius: 100%;
+            margin-right: 5px;
+        }
+        .eliminar-mensajes{
+            border: 0;
+            background-color: transparent;
+        }
+        p{
+            margin: 0;
+            margin-right: 10px;
+        }
+    }
+    .mensaje-2{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .imagen-perfil-usuario{
+            width: 2%;
+            height: 2%;
+            border-radius: 100%;
+            margin-left: 5px;
+        }
+        .eliminar-mensajes{
+            border: 0;
+            background-color: transparent;
+        }
+        p{
+            margin: 0;
+            margin-left: 10px;
         }
     }
 }

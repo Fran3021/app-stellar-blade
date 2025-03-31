@@ -115,7 +115,7 @@
   width: 20%;
 }
 .container-home .publicacion .imagen-hora-titulo .imagen .imagen_perfil, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen .imagen_perfil {
-  width: 80%;
+  width: 20%;
   border-radius: 20px;
 }
 .container-home .publicacion .imagen-hora-titulo .hora-titulo, .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-titulo {
@@ -312,6 +312,45 @@
 .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .boton-detalle:hover {
   background-color: blue;
   scale: 0.9;
+}
+
+.container-conversaciones .mensaje-1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container-conversaciones .mensaje-1 .imagen-perfil-usuario {
+  width: 2%;
+  height: 2%;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+.container-conversaciones .mensaje-1 .eliminar-mensajes {
+  border: 0;
+  background-color: transparent;
+}
+.container-conversaciones .mensaje-1 p {
+  margin: 0;
+  margin-right: 10px;
+}
+.container-conversaciones .mensaje-2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container-conversaciones .mensaje-2 .imagen-perfil-usuario {
+  width: 2%;
+  height: 2%;
+  border-radius: 100%;
+  margin-left: 5px;
+}
+.container-conversaciones .mensaje-2 .eliminar-mensajes {
+  border: 0;
+  background-color: transparent;
+}
+.container-conversaciones .mensaje-2 p {
+  margin: 0;
+  margin-left: 10px;
 }
 
 .main-notificaciones {

@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import User
+from thumbnails.fields import ImageField
 
 
 
 class PerfilUsuario(models.Model):
     usuario = models.OneToOneField(User, verbose_name='Usuario:', on_delete=models.CASCADE, related_name='perfil')
-    imagen_perfil = models.ImageField(verbose_name='Imagen de perfil:', upload_to='usuarios/img_perfil/', null=True, blank=True)
+    imagen_perfil = ImageField(verbose_name='Imagen de perfil:', upload_to='usuarios/img_perfil/', null=True, blank=True)
     biografia = models.TextField(verbose_name='Biografia del ususario:', max_length=300, blank=True)
     fecha_nacimiento = models.DateField(verbose_name='Fecha de nacimiento:', null=True, blank=True, default='1900-01-01')
     seguidores = models.ManyToManyField('self', verbose_name='Seguidores', symmetrical=False, related_name='siguiendo', through='Follow')

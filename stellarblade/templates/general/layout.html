@@ -318,7 +318,6 @@
         .then(data => {
           if(data.success){
             mensajesEliminarMensajes.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
-            containerComentario.remove()
           }else{
             mensajesEliminarMensajes.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
           }
