@@ -3,12 +3,14 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Editar Publicacion{% endblock  %}
 {% block page_content %}
-    <form action="" method = 'POST' enctype='multipart/form-data'>
+<div class="container-editar-publicacion">
+    <form class="formulario-editar-publicacion" action="" method = 'POST' enctype='multipart/form-data'>
         {% csrf_token %}
         {{form.titulo | as_crispy_field}}
         {{form.imagen | as_crispy_field}}
         {{form.contenido | as_crispy_field}}
-        <button class="btn btn-primary btn-sm">Editar</button>
-        <a href="{% url 'publicaciones:detalle' object.pk %}"><button type="button" class="btn btn-secondary btn-sm">Cancelar</button></a>
+        <button class="boton-editar">Editar</button>
+        <a class="boton-cancelar" href="{% url 'publicaciones:detalle' object.pk %}">Cancelar</a>
     </form>
+</div>
 {% endblock  %}

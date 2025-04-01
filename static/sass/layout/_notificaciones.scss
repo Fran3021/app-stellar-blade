@@ -15,10 +15,10 @@
     flex-direction: column;
     a{
         text-decoration: none;
-        background-color: blue;
-        border-bottom: 1px solid white;
+        background-color: abs.$azul-neon;
+        border-bottom: 1px solid abs.$rosa-neon;
         padding: 20px 30px;
         display: block;
-        color: grey;
+        color: abs.$blanco;
     }
 }

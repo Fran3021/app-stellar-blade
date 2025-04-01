@@ -3,11 +3,13 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Eliminar Perfil{% endblock  %}
 {% block page_content %}
-<h4>¿Seguro que desea eliminar su perfil: <strong>{{object.usuario}}</strong>?</h4>
-<form action="" method = 'POST'>
+<div class="container-eliminar-perfil">
+    <h4>¿Seguro que desea eliminar su perfil: <strong>{{object.usuario}}</strong>?</h4>
+    <form class="formulario-borrar-perfil" action="" method = 'POST'>
     {% csrf_token %}
     {{form}}
-    <button class="btn btn-outline-danger">Eliminar</button>
-    <a href="{% url 'usuarios:mi_perfil' object.pk %}"><button type="button" class="btn btn-outline-dark">Cancelar</button></a>
-</form>
+    <button class="boton-eliminar">Eliminar</button>
+    <a class="boton-cancelar" href="{% url 'usuarios:mi_perfil' object.pk %}">Cancelar</a>
+    </form>
+</div>
 {% endblock  %}

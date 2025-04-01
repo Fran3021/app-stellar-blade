@@ -4,11 +4,28 @@
 
 
 .menu-header{
+    background-color: abs.$gris-oscuro;
+    opacity: 0.5;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
     ul{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
         display: flex;
-        gap: 20px;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            flex: 1;
+            text-align: center;
+        }
         a{
             text-decoration: none;
+            color: abs.$azul-neon;
+            i{
+                color: abs.$azul-neon;
+            }
         }
     }
 }

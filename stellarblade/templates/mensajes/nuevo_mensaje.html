@@ -3,9 +3,11 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Nuevo mensaje{% endblock  %}
 {% block page_content %}
-<form action="" method='POST'>
-    {% csrf_token %}
-    {{form.contenido | as_crispy_field}}
-    <button>Enviar</button>
-</form>
+<div class="container-nuevo-mensaje">
+    <form class="formulario-nuevo-mensaje" action="" method='POST'>
+        {% csrf_token %}
+        {{form.contenido | as_crispy_field}}
+        <button class="boton-enviar" >Enviar</button>
+    </form>
+</div>
 {% endblock  %}

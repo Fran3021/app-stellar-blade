@@ -3,20 +3,16 @@
 {% block head_title %}Stellar Blade{% endblock %}
 {% block page_title %}Registrate{% endblock  %}
 {% block page_content %}
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <form action="" method = 'POST'>
-                {% csrf_token %}
-                {{form.username | as_crispy_field}}
-                {{form.first_name | as_crispy_field}}
-                {{form.last_name | as_crispy_field}}
-                {{form.email | as_crispy_field}}
-                {{form.password | as_crispy_field}}
-                {{form.password_confirm | as_crispy_field}}
-                <button class="btn btn-primary">Crear cuenta</button>
-            </form>
-        </div>
-    </div>
+<div class="container-registro">
+    <form class="formulario-crear-cuenta" action="" method = 'POST'>
+        {% csrf_token %}
+        {{form.username | as_crispy_field}}
+        {{form.first_name | as_crispy_field}}
+        {{form.last_name | as_crispy_field}}
+        {{form.email | as_crispy_field}}
+        {{form.password | as_crispy_field}}
+        {{form.password_confirm | as_crispy_field}}
+        <button class="boton-registro">Crear cuenta</button>
+    </form>
 </div>
 {% endblock %}

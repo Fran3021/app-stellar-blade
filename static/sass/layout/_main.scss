@@ -2,16 +2,9 @@
 @use '../base/base' as base;
 @use '../components/components' as comp;
 
-.TextoComentario{
-    margin: 0;
-}
 
-.TextoRespuestaComentario{
-    margin-left: 20px;
-    margin-bottom: 0px;
-}
 
-.title-home, .title-contactos{
+.title-home{
     font-size: 25px;
     text-align: center;
     margin-bottom: 50px;
@@ -27,7 +20,7 @@
 }
 
 
-.container-home, .container-publicaciones-mis-contactos{
+.container-home{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,7 +28,7 @@
     gap: 30px;
     .publicacion{
         max-width: 50%;
-        border-bottom: 1px solid silver;
+        border-bottom: 1px solid abs.$azul-neon;
         .imagen-hora-titulo{
             display: flex;
             justify-content: center;
@@ -54,14 +47,14 @@
                     a{
                         text-decoration: none;
                         font-size: 12px;
-                        color: black;
+                        color: abs.$blanco;
                     }
                     span{
                         font-size: 12px;
                     }
                 }
                 .titulo{
-                    color: cyan;
+                    color: abs.$gris-claro;
                     font-size: 17px;
                 }
             }
@@ -72,7 +65,7 @@
         }
         .contenido-publicacion{
             font-size: 15px;
-            color: silver;
+            color: abs.$gris-claro;
             margin: 0;
             margin-bottom: 10px;
         }
@@ -85,14 +78,14 @@
             text-decoration: none;
             display: inline-block;
             font-size: 12px;
-            color: white;
-            background-color: black;
+            color: abs.$blanco;
+            background-color: abs.$azul-neon;
             padding: 10px 20px;
             border-radius: 10px;
             margin-bottom: 10px;
             transition: background-color 1s ease, scale 1s ease;
             &:hover{
-                background-color: blue;
+                background-color: abs.$rosa-neon;
                 scale: 0.9;
             }
         }
@@ -108,7 +101,7 @@
         .publicaciones-busqueda{
             .publicacion{
                 max-width: 50%;
-                border-bottom: 1px solid silver;
+                border-bottom: 1px solid abs.$azul-neon;
                 .imagen-hora-titulo{
                     display: flex;
                     justify-content: center;
@@ -127,14 +120,14 @@
                             a{
                                 text-decoration: none;
                                 font-size: 12px;
-                                color: black;
+                                color: abs.$blanco;
                             }
                             span{
                                 font-size: 12px;
                             }
                         }
                         .titulo{
-                            color: cyan;
+                            color: abs.$gris-claro;
                             font-size: 17px;
                         }
                     }
@@ -145,7 +138,7 @@
                 }
                 .contenido-publicacion{
                     font-size: 15px;
-                    color: silver;
+                    color: abs.$gris-claro;
                     margin: 0;
                     margin-bottom: 10px;
                 }
@@ -158,14 +151,14 @@
                     text-decoration: none;
                     display: inline-block;
                     font-size: 12px;
-                    color: white;
-                    background-color: black;
+                    color: abs.$blanco;
+                    background-color: abs.$azul-neon;
                     padding: 10px 20px;
                     border-radius: 10px;
                     margin-bottom: 10px;
                     transition: background-color 1s ease, scale 1s ease;
                     &:hover{
-                        background-color: blue;
+                        background-color: abs.$rosa-neon;
                         scale: 0.9;
                     }
                 }
@@ -190,7 +183,7 @@
             section{
                 .publicacion{
                     max-width: 50%;
-                    border-bottom: 1px solid silver;
+                    border-bottom: 1px solid abs.$azul-neon;
                     .imagen-hora-titulo{
                         display: flex;
                         justify-content: center;
@@ -209,14 +202,14 @@
                                 a{
                                     text-decoration: none;
                                     font-size: 12px;
-                                    color: black;
+                                    color: abs.$blanco;
                                 }
                                 span{
                                     font-size: 12px;
                                 }
                             }
                             .titulo{
-                                color: cyan;
+                                color: abs.$gris-claro;
                                 font-size: 17px;
                             }
                         }
@@ -227,7 +220,7 @@
                     }
                     .contenido-publicacion{
                         font-size: 15px;
-                        color: silver;
+                        color: abs.$gris-claro;
                         margin: 0;
                         margin-bottom: 10px;
                     }
@@ -240,60 +233,19 @@
                         text-decoration: none;
                         display: inline-block;
                         font-size: 12px;
-                        color: white;
-                        background-color: black;
+                        color: abs.$blanco;
+                        background-color:abs.$azul-neon;
                         padding: 10px 20px;
                         border-radius: 10px;
                         margin-bottom: 10px;
                         transition: background-color 1s ease, scale 1s ease;
                         &:hover{
-                            background-color: blue;
+                            background-color: abs.$rosa-neon;
                             scale: 0.9;
                         }
                     }
                 }
             }
-        }
-    }
-}
-
-.container-conversaciones{
-    .mensaje-1{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        .imagen-perfil-usuario{
-            width: 2%;
-            height: 2%;
-            border-radius: 100%;
-            margin-right: 5px;
-        }
-        .eliminar-mensajes{
-            border: 0;
-            background-color: transparent;
-        }
-        p{
-            margin: 0;
-            margin-right: 10px;
-        }
-    }
-    .mensaje-2{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        .imagen-perfil-usuario{
-            width: 2%;
-            height: 2%;
-            border-radius: 100%;
-            margin-left: 5px;
-        }
-        .eliminar-mensajes{
-            border: 0;
-            background-color: transparent;
-        }
-        p{
-            margin: 0;
-            margin-left: 10px;
         }
     }
 }

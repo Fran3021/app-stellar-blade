@@ -55,4 +55,4 @@ class RespuestaComentario(models.Model):
         verbose_name_plural = 'Respuestas'
 
     def __str__(self):
-        return f'{self.autor}:{self.respuesta}'
+        return f'{self.respuesta}'

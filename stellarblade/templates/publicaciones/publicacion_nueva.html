@@ -3,11 +3,13 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Publicacion nueva{% endblock  %}
 {% block page_content %}
-    <form action="" method = 'POST' enctype='multipart/form-data'>
+<div class="container-publicacion-nueva">
+    <form class="formulario-para-crear-publicacion" action="" method = 'POST' enctype='multipart/form-data'>
         {% csrf_token %}
         {{form.titulo | as_crispy_field}}
         {{form.imagen | as_crispy_field}}
         {{form.contenido | as_crispy_field}}
-        <button class="btn btn-primary">Crear publicacion</button>
+        <button class="boton-crear">Crear publicacion</button>
     </form>
+</div>
 {% endblock  %}

@@ -8,11 +8,11 @@
     <div class="resultado-busqueda">
         <form action="" method="GET">
             {{formulario.value| as_crispy_field}}
-            <button>Buscar</button>
+            <button class="boton-buscar" >Buscar</button>
         </form>
         <section class="publicaciones-busqueda">
             {% if publicaciones %}
-                <h2>Publicaciones encontradas</h2>
+                <h3>Publicaciones encontradas</h3>
             {% endif %}
             {% for publicacion in publicaciones %}
                 {% include "_includes/_publicaciones.html" %}
@@ -21,7 +21,7 @@
     
         <section class="usuarios-busqueda" >
             {% if usuarios %}
-                <h2>Usarios encontrados</h2>
+                <h3>Usarios encontrados</h3>
             {% endif %}
             {% for perfil in usuarios %}
                 {% include "_includes/_perfiles.html" %}
@@ -32,7 +32,7 @@
     <div class="sugerencias">
         {% if all_users %}
             <section class="perfiles-sugeridos">
-                <h2>Perfiles sugeridos</h2>
+                <h3>Perfiles sugeridos</h3>
                 <section>
                     {% for perfil in all_users %}
                         {% include "_includes/_perfiles.html" %}
@@ -40,12 +40,12 @@
                 </section>
             </section>
         {% else %}
-            <h2>No hay sugerencias de perfiles</h2>
+            <h3>No hay sugerencias de perfiles</h3>
         {% endif %}
 
         {% if all_publicaciones %}
             <section class="publicaciones-sugeridas">
-                <h2>Publicaciones sugeridas</h2>
+                <h3>Publicaciones sugeridas</h3>
                 <section>
                     {% for publicacion in all_publicaciones %}
                         {% include "_includes/_publicaciones.html" %}
@@ -53,7 +53,7 @@
                 </section>
             </section>
         {% else %}
-            <h2>No hay sugerencias de publicaciones</h2>
+            <h3>No hay sugerencias de publicaciones</h3>
         {% endif %}
     </div>
 </div>

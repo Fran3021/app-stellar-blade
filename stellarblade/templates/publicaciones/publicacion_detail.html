@@ -7,7 +7,7 @@
     <div class="publicacion-detalle-imagen-descripcion">
         <div class="imagen-small-publicacion-detalle">
             {% if publicacion.autor.imagen_perfil %}
-                <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img width='50px' height='50px' style='border-radius:30px' src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
+                <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
             {% endif %}
         </div>
         <div class="descripcion-publicacion-detalle" >
@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="publicacion-detalle imagen-large">
+    <div class="publicacion-detalle-imagen-large">
         {% if publicacion.imagen %}
             <img width='50%' style='border-radius:10px' src="{{publicacion.imagen.url}}" alt="">
         {% endif %}
@@ -54,7 +54,13 @@
             {% for comentario in publicacion.comentarios.all %}
             <article class="container-comentarios-respuestas">
                 <div class="container-comentarios" id="container-comentario-{{comentario.pk}}">
-                    <h5>{{comentario.autor}} - Hace: {{comentario.fecha_comentario | timesince}}</h5>
+                    <span>
+                        <a href="{% url 'usuarios:detail' comentario.autor.pk %}">
+                            <img src="{{comentario.autor.imagen_perfil.thumbnails.small.url}}" alt="{{comentario.autor.usuario}}">
+                        </a>
+                        <p>{{comentario.autor.usuario}}</p>
+                        <p>{{comentario.fecha_comentario | date:"Y/m/d H:i"}}</p>
+                    </span>
                     <p class="TextoComentario" >{{comentario.texto}}</p>
                     {% if comentario.autor == request.user.perfil %}
                         <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}">Eliminar comentario</button>
@@ -64,16 +70,22 @@
                         <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button>
                     {% endif %}
                 </div>
+
                 {% if comentario.respuestas.count %}
                 <div class="container-respuestas"  id="container-respuestas-{{comentario.pk}}">
                     <h5>Respuestas al comentario</h5>
                     {% for respuesta in comentario.respuestas.all  %}
                         <div id="container-respuesta-{{respuesta.pk}}">
-                            <p class="TextoRespuestaComentario">{{respuesta}}</p>
+                            <span>
+                                <a href="{% url 'usuarios:detail' respuesta.autor.pk %}">
+                                    <img src="{{respuesta.autor.imagen_perfil.thumbnails.small.url}}" alt="{{comentario.autor.usuario}}">
+                                </a>
+                                <p>{{respuesta.autor.usuario}}</p>
+                                <p>{{respuesta.fecha_respuesta | date:"Y/m/d H:i"}}</p>
+                            </span>
+                            <p class="TextoRespuesta">{{respuesta}}</p>
                             {% if request.user.perfil == respuesta.autor %}
-                                <span>
-                                    <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}">Eliminar respuesta</button>
-                                </span>
+                                <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}">Eliminar respuesta</button>
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -84,7 +96,7 @@
                     {% csrf_token %}
                     <input type="hidden" name="publicacion_pk" value="{{publicacion.pk}}">
                     {{contestar_form.respuesta | as_crispy_field}}
-                    <button class="btn btn-primary btn-sm">Responder</button>
+                    <button class="boton-responder">Responder</button>
                 </form>
             </article>
             {% endfor %}
@@ -98,15 +110,15 @@
         <form action="" method='POST' >
             {% csrf_token %}
             {{form.texto | as_crispy_field}}
-            <button class="btn btn-outline-info" >Comentar</button>
+            <button class="boton-comentar" >Comentar</button>
         </form>
     </div>
     {% endif %}
 
     {% if publicacion.autor == request.user.perfil %}
         <div class="botones-editar-eliminar-publicacion-detalle">
-            <a href="{% url 'publicaciones:editar' publicacion.pk %}"><button class="btn btn-primary">Editar</button></a>
-            <a href="{% url 'publicaciones:delete' publicacion.pk %}"><button class="btn btn-danger">Eliminar</button></a>
+            <a class="boton-editar" href="{% url 'publicaciones:editar' publicacion.pk %}">Editar</a>
+            <a class="boton-eliminar" href="{% url 'publicaciones:delete' publicacion.pk %}">Eliminar</a>
         </div>
     {% endif %}
 </div>

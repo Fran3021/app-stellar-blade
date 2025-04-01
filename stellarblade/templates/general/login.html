@@ -3,16 +3,12 @@
 {% block head_title %}Stellar Blade{% endblock %}
 {% block page_title %}Registrate{% endblock  %}
 {% block page_content %}
-<div class="container">
-    <div class="row">
-        <div class="col-6">
-            <form action="" method = 'POST'>
-                {% csrf_token %}
-                {{form.username | as_crispy_field}}
-                {{form.password | as_crispy_field}}
-                <button class="btn btn-primary">Acceder</button>
-            </form>
-        </div>
-    </div>
+<div class="container-login">
+    <form class="formulario-login" action="" method = 'POST'>
+        {% csrf_token %}
+        {{form.username | as_crispy_field}}
+        {{form.password | as_crispy_field}}
+        <button class="boton-login">Acceder</button>
+    </form>
 </div>
 {% endblock %}

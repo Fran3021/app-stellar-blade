@@ -2,30 +2,35 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Mi Perfil{% endblock  %}
 {% block page_content %}
-    {% if perfil.imagen_perfil %}
-    <picture>
-        <img width='100px' height='100px' style='border-radius:200px' src="{{perfil.imagen_perfil.url}}" alt="">
-    </picture>
+<div class="container-mi-perfil">
     <article>
-        <h4>Biografia</h4>
-        <p>{{perfil.biografia}}</p>
-        <h4>Fecha de nacimiento</h4>
-        <p>{{perfil.fecha_nacimiento}}</p>
-        <h4>Seguidores: {{perfil.siguiendo.count}} | Siguiendo: {{perfil.seguidores.count}}</h4>
-    </article>
-    {% endif %}
-    {% if request.user.perfil.usuario == perfil.usuario %}
-    <a href="{% url 'usuarios:update' perfil.pk %}"><button type="button" class="btn btn-outline-info">Editar perfil</button></a>
-    <a href="{% url 'usuarios:delete' perfil.pk %}"><button type="button" class="btn btn-outline-danger">Eliminar perfil</button></a>
-    {% endif %}
-        <div class="container">
-            <h3>Mis ultimas publicaciones</h3>
-            <div class="row">
-                <div class="col d-flex gap-5 m-2 flex-wrap justify-content-between">
-                    {% for publicacion in publicaciones %}
-                        {% include "_includes/_publicaciones.html" %}
-                    {% endfor %}
-                </div>
+        {% if perfil.imagen_perfil %}
+            <img src="{{perfil.imagen_perfil.thumbnails.small.url}}" alt="">
+        {% endif %}
+        <div class="descripcion-mi-perfil">
+            <div class="editar-eliminar-mi-perfil">
+                <p><strong>{{perfil.usuario}}</strong></p>
+                {% if request.user.perfil.usuario == perfil.usuario %}
+                <a class="boton-editar" href="{% url 'usuarios:update' perfil.pk %}">Editar perfil</a>
+                <a class="boton-eliminar" href="{% url 'usuarios:delete' perfil.pk %}">Eliminar perfil</a>
+                {% endif %}
+            </div>
+            <div class="seguidores-seguidos-mi-perfil">
+                <p>Seguidores:<span>{{perfil.siguiendo.count}}</span></p>
+                <p>Siguiendo:<span>{{perfil.seguidores.count}}</span></p>
+            </div>
+            <div class="biografia-mi-perfil">
+                <p>{{perfil.biografia}}</p>
             </div>
         </div>
+    </article>
+    <div class="container-mis-ultimas-publicaciones">
+        <h3>Mis ultimas publicaciones</h3>
+        <div class="mis-ultimas-publicaciones">
+            {% for publicacion in publicaciones %}
+                {% include "_includes/_publicaciones.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock  %}

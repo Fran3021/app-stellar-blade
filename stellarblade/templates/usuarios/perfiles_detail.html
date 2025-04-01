@@ -2,41 +2,43 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Detalle del perfil{% endblock %}
 {% block page_content %}
-<div class="container">
-    {% if perfil.imagen_perfil %}
-        <picture>
-            <img width='100px' height='100px' style='border-radius:200px' src="{{perfil.imagen_perfil.url}}" alt="">
-        </picture>
-    {% endif %}
-    <h2>{{perfil.usuario}}</h2>
-    {% if perfil in request.user.perfil.siguiendo.all  %}
-    <span>Te sigue</span>
-    {% endif %}
-    <article>
-        <h5>Biografia</h5>
-        <p>{{perfil.biografia}}</p>
-        <h5>Fecha de nacimiento</h5>
-        <p>{{perfil.fecha_nacimiento}}</p>
-        <h3 id='Nseguidores-{{perfil.pk}}'>Seguidores: {{perfil.siguiendo.count}}</h3>
-        <h3>Siguiendo: {{perfil.seguidores.count}}</h3>
-        <a class='ButtonFollows' data-perfil-id='{{perfil.pk}}' href="{% url 'usuarios:follow' perfil.pk %}">
-            {% if request.user.perfil in perfil.siguiendo.all %}
-                <button type="button" class="btn btn-outline-primary btn-sm">Dejar de seguir</button>
-            {% else %}
-                <button type="button" class="btn btn-outline-dark btn-sm">Seguir</button>
-            {% endif %}
-        </a>
-        <a href="{% url 'usuarios:mis_contactos' %}"><button type="button" class="btn btn-secondary btn-sm">Atras</button></a>
-        <a href="{% url 'mensajes:nuevo' perfil.pk %}">Mensaje</a>
-    </article>
-    <div class="container">
-        <h3>Ultimas publicaciones</h3>
-        <div class="row">
-            <div class="col d-flex gap-5 m-2 flex-wrap justify-content-between">
-                {% for publicacion in perfil.publicaciones.all %}
-                    {% include "_includes/_publicaciones.html" %}
-                {% endfor %}
+<div class="container-perfiles-detail">
+    <article class="perfiles-detail" >
+        {% if perfil.imagen_perfil %}
+                <img src="{{perfil.imagen_perfil.thumbnails.small.url}}" alt="{{perfil.usuario}}">
+        {% endif %}
+        <div class="descripcion-perfiles-detail">
+            <div class="seguidores-siguiendo-mensaje">
+                <p id="Nseguidores-{{perfil.pk}}">Seguidores:<span>{{perfil.siguiendo.count}}</span></p>
+                <p>Siguiendo<span>{{perfil.seguidores.count}}</span></p>
+                <a href="{% url 'mensajes:nuevo' perfil.pk %}"><button><i class="bi bi-envelope"></i></button></a>
             </div>
+            <div class="nombre-te-sigue">
+                <p><strong>{{perfil.usuario}}</strong></p>
+                {% if perfil in request.user.perfil.siguiendo.all  %}
+                    <span>Te sigue</span>
+                {% endif %}
+            </div>
+            <div class="biografia-perfiles-detail">
+                <p>{{perfil.biografia}}</p>
+            </div>
+            <div class="botones-seguir-dejar-de-seguir">
+                <a class='ButtonFollows' data-perfil-id='{{perfil.pk}}' href="{% url 'usuarios:follow' perfil.pk %}">
+                    {% if request.user.perfil in perfil.siguiendo.all %}
+                        <button type="button" class="boton-dejar-de-seguir">Dejar de seguir</button>
+                    {% else %}
+                        <button type="button" class="boton-seguir">Seguir</button>
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </article>
+    <div class="container-ultimas-publicaciones-perfiles-detail">
+        <h3>Ultimas publicaciones</h3>
+        <div class="ultimas-publicaciones-perfiles-detail">
+            {% for publicacion in perfil.publicaciones.all %}
+                    {% include "_includes/_publicaciones.html" %}
+            {% endfor %}
         </div>
     </div>
 </div>

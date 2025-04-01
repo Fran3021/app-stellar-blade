@@ -3,17 +3,19 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}Conversaciones{% endblock  %}
 {% block page_content %}
-{% if conversaciones %}
+<div class="container-conversaciones">
+    {% if conversaciones %}
     {% for conversacion in conversaciones %}
-        <article id="conversacion-{{conversacion.pk}}" data-pk-conversacion="{{conversacion.pk}}">
-            <picture>
-                <img width="50px" style="border-radius:10px" src="{{conversacion.usuario1.imagen_perfil.url}}" alt="">
-            </picture>
-            <p>{{conversacion}}</p>
-            <a href="{% url 'mensajes:conversaciones_detail' conversacion.pk %}">Ir a la conversacion</a>
+        <article class="conversacion" id="conversacion-{{conversacion.pk}}" data-pk-conversacion="{{conversacion.pk}}">
+            <img src="{{conversacion.usuario1.imagen_perfil.thumbnails.small.url}}" alt="">
+            <div class="conversacion-enlace">
+                <p>{{conversacion}}</p>
+                <a class="boton-ir-conversacion" href="{% url 'mensajes:conversaciones_detail' conversacion.pk %}">Ir a la conversacion</a>
+            </div>
         </article>
     {% endfor %}
-{% else %}
-    <h4>Aun no tienes conversaciones</h4>
-{% endif %}
+    {% else %}
+        <h4>Aun no tienes conversaciones</h4>
+    {% endif %}
+</div>
 {% endblock  %}

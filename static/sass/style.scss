@@ -4,8 +4,11 @@
 @use './layout/_grid';
 @use './layout/_header';
 @use './layout/_main';
+@use './layout/_mensajes';
+@use './layout/_notificaciones';
+@use './layout/_publicaciones';
+@use './layout/_usuarios';
 @use './layout/_navbar';
 @use './layout/_sidebar';
-@use './layout/_notificaciones';
 @use './themes/_themes';
 @use './_settings';

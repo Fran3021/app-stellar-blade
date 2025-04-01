@@ -1,18 +1,19 @@
-<article>
-    {% if perfil.imagen_perfil %}
-        <picture>
-            <img width='100px' height='100px' style='border-radius:200px' src="{{perfil.imagen_perfil.url}}" alt="">
-        </picture>
-    {% endif %}
-    <h2>{{perfil.usuario}}</h2>
+<article class="container-perfiles-includes">
+    <div class="perfiles_includes-imagen-usuario">
+        {% if perfil.imagen_perfil %}
+            <a href="{% url 'usuarios:detail' perfil.pk %}"><img src="{{perfil.imagen_perfil.thumbnails.small.url}}" alt="{{perfil.usuario}}"></a>
+        {% endif %}
+        <div class="usuario-seguidores">
+            <h2>{{perfil.usuario}}</h2>
+            <span id='Nseguidores-{{perfil.pk}}' >Seguidores: {{perfil.siguiendo.count}}</span>
+        </div>
+    </div>
     <p>{{perfil.biografia | truncatechars:50}}</p>
-    <h3 id='Nseguidores-{{perfil.pk}}' >Seguidores: {{perfil.siguiendo.count}}</h3>
     <a class='ButtonFollows' data-perfil-id = {{perfil.pk}} href="{% url 'usuarios:follow' perfil.pk %}">
         {% if request.user.perfil in perfil.siguiendo.all %}
-            <button type="button" class="btn btn-outline-primary btn-sm">Dejar de seguir</button>
+            <button class="boton-dejar-de-seguir">Dejar de seguir</button>
         {% else %}
-            <button type="button" class="btn btn-outline-dark btn-sm">Seguir</button>
+            <button class="boton-seguir" >Seguir</button>
         {% endif %}
     </a>
-    <a href="{% url 'usuarios:detail' perfil.pk %}"><button type="button" class="btn btn-outline-warning btn-sm">Detalles del perfil</button></a>
 </article>
