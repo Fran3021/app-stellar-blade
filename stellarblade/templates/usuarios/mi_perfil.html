@@ -1,9 +1,9 @@
 {% extends "general/layout.html" %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block page_title %}Mi Perfil{% endblock  %}
+{% block page_title %}MI PERFIL{% endblock  %}
 {% block page_content %}
 <div class="container-mi-perfil">
-    <article>
+    <article class="mi-perfil-top" >
         {% if perfil.imagen_perfil %}
             <img src="{{perfil.imagen_perfil.thumbnails.small.url}}" alt="">
         {% endif %}

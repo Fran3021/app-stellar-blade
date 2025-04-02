@@ -1,12 +1,12 @@
 {% extends "general/layout.html" %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block page_title %}Busqueda y sugerencias{% endblock  %}
+{% block page_title %}BUSQUEDA{% endblock  %}
 {% block page_content %}
-<h2 class="title-home" >Busqueda y sugerencias</h2>
+<h2 class="title-busqueda" >Búsqueda y sugerencias</h2>
 <div class="container-busqueda">
     <div class="resultado-busqueda">
-        <form action="" method="GET">
+        <form class="formulario-busqueda" action="" method="GET">
             {{formulario.value| as_crispy_field}}
             <button class="boton-buscar" >Buscar</button>
         </form>
@@ -21,7 +21,7 @@
     
         <section class="usuarios-busqueda" >
             {% if usuarios %}
-                <h3>Usarios encontrados</h3>
+                <h3>Usuarios encontrados</h3>
             {% endif %}
             {% for perfil in usuarios %}
                 {% include "_includes/_perfiles.html" %}

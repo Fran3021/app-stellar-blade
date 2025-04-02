@@ -7,8 +7,8 @@
                 </a>
             {% endif %}
         </div>
-        <div class="hora-titulo">
-            <div class="hora">
+        <div class="hora-autor-titulo">
+            <div class="hora-autor">
                 <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">{{publicacion.autor}}</a>
                 <span>- {{publicacion.fecha_publicacion | timesince}}</span>
             </div>

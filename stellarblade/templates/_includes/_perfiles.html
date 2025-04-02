@@ -1,5 +1,5 @@
 <article class="container-perfiles-includes">
-    <div class="perfiles_includes-imagen-usuario">
+    <div class="perfiles-includes-imagen-usuario">
         {% if perfil.imagen_perfil %}
             <a href="{% url 'usuarios:detail' perfil.pk %}"><img src="{{perfil.imagen_perfil.thumbnails.small.url}}" alt="{{perfil.usuario}}"></a>
         {% endif %}
