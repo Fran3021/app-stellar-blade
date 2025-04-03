@@ -53,15 +53,15 @@ main{
             width: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             .publicacion-detalle-imagen-descripcion{
                 display: flex;
                 width: 100%;
                 align-items: center;
                 gap: 10px;
+                margin-bottom: 15px;
                 .imagen-publicacion-detalle{
-                    width: 30%;
+                    width: 20%;
                     a{
                         text-decoration: none;
                         img{
@@ -72,10 +72,10 @@ main{
                     }
                 }
                 .descripcion-publicacion-detalle{
-                    width: 70%;
+                    width: 80%;
                     display: flex;
                     flex-direction: column;
-                    gap: 20px;
+                    gap: 10px;
                     .autor-fecha{
                         font-size: 12px;
                     }
@@ -88,9 +88,18 @@ main{
             }
             .publicacion-detalle-imagen-large{
                 width: 100%;
+                margin-bottom: 15px;
                 img{
                     width: 100%;
                     border-radius: 10px;
+                }
+            }
+            .publicacion-detalle-contenido{
+                width: 100%;
+                margin-bottom: 15px;
+                p{
+                    font-size: 13px;
+                    color: abs.$gris-claro;
                 }
             }
             .publicacion-detalle-likes-comentarios{
@@ -98,6 +107,7 @@ main{
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
+                margin-bottom: 15px;
                 .likes{
                     display: flex;
                     align-items: center;
@@ -121,6 +131,300 @@ main{
                             color: abs.$rosa-neon;
                         }
                     }
+                }
+            }
+            .publicacion-detalle-comentarios-respuestas{
+                width: 100%;
+                h3{
+                    font-size: 15px;
+                    text-align: center;
+                    margin-bottom: 10px;
+                }
+                .container-comentarios-respuestas{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    border-bottom: 1px solid abs.$gris-claro;
+                    padding-bottom: 20px;
+                    margin-bottom: 20px;
+                    .container-comentarios{
+                        width: 100%;
+                        margin-bottom: 10px;
+                        .imagen-autor-fecha-publi{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            a{
+                                width: 10%;
+                                text-decoration: none;
+                                display: inline-block;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                }
+                            }
+                            .autor-fecha-publi{
+                                display: flex;
+                                flex-direction: column;
+                                width: 90%;
+                                .autor{
+                                    font-size: 8px;
+                                }
+                                .fecha-publi{
+                                    font-size: 8px;
+                                }
+                            }
+                        }
+                        .TextoComentario{
+                            font-size: 10px;
+                        }
+                        .EliminarComentario{
+                            font-size: 8px;
+                            background-color: abs.$rojo-neon;
+                            padding: 3px 5px;
+                            border-radius: 4px;
+                        }
+                        .BotonResponder{
+                            font-size: 8px;
+                            background-color: abs.$azul-neon;
+                            padding: 3px 5px;
+                            border-radius: 4px;
+                        }
+                        .VerRespuestas{
+                            font-size: 8px;
+                            background-color: abs.$rosa-neon;
+                            padding: 3px 5px;
+                            border-radius: 4px;
+                        }
+                    }
+                    .container-respuestas{
+                        width: 100%;
+                        margin-left: 15%;
+                        .imagen-autor-fecha-respuesta{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+                            a{
+                                width: 10%;
+                                text-decoration: none;
+                                display: inline-block;
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 50%;
+                                }
+                            }
+                            .autor-fecha-respuesta{
+                                display: flex;
+                                flex-direction: column;
+                                width: 90%;
+                                .autor{
+                                    font-size: 8px;
+                                }
+                                .fecha-respuesta{
+                                    font-size: 8px;
+                                }
+                            }
+                        }
+                        .TextoRespuesta{
+                            font-size: 10px;
+                        }
+                        .eliminarRespuesta{
+                            font-size: 8px;
+                            background-color: abs.$rojo-neon;
+                            padding: 3px 5px;
+                            border-radius: 4px;
+                        }
+                    }
+                }
+            }
+            .FormRespuesta{
+                width: 100%;
+                label{
+                    font-size: 10px;
+                    text-shadow: 0px 0px 5px abs.$azul-neon;
+                }
+                input{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                textarea{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                .boton-responder{
+                    border: 0;
+                    color: abs.$rosa-neon;
+                    background-color: abs.$gris-oscuro;
+                    border: 1px solid abs.$azul-neon;
+                    padding: 3px 6px;
+                    border-radius: 4px;
+                    font-size: 8px;
+                }
+            }
+            .title-no-hay-comentarios{
+                font-size: 12px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            .FormComentario{
+                width: 100%;
+                margin-bottom: 15px;
+                .formulario-comentar{
+                    label{
+                        font-size: 10px;
+                        text-shadow: 0px 0px 5px abs.$azul-neon;
+                    }
+                    input{
+                        background-color: abs.$negro-espacial;
+                        color: abs.$blanco;
+                        border-color: abs.$azul-neon;
+                        &:focus{
+                            box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                        }
+                    }
+                    textarea{
+                        background-color: abs.$negro-espacial;
+                        color: abs.$blanco;
+                        border-color: abs.$azul-neon;
+                        &:focus{
+                            box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                        }
+                    }
+                    .boton-comentar{
+                        border: 0;
+                        color: abs.$rosa-neon;
+                        background-color: abs.$gris-oscuro;
+                        border: 1px solid abs.$azul-neon;
+                        padding: 3px 6px;
+                        border-radius: 4px;
+                        font-size: 8px;
+                    }
+                }
+            }
+            .botones-editar-eliminar-publicacion-detalle{
+                width: 100%;
+                display: flex;
+                gap: 10px;
+                .boton-editar{
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 10px;
+                    background-color: abs.$azul-neon;
+                    color: abs.$blanco;
+                    padding: 3px 6px;
+                    border-radius: 5px;
+                }
+                .boton-eliminar{
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 10px;
+                    background-color: abs.$rojo-neon;
+                    padding: 3px 6px;
+                    border-radius: 5px;
+                    color: abs.$blanco;
+                }
+            }
+        }
+        .container-editar-publicacion{
+            width: 100%;
+            .formulario-editar-publicacion{
+                width: 100%;
+                .input-group-text{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    font-size: 10px;
+                }
+                .form-control{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    font-size: 10px;
+                    .text-break{
+                        a{
+                            font-size: 10px;
+                            text-decoration: none;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                label{
+                    font-size: 10px;
+                    text-shadow: 0px 0px 5px abs.$azul-neon;
+                }
+                input{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                textarea{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                .boton-editar{
+                    font-size: 10px;
+                    background-color: abs.$azul-neon;
+                    color: abs.$blanco;
+                    padding: 3px 6px;
+                    border: 0;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                }
+                .boton-cancelar{
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 10px;
+                    background-color: abs.$rosa-neon;
+                    color: abs.$blanco;
+                    padding: 3px 6px;
+                    border-radius: 5px;
+                }
+            }
+        }
+        .container-eliminar-publicacion{
+            width: 100%;
+            .title-eliminar-publicacion{
+                font-size: 15px;
+            }
+            .formulario-eliminar-publicacion{
+                width: 100%;
+                .boton-eliminar{
+                    border: 0;
+                    font-size: 10px;
+                    background-color: abs.$rojo-neon;
+                    padding: 3px 6px;
+                    border-radius: 5px;
+                    color: abs.$blanco;
+                    margin-top: 10px;
+                }
+                .boton-cancelar{
+                    margin-top: 10px;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 10px;
+                    background-color: abs.$blanco;
+                    padding: 3px 6px;
+                    border-radius: 5px;
+                    color: abs.$rojo-neon;
                 }
             }
         }

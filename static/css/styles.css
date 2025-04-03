@@ -706,7 +706,6 @@ main .container-main .container-detalle-publicacion {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion {
@@ -714,9 +713,10 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-
   width: 100%;
   align-items: center;
   gap: 10px;
+  margin-bottom: 15px;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle {
-  width: 30%;
+  width: 20%;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle a {
   text-decoration: none;
@@ -727,10 +727,10 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-
   border-radius: 50%;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle .autor-fecha {
   font-size: 12px;
@@ -742,16 +742,26 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-large {
   width: 100%;
+  margin-bottom: 15px;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-large img {
   width: 100%;
   border-radius: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-contenido {
+  width: 100%;
+  margin-bottom: 15px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-contenido p {
+  font-size: 13px;
+  color: #CCCCCC;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 15px;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .likes {
   display: flex;
@@ -774,6 +784,296 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-likes-c
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .comentarios .ButtonNuevoComentario i {
   color: #FF007F;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas {
+  width: 100%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas h3 {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #CCCCCC;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios {
+  width: 100%;
+  margin-bottom: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi a {
+  width: 10%;
+  text-decoration: none;
+  display: inline-block;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi .autor {
+  font-size: 8px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi .fecha-publi {
+  font-size: 8px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .TextoComentario {
+  font-size: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .EliminarComentario {
+  font-size: 8px;
+  background-color: #FF073A;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .BotonResponder {
+  font-size: 8px;
+  background-color: #00BFFF;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .VerRespuestas {
+  font-size: 8px;
+  background-color: #FF007F;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas {
+  width: 100%;
+  margin-left: 15%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a {
+  width: 10%;
+  text-decoration: none;
+  display: inline-block;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta .autor {
+  font-size: 8px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta .fecha-respuesta {
+  font-size: 8px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .TextoRespuesta {
+  font-size: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .eliminarRespuesta {
+  font-size: 8px;
+  background-color: #FF073A;
+  padding: 3px 5px;
+  border-radius: 4px;
+}
+main .container-main .container-detalle-publicacion .FormRespuesta {
+  width: 100%;
+}
+main .container-main .container-detalle-publicacion .FormRespuesta label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+main .container-main .container-detalle-publicacion .FormRespuesta input {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-detalle-publicacion .FormRespuesta input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-detalle-publicacion .FormRespuesta textarea {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-detalle-publicacion .FormRespuesta textarea:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-detalle-publicacion .FormRespuesta .boton-responder {
+  border: 0;
+  color: #FF007F;
+  background-color: #1E1E1E;
+  border: 1px solid #00BFFF;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 8px;
+}
+main .container-main .container-detalle-publicacion .title-no-hay-comentarios {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+main .container-main .container-detalle-publicacion .FormComentario {
+  width: 100%;
+  margin-bottom: 15px;
+}
+main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar input {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar textarea {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar textarea:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar .boton-comentar {
+  border: 0;
+  color: #FF007F;
+  background-color: #1E1E1E;
+  border: 1px solid #00BFFF;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 8px;
+}
+main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle .boton-editar {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  background-color: #00BFFF;
+  color: #FFFFFF;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle .boton-eliminar {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  background-color: #FF073A;
+  padding: 3px 6px;
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+main .container-main .container-editar-publicacion {
+  width: 100%;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion {
+  width: 100%;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion .input-group-text {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+  font-size: 10px;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion .form-control {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+  font-size: 10px;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion .form-control .text-break a {
+  font-size: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion input {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion textarea {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion textarea:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion .boton-editar {
+  font-size: 10px;
+  background-color: #00BFFF;
+  color: #FFFFFF;
+  padding: 3px 6px;
+  border: 0;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+main .container-main .container-editar-publicacion .formulario-editar-publicacion .boton-cancelar {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  background-color: #FF007F;
+  color: #FFFFFF;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+main .container-main .container-eliminar-publicacion {
+  width: 100%;
+}
+main .container-main .container-eliminar-publicacion .title-eliminar-publicacion {
+  font-size: 15px;
+}
+main .container-main .container-eliminar-publicacion .formulario-eliminar-publicacion {
+  width: 100%;
+}
+main .container-main .container-eliminar-publicacion .formulario-eliminar-publicacion .boton-eliminar {
+  border: 0;
+  font-size: 10px;
+  background-color: #FF073A;
+  padding: 3px 6px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  margin-top: 10px;
+}
+main .container-main .container-eliminar-publicacion .formulario-eliminar-publicacion .boton-cancelar {
+  margin-top: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  background-color: #FFFFFF;
+  padding: 3px 6px;
+  border-radius: 5px;
+  color: #FF073A;
 }
 
 main .container-main .title-contactos {
@@ -1078,22 +1378,22 @@ main .container-main .container-editar-perfil .formulario-editar-perfil textarea
   box-shadow: 0px 0px 5px 2px #CCCCCC;
 }
 main .container-main .container-editar-perfil .formulario-editar-perfil .boton-editar {
-  font-size: 8px;
+  font-size: 10px;
   background-color: #00BFFF;
   color: #FFFFFF;
-  padding: 2px 5px;
+  padding: 3px 6px;
   border: 0;
-  border-radius: 2px;
+  border-radius: 5px;
   margin-right: 10px;
 }
 main .container-main .container-editar-perfil .formulario-editar-perfil .boton-cancelar {
   text-decoration: none;
   display: inline-block;
-  font-size: 8px;
+  font-size: 10px;
   background-color: #FF007F;
   color: #FFFFFF;
-  padding: 2px 5px;
-  border-radius: 2px;
+  padding: 3px 6px;
+  border-radius: 5px;
 }
 main .container-main .container-eliminar-perfil {
   width: 100%;
@@ -1122,6 +1422,185 @@ main .container-main .container-eliminar-perfil .formulario-borrar-perfil .boton
   padding: 3px 6px;
   border-radius: 5px;
   color: #FF073A;
+}
+main .container-main .container-perfiles-detail {
+  width: 100%;
+}
+main .container-main .container-perfiles-detail .perfiles-detail {
+  display: flex;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #00BFFF;
+  border-radius: 10px;
+  padding: 20px 10px;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+main .container-main .container-perfiles-detail .perfiles-detail img {
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .seguidores {
+  font-size: 10px;
+  font-weight: bold;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .seguidores span {
+  font-size: 10px;
+  font-weight: bold;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .siguiendo {
+  font-size: 10px;
+  font-weight: bold;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .siguiendo span {
+  font-size: 10px;
+  font-weight: bold;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .mensaje {
+  text-decoration: none;
+  font-size: 12px;
+  display: inline-block;
+  background-color: #0D0D0D;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .mensaje i {
+  color: #00BFFF;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .nombre-te-sigue p {
+  font-size: 10px;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .nombre-te-sigue span {
+  font-size: 12px;
+  font-weight: bold;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .biografia-perfiles-detail p {
+  font-size: 12px;
+  font-weight: bold;
+  color: #CCCCCC;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .botones-seguir-dejar-de-seguir .boton-dejar-de-seguir {
+  background-color: #1E1E1E;
+  border: 0;
+  padding: 5px 10px;
+  border: 1px solid #CCCCCC;
+  font-size: 10px;
+  border-radius: 3px;
+}
+main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .botones-seguir-dejar-de-seguir .boton-seguir {
+  background-color: #00BFFF;
+  border: 0;
+  padding: 5px 10px;
+  border: 1px solid #FF007F;
+  font-size: 10px;
+  border-radius: 3px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail {
+  width: 100%;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .title-ultimas-publicaciones-perfiles-detail {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion {
+  width: 100%;
+  padding: 20px 20px;
+  box-shadow: 0px 0px 10px 5px #00BFFF;
+  border-radius: 10px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen {
+  width: 20%;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen a {
+  text-decoration: none;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen a .imagen_perfil {
+  width: 100%;
+  border-radius: 50%;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo {
+  width: 80%;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a {
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
+  font-size: 10px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .titulo h2 {
+  font-size: 13px;
+  font-weight: 600;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen_publicacion {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .contenido-publicacion {
+  font-size: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios .numero-likes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios .numero-likes span {
+  color: #FF007F;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios .numero-likes i {
+  color: #00BFFF;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios .numero-comentarios {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios .numero-comentarios span {
+  color: #00BFFF;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios .numero-comentarios i {
+  color: #FF007F;
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .boton-detalle {
+  text-decoration: none;
+  font-size: 13px;
+  display: inline-block;
+  text-shadow: 0px 0px 10px #FF007F;
 }
 
 body {

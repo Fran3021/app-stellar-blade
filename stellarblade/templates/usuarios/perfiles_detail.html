@@ -9,9 +9,9 @@
         {% endif %}
         <div class="descripcion-perfiles-detail">
             <div class="seguidores-siguiendo-mensaje">
-                <p id="Nseguidores-{{perfil.pk}}">Seguidores:<span>{{perfil.siguiendo.count}}</span></p>
-                <p>Siguiendo<span>{{perfil.seguidores.count}}</span></p>
-                <a href="{% url 'mensajes:nuevo' perfil.pk %}"><button><i class="bi bi-envelope"></i></button></a>
+                <p class='seguidores' id="Nseguidores-{{perfil.pk}}">Seguidores:<span>{{perfil.siguiendo.count}}</span></p>
+                <p class="siguiendo">Siguiendo<span>{{perfil.seguidores.count}}</span></p>
+                <a class="mensaje" href="{% url 'mensajes:nuevo' perfil.pk %}"><i class="bi bi-envelope"></i></a>
             </div>
             <div class="nombre-te-sigue">
                 <p><strong>{{perfil.usuario}}</strong></p>
@@ -34,7 +34,7 @@
         </div>
     </article>
     <div class="container-ultimas-publicaciones-perfiles-detail">
-        <h3>Ultimas publicaciones</h3>
+        <h3 class="title-ultimas-publicaciones-perfiles-detail">Ultimas publicaciones</h3>
         <div class="ultimas-publicaciones-perfiles-detail">
             {% for publicacion in perfil.publicaciones.all %}
                     {% include "_includes/_publicaciones.html" %}

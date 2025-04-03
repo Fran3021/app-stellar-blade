@@ -54,17 +54,20 @@
             <h3>Comentarios de la publicacion</h3>
             {% for comentario in publicacion.comentarios.all %}
             <article class="container-comentarios-respuestas">
+                
                 <div class="container-comentarios" id="container-comentario-{{comentario.pk}}">
-                    <span>
+                    <div class="imagen-autor-fecha-publi">
                         <a href="{% url 'usuarios:detail' comentario.autor.pk %}">
                             <img src="{{comentario.autor.imagen_perfil.thumbnails.small.url}}" alt="{{comentario.autor.usuario}}">
                         </a>
-                        <p>{{comentario.autor.usuario}}</p>
-                        <p>{{comentario.fecha_comentario | date:"Y/m/d H:i"}}</p>
-                    </span>
+                        <div class="autor-fecha-publi">
+                            <p class="autor">{{comentario.autor.usuario}}</p>
+                            <p class="fecha-publi">Hace: {{comentario.fecha_comentario | timesince}}</p>
+                        </div>
+                    </div>
                     <p class="TextoComentario" >{{comentario.texto}}</p>
                     {% if comentario.autor == request.user.perfil %}
-                        <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}">Eliminar comentario</button>
+                        <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}">Eliminar</button>
                     {% endif %}
                     <button data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button>
                     {% if comentario.respuestas.count %}
@@ -74,19 +77,20 @@
 
                 {% if comentario.respuestas.count %}
                 <div class="container-respuestas"  id="container-respuestas-{{comentario.pk}}">
-                    <h5>Respuestas al comentario</h5>
                     {% for respuesta in comentario.respuestas.all  %}
                         <div id="container-respuesta-{{respuesta.pk}}">
-                            <span>
+                            <div class="imagen-autor-fecha-respuesta">
                                 <a href="{% url 'usuarios:detail' respuesta.autor.pk %}">
                                     <img src="{{respuesta.autor.imagen_perfil.thumbnails.small.url}}" alt="{{comentario.autor.usuario}}">
                                 </a>
-                                <p>{{respuesta.autor.usuario}}</p>
-                                <p>{{respuesta.fecha_respuesta | date:"Y/m/d H:i"}}</p>
-                            </span>
+                                <div class="autor-fecha-respuesta">
+                                    <p class="autor">{{respuesta.autor.usuario}}</p>
+                                    <p class="fecha-respuesta">Hace: {{respuesta.fecha_respuesta | timesince}}</p>
+                                </div>
+                            </div>
                             <p class="TextoRespuesta">{{respuesta}}</p>
                             {% if request.user.perfil == respuesta.autor %}
-                                <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}">Eliminar respuesta</button>
+                                <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}">Eliminar</button>
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -103,12 +107,12 @@
             {% endfor %}
         </div>
     {% else %}
-        <h4>En esta publicacion todavia no hay comentarios</h4>
+        <h3 class="title-no-hay-comentarios">En esta publicacion todavia no hay comentarios</h3>
     {% endif %}
 
     {% if request.user.is_authenticated %}
     <div class="FormComentario">
-        <form action="" method='POST' >
+        <form class="formulario-comentar" action="" method='POST' >
             {% csrf_token %}
             {{form.texto | as_crispy_field}}
             <button class="boton-comentar" >Comentar</button>

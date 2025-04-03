@@ -4,7 +4,7 @@
 {% block page_title %}Eliminar Publicacion{% endblock  %}
 {% block page_content %}
 <div class="container-eliminar-publicacion">
-    <h4>¿Seguro que desea eliminar la publicacion: <strong>{{object.titulo}}</strong>?</h4>
+    <h4 class="title-eliminar-publicacion">¿Seguro que desea eliminar la publicacion: <strong>{{object.titulo}}</strong>?</h4>
     <form class="formulario-eliminar-publicacion" action="" method = 'POST'>
         {% csrf_token %}
         {{form}}

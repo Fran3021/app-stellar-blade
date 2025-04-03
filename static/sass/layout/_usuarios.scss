@@ -317,22 +317,22 @@ main{
                     }
                 }
                 .boton-editar{
-                    font-size: 8px;
+                    font-size: 10px;
                     background-color: abs.$azul-neon;
                     color: abs.$blanco;
-                    padding: 2px 5px;
+                    padding: 3px 6px;
                     border: 0;
-                    border-radius: 2px;
+                    border-radius: 5px;
                     margin-right: 10px;
                 }
                 .boton-cancelar{
                     text-decoration: none;
                     display: inline-block;
-                    font-size: 8px;
+                    font-size: 10px;
                     background-color: abs.$rosa-neon;
                     color: abs.$blanco;
-                    padding: 2px 5px;
-                    border-radius: 2px;
+                    padding: 3px 6px;
+                    border-radius: 5px;
                 }
             }
         }
@@ -361,6 +361,195 @@ main{
                     padding: 3px 6px;
                     border-radius: 5px;
                     color: abs.$rojo-neon;
+                }
+            }
+        }
+        .container-perfiles-detail{
+            width: 100%;
+            .perfiles-detail{
+                display: flex;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                border: 1px solid abs.$azul-neon;
+                border-radius: 10px;
+                padding: 20px 10px;
+                gap: 10px;
+                margin-bottom: 50px;
+                img{
+                    width: 30%;
+                    height: 30%;
+                    border-radius: 50%;
+                }
+                .descripcion-perfiles-detail{
+                    width: 70%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    .seguidores-siguiendo-mensaje{
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        .seguidores{
+                            font-size: 10px;
+                            font-weight: bold;
+                            span{
+                            font-size: 10px;
+                            font-weight: bold;
+                            }
+                        }
+                        .siguiendo{
+                            font-size: 10px;
+                            font-weight: bold;
+                            span{
+                            font-size: 10px;
+                            font-weight: bold;
+                            }
+                        }
+                        .mensaje{
+                            text-decoration: none;
+                            font-size: 12px;
+                            display: inline-block;
+                            background-color: abs.$negro-espacial;
+                            i{
+                                color: abs.$azul-neon;
+                            }
+                        }
+                    }
+                    .nombre-te-sigue{
+                        p{
+                            font-size: 10px;
+                        }
+                        span{
+                            font-size: 12px;
+                            font-weight: bold;
+                        }
+                    }
+                    .biografia-perfiles-detail{
+                        p{
+                            font-size: 12px;
+                            font-weight: bold;
+                            color: abs.$gris-claro;
+                        }
+                    }
+                    .botones-seguir-dejar-de-seguir{
+                        .boton-dejar-de-seguir{
+                            background-color: abs.$gris-oscuro;
+                            border: 0;
+                            padding: 5px 10px;
+                            border: 1px solid abs.$gris-claro;
+                            font-size: 10px;
+                            border-radius: 3px;
+                        }
+                        .boton-seguir{
+                            background-color: abs.$azul-neon;
+                            border: 0;
+                            padding: 5px 10px;
+                            border: 1px solid abs.$rosa-neon;
+                            font-size: 10px;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+            }
+            .container-ultimas-publicaciones-perfiles-detail{
+                width: 100%;
+                .title-ultimas-publicaciones-perfiles-detail{
+                    font-size: 15px;
+                    text-align: center;
+                    margin-bottom: 35px;
+                }
+                .ultimas-publicaciones-perfiles-detail{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 50px;
+                    .publicacion{
+                        width: 100%;
+                        padding: 20px 20px;
+                        box-shadow: 0px 0px 10px 5px abs.$azul-neon;
+                        border-radius: 10px;
+                        .imagen-hora-titulo{
+                            width: 100%;
+                            display: flex;
+                            gap: 10px;
+                            align-items: center;
+                            margin-bottom: 10px;
+                            .imagen{
+                                width: 20%;
+                                a{
+                                    text-decoration: none;
+                                    .imagen_perfil{
+                                    width: 100%;
+                                    border-radius: 50%;
+                                    }
+                                }
+                            }
+                            .hora-autor-titulo{
+                                width: 80%;
+                                .hora-autor{
+                                    a{
+                                        text-decoration: none;
+                                        font-size: 10px;
+                                        font-weight: bold;
+                                    }
+                                    span{
+                                        font-size: 10px;
+                                    }
+                                }
+                                .titulo{
+                                    h2{
+                                        font-size: 13px;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                        }
+                        .imagen_publicacion{
+                            width: 100%;
+                            margin-bottom: 10px;
+                            border-radius: 10px;
+                        }
+                        .contenido-publicacion{
+                            font-size: 10px;
+                            width: 100%;
+                            margin-bottom: 10px;
+                        }
+                        .numero-likes-comentarios{
+                            width: 100%;
+                            display: flex;
+                            justify-content: space-around;
+                            margin-bottom: 10px;
+                            .numero-likes{
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                span{
+                                    color: abs.$rosa-neon;
+                                }
+                                i{
+                                    color: abs.$azul-neon
+                                }
+                            }
+                            .numero-comentarios{
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                span{
+                                    color: abs.$azul-neon;
+                                }
+                                i{
+                                    color: abs.$rosa-neon;
+                                }
+                            }
+                        }
+                        .boton-detalle{
+                            text-decoration: none;
+                            font-size: 13px;
+                            display: inline-block;
+                            text-shadow: 0px 0px 10px abs.$rosa-neon;
+                        }
+                    }
                 }
             }
         }
