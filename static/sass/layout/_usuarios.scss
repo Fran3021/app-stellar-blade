@@ -273,6 +273,97 @@ main{
                 }
             }
         }
+        .container-editar-perfil{
+            width: 100%;
+            .formulario-editar-perfil{
+                width: 100%;
+                .input-group-text{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    font-size: 10px;
+                }
+                .form-control{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    font-size: 10px;
+                    .text-break{
+                        a{
+                            font-size: 10px;
+                            text-decoration: none;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                label{
+                    font-size: 10px;
+                    text-shadow: 0px 0px 5px abs.$azul-neon;
+                }
+                input{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                textarea{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                .boton-editar{
+                    font-size: 8px;
+                    background-color: abs.$azul-neon;
+                    color: abs.$blanco;
+                    padding: 2px 5px;
+                    border: 0;
+                    border-radius: 2px;
+                    margin-right: 10px;
+                }
+                .boton-cancelar{
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 8px;
+                    background-color: abs.$rosa-neon;
+                    color: abs.$blanco;
+                    padding: 2px 5px;
+                    border-radius: 2px;
+                }
+            }
+        }
+        .container-eliminar-perfil{
+            width: 100%;
+            .title-eliminar-perfil{
+                font-size: 15px;
+            }
+            .formulario-borrar-perfil{
+                width: 100%;
+                .boton-eliminar{
+                    border: 0;
+                    font-size: 10px;
+                    background-color: abs.$rojo-neon;
+                    padding: 3px 6px;
+                    border-radius: 5px;
+                    color: abs.$blanco;
+                    margin-top: 10px;
+                }
+                .boton-cancelar{
+                    margin-top: 10px;
+                    text-decoration: none;
+                    display: inline-block;
+                    font-size: 10px;
+                    background-color: abs.$blanco;
+                    padding: 3px 6px;
+                    border-radius: 5px;
+                    color: abs.$rojo-neon;
+                }
+            }
+        }
     }
 }
 

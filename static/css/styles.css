@@ -90,6 +90,15 @@
   display: none;
 }
 
+header {
+  padding-top: 30px;
+  margin-bottom: 35px;
+}
+header .container-header .page-title {
+  font-size: 25px;
+  text-align: center;
+}
+
 .menu-header {
   background-color: #1E1E1E;
   opacity: 0.5;
@@ -115,15 +124,6 @@
 }
 .menu-header ul a i {
   color: #00BFFF;
-}
-
-header {
-  padding-top: 30px;
-  margin-bottom: 35px;
-}
-header .container-header .page-title {
-  font-size: 25px;
-  text-align: center;
 }
 
 main .container-main .title-home {
@@ -660,6 +660,122 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
   color: #FFFFFF;
 }
 
+main .container-main .container-publicacion-nueva {
+  width: 100%;
+}
+main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion .form-control {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+  font-size: 10px;
+}
+main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion input {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion textarea {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion textarea:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion .boton-crear {
+  border: 1px solid #FF073A;
+  font-size: 10px;
+  background-color: #FFFFFF;
+  color: #0D0D0D;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+main .container-main .title-detalle-publicacion {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+main .container-main .container-detalle-publicacion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle {
+  width: 30%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle a {
+  text-decoration: none;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle .autor-fecha {
+  font-size: 12px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle .titulo {
+  font-size: 15px;
+  color: #00BFFF;
+  font-weight: bold;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-large {
+  width: 100%;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-large img {
+  width: 100%;
+  border-radius: 10px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .likes {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .likes span {
+  color: #FF073A;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .likes a i {
+  color: #00BFFF;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .comentarios {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .comentarios .ButtonNuevoComentario {
+  color: #00BFFF;
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .comentarios .ButtonNuevoComentario i {
+  color: #FF007F;
+}
+
 main .container-main .title-contactos {
   font-size: 20px;
   text-align: center;
@@ -917,6 +1033,95 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
   font-size: 13px;
   display: inline-block;
   text-shadow: 0px 0px 10px #FF007F;
+}
+main .container-main .container-editar-perfil {
+  width: 100%;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil {
+  width: 100%;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil .input-group-text {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+  font-size: 10px;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil .form-control {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+  font-size: 10px;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil .form-control .text-break a {
+  font-size: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil input {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil textarea {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil textarea:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil .boton-editar {
+  font-size: 8px;
+  background-color: #00BFFF;
+  color: #FFFFFF;
+  padding: 2px 5px;
+  border: 0;
+  border-radius: 2px;
+  margin-right: 10px;
+}
+main .container-main .container-editar-perfil .formulario-editar-perfil .boton-cancelar {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 8px;
+  background-color: #FF007F;
+  color: #FFFFFF;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+main .container-main .container-eliminar-perfil {
+  width: 100%;
+}
+main .container-main .container-eliminar-perfil .title-eliminar-perfil {
+  font-size: 15px;
+}
+main .container-main .container-eliminar-perfil .formulario-borrar-perfil {
+  width: 100%;
+}
+main .container-main .container-eliminar-perfil .formulario-borrar-perfil .boton-eliminar {
+  border: 0;
+  font-size: 10px;
+  background-color: #FF073A;
+  padding: 3px 6px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  margin-top: 10px;
+}
+main .container-main .container-eliminar-perfil .formulario-borrar-perfil .boton-cancelar {
+  margin-top: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  background-color: #FFFFFF;
+  padding: 3px 6px;
+  border-radius: 5px;
+  color: #FF073A;
 }
 
 body {

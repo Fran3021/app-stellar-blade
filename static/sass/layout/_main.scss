@@ -2,17 +2,6 @@
 @use '../base/base' as base;
 @use '../components/components' as comp;
 
-header{
-    padding-top: 30px;
-    margin-bottom: 35px;
-    .container-header{
-        .page-title{
-            font-size: 25px;
-            text-align: center;
-        }
-    }
-}
-
 
 main{
     .container-main{
