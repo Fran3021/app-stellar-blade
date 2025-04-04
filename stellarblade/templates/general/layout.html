@@ -256,14 +256,14 @@
         .then(response => response.json())
         .then(data => {
           if(data.success){
-            buttonNoti.style.backgroundColor = 'cyan'
+            buttonNoti.classList.toggle('leida')
           }
         })
         .catch(error => console.error('Error en la petición:', error));
       })
       const leida = button.getAttribute('data-leida')
       if(leida == 'True'){
-        buttonNoti.style.backgroundColor = 'abs.$rosa-neon'
+        buttonNoti.classList.toggle('leida')
       }
     })
 

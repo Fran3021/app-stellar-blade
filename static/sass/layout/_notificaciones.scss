@@ -2,23 +2,30 @@
 @use '../base/base' as base;
 @use '../components/components' as comp;
 
-
-.main-notificaciones{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-
-.notificaciones{
-    display: flex;
-    flex-direction: column;
-    a{
-        text-decoration: none;
-        background-color: abs.$azul-neon;
-        border-bottom: 1px solid abs.$rosa-neon;
-        padding: 20px 30px;
-        display: block;
-        color: abs.$blanco;
+main{
+    .container-main{
+        .container-notificaciones{
+            width: 100%;
+            .notificaciones{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 1px;
+                li{
+                    a{
+                        border: 1px solid abs.$gris-oscuro;
+                        display: block;
+                        background-color: abs.$azul-neon;
+                        padding: 10px 20px;
+                        text-decoration: none;
+                        font-size: 10px;
+                        font-weight: 600;
+                    }
+                }
+                .leida{
+                    background-color: abs.$gris-oscuro;
+                }
+            }
+        }
     }
 }

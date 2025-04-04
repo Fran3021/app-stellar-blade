@@ -1,36 +1,37 @@
-
-        {% for message in messages %}
-            <div class="alert 
-                {% if message.tags %}
-                    {% if message.tags == 'error' %}
-                        alert-danger
-                    {% else %}
-                        alert-{{message.tags}}
-                    {% endif %}
-                {% else %}
-                    alert-info
-                {% endif %}">
-            {{message}}
-            </div>
-        {% endfor %}
-        <div class="mensaje-follow">
-            
-        </div>
-        <div class="mensaje-likes">
-            
-        </div>
-        <div class="mensajes-contestar-comentarios">
-            
-        </div>
-        <div class="mensajes-eliminar-comentarios">
-            
-        </div>
-        <div class="mensajes-eliminar-respuestas">
-            
-        </div>
-        <div class="mensajes-eliminar-mensajes">
-            
-        </div>
-        <div class="mensajes-eliminar-conversaciones">
-            
-        </div>
+<div class="container-include-mensajes">
+    {% for message in messages %}
+    <div class="alert 
+        {% if message.tags %}
+            {% if message.tags == 'error' %}
+                alert-danger
+            {% else %}
+                alert-{{message.tags}}
+            {% endif %}
+        {% else %}
+            alert-info
+        {% endif %}">
+    {{message}}
+    </div>
+{% endfor %}
+    <div class="mensaje-follow">
+        
+    </div>
+    <div class="mensaje-likes">
+        
+    </div>
+    <div class="mensajes-contestar-comentarios">
+        
+    </div>
+    <div class="mensajes-eliminar-comentarios">
+        
+    </div>
+    <div class="mensajes-eliminar-respuestas">
+        
+    </div>
+    <div class="mensajes-eliminar-mensajes">
+        
+    </div>
+    <div class="mensajes-eliminar-conversaciones">
+        
+    </div>
+</div>

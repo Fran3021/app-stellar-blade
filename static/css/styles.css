@@ -98,6 +98,9 @@ header .container-header .page-title {
   font-size: 25px;
   text-align: center;
 }
+header .container-header .container-include-mensajes div {
+  font-size: 8px;
+}
 
 .menu-header {
   background-color: #1E1E1E;
@@ -604,60 +607,221 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
   text-shadow: 0px 0px 10px #FF007F;
 }
 
-.container-conversaciones .mensaje-1 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.container-conversaciones .mensaje-1 .imagen-perfil-usuario {
-  width: 2%;
-  height: 2%;
-  border-radius: 100%;
-  margin-right: 5px;
-}
-.container-conversaciones .mensaje-1 .eliminar-mensajes {
-  border: 0;
-  background-color: transparent;
-}
-.container-conversaciones .mensaje-1 p {
-  margin-right: 10px;
-}
-.container-conversaciones .mensaje-2 {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.container-conversaciones .mensaje-2 .imagen-perfil-usuario {
-  width: 2%;
-  height: 2%;
-  border-radius: 100%;
-  margin-left: 5px;
-}
-.container-conversaciones .mensaje-2 .eliminar-mensajes {
-  border: 0;
-  background-color: transparent;
-}
-.container-conversaciones .mensaje-2 p {
-  margin-left: 10px;
-}
-
-.main-notificaciones {
+main .container-main .container-conversaciones {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
-
-.notificaciones {
+main .container-main .container-conversaciones h3 {
+  font-size: 15px;
+  font-weight: bold;
+}
+main .container-main .container-conversaciones .conversacion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #FF007F;
+  padding: 10px;
+  border-radius: 10px;
+}
+main .container-main .container-conversaciones .conversacion img {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+}
+main .container-main .container-conversaciones .conversacion .conversacion-enlace {
+  width: 80%;
   display: flex;
   flex-direction: column;
 }
-.notificaciones a {
+main .container-main .container-conversaciones .conversacion .conversacion-enlace p {
+  font-size: 10px;
+  font-weight: 600;
+}
+main .container-main .container-conversaciones .conversacion .conversacion-enlace .boton-ir-conversacion {
   text-decoration: none;
+  font-size: 12px;
+  font-size: bold;
+  color: #00BFFF;
+}
+main .container-main .title-conversaciones-detalle {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+main .container-main .container-conversaciones-detail {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .container-main .container-conversaciones-detail .mensaje-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje img {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+}
+main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje p {
+  font-size: 10px;
   background-color: #00BFFF;
-  border-bottom: 1px solid #FF007F;
-  padding: 20px 30px;
-  display: block;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje span {
+  font-size: 8px;
+  font-weight: bold;
+}
+main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje .eliminar-mensajes {
+  border: 0;
+  background-color: transparent;
+}
+main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje .eliminar-mensajes i {
+  font-size: 8px;
+  color: #FF073A;
+}
+main .container-main .container-conversaciones-detail .mensaje-2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+}
+main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen img {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+}
+main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen p {
+  font-size: 10px;
+  background-color: #1E1E1E;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 5px;
+}
+main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje span {
+  font-size: 8px;
+  font-weight: bold;
+}
+main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje .eliminar-mensajes {
+  border: 0;
+  background-color: transparent;
+}
+main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje .eliminar-mensajes i {
+  font-size: 8px;
+  color: #FF073A;
+}
+main .container-main .container-conversaciones-detail .form-contestar-mensaje label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+main .container-main .container-conversaciones-detail .form-contestar-mensaje input {
+  background-color: #0D0D0D;
   color: #FFFFFF;
+  border-color: #00BFFF;
+  font-size: 10px;
+}
+main .container-main .container-conversaciones-detail .form-contestar-mensaje input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-conversaciones-detail .form-contestar-mensaje .boton-contestar {
+  border: 0;
+  background-color: #FF007F;
+  color: #00BFFF;
+  font-size: 10px;
+  border-radius: 5px;
+  padding: 3px 6px;
+}
+main .container-main .container-conversaciones-detail .title-borrado-conversaciones {
+  font-size: 18px;
+  font-weight: 600;
+}
+main .container-main .container-conversaciones-detail .eliminar-conversaciones {
+  border: 0;
+  background-color: #FF073A;
+  font-size: 10px;
+  border-radius: 5px;
+  padding: 3px 6px;
+  width: max-content;
+}
+main .container-main .container-nuevo-mensaje {
+  width: 100%;
+}
+main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border-color: #00BFFF;
+  font-size: 10px;
+}
+main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje .boton-enviar {
+  border: 0;
+  background-color: #FF007F;
+  color: #00BFFF;
+  font-size: 10px;
+  border-radius: 5px;
+  padding: 3px 6px;
+}
+
+main .container-main .container-notificaciones {
+  width: 100%;
+}
+main .container-main .container-notificaciones .notificaciones {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+main .container-main .container-notificaciones .notificaciones li a {
+  border: 1px solid #1E1E1E;
+  display: block;
+  background-color: #00BFFF;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+}
+main .container-main .container-notificaciones .notificaciones .leida {
+  background-color: #1E1E1E;
 }
 
 main .container-main .container-publicacion-nueva {

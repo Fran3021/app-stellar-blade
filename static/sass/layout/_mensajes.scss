@@ -2,42 +2,205 @@
 @use '../base/base' as base;
 @use '../components/components' as comp;
 
-
-.container-conversaciones{
-    .mensaje-1{
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        .imagen-perfil-usuario{
-            width: 2%;
-            height: 2%;
-            border-radius: 100%;
-            margin-right: 5px;
+main{
+    .container-main{
+        .container-conversaciones{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            h3{
+                font-size: 15px;
+                font-weight: bold;
+            }
+            .conversacion{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border: 1px solid abs.$rosa-neon;
+                padding: 10px;
+                border-radius: 10px;
+                img{
+                    width: 10%;
+                    height: 10%;
+                    border-radius: 50%;
+                }
+                .conversacion-enlace{
+                    width: 80%;
+                    display: flex;
+                    flex-direction: column;
+                    p{
+                        font-size: 10px;
+                        font-weight: 600;
+                    }
+                    .boton-ir-conversacion{
+                        text-decoration: none;
+                        font-size: 12px;
+                        font-size: bold;
+                        color: abs.$azul-neon;
+                    }
+                }
+            }
         }
-        .eliminar-mensajes{
-            border: 0;
-            background-color: transparent;
+        .title-conversaciones-detalle{
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 35px;
         }
-        p{
-            margin-right: 10px;
+        .container-conversaciones-detail{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .mensaje-1{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                .imagen-mensaje{
+                    display: flex;
+                    gap: 10px;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: flex-start;
+                    img{
+                        width: 10%;
+                        height: 10%;
+                        border-radius: 50%;
+                    }
+                    p{
+                        font-size: 10px;
+                        background-color: abs.$azul-neon;
+                        padding: 10px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                }
+                .fecha-borrar-mensaje{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 5px;
+                    span{
+                        font-size: 8px;
+                        font-weight: bold;
+                    }
+                    .eliminar-mensajes{
+                        border: 0;
+                        background-color: transparent;
+                        i{
+                            font-size: 8px;
+                            color: abs.$rojo-neon;
+                        }
+                    }
+                }
+            }
+            .mensaje-2{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                .mensaje-imagen{
+                    display: flex;
+                    gap: 10px;
+                    width: 100%;
+                    align-items: center;
+                    justify-content: flex-end;
+                    img{
+                        width: 10%;
+                        height: 10%;
+                        border-radius: 50%;
+                    }
+                    p{
+                        font-size: 10px;
+                        background-color: abs.$gris-oscuro;
+                        padding: 10px;
+                        border-top-left-radius: 5px;
+                        border-top-right-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                    }
+                }
+                .borrar-fecha-mensaje{
+                    display: flex;
+                    width: 100%;
+                    justify-content: flex-end;
+                    gap: 5px;
+                    span{
+                        font-size: 8px;
+                        font-weight: bold;
+                    }
+                    .eliminar-mensajes{
+                        border: 0;
+                        background-color: transparent;
+                        i{
+                            font-size: 8px;
+                            color: abs.$rojo-neon;
+                        }
+                    }
+                }
+            }
+            .form-contestar-mensaje{
+                label{
+                    font-size: 10px;
+                    text-shadow: 0px 0px 5px abs.$azul-neon;
+                }
+                input{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    font-size: 10px;
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                .boton-contestar{
+                    border: 0;
+                    background-color: abs.$rosa-neon;
+                    color: abs.$azul-neon;
+                    font-size: 10px;
+                    border-radius: 5px;
+                    padding: 3px 6px;
+                }
+            }
+            .title-borrado-conversaciones{
+                font-size: 18px;
+                font-weight: 600;
+            }
+            .eliminar-conversaciones{
+                border: 0;
+                background-color: abs.$rojo-neon;
+                font-size: 10px;
+                border-radius: 5px;
+                padding: 3px 6px;
+                width: max-content;
+            }
         }
-    }
-    .mensaje-2{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        .imagen-perfil-usuario{
-            width: 2%;
-            height: 2%;
-            border-radius: 100%;
-            margin-left: 5px;
-        }
-        .eliminar-mensajes{
-            border: 0;
-            background-color: transparent;
-        }
-        p{
-            margin-left: 10px;
+        .container-nuevo-mensaje{
+            width: 100%;
+            .formulario-nuevo-mensaje{
+                label{
+                    font-size: 10px;
+                    text-shadow: 0px 0px 5px abs.$azul-neon;
+                }
+                input{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border-color: abs.$azul-neon;
+                    font-size: 10px;
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                .boton-enviar{
+                    border: 0;
+                    background-color: abs.$rosa-neon;
+                    color: abs.$azul-neon;
+                    font-size: 10px;
+                    border-radius: 5px;
+                    padding: 3px 6px;
+                }
+            }
         }
     }
 }
