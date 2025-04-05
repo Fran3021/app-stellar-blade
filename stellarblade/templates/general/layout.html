@@ -39,9 +39,13 @@
 </head>
 <body>
     <header>
+      <h1 class="logo">
+        <span class="stellar">Stellar</span>
+        <span class="blade">Blade</span>
+      </h1>
       {% include '_includes/_header.html' %}
       <div class="container-header">
-        <h1 class="page-title" >{% block page_title %}Titulo de la pagina{% endblock  %}</h1>
+        <h2 class="page-title" >{% block page_title %}Titulo de la pagina{% endblock  %}</h2>
         {% include '_includes/_messages.html' %}
       </div>
     </header>
@@ -331,6 +335,7 @@
     let mensajesEliminarConversaciones = document.querySelector('.mensajes-eliminar-conversaciones')
     buttonEliminarConversaciones.forEach(button => {
       let pkConversacion = button.dataset.conversacionPk
+      let redirectUrl = button.getAttribute('data-redirect-url')
       const eliminarConversacion = document.getElementById(`eliminar-conversacion${pkConversacion}`)
       button.addEventListener('click', event => {
         event.preventDefault()
@@ -351,6 +356,11 @@
         .then(data => {
           if(data.success){
             mensajesEliminarConversaciones.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
+
+            setTimeout(() => {
+              window.location.href = redirectUrl
+            }, 1500)
+
           }else{
             mensajesEliminarConversaciones.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
           }

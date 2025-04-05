@@ -42,7 +42,7 @@
         </form>
     {% else %}
         <h3 class="title-borrado-conversaciones">Se han borrado los mensajes de esta conversacion</h3>
-        <button data-href="{% url 'mensajes:eliminar_conversacion' conversacion.pk %}" class="eliminar-conversaciones" data-conversacion-pk="{{conversacion.pk}}" id="eliminar-conversacion-{{conversacion.pk}}" >Eliminar conversacion</button>
+        <button data-href="{% url 'mensajes:eliminar_conversacion' conversacion.pk %}" class="eliminar-conversaciones" data-conversacion-pk="{{conversacion.pk}}" id="eliminar-conversacion-{{conversacion.pk}}" data-redirect-url="{% url 'mensajes:conversaciones' %}" >Eliminar conversacion</button>
     {% endif %}
 </div>
 {% endblock  %}

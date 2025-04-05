@@ -20,7 +20,7 @@
     {% if publicacion.imagen %}
         <img class="imagen_publicacion" src="{{publicacion.imagen.url}}" alt="">
     {% endif %}
-    <p class="contenido-publicacion" >{{publicacion.contenido}}</p>
+    <p class="contenido-publicacion" >{{publicacion.contenido | truncatechars:10}}...</p>
     <div class="numero-likes-comentarios">
         <div class="numero-likes">
             <span id="NumeroLikes-{{publicacion.pk}}">{{publicacion.likes.count}}</span>

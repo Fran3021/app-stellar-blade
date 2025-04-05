@@ -1,1 +1,26 @@
-// all keyframes 
+@use '../abstracts/abstracts' as abs;
+
+//animacion para los titulos de pagina
+@keyframes titulo-pagina{
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+        text-shadow: 0px 0px 5px abs.$azul-neon;
+    }
+    100%{
+        opacity: 1;
+        text-shadow: 0px 0px 10px abs.$gris-claro, 0px 0px 20px abs.$azul-neon;
+    }
+}
+
+//animacioon para el logo de la pagina
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
