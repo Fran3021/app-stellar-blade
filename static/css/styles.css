@@ -177,7 +177,7 @@ main .container-main .container-home {
 main .container-main .container-home .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 10px 5px #00BFFF;
+  box-shadow: 0px 0px 5px 5px #00BFFF;
   border-radius: 10px;
 }
 main .container-main .container-home .publicacion .imagen-hora-titulo {
@@ -286,6 +286,7 @@ main .container-main .container-busqueda .resultado-busqueda .formulario-busqued
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-busqueda .resultado-busqueda .formulario-busqueda input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -313,7 +314,7 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 10px 5px #00BFFF;
+  box-shadow: 0px 0px 5px 5px #00BFFF;
   border-radius: 10px;
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo {
@@ -559,7 +560,7 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 10px 5px #00BFFF;
+  box-shadow: 0px 0px 5px 5px #00BFFF;
   border-radius: 10px;
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo {
@@ -1100,6 +1101,7 @@ main .container-main .container-detalle-publicacion .FormRespuesta input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-detalle-publicacion .FormRespuesta input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1108,6 +1110,7 @@ main .container-main .container-detalle-publicacion .FormRespuesta textarea {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-detalle-publicacion .FormRespuesta textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1138,6 +1141,7 @@ main .container-main .container-detalle-publicacion .FormComentario .formulario-
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1146,6 +1150,7 @@ main .container-main .container-detalle-publicacion .FormComentario .formulario-
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1213,6 +1218,7 @@ main .container-main .container-editar-publicacion .formulario-editar-publicacio
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-editar-publicacion .formulario-editar-publicacion input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1221,6 +1227,7 @@ main .container-main .container-editar-publicacion .formulario-editar-publicacio
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-editar-publicacion .formulario-editar-publicacion textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1288,7 +1295,7 @@ main .container-main .container-publicaciones-mis-contactos {
 main .container-main .container-publicaciones-mis-contactos .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 10px 5px #00BFFF;
+  box-shadow: 0px 0px 5px 5px #00BFFF;
   border-radius: 10px;
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo {
@@ -1451,7 +1458,7 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 10px 5px #00BFFF;
+  box-shadow: 0px 0px 5px 5px #00BFFF;
   border-radius: 10px;
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo {
@@ -1561,6 +1568,7 @@ main .container-main .container-editar-perfil .formulario-editar-perfil input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-editar-perfil .formulario-editar-perfil input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1569,6 +1577,7 @@ main .container-main .container-editar-perfil .formulario-editar-perfil textarea
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+  font-size: 10px;
 }
 main .container-main .container-editar-perfil .formulario-editar-perfil textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1719,7 +1728,7 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 10px 5px #00BFFF;
+  box-shadow: 0px 0px 5px 5px #00BFFF;
   border-radius: 10px;
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo {

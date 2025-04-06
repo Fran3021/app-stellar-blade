@@ -118,6 +118,7 @@
     FormResponder.forEach(form => {
       form.addEventListener('submit', event => {
         event.preventDefault()
+        let redirectUrl = form.getAttribute('data-redirect-url')
 
         const formData = new FormData(form)//aqui metemos todos los datos del formulario
         
@@ -133,6 +134,11 @@
           if(data.mensaje){
             mensajesContestarComentarios.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
             form.reset()//con esto limpiamos el formulario
+                        
+            setTimeout(() => {
+              window.location.href = redirectUrl
+            }, 1000)
+            
           }else{
             mensajesContestarComentarios.innerHTML = `<p class="alert alert-primary">${data.error}</p>`
           }
@@ -174,6 +180,7 @@
     let mensajesEliminarComentarios = document.querySelector('.mensajes-eliminar-comentarios')
     buttonEliminarComentario.forEach(button => {
       let pkComentario = button.dataset.comentarioPk
+      let redirectUrl = button.getAttribute('data-redirect-url')
       const containerComentario = document.getElementById(`container-comentario-${pkComentario}`)
       button.addEventListener('click', event => {
         event.preventDefault()
@@ -195,6 +202,11 @@
           if(data.success){
             mensajesEliminarComentarios.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
             containerComentario.remove()
+
+            setTimeout(() => {
+              window.location.href = redirectUrl
+            }, 1000)
+
           }else{
             mensajesEliminarComentarios.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
           }
@@ -212,6 +224,7 @@
     let mensajesEliminarRespuestas =  document.querySelector('.mensajes-eliminar-respuestas')
     buttonEliminarRespuesta.forEach(button => {
       let pkRespuesta = button.dataset.respuestaPk
+      let redirectUrl = button.getAttribute('data-redirect-url')
       const containerRespuesta = document.getElementById(`container-respuesta-${pkRespuesta}`)
       button.addEventListener('click', event =>{
         event.preventDefault()
@@ -233,6 +246,11 @@
           if(data.success){
             containerRespuesta.remove()
               mensajesEliminarRespuestas.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
+
+              setTimeout(() => {
+                window.location.href = redirectUrl
+              }, 1000)
+
           }else{
               mensajesEliminarRespuestas.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`
           }
@@ -274,7 +292,7 @@
     FormContestarMensajes.forEach(form => {
       form.addEventListener('submit', event => {
         event.preventDefault()
-
+        let redirectUrl = form.getAttribute('data-redirect-url')
         const formData = new FormData(form)//aqui metemos todos los datos del formulario
         
         fetch(form.action, {//con esto evitamos que nos abra un json en otra pagina del navegador
@@ -288,6 +306,11 @@
         .then(data => {
           if(data.success){
             form.reset()//con esto limpiamos el formulario
+            
+            setTimeout(() => {
+              window.location.href = redirectUrl
+            }, 1000)
+
           }else{
           }
         })
@@ -299,6 +322,7 @@
     let mensajesEliminarMensajes = document.querySelector('.mensajes-eliminar-mensajes')
     buttonEliminarMensajes.forEach(button => {
       let pkMensaje = button.dataset.mensajePk
+      let redirectUrl = button.getAttribute('data-redirect-url')
       const eliminarMensaje = document.getElementById(`eliminar-mensaje${pkMensaje}`)
       button.addEventListener('click', event => {
         event.preventDefault()
@@ -319,6 +343,11 @@
         .then(data => {
           if(data.success){
             mensajesEliminarMensajes.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
+            
+            setTimeout(() => {
+              window.location.href = redirectUrl
+            }, 1000)
+
           }else{
             mensajesEliminarMensajes.innerHTML = `<p class="alert alert-primary">${data.message}</p>`
           }
@@ -356,7 +385,7 @@
 
             setTimeout(() => {
               window.location.href = redirectUrl
-            }, 1500)
+            }, 1000)
 
           }else{
             mensajesEliminarConversaciones.innerHTML = `<p class="alert alert-primary">${data.message}</p>`

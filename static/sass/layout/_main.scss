@@ -18,90 +18,7 @@ main{
             align-items: center;
             gap: 50px;
             .publicacion{
-                width: 100%;
-                padding: 20px 20px;
-                box-shadow: 0px 0px 10px 5px abs.$azul-neon;
-                border-radius: 10px;
-                .imagen-hora-titulo{
-                    width: 100%;
-                    display: flex;
-                    gap: 10px;
-                    align-items: center;
-                    margin-bottom: 10px;
-                    .imagen{
-                        width: 20%;
-                        a{
-                            text-decoration: none;
-                            .imagen_perfil{
-                            width: 100%;
-                            border-radius: 50%;
-                            }
-                        }
-                    }
-                    .hora-autor-titulo{
-                        width: 80%;
-                        .hora-autor{
-                            a{
-                                text-decoration: none;
-                                font-size: 10px;
-                                font-weight: bold;
-                            }
-                            span{
-                                font-size: 10px;
-                            }
-                        }
-                        .titulo{
-                            h2{
-                                font-size: 13px;
-                                font-weight: 600;
-                            }
-                        }
-                    }
-                }
-                .imagen_publicacion{
-                    width: 100%;
-                    margin-bottom: 10px;
-                    border-radius: 10px;
-                }
-                .contenido-publicacion{
-                    font-size: 10px;
-                    width: 100%;
-                    margin-bottom: 10px;
-                }
-                .numero-likes-comentarios{
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-around;
-                    margin-bottom: 10px;
-                    .numero-likes{
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
-                        span{
-                            color: abs.$rosa-neon;
-                        }
-                        i{
-                            color: abs.$azul-neon
-                        }
-                    }
-                    .numero-comentarios{
-                        display: flex;
-                        align-items: center;
-                        gap: 5px;
-                        span{
-                            color: abs.$azul-neon;
-                        }
-                        i{
-                            color: abs.$rosa-neon;
-                        }
-                    }
-                }
-                .boton-detalle{
-                    text-decoration: none;
-                    font-size: 13px;
-                    display: inline-block;
-                    text-shadow: 0px 0px 10px abs.$rosa-neon;
-                }
+                @include abs.publicacion
             }
         }
         .title-busqueda{
@@ -131,6 +48,7 @@ main{
                         background-color: abs.$negro-espacial;
                         color: abs.$blanco;
                         border-color: abs.$azul-neon;
+                        font-size: 10px;
                         &:focus{
                             box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                         }
@@ -156,90 +74,7 @@ main{
                         font-weight: bold;
                     }
                     .publicacion{
-                        width: 100%;
-                        padding: 20px 20px;
-                        box-shadow: 0px 0px 10px 5px abs.$azul-neon;
-                        border-radius: 10px;
-                        .imagen-hora-titulo{
-                            width: 100%;
-                            display: flex;
-                            gap: 10px;
-                            align-items: center;
-                            margin-bottom: 10px;
-                            .imagen{
-                                width: 20%;
-                                a{
-                                    text-decoration: none;
-                                    .imagen_perfil{
-                                    width: 100%;
-                                    border-radius: 50%;
-                                    }
-                                }
-                            }
-                            .hora-autor-titulo{
-                                width: 80%;
-                                .hora-autor{
-                                    a{
-                                        text-decoration: none;
-                                        font-size: 10px;
-                                        font-weight: bold;
-                                    }
-                                    span{
-                                        font-size: 10px;
-                                    }
-                                }
-                                .titulo{
-                                    h2{
-                                        font-size: 13px;
-                                        font-weight: 600;
-                                    }
-                                }
-                            }
-                        }
-                        .imagen_publicacion{
-                            width: 100%;
-                            margin-bottom: 10px;
-                            border-radius: 10px;
-                        }
-                        .contenido-publicacion{
-                            font-size: 10px;
-                            width: 100%;
-                            margin-bottom: 10px;
-                        }
-                        .numero-likes-comentarios{
-                            width: 100%;
-                            display: flex;
-                            justify-content: space-around;
-                            margin-bottom: 10px;
-                            .numero-likes{
-                                display: flex;
-                                align-items: center;
-                                gap: 5px;
-                                span{
-                                    color: abs.$rosa-neon;
-                                }
-                                i{
-                                    color: abs.$azul-neon
-                                }
-                            }
-                            .numero-comentarios{
-                                display: flex;
-                                align-items: center;
-                                gap: 5px;
-                                span{
-                                    color: abs.$azul-neon;
-                                }
-                                i{
-                                    color: abs.$rosa-neon;
-                                }
-                            }
-                        }
-                        .boton-detalle{
-                            text-decoration: none;
-                            font-size: 13px;
-                            display: inline-block;
-                            text-shadow: 0px 0px 10px abs.$rosa-neon;
-                        }
+                        @include abs.publicacion
                     }
                 }
                 .usuarios-busqueda{
@@ -254,64 +89,7 @@ main{
                         font-weight: bold;
                     }
                     .container-perfiles-includes{
-                        padding: 10px 15px;
-                        width: 100%;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        gap: 20px;
-                        box-shadow: 0px 0px 5px 5px abs.$rosa-neon;
-                        border-radius: 10px;
-                        .perfiles-includes-imagen-usuario{
-                            display: flex;
-                            align-items: center;
-                            width: 100%;
-                            gap: 20px;
-                            a{
-                                width: 20%;
-                                text-decoration: none;
-                                img{
-                                    width: 100%;
-                                    border-radius: 50%;
-                                }
-                            }
-                            .usuario-seguidores{
-                                width: 80%;
-                                h2{
-                                    font-size: 15px;
-                                    font-weight: bold;
-                                }
-                                span{
-                                    font-size: 10px;
-                                }
-                            }
-                        }
-                        p{
-                            font-size: 13px;
-                            font-weight: 600;
-                        }
-                        .ButtonFollows{
-                            margin: 0;
-                            padding: 0;
-                            text-decoration: none;
-                            .boton-dejar-de-seguir{
-                                background-color: abs.$gris-oscuro;
-                                border: 0;
-                                padding: 5px 10px;
-                                border: 1px solid abs.$gris-claro;
-                                font-size: 10px;
-                                border-radius: 3px;
-                            }
-                            .boton-seguir{
-                                background-color: abs.$azul-neon;
-                                border: 0;
-                                padding: 5px 10px;
-                                border: 1px solid abs.$rosa-neon;
-                                font-size: 10px;
-                                border-radius: 3px;
-                            }
-                        }
+                        @include abs.perfiles
                     }
                 }
             }
@@ -335,64 +113,7 @@ main{
                         justify-content: center;
                         align-items: center;
                         .container-perfiles-includes{
-                            padding: 10px 15px;
-                            width: 100%;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: center;
-                            gap: 20px;
-                            box-shadow: 0px 0px 5px 5px abs.$rosa-neon;
-                            border-radius: 10px;
-                            .perfiles-includes-imagen-usuario{
-                                display: flex;
-                                align-items: center;
-                                width: 100%;
-                                gap: 20px;
-                                a{
-                                    width: 20%;
-                                    text-decoration: none;
-                                    img{
-                                        width: 100%;
-                                        border-radius: 50%;
-                                    }
-                                }
-                                .usuario-seguidores{
-                                    width: 80%;
-                                    h2{
-                                        font-size: 15px;
-                                        font-weight: bold;
-                                    }
-                                    span{
-                                        font-size: 10px;
-                                    }
-                                }
-                            }
-                            p{
-                                font-size: 13px;
-                                font-weight: 600;
-                            }
-                            .ButtonFollows{
-                                margin: 0;
-                                padding: 0;
-                                text-decoration: none;
-                                .boton-dejar-de-seguir{
-                                    background-color: abs.$gris-oscuro;
-                                    border: 0;
-                                    padding: 5px 10px;
-                                    border: 1px solid abs.$gris-claro;
-                                    font-size: 10px;
-                                    border-radius: 3px;
-                                }
-                                .boton-seguir{
-                                    background-color: abs.$azul-neon;
-                                    border: 0;
-                                    padding: 5px 10px;
-                                    border: 1px solid abs.$rosa-neon;
-                                    font-size: 10px;
-                                    border-radius: 3px;
-                                }
-                            }
+                            @include abs.perfiles
                         }
                     }
                 }
@@ -405,90 +126,7 @@ main{
                         justify-content: center;
                         align-items: center;
                         .publicacion{
-                            width: 100%;
-                            padding: 20px 20px;
-                            box-shadow: 0px 0px 10px 5px abs.$azul-neon;
-                            border-radius: 10px;
-                            .imagen-hora-titulo{
-                                width: 100%;
-                                display: flex;
-                                gap: 10px;
-                                align-items: center;
-                                margin-bottom: 10px;
-                                .imagen{
-                                    width: 20%;
-                                    a{
-                                        text-decoration: none;
-                                        .imagen_perfil{
-                                        width: 100%;
-                                        border-radius: 50%;
-                                        }
-                                    }
-                                }
-                                .hora-autor-titulo{
-                                    width: 80%;
-                                    .hora-autor{
-                                        a{
-                                            text-decoration: none;
-                                            font-size: 10px;
-                                            font-weight: bold;
-                                        }
-                                        span{
-                                            font-size: 10px;
-                                        }
-                                    }
-                                    .titulo{
-                                        h2{
-                                            font-size: 13px;
-                                            font-weight: 600;
-                                        }
-                                    }
-                                }
-                            }
-                            .imagen_publicacion{
-                                width: 100%;
-                                margin-bottom: 10px;
-                                border-radius: 10px;
-                            }
-                            .contenido-publicacion{
-                                font-size: 10px;
-                                width: 100%;
-                                margin-bottom: 10px;
-                            }
-                            .numero-likes-comentarios{
-                                width: 100%;
-                                display: flex;
-                                justify-content: space-around;
-                                margin-bottom: 10px;
-                                .numero-likes{
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 5px;
-                                    span{
-                                        color: abs.$rosa-neon;
-                                    }
-                                    i{
-                                        color: abs.$azul-neon
-                                    }
-                                }
-                                .numero-comentarios{
-                                    display: flex;
-                                    align-items: center;
-                                    gap: 5px;
-                                    span{
-                                        color: abs.$azul-neon;
-                                    }
-                                    i{
-                                        color: abs.$rosa-neon;
-                                    }
-                                }
-                            }
-                            .boton-detalle{
-                                text-decoration: none;
-                                font-size: 13px;
-                                display: inline-block;
-                                text-shadow: 0px 0px 10px abs.$rosa-neon;
-                            }
+                            @include abs.publicacion
                         }
                     }
                 }

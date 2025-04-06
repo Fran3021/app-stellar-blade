@@ -67,7 +67,7 @@
                     </div>
                     <p class="TextoComentario" >{{comentario.texto}}</p>
                     {% if comentario.autor == request.user.perfil %}
-                        <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}">Eliminar</button>
+                        <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">Eliminar</button>
                     {% endif %}
                     <button data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button>
                     {% if comentario.respuestas.count %}
@@ -90,14 +90,14 @@
                             </div>
                             <p class="TextoRespuesta">{{respuesta}}</p>
                             {% if request.user.perfil == respuesta.autor %}
-                                <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}">Eliminar</button>
+                                <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">Eliminar</button>
                             {% endif %}
                         </div>
                     {% endfor %}
                 </div>
                 {% endif %}
 
-                <form class='FormRespuesta' id="FormRespuesta-{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}">
+                <form class='FormRespuesta' id="FormRespuesta-{{comentario.pk}}" method="POST" action="{% url 'publicaciones:contestar_comentario' comentario.pk%}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">
                     {% csrf_token %}
                     <input type="hidden" name="publicacion_pk" value="{{publicacion.pk}}">
                     {{contestar_form.respuesta | as_crispy_field}}
