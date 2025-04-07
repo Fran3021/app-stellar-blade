@@ -46,38 +46,74 @@
         padding: 20px 20px;
         box-shadow: 0px 0px 5px 5px var.$azul-neon;
         border-radius: 10px;
+        @include breakpoint(tablet){
+            padding: 30px 60px 30px 60px;
+        }
         .imagen-hora-titulo{
             width: 100%;
             display: flex;
             gap: 10px;
             align-items: center;
             margin-bottom: 10px;
+            @include breakpoint(tablet){
+                margin-bottom: 25px;
+            }
             .imagen{
                 width: 20%;
+                @include breakpoint(tablet){
+                    width: 10%;
+                }
                 a{
                     text-decoration: none;
-                    .imagen_perfil{
+                    .imagen-perfil-movil{
                     width: 100%;
                     border-radius: 50%;
+                    @include breakpoint(tablet){
+                        display: none;
+                        }
+                    }
+                    .imagen-perfil-tablet{
+                        display: none;
+                        @include breakpoint(tablet){
+                            display: block;
+                            width: 100%;
+                            border-radius: 50%;
+                        }
                     }
                 }
             }
             .hora-autor-titulo{
                 width: 80%;
+                @include breakpoint(tablet){
+                    width: 90%;
+                }
                 .hora-autor{
+                    @include breakpoint(tablet){
+                        margin-bottom: 10px;
+                    }
                     a{
                         text-decoration: none;
                         font-size: 10px;
                         font-weight: bold;
+                        @include breakpoint(tablet){
+                            font-size: 15px;
+                        }
                     }
                     span{
                         font-size: 10px;
+                        @include breakpoint(tablet){
+                            font-size: 15px;
+                        }
                     }
                 }
                 .titulo{
                     h2{
                         font-size: 13px;
                         font-weight: 600;
+                        @include breakpoint(tablet){
+                            font-size: 18px;
+                            color: var.$rosa-neon;
+                        }
                     }
                 }
             }
@@ -86,17 +122,36 @@
             width: 100%;
             margin-bottom: 10px;
             border-radius: 10px;
+            @include breakpoint(tablet){
+                display: none;
+            }
+        }
+        .imagen_publicacion_tablet{
+            display: none;
+            @include breakpoint(tablet){
+                display: block;
+                width: 100%;
+                margin-bottom: 25px;
+                border-radius: 10px;
+            }
         }
         .contenido-publicacion{
             font-size: 10px;
             width: 100%;
             margin-bottom: 10px;
+            @include breakpoint(tablet){
+                font-size: 13px;
+                margin-bottom: 25px;
+            }
         }
         .numero-likes-comentarios{
             width: 100%;
             display: flex;
             justify-content: space-around;
             margin-bottom: 10px;
+            @include breakpoint(tablet){
+                margin-bottom: 25px;
+            }
             .numero-likes{
                 display: flex;
                 align-items: center;
@@ -125,6 +180,25 @@
             font-size: 13px;
             display: inline-block;
             text-shadow: 0px 0px 10px var.$rosa-neon;
+            @include breakpoint(tablet){
+                font-size: 15px;
+                text-shadow: none;
+                color: var.$rosa-neon;
+                padding: 10px 15px;
+                background-color: var.$negro-espacial;
+                border: 1px solid var.$azul-neon;
+                border-radius: 15px;
+                transition: background-color 1s linear,
+                color 1s linear, border 1s linear, box-shadow 1s linear;
+                &:hover{
+                    color: var.$negro-espacial;
+                    padding: 10px 15px;
+                    background-color: var.$azul-neon;
+                    border: 1px solid var.$rojo-neon;
+                    border-radius: 15px;
+                    box-shadow: 0px 0px 3px 3px var.$blanco;
+                }
+            }
         }
 }
 

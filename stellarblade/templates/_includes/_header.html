@@ -1,14 +1,36 @@
-    <nav class="menu-header">
+    <nav class="menu-header-movil">
         <ul>
             <li><a href="{% url 'home' %}"><i class="bi bi-house"></i></a></li>
             {% if request.user.is_authenticated %}
                 <li><a href="{% url 'usuarios:mis_contactos' %}"><i class="bi bi-person-add"></i></a></li>
                 <li><a href="{% url 'search' %}"><i class="bi bi-search"></i></a></li>
                 <li><a href="{% url 'logout' %}"><i class="bi bi-box-arrow-in-right"></i></a></li>
-                <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}"><i class="bi bi-person-circle"></i></a></li>
+                <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}"><img class="avatar-menu" src="{{request.user.perfil.imagen_perfil.thumbnails.xs.url}}" alt=""></a></li>
                 <li><a href="{% url 'publicaciones:crear' %}"><i class="bi bi-plus-circle"></i></a></li>
                 <li><a href="{% url 'mensajes:conversaciones' %}"><i class="bi bi-envelope"></i></a></li>
                 <li><a href="{% url 'notificaciones:lista' %}">{{request.user.perfil.total_notificaciones}}<i class="bi bi-bell"></i></a></li>
+            {% else %}
+                <li><a href="{% url 'registro' %}">Registrate</a></li>
+                <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+
+    <nav class="menu-header-tablet">
+        <ul>
+            <li><a href="{% url 'home' %}"><i class="bi bi-house"></i>Inicio</a></li>
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'usuarios:mis_contactos' %}"><i class="bi bi-person-add"></i>Mi red</a></li>
+                <li><a href="{% url 'search' %}"><i class="bi bi-search"></i>Búsqueda</a></li>
+                <li><a href="{% url 'logout' %}"><i class="bi bi-box-arrow-in-right"></i>Cerrar sesión</a></li>
+                <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}"><img class="avatar-menu" src="{{request.user.perfil.imagen_perfil.thumbnails.xs.url}}" alt="">Mi perfil</a></li>
+                <li><a href="{% url 'publicaciones:crear' %}"><i class="bi bi-plus-circle"></i>Nueva publicación</a></li>
+                <li><a href="{% url 'mensajes:conversaciones' %}"><i class="bi bi-envelope"></i>Mensajes</a></li>
+                <li><a href="{% url 'notificaciones:lista' %}"><i class="bi bi-bell"></i>Notificaciones</a></li>
+                {% if request.user.perfil.total_notificaciones %}
+                    <li class="numero-notificaciones">{{request.user.perfil.total_notificaciones}}</li>
+                {% endif %}
             {% else %}
                 <li><a href="{% url 'registro' %}">Registrate</a></li>
                 <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>

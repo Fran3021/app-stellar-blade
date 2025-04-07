@@ -3,14 +3,15 @@
         <div class="imagen">
             {% if publicacion.autor.imagen_perfil %}
                 <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
-                    <img class="imagen_perfil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="">
+                    <img class="imagen-perfil-movil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}">
+                    <img class="imagen-perfil-tablet" src="{{publicacion.autor.imagen_perfil.thumbnails.large.url}}" alt="{{publicacion.autor.usuario}}">
                 </a>
             {% endif %}
         </div>
         <div class="hora-autor-titulo">
             <div class="hora-autor">
                 <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">{{publicacion.autor}}</a>
-                <span>- {{publicacion.fecha_publicacion | timesince}}</span>
+                <span> - {{publicacion.fecha_publicacion | timesince}}</span>
             </div>
             <div class="titulo">
                 <h2>{{publicacion.titulo}}</h2>
@@ -18,7 +19,8 @@
         </div>
     </div>
     {% if publicacion.imagen %}
-        <img class="imagen_publicacion" src="{{publicacion.imagen.url}}" alt="">
+        <img class="imagen_publicacion" src="{{publicacion.imagen.url}}" alt="{{publicacion.autor.usuario}}">
+        <img class="imagen_publicacion_tablet" src="{{publicacion.imagen.thumbnails.largepublicacion.url}}" alt="{{publicacion.autor.usuario}}">
     {% endif %}
     <p class="contenido-publicacion" >{{publicacion.contenido | truncatechars:10}}...</p>
     <div class="numero-likes-comentarios">

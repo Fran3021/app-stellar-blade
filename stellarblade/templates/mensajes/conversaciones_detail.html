@@ -9,7 +9,7 @@
     {% if mensajes.autor == request.user.perfil %}
         <div class="mensaje-1">
             <div class="imagen-mensaje">
-                <img src="{{mensajes.autor.imagen_perfil.thumbnails.small.url}}" alt="" class="imagen-perfil-usuario">
+                <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="" class="imagen-perfil-usuario">
                 <p>{{mensajes.contenido}}</p>
             </div>
             <div class="fecha-borrar-mensaje">
@@ -23,7 +23,7 @@
     <div class="mensaje-2">
         <div class="mensaje-imagen">
             <p>{{mensajes.contenido}}</p>
-            <img src="{{mensajes.autor.imagen_perfil.thumbnails.small.url}}" alt="" class="imagen-perfil-usuario">
+            <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="" class="imagen-perfil-usuario">
         </div>
         <div class="borrar-fecha-mensaje">
             {% if request.user.perfil == mensajes.autor %}

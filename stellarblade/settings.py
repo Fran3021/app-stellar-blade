@@ -199,25 +199,37 @@ THUMBNAILS = {
         # You can also use Amazon S3 or any other Django storage backends
     },
     'SIZES': {
+        #vista movil
         'small': {
             'PROCESSORS': [
                 {'PATH': 'thumbnails.processors.resize', 'width': 150, 'height': 150, 'method': 'fill'},
-                {'PATH': 'thumbnails.processors.crop', 'width': 100, 'height': 100},
+                {'PATH': 'thumbnails.processors.crop', 'width': 125, 'height': 125},
+            ],
+        },
+        'xs': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 140, 'height': 140, 'method': 'fill'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 70, 'height': 70},
+            ],
+        },
+        'medium': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 500, 'height': 500, 'method': 'fit'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 350, 'height': 350},
             ],
         },
         'large': {
             'PROCESSORS': [
-                {'PATH': 'thumbnails.processors.resize', 'width': 20, 'height': 20},
-                {'PATH': 'thumbnails.processors.flip', 'direction': 'horizontal'}
+                {'PATH': 'thumbnails.processors.resize', 'width': 500, 'height': 500, 'method': 'fit'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 250, 'height': 250},
             ],
         },
-        'watermarked': {
+        'largepublicacion': {
             'PROCESSORS': [
-                {'PATH': 'thumbnails.processors.resize', 'width': 20, 'height': 20},
-                #Solo se admite PNG. El archivo debe tener el mismo tamaño que la miniatura (20 x 20 en este caso).
-                {'PATH': 'thumbnails.processors.add_watermark', 'watermark_path': 'watermark.png'}
+                {'PATH': 'thumbnails.processors.resize', 'width': 520, 'height': 600, 'method': 'fill'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 520, 'height': 600},
             ],
-        }
+        },
     }
 }
 

@@ -58,7 +58,7 @@
                 <div class="container-comentarios" id="container-comentario-{{comentario.pk}}">
                     <div class="imagen-autor-fecha-publi">
                         <a href="{% url 'usuarios:detail' comentario.autor.pk %}">
-                            <img src="{{comentario.autor.imagen_perfil.thumbnails.small.url}}" alt="{{comentario.autor.usuario}}">
+                            <img src="{{comentario.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
                         </a>
                         <div class="autor-fecha-publi">
                             <p class="autor">{{comentario.autor.usuario}}</p>
@@ -81,7 +81,7 @@
                         <div id="container-respuesta-{{respuesta.pk}}">
                             <div class="imagen-autor-fecha-respuesta">
                                 <a href="{% url 'usuarios:detail' respuesta.autor.pk %}">
-                                    <img src="{{respuesta.autor.imagen_perfil.thumbnails.small.url}}" alt="{{comentario.autor.usuario}}">
+                                    <img src="{{respuesta.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
                                 </a>
                                 <div class="autor-fecha-respuesta">
                                     <p class="autor">{{respuesta.autor.usuario}}</p>

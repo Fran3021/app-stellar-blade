@@ -6,18 +6,30 @@
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+    @include abs.breakpoint(tablet){
+        width: 100%;
+        max-width: 600px;
+    }
 }
 
 .container-main{
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+    @include abs.breakpoint(tablet){
+        width: 100%;
+        max-width: 600px;
+    }
 }
 
 .container-footer{
     max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+    @include abs.breakpoint(tablet){
+        width: 100%;
+        max-width: 600px;
+    }
 }
 
 

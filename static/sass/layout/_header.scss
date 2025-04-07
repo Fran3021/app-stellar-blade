@@ -6,6 +6,9 @@
 header{
     padding-top: 20px;
     margin-bottom: 20px;
+    @include abs.breakpoint(tablet){
+        padding-top: 70px;
+    }
     .logo{
         margin-bottom: 15px;
         text-align: center;
@@ -14,14 +17,22 @@ header{
         font-weight: bold;
         text-shadow: 2px 2px 0px abs.$azul-neon;
         animation: zoomIn 2.5s ease-out;
+        @include abs.breakpoint(tablet){
+            font-size: 50px;
+            text-shadow: 5px 5px 0px abs.$azul-neon;
+        }
     }
-    .menu-header{
+    .menu-header-movil{
         background-color: abs.$gris-oscuro;
         opacity: 0.8;
         width: 100%;
         position: fixed;
         bottom: 0;
+        @include abs.breakpoint(tablet){
+            display: none;            
+        }
         ul{
+            position: relative;
             width: 90%;
             margin-left: auto;
             margin-right: auto;
@@ -35,8 +46,66 @@ header{
             a{
                 text-decoration: none;
                 color: abs.$azul-neon;
+                font-size: 10px;
                 i{
                     color: abs.$azul-neon;
+                    font-size: 15px;
+                }
+            }
+            .avatar-menu{
+                border-radius: 50%;
+                width: 50%;
+                height: 50%;
+                margin-bottom: 3px;
+            }
+        }
+    }
+    .menu-header-tablet{
+        display: none;
+        @include abs.breakpoint(tablet){
+            display: block;
+            background-color: abs.$gris-oscuro;
+            opacity: 0.9;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            ul{
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                li{
+                    flex: 1;
+                    text-align: center;
+                }
+                a{  
+                    display: flex;
+                    flex-direction: column;
+                    text-decoration: none;
+                    color: abs.$azul-neon;
+                    font-size: 10px;
+                    align-items: center;
+                    i{
+                        color: abs.$azul-neon;
+                        font-size: 15px;
+                    }
+                }
+                .avatar-menu{
+                    border-radius: 50%;
+                    width: 22%;
+                    height: 22%;
+                }
+                .numero-notificaciones{
+                    font-size: 7px;
+                    position: absolute;
+                    right: 9%;
+                    top: 7%;
+                    background-color: abs.$rojo-neon;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
                 }
             }
         }
@@ -46,6 +115,9 @@ header{
             font-size: 25px;
             text-align: center;
             animation: titulo-pagina 1.5s linear forwards;
+            @include abs.breakpoint(tablet){
+                font-size: 40px;
+            }
         }
         .container-include-mensajes{
             div{
@@ -57,6 +129,11 @@ header{
                 margin-right: auto;
                 text-align: center;
                 opacity: 0.8;
+                @include abs.breakpoint(tablet){
+                    top: 55px;
+                    font-size: 15px;
+                    opacity: 0.9;
+                }
             }
         }
     }

@@ -1,10 +1,11 @@
 from django.db import models
 from usuarios.models import PerfilUsuario
+from thumbnails.fields import ImageField
 
 class Publicacion(models.Model):
     titulo = models.CharField(verbose_name='Titulo de la publicacion:', max_length=50, blank=True, null=False)
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='publicaciones')
-    imagen = models.ImageField(verbose_name='Imagen del post:', upload_to='publicaciones/img/')
+    imagen = ImageField(verbose_name='Imagen del post:', upload_to='publicaciones/img/')
     video = models.FileField(verbose_name='Video de la publicacion:', upload_to='publicaciones/video/', null=True)
     contenido = models.TextField(verbose_name='Contenido de la publicacion', max_length=300, blank=True)
     fecha_publicacion = models.DateTimeField(verbose_name='Fecha de creacion:', auto_now_add=True)
