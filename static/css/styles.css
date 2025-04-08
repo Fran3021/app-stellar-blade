@@ -1494,6 +1494,12 @@ main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje
   height: 10%;
   border-radius: 50%;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje img {
+    width: 7%;
+    height: 7%;
+  }
+}
 main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje p {
   font-size: 10px;
   background-color: #00BFFF;
@@ -1501,6 +1507,15 @@ main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje p {
+    font-size: 15px;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
 }
 main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje {
   width: 100%;
@@ -1513,6 +1528,11 @@ main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-m
   font-size: 8px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje span {
+    font-size: 12px;
+  }
+}
 main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje .eliminar-mensajes {
   border: 0;
   background-color: transparent;
@@ -1520,6 +1540,14 @@ main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-m
 main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje .eliminar-mensajes i {
   font-size: 8px;
   color: #FF073A;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje .eliminar-mensajes i {
+    font-size: 14px;
+  }
+  main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje .eliminar-mensajes i:hover {
+    color: #00BFFF;
+  }
 }
 main .container-main .container-conversaciones-detail .mensaje-2 {
   display: flex;
@@ -1538,6 +1566,12 @@ main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen
   height: 10%;
   border-radius: 50%;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen img {
+    width: 7%;
+    height: 7%;
+  }
+}
 main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen p {
   font-size: 10px;
   background-color: #1E1E1E;
@@ -1545,6 +1579,15 @@ main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen p {
+    font-size: 15px;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
 }
 main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje {
   display: flex;
@@ -1556,6 +1599,11 @@ main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-m
   font-size: 8px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje span {
+    font-size: 12px;
+  }
+}
 main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje .eliminar-mensajes {
   border: 0;
   background-color: transparent;
@@ -1564,15 +1612,33 @@ main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-m
   font-size: 8px;
   color: #FF073A;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje .eliminar-mensajes i {
+    font-size: 14px;
+  }
+  main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje .eliminar-mensajes i:hover {
+    color: #00BFFF;
+  }
+}
 main .container-main .container-conversaciones-detail .form-contestar-mensaje label {
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .form-contestar-mensaje label {
+    font-size: 15px;
+  }
 }
 main .container-main .container-conversaciones-detail .form-contestar-mensaje input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .form-contestar-mensaje input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-conversaciones-detail .form-contestar-mensaje input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1585,9 +1651,21 @@ main .container-main .container-conversaciones-detail .form-contestar-mensaje .b
   border-radius: 5px;
   padding: 3px 6px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .form-contestar-mensaje .boton-contestar {
+    font-size: 15px;
+    padding: 5px 8px;
+  }
+}
 main .container-main .container-conversaciones-detail .title-borrado-conversaciones {
   font-size: 18px;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .title-borrado-conversaciones {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
 }
 main .container-main .container-conversaciones-detail .eliminar-conversaciones {
   border: 0;
@@ -1597,6 +1675,12 @@ main .container-main .container-conversaciones-detail .eliminar-conversaciones {
   padding: 3px 6px;
   width: max-content;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .eliminar-conversaciones {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
+}
 main .container-main .container-nuevo-mensaje {
   width: 100%;
 }
@@ -1604,11 +1688,21 @@ main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje label {
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje label {
+    font-size: 15px;
+  }
+}
 main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1620,6 +1714,12 @@ main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje .boton-e
   font-size: 10px;
   border-radius: 5px;
   padding: 3px 6px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje .boton-enviar {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
 }
 
 main .container-main .container-notificaciones {

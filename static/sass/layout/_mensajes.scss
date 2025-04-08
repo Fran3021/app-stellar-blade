@@ -86,6 +86,10 @@ main{
                         width: 10%;
                         height: 10%;
                         border-radius: 50%;
+                        @include abs.breakpoint(tablet){
+                            width: 7%;
+                            height: 7%;
+                        }
                     }
                     p{
                         font-size: 10px;
@@ -94,6 +98,13 @@ main{
                         border-top-left-radius: 5px;
                         border-top-right-radius: 5px;
                         border-bottom-right-radius: 5px;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                            padding: 10px 20px;
+                            border-top-left-radius: 8px;
+                            border-top-right-radius: 8px;
+                            border-bottom-right-radius: 8px;
+                        }
                     }
                 }
                 .fecha-borrar-mensaje{
@@ -105,6 +116,9 @@ main{
                     span{
                         font-size: 8px;
                         font-weight: bold;
+                        @include abs.breakpoint(tablet){
+                            font-size: 12px;
+                        }
                     }
                     .eliminar-mensajes{
                         border: 0;
@@ -112,6 +126,12 @@ main{
                         i{
                             font-size: 8px;
                             color: abs.$rojo-neon;
+                            @include abs.breakpoint(tablet){
+                                font-size: 14px;
+                                &:hover{
+                                    color: abs.$azul-neon;
+                                }
+                            }
                         }
                     }
                 }
@@ -130,6 +150,10 @@ main{
                         width: 10%;
                         height: 10%;
                         border-radius: 50%;
+                        @include abs.breakpoint(tablet){
+                            width: 7%;
+                            height: 7%;
+                        }
                     }
                     p{
                         font-size: 10px;
@@ -138,6 +162,13 @@ main{
                         border-top-left-radius: 5px;
                         border-top-right-radius: 5px;
                         border-bottom-left-radius: 5px;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                            padding: 10px 20px;
+                            border-top-left-radius: 8px;
+                            border-top-right-radius: 8px;
+                            border-bottom-left-radius: 8px;
+                        }
                     }
                 }
                 .borrar-fecha-mensaje{
@@ -148,6 +179,9 @@ main{
                     span{
                         font-size: 8px;
                         font-weight: bold;
+                        @include abs.breakpoint(tablet){
+                            font-size: 12px;
+                        }
                     }
                     .eliminar-mensajes{
                         border: 0;
@@ -155,6 +189,12 @@ main{
                         i{
                             font-size: 8px;
                             color: abs.$rojo-neon;
+                            @include abs.breakpoint(tablet){
+                                font-size: 14px;
+                                &:hover{
+                                    color: abs.$azul-neon;
+                                }
+                            }
                         }
                     }
                 }
@@ -163,12 +203,18 @@ main{
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -180,11 +226,19 @@ main{
                     font-size: 10px;
                     border-radius: 5px;
                     padding: 3px 6px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                        padding: 5px 8px;
+                    }
                 }
             }
             .title-borrado-conversaciones{
                 font-size: 18px;
                 font-weight: 600;
+                @include abs.breakpoint(tablet){
+                    font-size: 23px;
+                    margin-bottom: 15px;
+                }
             }
             .eliminar-conversaciones{
                 border: 0;
@@ -193,6 +247,10 @@ main{
                 border-radius: 5px;
                 padding: 3px 6px;
                 width: max-content;
+                @include abs.breakpoint(tablet){
+                    font-size: 15px;
+                    padding: 5px 10px;
+                }
             }
         }
         .container-nuevo-mensaje{
@@ -201,12 +259,18 @@ main{
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -218,6 +282,10 @@ main{
                     font-size: 10px;
                     border-radius: 5px;
                     padding: 3px 6px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                        padding: 5px 10px;
+                    }
                 }
             }
         }
