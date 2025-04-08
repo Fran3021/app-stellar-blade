@@ -15,6 +15,12 @@
                 <a class="boton-eliminar" href="{% url 'usuarios:delete' perfil.pk %}">Eliminar perfil</a>
                 {% endif %}
             </div>
+            <div class="crear-publicacion-cerrar-sesion-mi-perfil">
+                {% if request.user.perfil.usuario == perfil.usuario %}
+                <a class="boton-crear-publicacion" href="{% url 'publicaciones:crear' %}">Crear publicación</a>
+                <a class="boton-cerrar-sesion" href="{% url 'logout' %}">Cerrar sesión</a>
+                {% endif %}
+            </div>
             <div class="seguidores-seguidos-mi-perfil">
                 <p>Seguidores:<span>{{perfil.siguiendo.count}}</span></p>
                 <p>Siguiendo:<span>{{perfil.seguidores.count}}</span></p>

@@ -44,10 +44,12 @@
 @mixin publicacion{
         width: 100%;
         padding: 20px 20px;
-        box-shadow: 0px 0px 5px 5px var.$azul-neon;
+        border: 1px solid var.$azul-neon;
         border-radius: 10px;
         @include breakpoint(tablet){
-            padding: 30px 60px 30px 60px;
+            padding: 20px 40px 20px 40px;
+            box-shadow: 0px 0px 5px 5px var.$azul-neon;
+            border: none;
         }
         .imagen-hora-titulo{
             width: 100%;
@@ -56,7 +58,8 @@
             align-items: center;
             margin-bottom: 10px;
             @include breakpoint(tablet){
-                margin-bottom: 25px;
+                margin-bottom: 20px;
+                gap: 15px;
             }
             .imagen{
                 width: 20%;
@@ -97,12 +100,18 @@
                         font-weight: bold;
                         @include breakpoint(tablet){
                             font-size: 15px;
+                            &:active{
+                                color: var.$azul-neon;
+                            }
+                            &:hover{
+                                color: var.$azul-neon;
+                            }
                         }
                     }
                     span{
                         font-size: 10px;
                         @include breakpoint(tablet){
-                            font-size: 15px;
+                            font-size: 13px;
                         }
                     }
                 }
@@ -122,6 +131,7 @@
             width: 100%;
             margin-bottom: 10px;
             border-radius: 10px;
+            border: 1px solid var.$gris-claro;
             @include breakpoint(tablet){
                 display: none;
             }
@@ -131,8 +141,9 @@
             @include breakpoint(tablet){
                 display: block;
                 width: 100%;
-                margin-bottom: 25px;
+                margin-bottom: 20px;
                 border-radius: 10px;
+                border: 1px solid var.$gris-claro;
             }
         }
         .contenido-publicacion{
@@ -141,7 +152,7 @@
             margin-bottom: 10px;
             @include breakpoint(tablet){
                 font-size: 13px;
-                margin-bottom: 25px;
+                margin-bottom: 20px;
             }
         }
         .numero-likes-comentarios{
@@ -150,7 +161,7 @@
             justify-content: space-around;
             margin-bottom: 10px;
             @include breakpoint(tablet){
-                margin-bottom: 25px;
+                margin-bottom: 20px;
             }
             .numero-likes{
                 display: flex;
@@ -211,19 +222,37 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    box-shadow: 0px 0px 5px 5px var.$rosa-neon;
+    border: 1px solid var.$rojo-neon;
     border-radius: 10px;
+    @include breakpoint(tablet){
+        box-shadow: 0px 0px 5px 5px var.$rojo-neon;
+        padding: 20px 30px;
+    }
     .perfiles-includes-imagen-usuario{
         display: flex;
         align-items: center;
         width: 100%;
         gap: 20px;
+        @include breakpoint(tablet){
+            gap: 30px;
+        }
         a{
             width: 20%;
             text-decoration: none;
-            img{
+            .imagen-perfiles-movil{
                 width: 100%;
                 border-radius: 50%;
+                @include breakpoint(tablet){
+                    display: none;
+                }
+            }
+            .imagen-perfiles-tablet{
+                display: none;
+                @include breakpoint(tablet){
+                    display: block;
+                    width: 100%;
+                    border-radius: 50%;
+                }
             }
         }
         .usuario-seguidores{
@@ -231,15 +260,25 @@
             h2{
                 font-size: 15px;
                 font-weight: bold;
+                @include breakpoint(tablet){
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
             }
             span{
                 font-size: 10px;
+                @include breakpoint(tablet){
+                    font-size: 15px;
+                }
             }
         }
     }
     p{
         font-size: 13px;
         font-weight: 600;
+        @include breakpoint(tablet){
+            font-size: 18px;
+        }
     }
     .ButtonFollows{
         margin: 0;
@@ -252,6 +291,11 @@
             border: 1px solid var.$gris-claro;
             font-size: 10px;
             border-radius: 3px;
+            @include breakpoint(tablet){
+                font-size: 15px;
+                padding: 10px 15px;
+                border-radius: 6px;
+            }
         }
         .boton-seguir{
             background-color: var.$azul-neon;
@@ -260,6 +304,11 @@
             border: 1px solid var.$rosa-neon;
             font-size: 10px;
             border-radius: 3px;
+            @include breakpoint(tablet){
+                font-size: 15px;
+                padding: 10px 15px;
+                border-radius: 6px;
+            }
         }
     }
 }

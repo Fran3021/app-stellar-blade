@@ -9,6 +9,10 @@ main{
             font-size: 20px;
             text-align: center;
             margin-bottom: 35px;
+            @include abs.breakpoint(tablet){
+                font-size: 30px;
+                margin-bottom: 45px;
+            }
         }
         .container-publicaciones-mis-contactos{
             width: 100%;
@@ -17,6 +21,9 @@ main{
             justify-content: center;
             align-items: center;
             gap: 50px;
+            @include abs.breakpoint(tablet){
+                gap: 80px
+            }
             .publicacion{
                 @include abs.publicacion
             }
@@ -32,6 +39,10 @@ main{
                 padding: 20px 10px;
                 gap: 10px;
                 margin-bottom: 50px;
+                @include abs.breakpoint(tablet){
+                    gap: 15px;
+                    padding: 20px 30px;
+                }
                 img{
                     width: 30%;
                     height: 30%;
@@ -41,14 +52,20 @@ main{
                     width: 70%;
                     display: flex;
                     flex-direction: column;
-                    gap: 20px;
+                    gap: 10px;
                     .editar-eliminar-mi-perfil{
                         display: flex;
                         gap: 10px;
                         align-items: center;
+                        @include abs.breakpoint(tablet){
+                            gap: 20px;
+                        }
                         p{
                             font-size: 10px;
                             font-weight: bold;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                            }
                         }
                         .boton-editar{
                             text-decoration: none;
@@ -58,6 +75,11 @@ main{
                             color: abs.$blanco;
                             padding: 2px 5px;
                             border-radius: 2px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 12px;
+                                padding: 5px 10px;
+                                border-radius: 5px;
+                            }
                         }
                         .boton-eliminar{
                             text-decoration: none;
@@ -67,22 +89,73 @@ main{
                             color: abs.$azul-neon;
                             padding: 2px 5px;
                             border-radius: 2px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 12px;
+                                padding: 5px 10px;
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+                    .crear-publicacion-cerrar-sesion-mi-perfil{
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        @include abs.breakpoint(tablet){
+                            gap: 20px;
+                        }
+                        .boton-crear-publicacion{
+                            text-decoration: none;
+                            font-size: 8px;
+                            display: inline-block;
+                            background-color: abs.$negro-espacial;
+                            color: abs.$azul-neon;
+                            padding: 2px 5px;
+                            border-radius: 2px;
+                            border: 1px solid abs.$rojo-neon;
+                            @include abs.breakpoint(tablet){
+                                font-size: 13px;
+                                padding: 5px 10px;
+                                border-radius: 5px;
+                            }
+                        }
+                        .boton-cerrar-sesion{
+                            text-decoration: none;
+                            font-size: 8px;
+                            display: inline-block;
+                            background-color: abs.$rojo-neon;
+                            color: abs.$blanco;
+                            padding: 2px 5px;
+                            border-radius: 2px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 13px;
+                                padding: 5px 10px;
+                                border-radius: 5px;
+                            }
                         }
                     }
                     .seguidores-seguidos-mi-perfil{
                         display: flex;
                         gap: 10px;
                         align-items: center;
+                        @include abs.breakpoint(tablet){
+                            gap: 20px;
+                        }
                         p{
                             font-size: 10px;
                             font-weight: 600;
+                            @include abs.breakpoint(tablet){
+                                font-size: 13px;
+                            }
                         }
                     }
                     .biografia-mi-perfil{
                         p{
-                            font-size: 12px;
+                            font-size: 10px;
                             font-weight: bold;
                             color: abs.$gris-claro;
+                            @include abs.breakpoint(tablet){
+                                font-size: 13px;
+                            }
                         }
                     }
                 }
@@ -94,6 +167,10 @@ main{
                     text-align: center;
                     margin-bottom: 30px;
                     font-weight: bold;
+                    @include abs.breakpoint(tablet){
+                        font-size: 20px;
+                        margin-bottom: 40px;
+                    }
                 }
                 .mis-ultimas-publicaciones{
                     width: 100%;
@@ -101,6 +178,9 @@ main{
                     justify-content: center;
                     align-items: center;
                     gap: 50px;
+                    @include abs.breakpoint(tablet){
+                        gap: 80px;
+                    }
                     .publicacion{
                         @include abs.publicacion
                     }
@@ -116,12 +196,18 @@ main{
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 .form-control{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     .text-break{
                         a{
                             font-size: 10px;
@@ -133,12 +219,18 @@ main{
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -148,6 +240,9 @@ main{
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -160,6 +255,10 @@ main{
                     border: 0;
                     border-radius: 5px;
                     margin-right: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 13px;
+                        padding: 8px 13px;
+                    }
                 }
                 .boton-cancelar{
                     text-decoration: none;
@@ -169,6 +268,10 @@ main{
                     color: abs.$blanco;
                     padding: 3px 6px;
                     border-radius: 5px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 13px;
+                        padding: 8px 13px;
+                    }
                 }
             }
         }
@@ -176,6 +279,9 @@ main{
             width: 100%;
             .title-eliminar-perfil{
                 font-size: 15px;
+                @include abs.breakpoint(tablet){
+                    font-size: 20px;
+                }
             }
             .formulario-borrar-perfil{
                 width: 100%;
@@ -187,6 +293,10 @@ main{
                     border-radius: 5px;
                     color: abs.$blanco;
                     margin-top: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 13px;
+                        padding: 8px 13px;
+                    }
                 }
                 .boton-cancelar{
                     margin-top: 10px;
@@ -197,6 +307,11 @@ main{
                     padding: 3px 6px;
                     border-radius: 5px;
                     color: abs.$rojo-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 13px;
+                        padding: 8px 13px;
+                        margin-left: 3%;
+                    }
                 }
             }
         }
@@ -257,13 +372,13 @@ main{
                             font-size: 10px;
                         }
                         span{
-                            font-size: 12px;
+                            font-size: 10px;
                             font-weight: bold;
                         }
                     }
                     .biografia-perfiles-detail{
                         p{
-                            font-size: 12px;
+                            font-size: 10px;
                             font-weight: bold;
                             color: abs.$gris-claro;
                         }

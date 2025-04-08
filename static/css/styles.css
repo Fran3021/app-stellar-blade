@@ -184,8 +184,8 @@ header .menu-header-movil ul a i {
 }
 header .menu-header-movil ul .avatar-menu {
   border-radius: 50%;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   margin-bottom: 3px;
 }
 header .menu-header-tablet {
@@ -199,9 +199,12 @@ header .menu-header-tablet {
     width: 100%;
     position: fixed;
     top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   header .menu-header-tablet ul {
-    width: 90%;
+    width: 100%;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -217,27 +220,48 @@ header .menu-header-tablet {
     flex-direction: column;
     text-decoration: none;
     color: #00BFFF;
-    font-size: 10px;
+    font-size: 13px;
     align-items: center;
   }
   header .menu-header-tablet ul a i {
     color: #00BFFF;
-    font-size: 15px;
+    font-size: 17px;
   }
   header .menu-header-tablet ul .avatar-menu {
     border-radius: 50%;
-    width: 22%;
-    height: 22%;
+    width: 27%;
+    height: 27%;
   }
   header .menu-header-tablet ul .numero-notificaciones {
-    font-size: 7px;
+    font-size: 8px;
     position: absolute;
-    right: 9%;
-    top: 7%;
+    right: 16%;
+    top: 13%;
     background-color: #FF073A;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
+  }
+}
+header .container-include-mensajes {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+header .container-include-mensajes div {
+  font-size: 8px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  opacity: 0.8;
+}
+@media (min-width: 768px) {
+  header .container-include-mensajes div {
+    top: 60px;
+    font-size: 15px;
   }
 }
 header .container-header .page-title {
@@ -247,24 +271,8 @@ header .container-header .page-title {
 }
 @media (min-width: 768px) {
   header .container-header .page-title {
-    font-size: 40px;
-  }
-}
-header .container-header .container-include-mensajes div {
-  font-size: 8px;
-  position: fixed;
-  top: 0;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  opacity: 0.8;
-}
-@media (min-width: 768px) {
-  header .container-header .container-include-mensajes div {
-    top: 55px;
-    font-size: 15px;
-    opacity: 0.9;
+    font-size: 35px;
+    margin-bottom: 40px;
   }
 }
 
@@ -287,15 +295,22 @@ main .container-main .container-home {
   align-items: center;
   gap: 50px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-home {
+    gap: 80px;
+  }
+}
 main .container-main .container-home .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 5px 5px #00BFFF;
+  border: 1px solid #00BFFF;
   border-radius: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-home .publicacion {
-    padding: 30px 60px 30px 60px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 0px 5px 5px #00BFFF;
+    border: none;
   }
 }
 main .container-main .container-home .publicacion .imagen-hora-titulo {
@@ -307,7 +322,8 @@ main .container-main .container-home .publicacion .imagen-hora-titulo {
 }
 @media (min-width: 768px) {
   main .container-main .container-home .publicacion .imagen-hora-titulo {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    gap: 15px;
   }
 }
 main .container-main .container-home .publicacion .imagen-hora-titulo .imagen {
@@ -362,13 +378,19 @@ main .container-main .container-home .publicacion .imagen-hora-titulo .hora-auto
   main .container-main .container-home .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a {
     font-size: 15px;
   }
+  main .container-main .container-home .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:active {
+    color: #00BFFF;
+  }
+  main .container-main .container-home .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:hover {
+    color: #00BFFF;
+  }
 }
 main .container-main .container-home .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
   font-size: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-home .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 main .container-main .container-home .publicacion .imagen-hora-titulo .hora-autor-titulo .titulo h2 {
@@ -385,6 +407,7 @@ main .container-main .container-home .publicacion .imagen_publicacion {
   width: 100%;
   margin-bottom: 10px;
   border-radius: 10px;
+  border: 1px solid #CCCCCC;
 }
 @media (min-width: 768px) {
   main .container-main .container-home .publicacion .imagen_publicacion {
@@ -398,8 +421,9 @@ main .container-main .container-home .publicacion .imagen_publicacion_tablet {
   main .container-main .container-home .publicacion .imagen_publicacion_tablet {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 10px;
+    border: 1px solid #CCCCCC;
   }
 }
 main .container-main .container-home .publicacion .contenido-publicacion {
@@ -410,7 +434,7 @@ main .container-main .container-home .publicacion .contenido-publicacion {
 @media (min-width: 768px) {
   main .container-main .container-home .publicacion .contenido-publicacion {
     font-size: 13px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-home .publicacion .numero-likes-comentarios {
@@ -421,7 +445,7 @@ main .container-main .container-home .publicacion .numero-likes-comentarios {
 }
 @media (min-width: 768px) {
   main .container-main .container-home .publicacion .numero-likes-comentarios {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-home .publicacion .numero-likes-comentarios .numero-likes {
@@ -477,6 +501,12 @@ main .container-main .title-busqueda {
   text-align: center;
   margin-bottom: 35px;
 }
+@media (min-width: 768px) {
+  main .container-main .title-busqueda {
+    font-size: 30px;
+    margin-bottom: 45px;
+  }
+}
 main .container-main .container-busqueda {
   width: 100%;
   display: flex;
@@ -491,6 +521,11 @@ main .container-main .container-busqueda .resultado-busqueda {
   margin-bottom: 40px;
   gap: 50px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda {
+    gap: 80px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .formulario-busqueda {
   width: 100%;
 }
@@ -498,11 +533,21 @@ main .container-main .container-busqueda .resultado-busqueda .formulario-busqued
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .formulario-busqueda label {
+    font-size: 15px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .formulario-busqueda input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .formulario-busqueda input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-busqueda .resultado-busqueda .formulario-busqueda input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -514,6 +559,22 @@ main .container-main .container-busqueda .resultado-busqueda .formulario-busqued
   background-color: #FF007F;
   border-radius: 5px;
   font-size: 10px;
+  transition: background-color 1s linear, color 1s linear, border 1s linear;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .formulario-busqueda .boton-buscar {
+    color: #FFFFFF;
+    background-color: #00BFFF;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 13px;
+    border: 1px solid #FF007F;
+  }
+  main .container-main .container-busqueda .resultado-busqueda .formulario-busqueda .boton-buscar:hover {
+    background-color: #0D0D0D;
+    color: #00BFFF;
+    border: 1px solid #FFFFFF;
+  }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda {
   width: 100%;
@@ -523,19 +584,31 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
   justify-content: center;
   gap: 50px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda {
+    gap: 80px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda h3 {
   font-size: 15px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda h3 {
+    font-size: 20px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 5px 5px #00BFFF;
+  border: 1px solid #00BFFF;
   border-radius: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion {
-    padding: 30px 60px 30px 60px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 0px 5px 5px #00BFFF;
+    border: none;
   }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo {
@@ -547,7 +620,8 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    gap: 15px;
   }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .imagen {
@@ -602,13 +676,19 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a {
     font-size: 15px;
   }
+  main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:active {
+    color: #00BFFF;
+  }
+  main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:hover {
+    color: #00BFFF;
+  }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
   font-size: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .hora-autor-titulo .titulo h2 {
@@ -625,6 +705,7 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
   width: 100%;
   margin-bottom: 10px;
   border-radius: 10px;
+  border: 1px solid #CCCCCC;
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen_publicacion {
@@ -638,8 +719,9 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen_publicacion_tablet {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 10px;
+    border: 1px solid #CCCCCC;
   }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .contenido-publicacion {
@@ -650,7 +732,7 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
 @media (min-width: 768px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .contenido-publicacion {
     font-size: 13px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .numero-likes-comentarios {
@@ -661,7 +743,7 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .numero-likes-comentarios {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .numero-likes-comentarios .numero-likes {
@@ -720,9 +802,19 @@ main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda 
   justify-content: center;
   gap: 50px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda {
+    gap: 80px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda h3 {
   font-size: 15px;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda h3 {
+    font-size: 20px;
+  }
 }
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes {
   padding: 10px 15px;
@@ -732,8 +824,14 @@ main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda 
   justify-content: center;
   align-items: center;
   gap: 20px;
-  box-shadow: 0px 0px 5px 5px #FF007F;
+  border: 1px solid #FF073A;
   border-radius: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes {
+    box-shadow: 0px 0px 5px 5px #FF073A;
+    padding: 20px 30px;
+  }
 }
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario {
   display: flex;
@@ -741,13 +839,33 @@ main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda 
   width: 100%;
   gap: 20px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario {
+    gap: 30px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a {
   width: 20%;
   text-decoration: none;
 }
-main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a img {
+main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a .imagen-perfiles-movil {
   width: 100%;
   border-radius: 50%;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a .imagen-perfiles-movil {
+    display: none;
+  }
+}
+main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a .imagen-perfiles-tablet {
+  display: none;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a .imagen-perfiles-tablet {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+  }
 }
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores {
   width: 80%;
@@ -756,12 +874,28 @@ main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda 
   font-size: 15px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores span {
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores span {
+    font-size: 15px;
+  }
 }
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes p {
   font-size: 13px;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes p {
+    font-size: 18px;
+  }
 }
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .ButtonFollows {
   margin: 0;
@@ -776,6 +910,13 @@ main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda 
   font-size: 10px;
   border-radius: 3px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .ButtonFollows .boton-dejar-de-seguir {
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .ButtonFollows .boton-seguir {
   background-color: #00BFFF;
   border: 0;
@@ -784,17 +925,35 @@ main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda 
   font-size: 10px;
   border-radius: 3px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .ButtonFollows .boton-seguir {
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+}
 main .container-main .container-busqueda .sugerencias {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias {
+    gap: 90px;
+  }
+}
 main .container-main .container-busqueda .sugerencias h3 {
   font-size: 15px;
   text-align: center;
   margin-bottom: 30px;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias h3 {
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
 }
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos {
   width: 100%;
@@ -806,6 +965,11 @@ main .container-main .container-busqueda .sugerencias .perfiles-sugeridos sectio
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section {
+    gap: 80px;
+  }
+}
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes {
   padding: 10px 15px;
   width: 100%;
@@ -814,8 +978,14 @@ main .container-main .container-busqueda .sugerencias .perfiles-sugeridos sectio
   justify-content: center;
   align-items: center;
   gap: 20px;
-  box-shadow: 0px 0px 5px 5px #FF007F;
+  border: 1px solid #FF073A;
   border-radius: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes {
+    box-shadow: 0px 0px 5px 5px #FF073A;
+    padding: 20px 30px;
+  }
 }
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario {
   display: flex;
@@ -823,13 +993,33 @@ main .container-main .container-busqueda .sugerencias .perfiles-sugeridos sectio
   width: 100%;
   gap: 20px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario {
+    gap: 30px;
+  }
+}
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a {
   width: 20%;
   text-decoration: none;
 }
-main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a img {
+main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a .imagen-perfiles-movil {
   width: 100%;
   border-radius: 50%;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a .imagen-perfiles-movil {
+    display: none;
+  }
+}
+main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a .imagen-perfiles-tablet {
+  display: none;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a .imagen-perfiles-tablet {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+  }
 }
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores {
   width: 80%;
@@ -838,12 +1028,28 @@ main .container-main .container-busqueda .sugerencias .perfiles-sugeridos sectio
   font-size: 15px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores span {
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores span {
+    font-size: 15px;
+  }
 }
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes p {
   font-size: 13px;
   font-weight: 600;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes p {
+    font-size: 18px;
+  }
 }
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .ButtonFollows {
   margin: 0;
@@ -858,6 +1064,13 @@ main .container-main .container-busqueda .sugerencias .perfiles-sugeridos sectio
   font-size: 10px;
   border-radius: 3px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .ButtonFollows .boton-dejar-de-seguir {
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+}
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .ButtonFollows .boton-seguir {
   background-color: #00BFFF;
   border: 0;
@@ -865,6 +1078,13 @@ main .container-main .container-busqueda .sugerencias .perfiles-sugeridos sectio
   border: 1px solid #FF007F;
   font-size: 10px;
   border-radius: 3px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .ButtonFollows .boton-seguir {
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas {
   width: 100%;
@@ -876,15 +1096,22 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
   justify-content: center;
   align-items: center;
 }
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section {
+    gap: 80px;
+  }
+}
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 5px 5px #00BFFF;
+  border: 1px solid #00BFFF;
   border-radius: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion {
-    padding: 30px 60px 30px 60px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 0px 5px 5px #00BFFF;
+    border: none;
   }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo {
@@ -896,7 +1123,8 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    gap: 15px;
   }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .imagen {
@@ -951,13 +1179,19 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a {
     font-size: 15px;
   }
+  main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:active {
+    color: #00BFFF;
+  }
+  main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:hover {
+    color: #00BFFF;
+  }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
   font-size: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .hora-autor-titulo .titulo h2 {
@@ -974,6 +1208,7 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
   width: 100%;
   margin-bottom: 10px;
   border-radius: 10px;
+  border: 1px solid #CCCCCC;
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen_publicacion {
@@ -987,8 +1222,9 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen_publicacion_tablet {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 10px;
+    border: 1px solid #CCCCCC;
   }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .contenido-publicacion {
@@ -999,7 +1235,7 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
 @media (min-width: 768px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .contenido-publicacion {
     font-size: 13px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .numero-likes-comentarios {
@@ -1010,7 +1246,7 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .numero-likes-comentarios {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .numero-likes-comentarios .numero-likes {
@@ -1071,11 +1307,21 @@ main .container-main .container-login .formulario-login label {
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-login .formulario-login label {
+    font-size: 15px;
+  }
+}
 main .container-main .container-login .formulario-login input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-login .formulario-login input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-login .formulario-login input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1088,6 +1334,15 @@ main .container-main .container-login .formulario-login .boton-login {
   border-radius: 5px;
   font-size: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-login .formulario-login .boton-login {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  main .container-main .container-login .formulario-login .boton-login:hover {
+    box-shadow: 0px 0px 3px 2px #FFFFFF;
+  }
+}
 main .container-main .container-registro {
   width: 100%;
 }
@@ -1098,11 +1353,21 @@ main .container-main .container-registro .formulario-crear-cuenta label {
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-registro .formulario-crear-cuenta label {
+    font-size: 15px;
+  }
+}
 main .container-main .container-registro .formulario-crear-cuenta input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-registro .formulario-crear-cuenta input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-registro .formulario-crear-cuenta input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1115,8 +1380,22 @@ main .container-main .container-registro .formulario-crear-cuenta .boton-registr
   border-radius: 5px;
   font-size: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-registro .formulario-crear-cuenta .boton-registro {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  main .container-main .container-registro .formulario-crear-cuenta .boton-registro:hover {
+    box-shadow: 0px 0px 5px 2px #FF007F;
+  }
+}
 main .container-main .container-registro .formulario-crear-cuenta .form-text {
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-registro .formulario-crear-cuenta .form-text {
+    font-size: 15px;
+  }
 }
 
 main .container-main .container-conversaciones {
@@ -1763,6 +2042,12 @@ main .container-main .title-contactos {
   text-align: center;
   margin-bottom: 35px;
 }
+@media (min-width: 768px) {
+  main .container-main .title-contactos {
+    font-size: 30px;
+    margin-bottom: 45px;
+  }
+}
 main .container-main .container-publicaciones-mis-contactos {
   width: 100%;
   display: flex;
@@ -1771,15 +2056,22 @@ main .container-main .container-publicaciones-mis-contactos {
   align-items: center;
   gap: 50px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-publicaciones-mis-contactos {
+    gap: 80px;
+  }
+}
 main .container-main .container-publicaciones-mis-contactos .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 5px 5px #00BFFF;
+  border: 1px solid #00BFFF;
   border-radius: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion {
-    padding: 30px 60px 30px 60px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 0px 5px 5px #00BFFF;
+    border: none;
   }
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo {
@@ -1791,7 +2083,8 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .imagen
 }
 @media (min-width: 768px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    gap: 15px;
   }
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen {
@@ -1846,13 +2139,19 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .imagen
   main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a {
     font-size: 15px;
   }
+  main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:active {
+    color: #00BFFF;
+  }
+  main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:hover {
+    color: #00BFFF;
+  }
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
   font-size: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-autor-titulo .titulo h2 {
@@ -1869,6 +2168,7 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .imagen
   width: 100%;
   margin-bottom: 10px;
   border-radius: 10px;
+  border: 1px solid #CCCCCC;
 }
 @media (min-width: 768px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion .imagen_publicacion {
@@ -1882,8 +2182,9 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .imagen
   main .container-main .container-publicaciones-mis-contactos .publicacion .imagen_publicacion_tablet {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 10px;
+    border: 1px solid #CCCCCC;
   }
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .contenido-publicacion {
@@ -1894,7 +2195,7 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .conten
 @media (min-width: 768px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion .contenido-publicacion {
     font-size: 13px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .numero-likes-comentarios {
@@ -1905,7 +2206,7 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .numero
 }
 @media (min-width: 768px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion .numero-likes-comentarios {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .numero-likes-comentarios .numero-likes {
@@ -1969,6 +2270,12 @@ main .container-main .container-mi-perfil .mi-perfil-top {
   gap: 10px;
   margin-bottom: 50px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top {
+    gap: 15px;
+    padding: 20px 30px;
+  }
+}
 main .container-main .container-mi-perfil .mi-perfil-top img {
   width: 30%;
   height: 30%;
@@ -1978,16 +2285,26 @@ main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil 
   width: 70%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil {
+    gap: 20px;
+  }
+}
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil p {
   font-size: 10px;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil p {
+    font-size: 15px;
+  }
 }
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil .boton-editar {
   text-decoration: none;
@@ -1998,6 +2315,13 @@ main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil 
   padding: 2px 5px;
   border-radius: 2px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil .boton-editar {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil .boton-eliminar {
   text-decoration: none;
   font-size: 8px;
@@ -2007,19 +2331,84 @@ main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil 
   padding: 2px 5px;
   border-radius: 2px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil .boton-eliminar {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
+main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil {
+    gap: 20px;
+  }
+}
+main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil .boton-crear-publicacion {
+  text-decoration: none;
+  font-size: 8px;
+  display: inline-block;
+  background-color: #0D0D0D;
+  color: #00BFFF;
+  padding: 2px 5px;
+  border-radius: 2px;
+  border: 1px solid #FF073A;
+}
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil .boton-crear-publicacion {
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
+main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil .boton-cerrar-sesion {
+  text-decoration: none;
+  font-size: 8px;
+  display: inline-block;
+  background-color: #FF073A;
+  color: #FFFFFF;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil .boton-cerrar-sesion {
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+}
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .seguidores-seguidos-mi-perfil {
   display: flex;
   gap: 10px;
   align-items: center;
 }
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .seguidores-seguidos-mi-perfil {
+    gap: 20px;
+  }
+}
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .seguidores-seguidos-mi-perfil p {
   font-size: 10px;
   font-weight: 600;
 }
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .seguidores-seguidos-mi-perfil p {
+    font-size: 13px;
+  }
+}
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .biografia-mi-perfil p {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   color: #CCCCCC;
+}
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .biografia-mi-perfil p {
+    font-size: 13px;
+  }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones {
   width: 100%;
@@ -2030,6 +2419,12 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones h
   margin-bottom: 30px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones h3 {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones {
   width: 100%;
   display: flex;
@@ -2037,15 +2432,22 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
   align-items: center;
   gap: 50px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones {
+    gap: 80px;
+  }
+}
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 5px 5px #00BFFF;
+  border: 1px solid #00BFFF;
   border-radius: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion {
-    padding: 30px 60px 30px 60px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 0px 5px 5px #00BFFF;
+    border: none;
   }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo {
@@ -2057,7 +2459,8 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
 }
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    gap: 15px;
   }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .imagen {
@@ -2112,13 +2515,19 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a {
     font-size: 15px;
   }
+  main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:active {
+    color: #00BFFF;
+  }
+  main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:hover {
+    color: #00BFFF;
+  }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
   font-size: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .hora-autor-titulo .titulo h2 {
@@ -2135,6 +2544,7 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
   width: 100%;
   margin-bottom: 10px;
   border-radius: 10px;
+  border: 1px solid #CCCCCC;
 }
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen_publicacion {
@@ -2148,8 +2558,9 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen_publicacion_tablet {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 10px;
+    border: 1px solid #CCCCCC;
   }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .contenido-publicacion {
@@ -2160,7 +2571,7 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .contenido-publicacion {
     font-size: 13px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .numero-likes-comentarios {
@@ -2171,7 +2582,7 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
 }
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .numero-likes-comentarios {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .numero-likes-comentarios .numero-likes {
@@ -2234,11 +2645,21 @@ main .container-main .container-editar-perfil .formulario-editar-perfil .input-g
   border-color: #00BFFF;
   font-size: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-editar-perfil .formulario-editar-perfil .input-group-text {
+    font-size: 15px;
+  }
+}
 main .container-main .container-editar-perfil .formulario-editar-perfil .form-control {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-editar-perfil .formulario-editar-perfil .form-control {
+    font-size: 15px;
+  }
 }
 main .container-main .container-editar-perfil .formulario-editar-perfil .form-control .text-break a {
   font-size: 10px;
@@ -2249,11 +2670,21 @@ main .container-main .container-editar-perfil .formulario-editar-perfil label {
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-editar-perfil .formulario-editar-perfil label {
+    font-size: 15px;
+  }
+}
 main .container-main .container-editar-perfil .formulario-editar-perfil input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-editar-perfil .formulario-editar-perfil input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-editar-perfil .formulario-editar-perfil input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -2263,6 +2694,11 @@ main .container-main .container-editar-perfil .formulario-editar-perfil textarea
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-editar-perfil .formulario-editar-perfil textarea {
+    font-size: 15px;
+  }
 }
 main .container-main .container-editar-perfil .formulario-editar-perfil textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -2276,6 +2712,12 @@ main .container-main .container-editar-perfil .formulario-editar-perfil .boton-e
   border-radius: 5px;
   margin-right: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-editar-perfil .formulario-editar-perfil .boton-editar {
+    font-size: 13px;
+    padding: 8px 13px;
+  }
+}
 main .container-main .container-editar-perfil .formulario-editar-perfil .boton-cancelar {
   text-decoration: none;
   display: inline-block;
@@ -2285,11 +2727,22 @@ main .container-main .container-editar-perfil .formulario-editar-perfil .boton-c
   padding: 3px 6px;
   border-radius: 5px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-editar-perfil .formulario-editar-perfil .boton-cancelar {
+    font-size: 13px;
+    padding: 8px 13px;
+  }
+}
 main .container-main .container-eliminar-perfil {
   width: 100%;
 }
 main .container-main .container-eliminar-perfil .title-eliminar-perfil {
   font-size: 15px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-eliminar-perfil .title-eliminar-perfil {
+    font-size: 20px;
+  }
 }
 main .container-main .container-eliminar-perfil .formulario-borrar-perfil {
   width: 100%;
@@ -2303,6 +2756,12 @@ main .container-main .container-eliminar-perfil .formulario-borrar-perfil .boton
   color: #FFFFFF;
   margin-top: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-eliminar-perfil .formulario-borrar-perfil .boton-eliminar {
+    font-size: 13px;
+    padding: 8px 13px;
+  }
+}
 main .container-main .container-eliminar-perfil .formulario-borrar-perfil .boton-cancelar {
   margin-top: 10px;
   text-decoration: none;
@@ -2312,6 +2771,13 @@ main .container-main .container-eliminar-perfil .formulario-borrar-perfil .boton
   padding: 3px 6px;
   border-radius: 5px;
   color: #FF073A;
+}
+@media (min-width: 768px) {
+  main .container-main .container-eliminar-perfil .formulario-borrar-perfil .boton-cancelar {
+    font-size: 13px;
+    padding: 8px 13px;
+    margin-left: 3%;
+  }
 }
 main .container-main .container-perfiles-detail {
   width: 100%;
@@ -2372,11 +2838,11 @@ main .container-main .container-perfiles-detail .perfiles-detail .descripcion-pe
   font-size: 10px;
 }
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .nombre-te-sigue span {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
 }
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .biografia-perfiles-detail p {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: bold;
   color: #CCCCCC;
 }
@@ -2413,12 +2879,14 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion {
   width: 100%;
   padding: 20px 20px;
-  box-shadow: 0px 0px 5px 5px #00BFFF;
+  border: 1px solid #00BFFF;
   border-radius: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion {
-    padding: 30px 60px 30px 60px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 0px 5px 5px #00BFFF;
+    border: none;
   }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo {
@@ -2430,7 +2898,8 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
 }
 @media (min-width: 768px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    gap: 15px;
   }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen {
@@ -2485,13 +2954,19 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a {
     font-size: 15px;
   }
+  main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:active {
+    color: #00BFFF;
+  }
+  main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor a:hover {
+    color: #00BFFF;
+  }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
   font-size: 10px;
 }
 @media (min-width: 768px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .hora-autor span {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo .titulo h2 {
@@ -2508,6 +2983,7 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
   width: 100%;
   margin-bottom: 10px;
   border-radius: 10px;
+  border: 1px solid #CCCCCC;
 }
 @media (min-width: 768px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen_publicacion {
@@ -2521,8 +2997,9 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen_publicacion_tablet {
     display: block;
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 10px;
+    border: 1px solid #CCCCCC;
   }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .contenido-publicacion {
@@ -2533,7 +3010,7 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
 @media (min-width: 768px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .contenido-publicacion {
     font-size: 13px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios {
@@ -2544,7 +3021,7 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
 }
 @media (min-width: 768px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .numero-likes-comentarios .numero-likes {

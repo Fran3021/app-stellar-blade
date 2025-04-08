@@ -21,14 +21,21 @@ main{
             justify-content: center;
             align-items: center;
             gap: 50px;
+            @include abs.breakpoint(tablet){
+                gap: 80px
+            }
             .publicacion{
-                @include abs.publicacion
+                @include abs.publicacion;
             }
         }
         .title-busqueda{
             font-size: 20px;
             text-align: center;
             margin-bottom: 35px;
+            @include abs.breakpoint(tablet){
+                font-size: 30px;
+                margin-bottom: 45px;
+            }
         }
         .container-busqueda{
             width: 100%;
@@ -42,17 +49,26 @@ main{
                 flex-direction: column;
                 margin-bottom: 40px;
                 gap: 50px;
+                @include abs.breakpoint(tablet){
+                    gap: 80px;
+                }
                 .formulario-busqueda{
                     width: 100%;
                     label{
                         font-size: 10px;
                         text-shadow: 0px 0px 5px abs.$azul-neon;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                        }
                     }
                     input{
                         background-color: abs.$negro-espacial;
                         color: abs.$blanco;
                         border-color: abs.$azul-neon;
                         font-size: 10px;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                        }
                         &:focus{
                             box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                         }
@@ -64,6 +80,21 @@ main{
                         background-color: abs.$rosa-neon;
                         border-radius: 5px;
                         font-size: 10px;
+                        transition: background-color 1s linear,
+                        color 1s linear, border 1s linear;
+                        @include abs.breakpoint(tablet){
+                            color: abs.$blanco;
+                            background-color: abs.$azul-neon;
+                            padding: 10px 15px;
+                            border-radius: 10px;
+                            font-size: 13px;
+                            border: 1px solid abs.$rosa-neon;
+                            &:hover{
+                                background-color: abs.$negro-espacial;
+                                color: abs.$azul-neon;
+                                border: 1px solid abs.$blanco;
+                            }
+                        }
                     }
                 }
                 .publicaciones-busqueda{
@@ -73,9 +104,15 @@ main{
                     align-items: center;
                     justify-content: center;
                     gap: 50px;
+                    @include abs.breakpoint(tablet){
+                        gap: 80px;
+                    }
                     h3{
                         font-size: 15px;
                         font-weight: bold;
+                        @include abs.breakpoint(tablet){
+                            font-size: 20px;
+                        }
                     }
                     .publicacion{
                         @include abs.publicacion
@@ -88,9 +125,15 @@ main{
                     align-items: center;
                     justify-content: center;
                     gap: 50px;
+                    @include abs.breakpoint(tablet){
+                        gap: 80px;
+                    }
                     h3{
                         font-size: 15px;
                         font-weight: bold;
+                        @include abs.breakpoint(tablet){
+                            font-size: 20px;
+                        }
                     }
                     .container-perfiles-includes{
                         @include abs.perfiles
@@ -102,11 +145,18 @@ main{
                 display: flex;
                 flex-direction: column;
                 gap: 60px;
+                @include abs.breakpoint(tablet){
+                    gap: 90px;
+                }
                 h3{
                     font-size: 15px;
                     text-align: center;
                     margin-bottom: 30px;
                     font-weight: bold;
+                    @include abs.breakpoint(tablet){
+                        font-size: 20px;
+                        margin-bottom: 50px;
+                    }
                 }
                 .perfiles-sugeridos{
                     width: 100%;
@@ -116,6 +166,9 @@ main{
                         gap: 50px;
                         justify-content: center;
                         align-items: center;
+                        @include abs.breakpoint(tablet){
+                            gap: 80px;
+                        }
                         .container-perfiles-includes{
                             @include abs.perfiles
                         }
@@ -129,6 +182,9 @@ main{
                         gap: 50px;
                         justify-content: center;
                         align-items: center;
+                        @include abs.breakpoint(tablet){
+                            gap: 80px;
+                        }
                         .publicacion{
                             @include abs.publicacion
                         }
@@ -143,12 +199,18 @@ main{
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -160,6 +222,13 @@ main{
                     background-color: abs.$rosa-neon;
                     border-radius: 5px;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        padding: 10px 15px;
+                        font-size: 13px;
+                        &:hover{
+                            box-shadow: 0px 0px 3px 2px abs.$blanco;
+                        }
+                    }
                 }
             }
         }
@@ -170,12 +239,18 @@ main{
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -187,9 +262,19 @@ main{
                     background-color: abs.$azul-neon;
                     border-radius: 5px;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        padding: 10px 15px;
+                        font-size: 13px;
+                        &:hover{
+                            box-shadow: 0px 0px 5px 2px abs.$rosa-neon;
+                        }
+                    }
                 }
                 .form-text{
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
             }
         }

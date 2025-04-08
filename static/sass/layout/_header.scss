@@ -54,8 +54,8 @@ header{
             }
             .avatar-menu{
                 border-radius: 50%;
-                width: 50%;
-                height: 50%;
+                width: 40%;
+                height: 40%;
                 margin-bottom: 3px;
             }
         }
@@ -69,8 +69,11 @@ header{
             width: 100%;
             position: fixed;
             top: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
             ul{
-                width: 90%;
+                width: 100%;
+                max-width: 600px;
                 margin-left: auto;
                 margin-right: auto;
                 display: flex;
@@ -85,28 +88,47 @@ header{
                     flex-direction: column;
                     text-decoration: none;
                     color: abs.$azul-neon;
-                    font-size: 10px;
+                    font-size: 13px;
                     align-items: center;
                     i{
                         color: abs.$azul-neon;
-                        font-size: 15px;
+                        font-size: 17px;
                     }
                 }
                 .avatar-menu{
                     border-radius: 50%;
-                    width: 22%;
-                    height: 22%;
+                    width: 27%;
+                    height: 27%;
                 }
                 .numero-notificaciones{
-                    font-size: 7px;
+                    font-size: 8px;
                     position: absolute;
-                    right: 9%;
-                    top: 7%;
+                    right: 16%;
+                    top: 13%;
                     background-color: abs.$rojo-neon;
-                    width: 10px;
-                    height: 10px;
+                    width: 12px;
+                    height: 12px;
                     border-radius: 50%;
                 }
+            }
+        }
+    }
+    .container-include-mensajes{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        div{
+            font-size: 8px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            opacity: 0.8;
+            @include abs.breakpoint(tablet){
+                top: 60px;
+                font-size: 15px;
             }
         }
     }
@@ -116,24 +138,8 @@ header{
             text-align: center;
             animation: titulo-pagina 1.5s linear forwards;
             @include abs.breakpoint(tablet){
-                font-size: 40px;
-            }
-        }
-        .container-include-mensajes{
-            div{
-                font-size: 8px;
-                position: fixed;
-                top: 0;
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-                text-align: center;
-                opacity: 0.8;
-                @include abs.breakpoint(tablet){
-                    top: 55px;
-                    font-size: 15px;
-                    opacity: 0.9;
-                }
+                font-size: 35px;
+                margin-bottom: 40px;
             }
         }
     }
