@@ -13,15 +13,24 @@ main{
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -30,6 +39,9 @@ main{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -41,27 +53,41 @@ main{
                     color: abs.$negro-espacial;
                     padding: 3px 6px;
                     border-radius: 5px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                        padding: 5px 10px;
+                    }
                 }
             }
-        }
-        .title-detalle-publicacion{
-            font-size: 20px;
-            text-align: center;
-            margin-bottom: 35px;
         }
         .container-detalle-publicacion{
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            border: 1px solid abs.$rojo-neon;
+            padding: 15px 10px;
+            border-radius: 10px;
+            @include abs.breakpoint(tablet){
+                border: none;
+                padding: 20px 30px;
+                box-shadow: 0px 0px 5px 5px abs.$rojo-neon;
+            }
             .publicacion-detalle-imagen-descripcion{
                 display: flex;
                 width: 100%;
                 align-items: center;
                 gap: 10px;
                 margin-bottom: 15px;
+                @include abs.breakpoint(tablet){
+                    gap: 20px;
+                    margin-bottom: 20px;
+                }
                 .imagen-publicacion-detalle{
                     width: 20%;
+                    @include abs.breakpoint(tablet){
+                        width: 15%;
+                    }
                     a{
                         text-decoration: none;
                         img{
@@ -76,30 +102,49 @@ main{
                     display: flex;
                     flex-direction: column;
                     gap: 10px;
+                    @include abs.breakpoint(tablet){
+                        width: 85%;
+                    }
                     .autor-fecha{
                         font-size: 12px;
+                        @include abs.breakpoint(tablet){
+                            font-size: 18px;
+                        }
                     }
                     .titulo{
                         font-size: 15px;
                         color: abs.$azul-neon;
                         font-weight: bold;
+                        @include abs.breakpoint(tablet){
+                            font-size: 20px;
+                        }
                     }
                 }
             }
             .publicacion-detalle-imagen-large{
                 width: 100%;
                 margin-bottom: 15px;
+                @include abs.breakpoint(tablet){
+                    margin-bottom: 20px;
+                }
                 img{
                     width: 100%;
                     border-radius: 10px;
+                    border: 1px solid abs.$gris-claro;
                 }
             }
             .publicacion-detalle-contenido{
                 width: 100%;
                 margin-bottom: 15px;
+                @include abs.breakpoint(tablet){
+                    margin-bottom: 20px;
+                }
                 p{
                     font-size: 13px;
                     color: abs.$gris-claro;
+                    @include abs.breakpoint(tablet){
+                        font-size: 17px;
+                    }
                 }
             }
             .publicacion-detalle-likes-comentarios{
@@ -108,6 +153,9 @@ main{
                 justify-content: space-around;
                 align-items: center;
                 margin-bottom: 15px;
+                @include abs.breakpoint(tablet){
+                    margin-bottom: 20px;
+                }
                 .likes{
                     display: flex;
                     align-items: center;
@@ -139,6 +187,10 @@ main{
                     font-size: 15px;
                     text-align: center;
                     margin-bottom: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                    }
                 }
                 .container-comentarios-respuestas{
                     width: 100%;
@@ -155,10 +207,16 @@ main{
                             display: flex;
                             align-items: center;
                             gap: 10px;
+                            @include abs.breakpoint(tablet){
+                                margin-bottom: 5px;
+                            }
                             a{
                                 width: 10%;
                                 text-decoration: none;
                                 display: inline-block;
+                                @include abs.breakpoint(tablet){
+                                    width: 7%;
+                                }
                                 img{
                                     width: 100%;
                                     height: 100%;
@@ -169,34 +227,58 @@ main{
                                 display: flex;
                                 flex-direction: column;
                                 width: 90%;
+                                @include abs.breakpoint(tablet){
+                                    width: 93%;
+                                }
                                 .autor{
                                     font-size: 8px;
+                                    @include abs.breakpoint(tablet){
+                                        font-size: 11px;
+                                    }
                                 }
                                 .fecha-publi{
                                     font-size: 8px;
+                                    @include abs.breakpoint(tablet){
+                                        font-size: 11px;
+                                    }
                                 }
                             }
                         }
                         .TextoComentario{
                             font-size: 10px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 14px;
+                            }
                         }
                         .EliminarComentario{
                             font-size: 8px;
                             background-color: abs.$rojo-neon;
                             padding: 3px 5px;
                             border-radius: 4px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 10px;
+                                padding: 5px 7px;
+                            }
                         }
                         .BotonResponder{
                             font-size: 8px;
                             background-color: abs.$azul-neon;
                             padding: 3px 5px;
                             border-radius: 4px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 10px;
+                                padding: 5px 7px;
+                            }
                         }
                         .VerRespuestas{
                             font-size: 8px;
                             background-color: abs.$rosa-neon;
                             padding: 3px 5px;
                             border-radius: 4px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 10px;
+                                padding: 5px 7px;
+                            }
                         }
                     }
                     .container-respuestas{
@@ -211,6 +293,9 @@ main{
                                 width: 10%;
                                 text-decoration: none;
                                 display: inline-block;
+                                @include abs.breakpoint(tablet){
+                                    width: 7%;
+                                }
                                 img{
                                     width: 100%;
                                     height: 100%;
@@ -221,22 +306,38 @@ main{
                                 display: flex;
                                 flex-direction: column;
                                 width: 90%;
+                                @include abs.breakpoint(tablet){
+                                    width: 93%;
+                                }
                                 .autor{
                                     font-size: 8px;
+                                    @include abs.breakpoint(tablet){
+                                        font-size: 11px;
+                                    }
                                 }
                                 .fecha-respuesta{
                                     font-size: 8px;
+                                    @include abs.breakpoint(tablet){
+                                        font-size: 11px;
+                                    }
                                 }
                             }
                         }
                         .TextoRespuesta{
                             font-size: 10px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 14px;
+                            }
                         }
                         .eliminarRespuesta{
                             font-size: 8px;
                             background-color: abs.$rojo-neon;
                             padding: 3px 5px;
                             border-radius: 4px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 10px;
+                                padding: 5px 7px;
+                            }
                         }
                     }
                 }
@@ -246,12 +347,18 @@ main{
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -261,6 +368,9 @@ main{
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -273,12 +383,20 @@ main{
                     padding: 3px 6px;
                     border-radius: 4px;
                     font-size: 8px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 10px;
+                        padding: 5px 7px;
+                    }
                 }
             }
             .title-no-hay-comentarios{
                 font-size: 12px;
                 font-weight: bold;
                 margin-bottom: 10px;
+                @include abs.breakpoint(tablet){
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
             }
             .FormComentario{
                 width: 100%;
@@ -287,12 +405,18 @@ main{
                     label{
                         font-size: 10px;
                         text-shadow: 0px 0px 5px abs.$azul-neon;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                        }
                     }
                     input{
                         background-color: abs.$negro-espacial;
                         color: abs.$blanco;
                         border-color: abs.$azul-neon;
                         font-size: 10px;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                        }
                         &:focus{
                             box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                         }
@@ -302,6 +426,9 @@ main{
                         color: abs.$blanco;
                         border-color: abs.$azul-neon;
                         font-size: 10px;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                        }
                         &:focus{
                             box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                         }
@@ -314,6 +441,10 @@ main{
                         padding: 3px 6px;
                         border-radius: 4px;
                         font-size: 8px;
+                        @include abs.breakpoint(tablet){
+                            font-size: 10px;
+                            padding: 5px 7px;
+                        }
                     }
                 }
             }
@@ -321,6 +452,7 @@ main{
                 width: 100%;
                 display: flex;
                 gap: 10px;
+                align-items: center;
                 .boton-editar{
                     text-decoration: none;
                     display: inline-block;
@@ -329,6 +461,10 @@ main{
                     color: abs.$blanco;
                     padding: 3px 6px;
                     border-radius: 5px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 10px;
+                        padding: 5px 7px;
+                    }
                 }
                 .boton-eliminar{
                     text-decoration: none;
@@ -338,6 +474,10 @@ main{
                     padding: 3px 6px;
                     border-radius: 5px;
                     color: abs.$blanco;
+                    @include abs.breakpoint(tablet){
+                        font-size: 10px;
+                        padding: 5px 7px;
+                    }
                 }
             }
         }
@@ -350,12 +490,18 @@ main{
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 .form-control{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     .text-break{
                         a{
                             font-size: 10px;
@@ -367,12 +513,18 @@ main{
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -382,6 +534,9 @@ main{
                     color: abs.$blanco;
                     border-color: abs.$azul-neon;
                     font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
                     }
@@ -394,6 +549,10 @@ main{
                     border: 0;
                     border-radius: 5px;
                     margin-right: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 12px;
+                        padding: 5px 8px;
+                    }
                 }
                 .boton-cancelar{
                     text-decoration: none;
@@ -403,6 +562,10 @@ main{
                     color: abs.$blanco;
                     padding: 3px 6px;
                     border-radius: 5px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 12px;
+                        padding: 5px 8px;
+                    }
                 }
             }
         }
@@ -410,6 +573,9 @@ main{
             width: 100%;
             .title-eliminar-publicacion{
                 font-size: 15px;
+                @include abs.breakpoint(tablet){
+                    font-size: 20px;
+                }
             }
             .formulario-eliminar-publicacion{
                 width: 100%;
@@ -421,6 +587,10 @@ main{
                     border-radius: 5px;
                     color: abs.$blanco;
                     margin-top: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 13px;
+                        padding: 8px 13px;
+                    }
                 }
                 .boton-cancelar{
                     margin-top: 10px;
@@ -431,6 +601,10 @@ main{
                     padding: 3px 6px;
                     border-radius: 5px;
                     color: abs.$rojo-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 13px;
+                        padding: 8px 13px;
+                    }
                 }
             }
         }

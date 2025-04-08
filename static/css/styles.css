@@ -1409,6 +1409,11 @@ main .container-main .container-conversaciones h3 {
   font-size: 15px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones h3 {
+    font-size: 20px;
+  }
+}
 main .container-main .container-conversaciones .conversacion {
   display: flex;
   align-items: center;
@@ -1416,6 +1421,14 @@ main .container-main .container-conversaciones .conversacion {
   border: 1px solid #FF007F;
   padding: 10px;
   border-radius: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones .conversacion {
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 2px 0px 4px 4px #FFFFFF;
+  }
 }
 main .container-main .container-conversaciones .conversacion img {
   width: 10%;
@@ -1431,16 +1444,32 @@ main .container-main .container-conversaciones .conversacion .conversacion-enlac
   font-size: 10px;
   font-weight: 600;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones .conversacion .conversacion-enlace p {
+    font-size: 15px;
+  }
+}
 main .container-main .container-conversaciones .conversacion .conversacion-enlace .boton-ir-conversacion {
   text-decoration: none;
   font-size: 12px;
   font-size: bold;
   color: #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones .conversacion .conversacion-enlace .boton-ir-conversacion {
+    font-size: 17px;
+  }
+}
 main .container-main .title-conversaciones-detalle {
   font-size: 20px;
   text-align: center;
   margin-bottom: 35px;
+}
+@media (min-width: 768px) {
+  main .container-main .title-conversaciones-detalle {
+    font-size: 30px;
+    margin-bottom: 45px;
+  }
 }
 main .container-main .container-conversaciones-detail {
   width: 100%;
@@ -1611,6 +1640,13 @@ main .container-main .container-notificaciones .notificaciones li a {
   font-size: 10px;
   font-weight: 600;
 }
+@media (min-width: 768px) {
+  main .container-main .container-notificaciones .notificaciones li a {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px 30px;
+  }
+}
 main .container-main .container-notificaciones .notificaciones .leida {
   background-color: #1E1E1E;
 }
@@ -1624,14 +1660,29 @@ main .container-main .container-publicacion-nueva .formulario-para-crear-publica
   border-color: #00BFFF;
   font-size: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion .form-control {
+    font-size: 15px;
+  }
+}
 main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion label {
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion label {
+    font-size: 15px;
+  }
 }
 main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1640,6 +1691,11 @@ main .container-main .container-publicacion-nueva .formulario-para-crear-publica
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion textarea {
+    font-size: 15px;
+  }
 }
 main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1652,16 +1708,27 @@ main .container-main .container-publicacion-nueva .formulario-para-crear-publica
   padding: 3px 6px;
   border-radius: 5px;
 }
-main .container-main .title-detalle-publicacion {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 35px;
+@media (min-width: 768px) {
+  main .container-main .container-publicacion-nueva .formulario-para-crear-publicacion .boton-crear {
+    font-size: 15px;
+    padding: 5px 10px;
+  }
 }
 main .container-main .container-detalle-publicacion {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid #FF073A;
+  padding: 15px 10px;
+  border-radius: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion {
+    border: none;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 5px 5px #FF073A;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion {
   display: flex;
@@ -1670,8 +1737,19 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-
   gap: 10px;
   margin-bottom: 15px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion {
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle {
   width: 20%;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle {
+    width: 15%;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle a {
   text-decoration: none;
@@ -1687,29 +1765,60 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-
   flex-direction: column;
   gap: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle {
+    width: 85%;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle .autor-fecha {
   font-size: 12px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle .autor-fecha {
+    font-size: 18px;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle .titulo {
   font-size: 15px;
   color: #00BFFF;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle .titulo {
+    font-size: 20px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-large {
   width: 100%;
   margin-bottom: 15px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-large {
+    margin-bottom: 20px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-large img {
   width: 100%;
   border-radius: 10px;
+  border: 1px solid #CCCCCC;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-contenido {
   width: 100%;
   margin-bottom: 15px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-contenido {
+    margin-bottom: 20px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-contenido p {
   font-size: 13px;
   color: #CCCCCC;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-contenido p {
+    font-size: 17px;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios {
   width: 100%;
@@ -1717,6 +1826,11 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-likes-c
   justify-content: space-around;
   align-items: center;
   margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios {
+    margin-bottom: 20px;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-likes-comentarios .likes {
   display: flex;
@@ -1748,6 +1862,12 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   text-align: center;
   margin-bottom: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas {
   width: 100%;
   display: flex;
@@ -1766,10 +1886,20 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   align-items: center;
   gap: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi {
+    margin-bottom: 5px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi a {
   width: 10%;
   text-decoration: none;
   display: inline-block;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi a {
+    width: 7%;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi a img {
   width: 100%;
@@ -1781,14 +1911,34 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   flex-direction: column;
   width: 90%;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi {
+    width: 93%;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi .autor {
   font-size: 8px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi .autor {
+    font-size: 11px;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi .fecha-publi {
   font-size: 8px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi .fecha-publi {
+    font-size: 11px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .TextoComentario {
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .TextoComentario {
+    font-size: 14px;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .EliminarComentario {
   font-size: 8px;
@@ -1796,17 +1946,35 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   padding: 3px 5px;
   border-radius: 4px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .EliminarComentario {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .BotonResponder {
   font-size: 8px;
   background-color: #00BFFF;
   padding: 3px 5px;
   border-radius: 4px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .BotonResponder {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .VerRespuestas {
   font-size: 8px;
   background-color: #FF007F;
   padding: 3px 5px;
   border-radius: 4px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .VerRespuestas {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas {
   width: 100%;
@@ -1823,6 +1991,11 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   text-decoration: none;
   display: inline-block;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a {
+    width: 7%;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a img {
   width: 100%;
   height: 100%;
@@ -1833,20 +2006,46 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   flex-direction: column;
   width: 90%;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta {
+    width: 93%;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta .autor {
   font-size: 8px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta .autor {
+    font-size: 11px;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta .fecha-respuesta {
   font-size: 8px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta .fecha-respuesta {
+    font-size: 11px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .TextoRespuesta {
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .TextoRespuesta {
+    font-size: 14px;
+  }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .eliminarRespuesta {
   font-size: 8px;
   background-color: #FF073A;
   padding: 3px 5px;
   border-radius: 4px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .eliminarRespuesta {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
 }
 main .container-main .container-detalle-publicacion .FormRespuesta {
   width: 100%;
@@ -1855,11 +2054,21 @@ main .container-main .container-detalle-publicacion .FormRespuesta label {
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .FormRespuesta label {
+    font-size: 15px;
+  }
+}
 main .container-main .container-detalle-publicacion .FormRespuesta input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .FormRespuesta input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-detalle-publicacion .FormRespuesta input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1869,6 +2078,11 @@ main .container-main .container-detalle-publicacion .FormRespuesta textarea {
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .FormRespuesta textarea {
+    font-size: 15px;
+  }
 }
 main .container-main .container-detalle-publicacion .FormRespuesta textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1882,10 +2096,22 @@ main .container-main .container-detalle-publicacion .FormRespuesta .boton-respon
   border-radius: 4px;
   font-size: 8px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .FormRespuesta .boton-responder {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+}
 main .container-main .container-detalle-publicacion .title-no-hay-comentarios {
   font-size: 12px;
   font-weight: bold;
   margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .title-no-hay-comentarios {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
 }
 main .container-main .container-detalle-publicacion .FormComentario {
   width: 100%;
@@ -1895,11 +2121,21 @@ main .container-main .container-detalle-publicacion .FormComentario .formulario-
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar label {
+    font-size: 15px;
+  }
+}
 main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1909,6 +2145,11 @@ main .container-main .container-detalle-publicacion .FormComentario .formulario-
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar textarea {
+    font-size: 15px;
+  }
 }
 main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1922,10 +2163,17 @@ main .container-main .container-detalle-publicacion .FormComentario .formulario-
   border-radius: 4px;
   font-size: 8px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .FormComentario .formulario-comentar .boton-comentar {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+}
 main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle {
   width: 100%;
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle .boton-editar {
   text-decoration: none;
@@ -1936,6 +2184,12 @@ main .container-main .container-detalle-publicacion .botones-editar-eliminar-pub
   padding: 3px 6px;
   border-radius: 5px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle .boton-editar {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
+}
 main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle .boton-eliminar {
   text-decoration: none;
   display: inline-block;
@@ -1944,6 +2198,12 @@ main .container-main .container-detalle-publicacion .botones-editar-eliminar-pub
   padding: 3px 6px;
   border-radius: 5px;
   color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle .boton-eliminar {
+    font-size: 10px;
+    padding: 5px 7px;
+  }
 }
 main .container-main .container-editar-publicacion {
   width: 100%;
@@ -1957,11 +2217,21 @@ main .container-main .container-editar-publicacion .formulario-editar-publicacio
   border-color: #00BFFF;
   font-size: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-editar-publicacion .formulario-editar-publicacion .input-group-text {
+    font-size: 15px;
+  }
+}
 main .container-main .container-editar-publicacion .formulario-editar-publicacion .form-control {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-editar-publicacion .formulario-editar-publicacion .form-control {
+    font-size: 15px;
+  }
 }
 main .container-main .container-editar-publicacion .formulario-editar-publicacion .form-control .text-break a {
   font-size: 10px;
@@ -1972,11 +2242,21 @@ main .container-main .container-editar-publicacion .formulario-editar-publicacio
   font-size: 10px;
   text-shadow: 0px 0px 5px #00BFFF;
 }
+@media (min-width: 768px) {
+  main .container-main .container-editar-publicacion .formulario-editar-publicacion label {
+    font-size: 15px;
+  }
+}
 main .container-main .container-editar-publicacion .formulario-editar-publicacion input {
   background-color: #0D0D0D;
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-editar-publicacion .formulario-editar-publicacion input {
+    font-size: 15px;
+  }
 }
 main .container-main .container-editar-publicacion .formulario-editar-publicacion input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1986,6 +2266,11 @@ main .container-main .container-editar-publicacion .formulario-editar-publicacio
   color: #FFFFFF;
   border-color: #00BFFF;
   font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-editar-publicacion .formulario-editar-publicacion textarea {
+    font-size: 15px;
+  }
 }
 main .container-main .container-editar-publicacion .formulario-editar-publicacion textarea:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
@@ -1999,6 +2284,12 @@ main .container-main .container-editar-publicacion .formulario-editar-publicacio
   border-radius: 5px;
   margin-right: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-editar-publicacion .formulario-editar-publicacion .boton-editar {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
 main .container-main .container-editar-publicacion .formulario-editar-publicacion .boton-cancelar {
   text-decoration: none;
   display: inline-block;
@@ -2008,11 +2299,22 @@ main .container-main .container-editar-publicacion .formulario-editar-publicacio
   padding: 3px 6px;
   border-radius: 5px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-editar-publicacion .formulario-editar-publicacion .boton-cancelar {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+}
 main .container-main .container-eliminar-publicacion {
   width: 100%;
 }
 main .container-main .container-eliminar-publicacion .title-eliminar-publicacion {
   font-size: 15px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-eliminar-publicacion .title-eliminar-publicacion {
+    font-size: 20px;
+  }
 }
 main .container-main .container-eliminar-publicacion .formulario-eliminar-publicacion {
   width: 100%;
@@ -2026,6 +2328,12 @@ main .container-main .container-eliminar-publicacion .formulario-eliminar-public
   color: #FFFFFF;
   margin-top: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-eliminar-publicacion .formulario-eliminar-publicacion .boton-eliminar {
+    font-size: 13px;
+    padding: 8px 13px;
+  }
+}
 main .container-main .container-eliminar-publicacion .formulario-eliminar-publicacion .boton-cancelar {
   margin-top: 10px;
   text-decoration: none;
@@ -2035,6 +2343,12 @@ main .container-main .container-eliminar-publicacion .formulario-eliminar-public
   padding: 3px 6px;
   border-radius: 5px;
   color: #FF073A;
+}
+@media (min-width: 768px) {
+  main .container-main .container-eliminar-publicacion .formulario-eliminar-publicacion .boton-cancelar {
+    font-size: 13px;
+    padding: 8px 13px;
+  }
 }
 
 main .container-main .title-contactos {
@@ -2793,6 +3107,12 @@ main .container-main .container-perfiles-detail .perfiles-detail {
   gap: 10px;
   margin-bottom: 50px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail {
+    gap: 15px;
+    padding: 20px 30px;
+  }
+}
 main .container-main .container-perfiles-detail .perfiles-detail img {
   width: 30%;
   height: 30%;
@@ -2809,21 +3129,46 @@ main .container-main .container-perfiles-detail .perfiles-detail .descripcion-pe
   gap: 10px;
   align-items: center;
 }
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje {
+    gap: 15px;
+  }
+}
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .seguidores {
   font-size: 10px;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .seguidores {
+    font-size: 15px;
+  }
 }
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .seguidores span {
   font-size: 10px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .seguidores span {
+    font-size: 15px;
+  }
+}
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .siguiendo {
   font-size: 10px;
   font-weight: bold;
 }
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .siguiendo {
+    font-size: 15px;
+  }
+}
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .siguiendo span {
   font-size: 10px;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .siguiendo span {
+    font-size: 15px;
+  }
 }
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .mensaje {
   text-decoration: none;
@@ -2831,20 +3176,43 @@ main .container-main .container-perfiles-detail .perfiles-detail .descripcion-pe
   display: inline-block;
   background-color: #0D0D0D;
 }
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .mensaje {
+    font-size: 18px;
+  }
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .mensaje:hover i {
+    text-shadow: 0px 0px 10px #FFFFFF;
+  }
+}
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .seguidores-siguiendo-mensaje .mensaje i {
   color: #00BFFF;
 }
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .nombre-te-sigue p {
   font-size: 10px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .nombre-te-sigue p {
+    font-size: 15px;
+  }
+}
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .nombre-te-sigue span {
   font-size: 10px;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .nombre-te-sigue span {
+    font-size: 15px;
+  }
 }
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .biografia-perfiles-detail p {
   font-size: 10px;
   font-weight: bold;
   color: #CCCCCC;
+}
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .biografia-perfiles-detail p {
+    font-size: 13px;
+  }
 }
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .botones-seguir-dejar-de-seguir .boton-dejar-de-seguir {
   background-color: #1E1E1E;
@@ -2854,6 +3222,13 @@ main .container-main .container-perfiles-detail .perfiles-detail .descripcion-pe
   font-size: 10px;
   border-radius: 3px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .botones-seguir-dejar-de-seguir .boton-dejar-de-seguir {
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+}
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .botones-seguir-dejar-de-seguir .boton-seguir {
   background-color: #00BFFF;
   border: 0;
@@ -2861,6 +3236,13 @@ main .container-main .container-perfiles-detail .perfiles-detail .descripcion-pe
   border: 1px solid #FF007F;
   font-size: 10px;
   border-radius: 3px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail .botones-seguir-dejar-de-seguir .boton-seguir {
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail {
   width: 100%;
@@ -2870,11 +3252,22 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
   text-align: center;
   margin-bottom: 35px;
 }
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .title-ultimas-publicaciones-perfiles-detail {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+}
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail {
+    gap: 80px;
+  }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion {
   width: 100%;

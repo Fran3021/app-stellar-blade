@@ -3,16 +3,19 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}DETALLE PUBLICACION{% endblock %}
 {% block page_content %}
-<h2 class="title-detalle-publicacion">{{publicacion.titulo | upper }}</h2>
 <div class="container-detalle-publicacion">
     <div class="publicacion-detalle-imagen-descripcion">
         <div class="imagen-publicacion-detalle">
             {% if publicacion.autor.imagen_perfil %}
-                <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
+                {% if request.user.perfil == publicacion.autor %}
+                    <a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
+                {% else %}
+                    <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
+                {% endif %}
             {% endif %}
         </div>
         <div class="descripcion-publicacion-detalle" >
-            <p class="autor-fecha" >{{publicacion.autor}} - Hace:{{publicacion.fecha_publicacion | timesince}}</p>
+            <p class="autor-fecha" >{{publicacion.autor}} - Hace: {{publicacion.fecha_publicacion | timesince}}</p>
             <p class="titulo" >{{publicacion.titulo}}</p>
         </div>
     </div>

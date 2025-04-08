@@ -327,6 +327,10 @@ main{
                 padding: 20px 10px;
                 gap: 10px;
                 margin-bottom: 50px;
+                @include abs.breakpoint(tablet){
+                    gap: 15px;
+                    padding: 20px 30px;
+                }
                 img{
                     width: 30%;
                     height: 30%;
@@ -341,20 +345,35 @@ main{
                         display: flex;
                         gap: 10px;
                         align-items: center;
+                        @include abs.breakpoint(tablet){
+                            gap: 15px;
+                        }
                         .seguidores{
                             font-size: 10px;
                             font-weight: bold;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                            }
                             span{
                             font-size: 10px;
                             font-weight: bold;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                                }
                             }
                         }
                         .siguiendo{
                             font-size: 10px;
                             font-weight: bold;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                            }
                             span{
                             font-size: 10px;
                             font-weight: bold;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                                }
                             }
                         }
                         .mensaje{
@@ -362,6 +381,14 @@ main{
                             font-size: 12px;
                             display: inline-block;
                             background-color: abs.$negro-espacial;
+                            @include abs.breakpoint(tablet){
+                                font-size: 18px;
+                                &:hover{
+                                    i{
+                                        text-shadow: 0px 0px 10px abs.$blanco;
+                                    }
+                                }
+                            }
                             i{
                                 color: abs.$azul-neon;
                             }
@@ -370,10 +397,16 @@ main{
                     .nombre-te-sigue{
                         p{
                             font-size: 10px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                            }
                         }
                         span{
                             font-size: 10px;
                             font-weight: bold;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                            }
                         }
                     }
                     .biografia-perfiles-detail{
@@ -381,6 +414,9 @@ main{
                             font-size: 10px;
                             font-weight: bold;
                             color: abs.$gris-claro;
+                            @include abs.breakpoint(tablet){
+                                font-size: 13px;
+                            }
                         }
                     }
                     .botones-seguir-dejar-de-seguir{
@@ -391,6 +427,11 @@ main{
                             border: 1px solid abs.$gris-claro;
                             font-size: 10px;
                             border-radius: 3px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                                padding: 10px 15px;
+                                border-radius: 6px;
+                            }
                         }
                         .boton-seguir{
                             background-color: abs.$azul-neon;
@@ -399,6 +440,11 @@ main{
                             border: 1px solid abs.$rosa-neon;
                             font-size: 10px;
                             border-radius: 3px;
+                            @include abs.breakpoint(tablet){
+                                font-size: 15px;
+                                padding: 10px 15px;
+                                border-radius: 6px;
+                            }
                         }
                     }
                 }
@@ -409,12 +455,19 @@ main{
                     font-size: 15px;
                     text-align: center;
                     margin-bottom: 35px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 20px;
+                        margin-bottom: 40px;
+                    }
                 }
                 .ultimas-publicaciones-perfiles-detail{
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     gap: 50px;
+                    @include abs.breakpoint(tablet){
+                        gap: 80px;
+                    }
                     .publicacion{
                         @include abs.publicacion
                     }

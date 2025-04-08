@@ -13,6 +13,9 @@ main{
             h3{
                 font-size: 15px;
                 font-weight: bold;
+                @include abs.breakpoint(tablet){
+                    font-size: 20px;
+                }
             }
             .conversacion{
                 display: flex;
@@ -21,6 +24,12 @@ main{
                 border: 1px solid abs.$rosa-neon;
                 padding: 10px;
                 border-radius: 10px;
+                @include abs.breakpoint(tablet){
+                    width: 100%;
+                    gap: 20px;
+                    padding: 20px;
+                    box-shadow: 2px 0px 4px 4px abs.$blanco;
+                }
                 img{
                     width: 10%;
                     height: 10%;
@@ -33,12 +42,18 @@ main{
                     p{
                         font-size: 10px;
                         font-weight: 600;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                        }
                     }
                     .boton-ir-conversacion{
                         text-decoration: none;
                         font-size: 12px;
                         font-size: bold;
                         color: abs.$azul-neon;
+                        @include abs.breakpoint(tablet){
+                        font-size: 17px;
+                        }
                     }
                 }
             }
@@ -47,6 +62,10 @@ main{
             font-size: 20px;
             text-align: center;
             margin-bottom: 35px;
+            @include abs.breakpoint(tablet){
+                font-size: 30px;
+                margin-bottom: 45px;
+            }
         }
         .container-conversaciones-detail{
             width: 100%;
