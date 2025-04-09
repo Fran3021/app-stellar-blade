@@ -27,6 +27,7 @@
 
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
   <!--Codificacion-->
   <meta charset="UTF-8">
@@ -38,8 +39,9 @@
   <meta name="theme-color" content="FF0000">
 </head>
 <body>
+  <div id="particles-js"></div>
     <header>
-      <h1 class="logo">Stellar Blade</h1>
+      <h1><a class="logo" href="{% url 'home' %}">Stellar Blade</a></h1>
       {% include '_includes/_header.html' %}
       {% include '_includes/_messages.html' %}
       <div class="container-header">
@@ -61,6 +63,19 @@
       </div>
     </footer>
   <script>
+    //script donde se configura el fondo animado a traves de la libreria tsparticles
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 50 },
+        color: { value: "#00BFFF" },
+        shape: { type: "circle" },
+        opacity: { value: 0.8, random: true },
+        size: { value: 3, random: true },
+        move: { enable: true, speed: 1, direction: "none", random: true }
+      },
+      interactivity: { detect_on: "canvas", events: { onhover: { enable: false } } },
+      retina_detect: true
+    });
 
     //evento para seguir y dejar de seguir a usuarios
     const buttonsFollows = document.querySelectorAll('.ButtonFollows')
