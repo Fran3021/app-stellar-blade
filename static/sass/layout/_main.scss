@@ -80,8 +80,8 @@ main{
                         background-color: abs.$rosa-neon;
                         border-radius: 5px;
                         font-size: 10px;
-                        transition: background-color 1s linear,
-                        color 1s linear, border 1s linear;
+                        transition: background-color 0.3s linear,
+                        color 0.3s linear, border 0.3s linear;
                         @include abs.breakpoint(tablet){
                             color: abs.$blanco;
                             background-color: abs.$azul-neon;

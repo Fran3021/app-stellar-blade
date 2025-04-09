@@ -82,6 +82,11 @@
                             width: 100%;
                             border-radius: 50%;
                         }
+                        @include breakpoint(desktop){
+                            &:hover{
+                                box-shadow: 0px 0px 5px 3px var.$rosa-neon;
+                            }
+                        }
                     }
                 }
             }
@@ -171,7 +176,7 @@
                     color: var.$rosa-neon;
                 }
                 i{
-                    color: var.$azul-neon
+                    color: var.$azul-neon;
                 }
             }
             .numero-comentarios{
@@ -199,8 +204,8 @@
                 background-color: var.$negro-espacial;
                 border: 1px solid var.$azul-neon;
                 border-radius: 15px;
-                transition: background-color 1s linear,
-                color 1s linear, border 1s linear, box-shadow 1s linear;
+                transition: background-color 0.3s linear,
+                color 0.3s linear, border 1s linear, box-shadow 0.3s linear;
                 &:hover{
                     color: var.$negro-espacial;
                     padding: 10px 15px;
@@ -253,6 +258,11 @@
                     width: 100%;
                     border-radius: 50%;
                 }
+                @include breakpoint(desktop){
+                    &:hover{
+                        box-shadow: 0px 0px 5px 3px var.$azul-neon;
+                    }
+                }
             }
         }
         .usuario-seguidores{
@@ -286,15 +296,22 @@
         text-decoration: none;
         .boton-dejar-de-seguir{
             background-color: var.$gris-oscuro;
-            border: 0;
             padding: 5px 10px;
             border: 1px solid var.$gris-claro;
             font-size: 10px;
             border-radius: 3px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
             @include breakpoint(tablet){
                 font-size: 15px;
                 padding: 10px 15px;
                 border-radius: 6px;
+            }
+            @include breakpoint(desktop){
+                &:hover{
+                    transform:translateY(-10px) scale(1.1) rotate(5deg);
+                    background-color: var.$blanco;
+                    color: var.$gris-oscuro;
+                }
             }
         }
         .boton-seguir{
@@ -304,10 +321,18 @@
             border: 1px solid var.$rosa-neon;
             font-size: 10px;
             border-radius: 3px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
             @include breakpoint(tablet){
                 font-size: 15px;
                 padding: 10px 15px;
                 border-radius: 6px;
+            }
+            @include breakpoint(desktop){
+                &:hover{
+                    transform:translateY(-10px) scale(1.1);
+                    background-color: var.$blanco;
+                    color: var.$azul-neon;
+                }
             }
         }
     }

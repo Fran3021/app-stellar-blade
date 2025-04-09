@@ -47,6 +47,9 @@ main{
                     width: 30%;
                     height: 30%;
                     border-radius: 50%;
+                    @include abs.breakpoint(desktop){
+                        border: 1px solid abs.$azul-neon;
+                    }
                 }
                 .descripcion-mi-perfil{
                     width: 70%;
@@ -335,6 +338,9 @@ main{
                     width: 30%;
                     height: 30%;
                     border-radius: 50%;
+                    @include abs.breakpoint(desktop){
+                        border: 1px solid abs.$azul-neon;
+                    }
                 }
                 .descripcion-perfiles-detail{
                     width: 70%;
@@ -427,10 +433,17 @@ main{
                             border: 1px solid abs.$gris-claro;
                             font-size: 10px;
                             border-radius: 3px;
+                            transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
                             @include abs.breakpoint(tablet){
                                 font-size: 15px;
                                 padding: 10px 15px;
                                 border-radius: 6px;
+                            }
+                            @include abs.breakpoint(desktop){
+                                &:hover{
+                                    transform: scale(1.1) rotate(5deg);
+                                    box-shadow: 0px 0px 5px 3px abs.$rojo-neon;
+                                }
                             }
                         }
                         .boton-seguir{
@@ -440,10 +453,17 @@ main{
                             border: 1px solid abs.$rosa-neon;
                             font-size: 10px;
                             border-radius: 3px;
+                            transition: transform 0.8s ease-in-out, box-shadow 0.8s ease-in-out;
                             @include abs.breakpoint(tablet){
                                 font-size: 15px;
                                 padding: 10px 15px;
                                 border-radius: 6px;
+                            }
+                            @include abs.breakpoint(desktop){
+                                &:hover{
+                                    transform: scale(1.1) rotate(-5deg);
+                                    box-shadow: 0px 0px 5px 3px abs.$blanco;
+                                }
                             }
                         }
                     }

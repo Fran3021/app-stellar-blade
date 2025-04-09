@@ -47,12 +47,18 @@ main{
                         }
                     }
                     .boton-ir-conversacion{
+                        width: max-content;
                         text-decoration: none;
                         font-size: 12px;
                         font-size: bold;
                         color: abs.$azul-neon;
                         @include abs.breakpoint(tablet){
                         font-size: 17px;
+                        }
+                        @include abs.breakpoint(desktop){
+                            &:hover{
+                                text-shadow: 0px 0px 2px abs.$blanco;
+                            }
                         }
                     }
                 }
@@ -82,13 +88,21 @@ main{
                     width: 100%;
                     align-items: center;
                     justify-content: flex-start;
-                    img{
+                    a{
                         width: 10%;
                         height: 10%;
-                        border-radius: 50%;
                         @include abs.breakpoint(tablet){
                             width: 7%;
                             height: 7%;
+                        }
+                        img{
+                            width: 100%;
+                            border-radius: 50%;
+                            @include abs.breakpoint(desktop){
+                                &:hover{
+                                    box-shadow: 0px 0px 2px 2px abs.$blanco;
+                                }
+                            }
                         }
                     }
                     p{
@@ -146,13 +160,21 @@ main{
                     width: 100%;
                     align-items: center;
                     justify-content: flex-end;
-                    img{
+                    a{
                         width: 10%;
                         height: 10%;
-                        border-radius: 50%;
                         @include abs.breakpoint(tablet){
                             width: 7%;
                             height: 7%;
+                        }
+                        img{
+                            width: 100%;
+                            border-radius: 50%;
+                            @include abs.breakpoint(desktop){
+                                &:hover{
+                                    box-shadow: 0px 0px 2px 2px abs.$blanco;
+                                }
+                            }
                         }
                     }
                     p{
@@ -226,9 +248,16 @@ main{
                     font-size: 10px;
                     border-radius: 5px;
                     padding: 3px 6px;
+                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                         padding: 5px 8px;
+                    }
+                    @include abs.breakpoint(desktop){
+                        &:hover{
+                            background-color: abs.$blanco;
+                            color: abs.$rosa-neon;
+                        }
                     }
                 }
             }
@@ -247,9 +276,17 @@ main{
                 border-radius: 5px;
                 padding: 3px 6px;
                 width: max-content;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
                 @include abs.breakpoint(tablet){
                     font-size: 15px;
                     padding: 5px 10px;
+                }
+                @include abs.breakpoint(desktop){
+                    &:hover{
+                        color: abs.$rojo-neon;
+                        background-color: abs.$blanco;
+                        box-shadow: 0px 0px 5px 5px abs.$rojo-neon;
+                    }
                 }
             }
         }
@@ -282,9 +319,16 @@ main{
                     font-size: 10px;
                     border-radius: 5px;
                     padding: 3px 6px;
+                    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                         padding: 5px 10px;
+                    }
+                    @include abs.breakpoint(desktop){
+                        &:hover{
+                            background-color: abs.$blanco;
+                            color: abs.$rosa-neon;
+                        }
                     }
                 }
             }

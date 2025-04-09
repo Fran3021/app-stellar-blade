@@ -25,6 +25,11 @@ main{
                             font-weight: bold;
                             padding: 15px 30px;
                         }
+                        @include abs.breakpoint(desktop){
+                            &:hover{
+                                color: abs.$rosa-neon;
+                            }
+                        }
                     }
                 }
                 .leida{

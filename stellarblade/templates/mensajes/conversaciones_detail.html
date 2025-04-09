@@ -9,7 +9,15 @@
     {% if mensajes.autor == request.user.perfil %}
         <div class="mensaje-1">
             <div class="imagen-mensaje">
-                <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="" class="imagen-perfil-usuario">
+                {% if request.user.perfil == mensajes.autor %}
+                    <a href="{% url 'usuarios:mi_perfil' mensajes.autor.pk %}">
+                        <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="" class="imagen-perfil-usuario">
+                    </a>
+                {% else %}
+                    <a href="{% url 'usuarios:detail' mensajes.autor.pk %}">
+                        <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="" class="imagen-perfil-usuario">
+                    </a>
+                {% endif %}
                 <p>{{mensajes.contenido}}</p>
             </div>
             <div class="fecha-borrar-mensaje">
@@ -23,7 +31,15 @@
     <div class="mensaje-2">
         <div class="mensaje-imagen">
             <p>{{mensajes.contenido}}</p>
-            <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="" class="imagen-perfil-usuario">
+            {% if request.user.perfil == mensajes.autor %}
+                <a href="{% url 'usuarios:mi_perfil' mensajes.autor.pk %}">
+                    <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="" class="imagen-perfil-usuario">
+                </a>
+            {% else %}
+                <a href="{% url 'usuarios:detail' mensajes.autor.pk %}">
+                    <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="" class="imagen-perfil-usuario">
+                </a>
+            {% endif %}
         </div>
         <div class="borrar-fecha-mensaje">
             {% if request.user.perfil == mensajes.autor %}

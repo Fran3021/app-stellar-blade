@@ -21,3 +21,8 @@
         opacity: 1;
     }
 }
+
+@keyframes neonPulse {
+    from { text-shadow: 0 0 5px abs.$rojo-neon, 0 0 10px abs.$rojo-neon; }
+    to   { text-shadow: 0 0 15px abs.$rojo-neon, 0 0 25px abs.$rojo-neon; }
+    }
