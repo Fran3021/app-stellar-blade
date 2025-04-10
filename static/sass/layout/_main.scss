@@ -13,6 +13,17 @@ main{
                 font-size: 30px;
                 margin-bottom: 45px;
             }
+            @include abs.breakpoint(desktop){
+                text-shadow:1px 1px 0px abs.$rosa-neon,
+                2px 2px 2px abs.$rosa-neon, 
+                3px 3px 0px abs.$rosa-neon, 
+                4px 4px 0px abs.$rosa-neon,
+                5px 5px 0px abs.$rosa-neon;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 40px;
+                margin-bottom: 70px;
+            }
         }
         .container-home{
             width: 100%;
@@ -23,6 +34,9 @@ main{
             gap: 50px;
             @include abs.breakpoint(tablet){
                 gap: 80px
+            }
+            @include abs.breakpoint(desktopxl){
+                gap: 120px
             }
             .publicacion{
                 @include abs.publicacion;
@@ -35,6 +49,17 @@ main{
             @include abs.breakpoint(tablet){
                 font-size: 30px;
                 margin-bottom: 45px;
+            }
+            @include abs.breakpoint(desktop){
+                text-shadow:1px 1px 0px abs.$rosa-neon,
+                2px 2px 2px abs.$rosa-neon, 
+                3px 3px 0px abs.$rosa-neon, 
+                4px 4px 0px abs.$rosa-neon,
+                5px 5px 0px abs.$rosa-neon;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 40px;
+                margin-bottom: 70px;
             }
         }
         .container-busqueda{
@@ -60,6 +85,9 @@ main{
                         @include abs.breakpoint(tablet){
                             font-size: 15px;
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 20px;
+                        }
                     }
                     input{
                         background-color: abs.$negro-espacial;
@@ -68,6 +96,9 @@ main{
                         font-size: 10px;
                         @include abs.breakpoint(tablet){
                             font-size: 15px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 20px;
                         }
                         &:focus{
                             box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -95,6 +126,9 @@ main{
                                 border: 1px solid abs.$blanco;
                             }
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 16px;
+                        }
                     }
                 }
                 .publicaciones-busqueda{
@@ -107,11 +141,17 @@ main{
                     @include abs.breakpoint(tablet){
                         gap: 80px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        gap: 120px;
+                    }
                     h3{
                         font-size: 15px;
                         font-weight: bold;
                         @include abs.breakpoint(tablet){
                             font-size: 20px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 25px;
                         }
                     }
                     .publicacion{
@@ -128,11 +168,17 @@ main{
                     @include abs.breakpoint(tablet){
                         gap: 80px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        gap: 120px;
+                    }
                     h3{
                         font-size: 15px;
                         font-weight: bold;
                         @include abs.breakpoint(tablet){
                             font-size: 20px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 25px;
                         }
                     }
                     .container-perfiles-includes{
@@ -148,6 +194,9 @@ main{
                 @include abs.breakpoint(tablet){
                     gap: 90px;
                 }
+                @include abs.breakpoint(desktopxl){
+                    gap: 140px;
+                }
                 h3{
                     font-size: 15px;
                     text-align: center;
@@ -156,6 +205,10 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 20px;
                         margin-bottom: 50px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 25px;
+                        margin-bottom: 70px;
                     }
                 }
                 .perfiles-sugeridos{
@@ -168,6 +221,9 @@ main{
                         align-items: center;
                         @include abs.breakpoint(tablet){
                             gap: 80px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            gap: 120px;
                         }
                         .container-perfiles-includes{
                             @include abs.perfiles
@@ -184,6 +240,9 @@ main{
                         align-items: center;
                         @include abs.breakpoint(tablet){
                             gap: 80px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            gap: 120px;
                         }
                         .publicacion{
                             @include abs.publicacion
@@ -202,6 +261,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
@@ -210,6 +272,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -229,6 +294,9 @@ main{
                             box-shadow: 0px 0px 3px 2px abs.$blanco;
                         }
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -242,6 +310,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
@@ -250,6 +321,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -268,6 +342,9 @@ main{
                         &:hover{
                             box-shadow: 0px 0px 5px 2px abs.$rosa-neon;
                         }
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
                     }
                 }
                 .form-text{

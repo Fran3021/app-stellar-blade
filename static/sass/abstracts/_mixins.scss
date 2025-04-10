@@ -51,6 +51,9 @@
             box-shadow: 0px 0px 5px 5px var.$azul-neon;
             border: none;
         }
+        @include breakpoint(desktopxl){
+            padding: 30px 50px 30px 50px;
+        }
         .imagen-hora-titulo{
             width: 100%;
             display: flex;
@@ -60,6 +63,10 @@
             @include breakpoint(tablet){
                 margin-bottom: 20px;
                 gap: 15px;
+            }
+            @include breakpoint(desktopxl){
+                margin-bottom: 30px;
+                gap: 20px;
             }
             .imagen{
                 width: 20%;
@@ -99,6 +106,9 @@
                     @include breakpoint(tablet){
                         margin-bottom: 10px;
                     }
+                    @include breakpoint(desktopxl){
+                        margin-bottom: 0;
+                    }
                     a{
                         text-decoration: none;
                         font-size: 10px;
@@ -112,11 +122,17 @@
                                 color: var.$azul-neon;
                             }
                         }
+                        @include breakpoint(desktopxl){
+                            font-size: 18px;
+                        }
                     }
                     span{
                         font-size: 10px;
                         @include breakpoint(tablet){
                             font-size: 13px;
+                        }
+                        @include breakpoint(desktopxl){
+                            font-size: 16px;
                         }
                     }
                 }
@@ -127,6 +143,9 @@
                         @include breakpoint(tablet){
                             font-size: 18px;
                             color: var.$rosa-neon;
+                        }
+                        @include breakpoint(desktopxl){
+                            font-size: 23px;
                         }
                     }
                 }
@@ -150,6 +169,9 @@
                 border-radius: 10px;
                 border: 1px solid var.$gris-claro;
             }
+            @include breakpoint(desktopxl){
+                margin-bottom: 30px;
+            }
         }
         .contenido-publicacion{
             font-size: 10px;
@@ -158,6 +180,12 @@
             @include breakpoint(tablet){
                 font-size: 13px;
                 margin-bottom: 20px;
+            }
+            @include breakpoint(desktopxl){
+                font-size: 17px;
+            }
+            @include breakpoint(desktopxl){
+                margin-bottom: 30px;
             }
         }
         .numero-likes-comentarios{
@@ -168,15 +196,24 @@
             @include breakpoint(tablet){
                 margin-bottom: 20px;
             }
+            @include breakpoint(desktopxl){
+                margin-bottom: 30px;
+            }
             .numero-likes{
                 display: flex;
                 align-items: center;
                 gap: 5px;
                 span{
                     color: var.$rosa-neon;
+                    @include breakpoint(desktopxl){
+                        font-size: 18px;
+                    }
                 }
                 i{
                     color: var.$azul-neon;
+                    @include breakpoint(desktopxl){
+                        font-size: 18px;
+                    }
                 }
             }
             .numero-comentarios{
@@ -185,9 +222,15 @@
                 gap: 5px;
                 span{
                     color: var.$azul-neon;
+                    @include breakpoint(desktopxl){
+                        font-size: 18px;
+                    }
                 }
                 i{
                     color: var.$rosa-neon;
+                    @include breakpoint(desktopxl){
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -215,6 +258,9 @@
                     box-shadow: 0px 0px 3px 3px var.$blanco;
                 }
             }
+            @include breakpoint(desktopxl){
+                font-size: 18px;
+            }
         }
 }
 
@@ -232,6 +278,9 @@
     @include breakpoint(tablet){
         box-shadow: 0px 0px 5px 5px var.$rojo-neon;
         padding: 20px 30px;
+    }
+    @include breakpoint(desktopxl){
+        padding: 30px 40px;
     }
     .perfiles-includes-imagen-usuario{
         display: flex;
@@ -274,11 +323,17 @@
                     font-size: 20px;
                     margin-bottom: 10px;
                 }
+                @include breakpoint(desktopxl){
+                    font-size: 22px;
+                }
             }
             span{
                 font-size: 10px;
                 @include breakpoint(tablet){
                     font-size: 15px;
+                }
+                @include breakpoint(desktopxl){
+                    font-size: 18px;
                 }
             }
         }
@@ -288,6 +343,9 @@
         font-weight: 600;
         @include breakpoint(tablet){
             font-size: 18px;
+        }
+        @include breakpoint(desktopxl){
+            font-size: 20px;
         }
     }
     .ButtonFollows{
@@ -313,6 +371,9 @@
                     color: var.$gris-oscuro;
                 }
             }
+            @include breakpoint(desktopxl){
+                font-size: 18px;
+            }
         }
         .boton-seguir{
             background-color: var.$azul-neon;
@@ -333,6 +394,9 @@
                     background-color: var.$blanco;
                     color: var.$azul-neon;
                 }
+            }
+            @include breakpoint(desktopxl){
+                font-size: 18px;
             }
         }
     }

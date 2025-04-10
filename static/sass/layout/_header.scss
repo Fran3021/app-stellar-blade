@@ -89,6 +89,19 @@ header{
                 height: 40%;
                 margin-bottom: 3px;
             }
+            .numero-notificacion-container{
+                position: relative;
+                .numero-notificaciones{
+                    font-size: 9px;
+                    position: absolute;
+                    right: 30%;
+                    top: 13%;
+                    background-color: abs.$rojo-neon;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                }
+            }
         }
     }
     .menu-header-tablet{
@@ -106,7 +119,7 @@ header{
                 display: block;
                 position:absolute;
                 left: 5%;
-                top: 15%;
+                top: 13%;
             }
         }
         ul{
@@ -117,6 +130,9 @@ header{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @include abs.breakpoint(desktopxl){
+                max-width: 700px;
+            }
             li{
                 flex: 1;
                 text-align: center;
@@ -139,25 +155,43 @@ header{
                         }
                     }
                 }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 15px;
+                }
                 i{
                     color: abs.$azul-neon;
                     font-size: 17px;
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 19px;
+                    }
                 }
             }
             .avatar-menu{
                 border-radius: 50%;
                 width: 27%;
                 height: 27%;
+                @include abs.breakpoint(desktopxl){
+                    width: 30%;
+                    height: 30%;
+                }
             }
-            .numero-notificaciones{
-                font-size: 8px;
-                position: absolute;
-                right: 16%;
-                top: 13%;
-                background-color: abs.$rojo-neon;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
+            .numero-notificacion-container{
+                position: relative;
+                .numero-notificaciones{
+                    font-size: 8px;
+                    position: absolute;
+                    right: 37%;
+                    top: 13%;
+                    background-color: abs.$rojo-neon;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 10px;
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
             }
         }
         @include abs.breakpoint(tablet){
@@ -184,6 +218,10 @@ header{
             @include abs.breakpoint(desktop){
                 top: 70px;
             }
+            @include abs.breakpoint(desktopxl){
+                top: 75px;
+                font-size: 18px;
+            }
         }
     }
     .container-header{
@@ -194,6 +232,10 @@ header{
             @include abs.breakpoint(tablet){
                 font-size: 35px;
                 margin-bottom: 40px;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 50px;
+                margin-bottom: 50px;
             }
         }
     }

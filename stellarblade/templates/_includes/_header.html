@@ -8,7 +8,14 @@
                 <li><a href="{% url 'search' %}"><i class="bi bi-search"></i></a></li>
                 <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}"><img class="avatar-menu" src="{{request.user.perfil.imagen_perfil.thumbnails.xs.url}}" alt=""></a></li>
                 <li><a href="{% url 'mensajes:conversaciones' %}"><i class="bi bi-envelope"></i></a></li>
-                <li><a href="{% url 'notificaciones:lista' %}">{{request.user.perfil.total_notificaciones}}<i class="bi bi-bell"></i></a></li>
+                <li class="numero-notificacion-container">
+                    <a href="{% url 'notificaciones:lista' %}">
+                        <i class="bi bi-bell"></i>
+                    </a>
+                    {% if request.user.perfil.total_notificaciones %}
+                        <span class="numero-notificaciones">{{request.user.perfil.total_notificaciones}}</span>
+                    {% endif %}
+                </li>
             {% else %}
                 <li><a href="{% url 'registro' %}">Registrate</a></li>
                 <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>
@@ -30,10 +37,14 @@
                 <li><a href="{% url 'search' %}"><i class="bi bi-search"></i>Búsqueda</a></li>
                 <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}"><img class="avatar-menu" src="{{request.user.perfil.imagen_perfil.thumbnails.xs.url}}" alt="">Mi perfil</a></li>
                 <li><a href="{% url 'mensajes:conversaciones' %}"><i class="bi bi-envelope"></i>Mensajes</a></li>
-                <li><a href="{% url 'notificaciones:lista' %}"><i class="bi bi-bell"></i>Notificaciones</a></li>
-                {% if request.user.perfil.total_notificaciones %}
-                    <li class="numero-notificaciones">{{request.user.perfil.total_notificaciones}}</li>
-                {% endif %}
+                <li class="numero-notificacion-container">
+                    <a href="{% url 'notificaciones:lista' %}">
+                        <i class="bi bi-bell"></i>
+                        Notificaciones</a>
+                    {% if request.user.perfil.total_notificaciones %}
+                        <span class="numero-notificaciones">{{request.user.perfil.total_notificaciones}}</span>
+                    {% endif %}
+                </li>
             {% else %}
                 <li><a href="{% url 'registro' %}">Registrate</a></li>
                 <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>

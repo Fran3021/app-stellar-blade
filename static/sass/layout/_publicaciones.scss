@@ -16,12 +16,18 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
                 }
                 label{
                     font-size: 10px;
                     text-shadow: 0px 0px 5px abs.$azul-neon;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                 }
                 input{
@@ -30,6 +36,9 @@ main{
                     border-color: abs.$azul-neon;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -41,6 +50,9 @@ main{
                     border-color: abs.$azul-neon;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -65,6 +77,9 @@ main{
                             transform: scale(1.1);
                         }
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -81,6 +96,9 @@ main{
                 padding: 20px 30px;
                 box-shadow: 0px 0px 5px 5px abs.$rojo-neon;
             }
+            @include abs.breakpoint(desktopxl){
+                padding: 35px 45px;
+            }
             .publicacion-detalle-imagen-descripcion{
                 display: flex;
                 width: 100%;
@@ -90,6 +108,10 @@ main{
                 @include abs.breakpoint(tablet){
                     gap: 20px;
                     margin-bottom: 20px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    gap: 30px;
+                    margin-bottom: 30px;
                 }
                 .imagen-publicacion-detalle{
                     width: 20%;
@@ -118,10 +140,16 @@ main{
                     @include abs.breakpoint(tablet){
                         width: 85%;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        gap: 0;
+                    }
                     .autor-fecha{
                         font-size: 12px;
                         @include abs.breakpoint(tablet){
                             font-size: 18px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 20px;
                         }
                     }
                     .titulo{
@@ -131,6 +159,9 @@ main{
                         @include abs.breakpoint(tablet){
                             font-size: 20px;
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 24px;
+                        }
                     }
                 }
             }
@@ -139,6 +170,9 @@ main{
                 margin-bottom: 15px;
                 @include abs.breakpoint(tablet){
                     margin-bottom: 20px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    margin-bottom: 30px;
                 }
                 img{
                     width: 100%;
@@ -152,11 +186,17 @@ main{
                 @include abs.breakpoint(tablet){
                     margin-bottom: 20px;
                 }
+                @include abs.breakpoint(desktopxl){
+                    margin-bottom: 30px;
+                }
                 p{
                     font-size: 13px;
                     color: abs.$gris-claro;
                     @include abs.breakpoint(tablet){
                         font-size: 17px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                 }
             }
@@ -175,10 +215,16 @@ main{
                     gap: 5px;
                     span{
                         color: abs.$rojo-neon;
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 20px;
+                        }
                     }
                     a{
                         i{
                             color: abs.$azul-neon;
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 20px;
+                            }
                         }
                     }
                 }
@@ -188,8 +234,14 @@ main{
                     gap: 5px;
                     .ButtonNuevoComentario{
                         color: abs.$azul-neon;
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 20px;
+                        }
                         i{
                             color: abs.$rosa-neon;
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 20px;
+                            }
                         }
                     }
                 }
@@ -203,6 +255,10 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 20px;
                         margin-bottom: 20px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 25px;
+                        margin-bottom: 30px;
                     }
                 }
                 .container-comentarios-respuestas{
@@ -253,11 +309,17 @@ main{
                                     @include abs.breakpoint(tablet){
                                         font-size: 11px;
                                     }
+                                    @include abs.breakpoint(desktopxl){
+                                        font-size: 13px;
+                                    }
                                 }
                                 .fecha-publi{
                                     font-size: 8px;
                                     @include abs.breakpoint(tablet){
                                         font-size: 11px;
+                                    }
+                                    @include abs.breakpoint(desktopxl){
+                                        font-size: 13px;
                                     }
                                 }
                             }
@@ -266,6 +328,9 @@ main{
                             font-size: 10px;
                             @include abs.breakpoint(tablet){
                                 font-size: 14px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 17px;
                             }
                         }
                         .EliminarComentario{
@@ -277,6 +342,9 @@ main{
                                 font-size: 10px;
                                 padding: 5px 7px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 12px;
+                            }
                         }
                         .BotonResponder{
                             font-size: 8px;
@@ -287,6 +355,9 @@ main{
                                 font-size: 10px;
                                 padding: 5px 7px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 12px;
+                            }
                         }
                         .VerRespuestas{
                             font-size: 8px;
@@ -296,6 +367,9 @@ main{
                             @include abs.breakpoint(tablet){
                                 font-size: 10px;
                                 padding: 5px 7px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 12px;
                             }
                         }
                     }
@@ -337,11 +411,17 @@ main{
                                     @include abs.breakpoint(tablet){
                                         font-size: 11px;
                                     }
+                                    @include abs.breakpoint(desktopxl){
+                                        font-size: 13px;
+                                    }
                                 }
                                 .fecha-respuesta{
                                     font-size: 8px;
                                     @include abs.breakpoint(tablet){
                                         font-size: 11px;
+                                    }
+                                    @include abs.breakpoint(desktopxl){
+                                        font-size: 13px;
                                     }
                                 }
                             }
@@ -350,6 +430,9 @@ main{
                             font-size: 10px;
                             @include abs.breakpoint(tablet){
                                 font-size: 14px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 17px;
                             }
                         }
                         .eliminarRespuesta{
@@ -360,6 +443,9 @@ main{
                             @include abs.breakpoint(tablet){
                                 font-size: 10px;
                                 padding: 5px 7px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 12px;
                             }
                         }
                     }
@@ -373,6 +459,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
@@ -381,6 +470,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -393,6 +485,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -415,6 +510,9 @@ main{
                             box-shadow: 0px 0px 2px 2px abs.$blanco inset;
                         }
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 15px;
+                    }
                 }
             }
             .title-no-hay-comentarios{
@@ -424,6 +522,10 @@ main{
                 @include abs.breakpoint(tablet){
                     font-size: 18px;
                     margin-bottom: 20px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 23px;
+                    margin-bottom: 30px;
                 }
             }
             .FormComentario{
@@ -436,6 +538,9 @@ main{
                         @include abs.breakpoint(tablet){
                             font-size: 15px;
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 18px;
+                        }
                     }
                     input{
                         background-color: abs.$negro-espacial;
@@ -444,6 +549,9 @@ main{
                         font-size: 10px;
                         @include abs.breakpoint(tablet){
                             font-size: 15px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 18px;
                         }
                         &:focus{
                             box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -456,6 +564,9 @@ main{
                         font-size: 10px;
                         @include abs.breakpoint(tablet){
                             font-size: 15px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 18px;
                         }
                         &:focus{
                             box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -478,6 +589,9 @@ main{
                                 box-shadow: 0px 0px 3px 3px abs.$blanco inset;
                             }
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 15px;
+                        }
                     }
                 }
             }
@@ -486,6 +600,9 @@ main{
                 display: flex;
                 gap: 10px;
                 align-items: center;
+                @include abs.breakpoint(desktopxl){
+                    gap: 25px;
+                }
                 .boton-editar{
                     text-decoration: none;
                     display: inline-block;
@@ -497,6 +614,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 13px;
                         padding: 5px 7px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
                     }
                 }
                 .boton-eliminar{
@@ -510,6 +630,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 13px;
                         padding: 5px 7px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
                     }
                 }
             }
@@ -526,6 +649,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
                 }
                 .form-control{
                     background-color: abs.$negro-espacial;
@@ -534,6 +660,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     .text-break{
                         a{
@@ -549,6 +678,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
@@ -557,6 +689,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -569,6 +704,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -586,6 +724,9 @@ main{
                         font-size: 12px;
                         padding: 5px 8px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
+                    }
                 }
                 .boton-cancelar{
                     text-decoration: none;
@@ -599,6 +740,9 @@ main{
                         font-size: 12px;
                         padding: 5px 8px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -608,6 +752,9 @@ main{
                 font-size: 15px;
                 @include abs.breakpoint(tablet){
                     font-size: 20px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 25px;
                 }
             }
             .formulario-eliminar-publicacion{
@@ -624,6 +771,9 @@ main{
                         font-size: 13px;
                         padding: 8px 13px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
+                    }
                 }
                 .boton-cancelar{
                     margin-top: 10px;
@@ -637,6 +787,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 13px;
                         padding: 8px 13px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
                     }
                 }
             }

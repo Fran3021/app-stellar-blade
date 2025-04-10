@@ -13,6 +13,17 @@ main{
                 font-size: 30px;
                 margin-bottom: 45px;
             }
+            @include abs.breakpoint(desktop){
+                text-shadow:1px 1px 0px abs.$rosa-neon,
+                2px 2px 2px abs.$rosa-neon, 
+                3px 3px 0px abs.$rosa-neon, 
+                4px 4px 0px abs.$rosa-neon,
+                5px 5px 0px abs.$rosa-neon;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 40px;
+                margin-bottom: 70px;
+            }
         }
         .container-publicaciones-mis-contactos{
             width: 100%;
@@ -43,6 +54,10 @@ main{
                     gap: 15px;
                     padding: 20px 30px;
                 }
+                @include abs.breakpoint(desktopxl){
+                    gap: 25px;
+                    padding: 30px 40px;
+                }
                 img{
                     width: 30%;
                     height: 30%;
@@ -63,11 +78,17 @@ main{
                         @include abs.breakpoint(tablet){
                             gap: 20px;
                         }
+                        @include abs.breakpoint(desktopxl){
+                            gap: 30px;
+                        }
                         p{
                             font-size: 10px;
                             font-weight: bold;
                             @include abs.breakpoint(tablet){
                                 font-size: 15px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 18px;
                             }
                         }
                         .boton-editar{
@@ -83,6 +104,9 @@ main{
                                 padding: 5px 10px;
                                 border-radius: 5px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 15px;
+                            }
                         }
                         .boton-eliminar{
                             text-decoration: none;
@@ -97,6 +121,9 @@ main{
                                 padding: 5px 10px;
                                 border-radius: 5px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 15px;
+                            }
                         }
                     }
                     .crear-publicacion-cerrar-sesion-mi-perfil{
@@ -105,6 +132,9 @@ main{
                         align-items: center;
                         @include abs.breakpoint(tablet){
                             gap: 20px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            gap: 30px;
                         }
                         .boton-crear-publicacion{
                             text-decoration: none;
@@ -120,6 +150,9 @@ main{
                                 padding: 5px 10px;
                                 border-radius: 5px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 15px;
+                            }
                         }
                         .boton-cerrar-sesion{
                             text-decoration: none;
@@ -134,6 +167,9 @@ main{
                                 padding: 5px 10px;
                                 border-radius: 5px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 15px;
+                            }
                         }
                     }
                     .seguidores-seguidos-mi-perfil{
@@ -143,11 +179,17 @@ main{
                         @include abs.breakpoint(tablet){
                             gap: 20px;
                         }
+                        @include abs.breakpoint(desktopxl){
+                            gap: 30px;
+                        }
                         p{
                             font-size: 10px;
                             font-weight: 600;
                             @include abs.breakpoint(tablet){
                                 font-size: 13px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 15px;
                             }
                         }
                     }
@@ -158,6 +200,9 @@ main{
                             color: abs.$gris-claro;
                             @include abs.breakpoint(tablet){
                                 font-size: 13px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 17px;
                             }
                         }
                     }
@@ -174,6 +219,10 @@ main{
                         font-size: 20px;
                         margin-bottom: 40px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 25px;
+                        margin-bottom: 70px;
+                    }
                 }
                 .mis-ultimas-publicaciones{
                     width: 100%;
@@ -183,6 +232,9 @@ main{
                     gap: 50px;
                     @include abs.breakpoint(tablet){
                         gap: 80px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        gap: 120px;
                     }
                     .publicacion{
                         @include abs.publicacion
@@ -202,6 +254,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
                 }
                 .form-control{
                     background-color: abs.$negro-espacial;
@@ -210,6 +265,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     .text-break{
                         a{
@@ -225,6 +283,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
@@ -233,6 +294,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -245,6 +309,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -262,6 +329,9 @@ main{
                         font-size: 13px;
                         padding: 8px 13px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
+                    }
                 }
                 .boton-cancelar{
                     text-decoration: none;
@@ -275,6 +345,9 @@ main{
                         font-size: 13px;
                         padding: 8px 13px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -284,6 +357,9 @@ main{
                 font-size: 15px;
                 @include abs.breakpoint(tablet){
                     font-size: 20px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 25px;
                 }
             }
             .formulario-borrar-perfil{
@@ -300,6 +376,9 @@ main{
                         font-size: 13px;
                         padding: 8px 13px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
+                    }
                 }
                 .boton-cancelar{
                     margin-top: 10px;
@@ -314,6 +393,9 @@ main{
                         font-size: 13px;
                         padding: 8px 13px;
                         margin-left: 3%;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
                     }
                 }
             }
@@ -333,6 +415,10 @@ main{
                 @include abs.breakpoint(tablet){
                     gap: 15px;
                     padding: 20px 30px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    gap: 25px;
+                    padding: 30px 40px;
                 }
                 img{
                     width: 30%;
@@ -360,11 +446,17 @@ main{
                             @include abs.breakpoint(tablet){
                                 font-size: 15px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 17px;
+                            }
                             span{
-                            font-size: 10px;
-                            font-weight: bold;
-                            @include abs.breakpoint(tablet){
-                                font-size: 15px;
+                                font-size: 10px;
+                                font-weight: bold;
+                                @include abs.breakpoint(tablet){
+                                    font-size: 15px;
+                                }
+                                @include abs.breakpoint(desktopxl){
+                                    font-size: 17px;
                                 }
                             }
                         }
@@ -374,11 +466,17 @@ main{
                             @include abs.breakpoint(tablet){
                                 font-size: 15px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 17px;
+                            }
                             span{
-                            font-size: 10px;
-                            font-weight: bold;
-                            @include abs.breakpoint(tablet){
-                                font-size: 15px;
+                                font-size: 10px;
+                                font-weight: bold;
+                                @include abs.breakpoint(tablet){
+                                    font-size: 15px;
+                                }
+                                @include abs.breakpoint(desktopxl){
+                                    font-size: 17px;
                                 }
                             }
                         }
@@ -395,6 +493,9 @@ main{
                                     }
                                 }
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 21px;
+                            }
                             i{
                                 color: abs.$azul-neon;
                             }
@@ -406,12 +507,18 @@ main{
                             @include abs.breakpoint(tablet){
                                 font-size: 15px;
                             }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 19px;
+                            }
                         }
                         span{
                             font-size: 10px;
                             font-weight: bold;
                             @include abs.breakpoint(tablet){
                                 font-size: 15px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 17px;
                             }
                         }
                     }
@@ -422,6 +529,9 @@ main{
                             color: abs.$gris-claro;
                             @include abs.breakpoint(tablet){
                                 font-size: 13px;
+                            }
+                            @include abs.breakpoint(desktopxl){
+                                font-size: 17px;
                             }
                         }
                     }
@@ -479,6 +589,10 @@ main{
                         font-size: 20px;
                         margin-bottom: 40px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 25px;
+                        margin-bottom: 70px;
+                    }
                 }
                 .ultimas-publicaciones-perfiles-detail{
                     display: flex;
@@ -487,6 +601,9 @@ main{
                     gap: 50px;
                     @include abs.breakpoint(tablet){
                         gap: 80px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        gap: 120px;
                     }
                     .publicacion{
                         @include abs.publicacion
