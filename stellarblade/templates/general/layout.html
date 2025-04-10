@@ -41,7 +41,16 @@
 <body>
   <div id="particles-js"></div>
     <header>
-      <h1><a class="logo" href="{% url 'home' %}"><img src="{% static 'images/logo-stellar-blade.svg' %}" alt=""></a></h1>
+      <h1 class="logo-movil">
+        <a class="logo" href="{% url 'home' %}">
+          <img src="{% static 'images/logo-stellar-blade.svg' %}" alt="">
+        </a>
+      </h1>
+      <h1 class="logo-desktop">
+        <a class="logo" href="{% url 'home' %}">
+          <img src="{% static 'images/logo-stellar-blade-desktop.svg' %}" alt="">
+        </a>
+      </h1>
       {% include '_includes/_header.html' %}
       {% include '_includes/_messages.html' %}
       <div class="container-header">

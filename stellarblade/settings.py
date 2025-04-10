@@ -230,6 +230,12 @@ THUMBNAILS = {
                 {'PATH': 'thumbnails.processors.crop', 'width': 520, 'height': 600},
             ],
         },
+        'movilpublicacion': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 300, 'height': 420, 'method': 'fill'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 280, 'height': 380},
+            ],
+        },
     }
 }
 

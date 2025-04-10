@@ -7,31 +7,50 @@ header{
     padding-top: 20px;
     margin-bottom: 20px;
     @include abs.breakpoint(tablet){
-        padding-top: 70px;
+        padding-top: 80px;
     }
-    h1{
+    .logo-movil{
+        display: flex;
+        justify-content: center;
         width: max-content;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         .logo{
+            width: 100%;
             text-decoration: none;
-            width: max-content;
-            font-size: 30px;
-            font-weight: bold;
-            text-shadow: 2px 2px 0px abs.$azul-neon;
-            animation: zoomIn 3s ease-out;
-            transition: color 0.5s linear, text-shadow 0.5s linear;
-            @include abs.breakpoint(tablet){
-                font-size: 50px;
-                text-shadow: 5px 5px 0px abs.$azul-neon;
-            }
-            @include abs.breakpoint(desktop){
-                &:hover{
-                    color: abs.$azul-neon;
-                    text-shadow: 5px 5px 0px abs.$blanco;
+            display: flex;
+            justify-content: center;
+            img{
+                animation: zoomIn 3s ease-out;
+                width: 70%;
+                @include abs.breakpoint(desktop){
+                    width: 80%;
                 }
             }
+        }
+        @include abs.breakpoint(desktop){
+            display: none;
+        }
+    }
+    .logo-desktop{
+        display: none;
+        justify-content: center;
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        .logo{
+            width: 100%;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            img{
+                animation: zoomIn 3s ease-out;
+            }
+        }
+        @include abs.breakpoint(desktop){
+            display: flex;
         }
     }
     .menu-header-movil{
@@ -79,6 +98,17 @@ header{
         width: 100%;
         position: fixed;
         top: 0;
+        .logo-desktop{
+            display: none;
+            width: 115px;
+            height: 50px;
+            @include abs.breakpoint(desktop){
+                display: block;
+                position:absolute;
+                left: 5%;
+                top: 15%;
+            }
+        }
         ul{
             width: 100%;
             max-width: 600px;

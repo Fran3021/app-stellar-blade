@@ -26,7 +26,7 @@
         </div>
     </div>
     {% if publicacion.imagen %}
-        <img class="imagen_publicacion" src="{{publicacion.imagen.url}}" alt="{{publicacion.autor.usuario}}">
+        <img class="imagen_publicacion_movil" src="{{publicacion.imagen.thumbnails.movilpublicacion.url}}" alt="{{publicacion.autor.usuario}}">
         <img class="imagen_publicacion_tablet" src="{{publicacion.imagen.thumbnails.largepublicacion.url}}" alt="{{publicacion.autor.usuario}}">
     {% endif %}
     <p class="contenido-publicacion" >{{publicacion.contenido | truncatechars:10}}...</p>
