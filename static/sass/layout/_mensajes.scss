@@ -16,6 +16,9 @@ main{
                 @include abs.breakpoint(tablet){
                     font-size: 20px;
                 }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 25px;
+                }
             }
             .conversacion{
                 display: flex;
@@ -29,6 +32,10 @@ main{
                     gap: 20px;
                     padding: 20px;
                     box-shadow: 2px 0px 4px 4px abs.$blanco;
+                }
+                @include abs.breakpoint(desktopxl){
+                    padding: 30px;
+                    gap: 30px;
                 }
                 img{
                     width: 10%;
@@ -45,6 +52,9 @@ main{
                         @include abs.breakpoint(tablet){
                             font-size: 15px;
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 18px;
+                        }
                     }
                     .boton-ir-conversacion{
                         width: max-content;
@@ -60,6 +70,9 @@ main{
                                 text-shadow: 0px 0px 2px abs.$blanco;
                             }
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 20px;
+                        }
                     }
                 }
             }
@@ -71,6 +84,10 @@ main{
             @include abs.breakpoint(tablet){
                 font-size: 30px;
                 margin-bottom: 45px;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 40px;
+                margin-bottom: 70px;
             }
         }
         .container-conversaciones-detail{
@@ -119,6 +136,9 @@ main{
                             border-top-right-radius: 8px;
                             border-bottom-right-radius: 8px;
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 17px;
+                        }
                     }
                 }
                 .fecha-borrar-mensaje{
@@ -132,6 +152,9 @@ main{
                         font-weight: bold;
                         @include abs.breakpoint(tablet){
                             font-size: 12px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 14px;
                         }
                     }
                     .eliminar-mensajes{
@@ -191,6 +214,9 @@ main{
                             border-top-right-radius: 8px;
                             border-bottom-left-radius: 8px;
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 17px;
+                        }
                     }
                 }
                 .borrar-fecha-mensaje{
@@ -203,6 +229,9 @@ main{
                         font-weight: bold;
                         @include abs.breakpoint(tablet){
                             font-size: 12px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 14px;
                         }
                     }
                     .eliminar-mensajes{
@@ -228,6 +257,9 @@ main{
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
+                    }
                 }
                 input{
                     background-color: abs.$negro-espacial;
@@ -236,6 +268,9 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
@@ -259,6 +294,9 @@ main{
                             color: abs.$rosa-neon;
                         }
                     }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 17px;
+                    }
                 }
             }
             .title-borrado-conversaciones{
@@ -267,6 +305,10 @@ main{
                 @include abs.breakpoint(tablet){
                     font-size: 23px;
                     margin-bottom: 15px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 27px;
+                    margin-bottom: 25px;
                 }
             }
             .eliminar-conversaciones{
@@ -288,6 +330,9 @@ main{
                         box-shadow: 0px 0px 5px 5px abs.$rojo-neon;
                     }
                 }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 18px;
+                }
             }
         }
         .container-nuevo-mensaje{
@@ -298,6 +343,9 @@ main{
                     text-shadow: 0px 0px 5px abs.$azul-neon;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                 }
                 input{
@@ -310,6 +358,9 @@ main{
                     }
                     &:focus{
                         box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
                     }
                 }
                 .boton-enviar{
@@ -329,6 +380,9 @@ main{
                             background-color: abs.$blanco;
                             color: abs.$rosa-neon;
                         }
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 18px;
                     }
                 }
             }

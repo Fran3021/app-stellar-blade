@@ -164,6 +164,11 @@ header .logo-movil {
   margin-right: auto;
   margin-bottom: 20px;
 }
+@media (min-width: 768px) {
+  header .logo-movil {
+    margin-bottom: 50px;
+  }
+}
 header .logo-movil .logo {
   width: 100%;
   text-decoration: none;
@@ -191,6 +196,11 @@ header .logo-desktop {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
+}
+@media (min-width: 1440px) {
+  header .logo-desktop {
+    margin-bottom: 100px;
+  }
 }
 header .logo-desktop .logo {
   width: 100%;
@@ -631,17 +641,13 @@ main .container-main .container-home .publicacion .contenido-publicacion {
 }
 @media (min-width: 768px) {
   main .container-main .container-home .publicacion .contenido-publicacion {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 20px;
   }
 }
 @media (min-width: 1440px) {
   main .container-main .container-home .publicacion .contenido-publicacion {
     font-size: 17px;
-  }
-}
-@media (min-width: 1440px) {
-  main .container-main .container-home .publicacion .contenido-publicacion {
     margin-bottom: 30px;
   }
 }
@@ -1046,17 +1052,13 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .contenido-publicacion {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 20px;
   }
 }
 @media (min-width: 1440px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .contenido-publicacion {
     font-size: 17px;
-  }
-}
-@media (min-width: 1440px) {
-  main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .contenido-publicacion {
     margin-bottom: 30px;
   }
 }
@@ -1761,17 +1763,13 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .contenido-publicacion {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 20px;
   }
 }
 @media (min-width: 1440px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .contenido-publicacion {
     font-size: 17px;
-  }
-}
-@media (min-width: 1440px) {
-  main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .contenido-publicacion {
     margin-bottom: 30px;
   }
 }
@@ -2011,6 +2009,11 @@ main .container-main .container-conversaciones h3 {
     font-size: 20px;
   }
 }
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones h3 {
+    font-size: 25px;
+  }
+}
 main .container-main .container-conversaciones .conversacion {
   display: flex;
   align-items: center;
@@ -2025,6 +2028,12 @@ main .container-main .container-conversaciones .conversacion {
     gap: 20px;
     padding: 20px;
     box-shadow: 2px 0px 4px 4px #FFFFFF;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones .conversacion {
+    padding: 30px;
+    gap: 30px;
   }
 }
 main .container-main .container-conversaciones .conversacion img {
@@ -2046,6 +2055,11 @@ main .container-main .container-conversaciones .conversacion .conversacion-enlac
     font-size: 15px;
   }
 }
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones .conversacion .conversacion-enlace p {
+    font-size: 18px;
+  }
+}
 main .container-main .container-conversaciones .conversacion .conversacion-enlace .boton-ir-conversacion {
   width: max-content;
   text-decoration: none;
@@ -2063,6 +2077,11 @@ main .container-main .container-conversaciones .conversacion .conversacion-enlac
     text-shadow: 0px 0px 2px #FFFFFF;
   }
 }
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones .conversacion .conversacion-enlace .boton-ir-conversacion {
+    font-size: 20px;
+  }
+}
 main .container-main .title-conversaciones-detalle {
   font-size: 20px;
   text-align: center;
@@ -2072,6 +2091,12 @@ main .container-main .title-conversaciones-detalle {
   main .container-main .title-conversaciones-detalle {
     font-size: 30px;
     margin-bottom: 45px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .title-conversaciones-detalle {
+    font-size: 40px;
+    margin-bottom: 70px;
   }
 }
 main .container-main .container-conversaciones-detail {
@@ -2128,6 +2153,11 @@ main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje
     border-bottom-right-radius: 8px;
   }
 }
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje p {
+    font-size: 17px;
+  }
+}
 main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje {
   width: 100%;
   display: flex;
@@ -2142,6 +2172,11 @@ main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-m
 @media (min-width: 768px) {
   main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje span {
     font-size: 12px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje span {
+    font-size: 14px;
   }
 }
 main .container-main .container-conversaciones-detail .mensaje-1 .fecha-borrar-mensaje .eliminar-mensajes {
@@ -2208,6 +2243,11 @@ main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen
     border-bottom-left-radius: 8px;
   }
 }
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen p {
+    font-size: 17px;
+  }
+}
 main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje {
   display: flex;
   width: 100%;
@@ -2221,6 +2261,11 @@ main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-m
 @media (min-width: 768px) {
   main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje span {
     font-size: 12px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje span {
+    font-size: 14px;
   }
 }
 main .container-main .container-conversaciones-detail .mensaje-2 .borrar-fecha-mensaje .eliminar-mensajes {
@@ -2248,6 +2293,11 @@ main .container-main .container-conversaciones-detail .form-contestar-mensaje la
     font-size: 15px;
   }
 }
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .form-contestar-mensaje label {
+    font-size: 18px;
+  }
+}
 main .container-main .container-conversaciones-detail .form-contestar-mensaje input {
   background-color: #0D0D0D;
   color: #FFFFFF;
@@ -2257,6 +2307,11 @@ main .container-main .container-conversaciones-detail .form-contestar-mensaje in
 @media (min-width: 768px) {
   main .container-main .container-conversaciones-detail .form-contestar-mensaje input {
     font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .form-contestar-mensaje input {
+    font-size: 18px;
   }
 }
 main .container-main .container-conversaciones-detail .form-contestar-mensaje input:focus {
@@ -2283,6 +2338,11 @@ main .container-main .container-conversaciones-detail .form-contestar-mensaje .b
     color: #FF007F;
   }
 }
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .form-contestar-mensaje .boton-contestar {
+    font-size: 17px;
+  }
+}
 main .container-main .container-conversaciones-detail .title-borrado-conversaciones {
   font-size: 18px;
   font-weight: 600;
@@ -2291,6 +2351,12 @@ main .container-main .container-conversaciones-detail .title-borrado-conversacio
   main .container-main .container-conversaciones-detail .title-borrado-conversaciones {
     font-size: 23px;
     margin-bottom: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .title-borrado-conversaciones {
+    font-size: 27px;
+    margin-bottom: 25px;
   }
 }
 main .container-main .container-conversaciones-detail .eliminar-conversaciones {
@@ -2315,6 +2381,11 @@ main .container-main .container-conversaciones-detail .eliminar-conversaciones {
     box-shadow: 0px 0px 5px 5px #FF073A;
   }
 }
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .eliminar-conversaciones {
+    font-size: 18px;
+  }
+}
 main .container-main .container-nuevo-mensaje {
   width: 100%;
 }
@@ -2325,6 +2396,11 @@ main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje label {
 @media (min-width: 768px) {
   main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje label {
     font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje label {
+    font-size: 20px;
   }
 }
 main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input {
@@ -2340,6 +2416,11 @@ main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input {
 }
 main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input:focus {
   box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+@media (min-width: 1440px) {
+  main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje input {
+    font-size: 20px;
+  }
 }
 main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje .boton-enviar {
   border: 0;
@@ -2360,6 +2441,11 @@ main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje .boton-e
   main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje .boton-enviar:hover {
     background-color: #FFFFFF;
     color: #FF007F;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-nuevo-mensaje .formulario-nuevo-mensaje .boton-enviar {
+    font-size: 18px;
   }
 }
 
@@ -2391,6 +2477,11 @@ main .container-main .container-notificaciones .notificaciones li a {
 @media (min-width: 1280px) {
   main .container-main .container-notificaciones .notificaciones li a:hover {
     color: #FF007F;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-notificaciones .notificaciones li a {
+    font-size: 18px;
   }
 }
 main .container-main .container-notificaciones .notificaciones .leida {
@@ -3405,6 +3496,28 @@ main .container-main .title-contactos {
     margin-bottom: 70px;
   }
 }
+main .container-main .title-sin-contactos {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+@media (min-width: 768px) {
+  main .container-main .title-sin-contactos {
+    font-size: 30px;
+    margin-bottom: 45px;
+  }
+}
+@media (min-width: 1280px) {
+  main .container-main .title-sin-contactos {
+    text-shadow: 1px 1px 0px #FF007F, 2px 2px 2px #FF007F, 3px 3px 0px #FF007F, 4px 4px 0px #FF007F, 5px 5px 0px #FF007F;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .title-sin-contactos {
+    font-size: 40px;
+    margin-bottom: 70px;
+  }
+}
 main .container-main .container-publicaciones-mis-contactos {
   width: 100%;
   display: flex;
@@ -3592,17 +3705,13 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .conten
 }
 @media (min-width: 768px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion .contenido-publicacion {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 20px;
   }
 }
 @media (min-width: 1440px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion .contenido-publicacion {
     font-size: 17px;
-  }
-}
-@media (min-width: 1440px) {
-  main .container-main .container-publicaciones-mis-contactos .publicacion .contenido-publicacion {
     margin-bottom: 30px;
   }
 }
@@ -3935,6 +4044,7 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 50px;
 }
 @media (min-width: 768px) {
@@ -4121,17 +4231,13 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
 }
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .contenido-publicacion {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 20px;
   }
 }
 @media (min-width: 1440px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .contenido-publicacion {
     font-size: 17px;
-  }
-}
-@media (min-width: 1440px) {
-  main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .contenido-publicacion {
     margin-bottom: 30px;
   }
 }
@@ -4659,6 +4765,7 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 50px;
 }
@@ -4846,17 +4953,13 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
 }
 @media (min-width: 768px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .contenido-publicacion {
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 20px;
   }
 }
 @media (min-width: 1440px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .contenido-publicacion {
     font-size: 17px;
-  }
-}
-@media (min-width: 1440px) {
-  main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .contenido-publicacion {
     margin-bottom: 30px;
   }
 }

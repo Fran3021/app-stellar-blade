@@ -30,6 +30,9 @@ main{
                                 color: abs.$rosa-neon;
                             }
                         }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 18px;
+                        }
                     }
                 }
                 .leida{

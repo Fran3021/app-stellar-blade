@@ -25,6 +25,26 @@ main{
                 margin-bottom: 70px;
             }
         }
+        .title-sin-contactos{
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 35px;
+            @include abs.breakpoint(tablet){
+                font-size: 30px;
+                margin-bottom: 45px;
+            }
+            @include abs.breakpoint(desktop){
+                text-shadow:1px 1px 0px abs.$rosa-neon,
+                2px 2px 2px abs.$rosa-neon, 
+                3px 3px 0px abs.$rosa-neon, 
+                4px 4px 0px abs.$rosa-neon,
+                5px 5px 0px abs.$rosa-neon;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 40px;
+                margin-bottom: 70px;
+            }
+        }
         .container-publicaciones-mis-contactos{
             width: 100%;
             display: flex;
@@ -229,6 +249,7 @@ main{
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    flex-direction: column;
                     gap: 50px;
                     @include abs.breakpoint(tablet){
                         gap: 80px;
@@ -597,6 +618,7 @@ main{
                 .ultimas-publicaciones-perfiles-detail{
                     display: flex;
                     justify-content: center;
+                    flex-direction: column;
                     align-items: center;
                     gap: 50px;
                     @include abs.breakpoint(tablet){

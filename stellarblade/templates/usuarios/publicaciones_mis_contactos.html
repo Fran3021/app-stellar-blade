@@ -2,10 +2,14 @@
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block page_title %}MI RED{% endblock %}
 {% block page_content %}
-<h2 class="title-contactos">Publicaciones de mis contactos</h2>
-<div class="container-publicaciones-mis-contactos">
-    {% for publicacion in publicaciones %}
-        {% include "_includes/_publicaciones.html" %}
-    {% endfor %}
-</div>
+{% if publicaciones %}
+    <h2 class="title-contactos">Publicaciones de mis contactos</h2>
+    <div class="container-publicaciones-mis-contactos">
+        {% for publicacion in publicaciones %}
+            {% include "_includes/_publicaciones.html" %}
+        {% endfor %}
+    </div>
+{% else %}
+    <h2 class="title-sin-contactos">Aún no sigues a nadie</h2>
+{% endif %}
 {% endblock  %}

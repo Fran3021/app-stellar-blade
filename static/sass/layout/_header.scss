@@ -16,6 +16,9 @@ header{
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
+        @include abs.breakpoint(tablet){
+            margin-bottom: 50px;
+        }
         .logo{
             width: 100%;
             text-decoration: none;
@@ -40,6 +43,9 @@ header{
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 20px;
+        @include abs.breakpoint(desktopxl){
+            margin-bottom: 100px;
+        }
         .logo{
             width: 100%;
             text-decoration: none;
