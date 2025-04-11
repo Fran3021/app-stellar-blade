@@ -21,6 +21,15 @@ class CreateMensajeView(CreateView):
     model = Mensaje
     form_class = CreateMensajeForm
 
+
+    def dispatch(self, request, *args, **kwargs):
+        #en caso de que se intente mandar un mensaje a si mismo, no nos deja
+        pk = self.kwargs.get('pk')
+        usuario_perfil = PerfilUsuario.objects.get(pk=pk)
+        if usuario_perfil.usuario == self.request.user:
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
     def form_valid(self, form):
         pk = self.kwargs.get('pk')#obtenemos el pk de la url, que guardamos antes que corresponde al perfil que estemos viendo
         destinatario = PerfilUsuario.objects.get(pk = pk)
@@ -52,6 +61,7 @@ class ConversacionesView(ListView):
             )
         
         return context
+
 
 @method_decorator(login_required, name='dispatch')
 class ConversacionesDetailView(DetailView):

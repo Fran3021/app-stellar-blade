@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import CreateView, FormView, DetailView, UpdateView, DeleteView, ListView
 from .models import PerfilUsuario, Follow
 from django.core.exceptions import PermissionDenied
@@ -115,3 +115,11 @@ class PerfilesDetailView(DetailView):
     template_name = 'usuarios/perfiles_detail.html'
     model = PerfilUsuario
     context_object_name = 'perfil'
+
+    def dispatch(self, request, *args, **kwargs):
+        #evita que accedamos a detalle perfil del usuario logeado, nos redirige a nuestro perfil
+        pk = self.kwargs.get('pk')
+        usuario_perfil = PerfilUsuario.objects.get(pk=pk)
+        if usuario_perfil.usuario == self.request.user:
+            return redirect(reverse_lazy('usuarios:mi_perfil' , kwargs={'pk': pk}))
+        return super().dispatch(request, *args, **kwargs)

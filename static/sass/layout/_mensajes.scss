@@ -9,7 +9,11 @@ main{
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             gap: 10px;
+            @include abs.breakpoint(tablet){
+                gap: 30px;
+            }
             h3{
                 font-size: 15px;
                 font-weight: bold;

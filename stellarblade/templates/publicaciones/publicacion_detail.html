@@ -7,11 +7,7 @@
     <div class="publicacion-detalle-imagen-descripcion">
         <div class="imagen-publicacion-detalle">
             {% if publicacion.autor.imagen_perfil %}
-                {% if request.user.perfil == publicacion.autor %}
-                    <a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
-                {% else %}
-                    <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
-                {% endif %}
+                <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
             {% endif %}
         </div>
         <div class="descripcion-publicacion-detalle" >
@@ -60,15 +56,9 @@
                 
                 <div class="container-comentarios" id="container-comentario-{{comentario.pk}}">
                     <div class="imagen-autor-fecha-publi">
-                        {% if request.user.perfil == comentario.autor %}
-                            <a href="{% url 'usuarios:mi_perfil' comentario.autor.pk %}">
-                                <img src="{{comentario.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
-                            </a>
-                        {% else %}
-                            <a href="{% url 'usuarios:detail' comentario.autor.pk %}">
-                                <img src="{{comentario.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
-                            </a>
-                        {% endif %}
+                        <a href="{% url 'usuarios:detail' comentario.autor.pk %}">
+                            <img src="{{comentario.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
+                        </a>
                         <div class="autor-fecha-publi">
                             <p class="autor">{{comentario.autor.usuario}}</p>
                             <p class="fecha-publi">Hace: {{comentario.fecha_comentario | timesince}}</p>
@@ -78,7 +68,9 @@
                     {% if comentario.autor == request.user.perfil %}
                         <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">Eliminar</button>
                     {% endif %}
-                    <button data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button>
+                    {% if comentario.autor != request.user.perfil %}
+                        <button data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button>
+                    {% endif %}
                     {% if comentario.respuestas.count %}
                         <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button>
                     {% endif %}
@@ -89,15 +81,9 @@
                     {% for respuesta in comentario.respuestas.all  %}
                         <div id="container-respuesta-{{respuesta.pk}}">
                             <div class="imagen-autor-fecha-respuesta">
-                                {% if request.user.perfil == respuesta.autor %}
-                                    <a href="{% url 'usuarios:mi_perfil' respuesta.autor.pk %}">
-                                        <img src="{{respuesta.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
-                                    </a>
-                                {% else %}
-                                    <a href="{% url 'usuarios:detail' respuesta.autor.pk %}">
-                                        <img src="{{respuesta.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
-                                    </a>
-                                {% endif %}
+                                <a href="{% url 'usuarios:detail' respuesta.autor.pk %}">
+                                    <img src="{{respuesta.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
+                                </a>
                                 <div class="autor-fecha-respuesta">
                                     <p class="autor">{{respuesta.autor.usuario}}</p>
                                     <p class="fecha-respuesta">Hace: {{respuesta.fecha_respuesta | timesince}}</p>

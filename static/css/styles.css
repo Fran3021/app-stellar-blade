@@ -1867,6 +1867,14 @@ main .container-main .container-login {
 }
 main .container-main .container-login .formulario-login {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .container-main .container-login .formulario-login .checkbox-login {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 main .container-main .container-login .formulario-login label {
   font-size: 10px;
@@ -1998,7 +2006,13 @@ main .container-main .container-conversaciones {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones {
+    gap: 30px;
+  }
 }
 main .container-main .container-conversaciones h3 {
   font-size: 15px;
@@ -3232,6 +3246,7 @@ main .container-main .container-detalle-publicacion .botones-editar-eliminar-pub
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: flex-end;
 }
 @media (min-width: 1440px) {
   main .container-main .container-detalle-publicacion .botones-editar-eliminar-publicacion-detalle {
@@ -3825,8 +3840,7 @@ main .container-main .container-mi-perfil .mi-perfil-top {
 }
 @media (min-width: 1440px) {
   main .container-main .container-mi-perfil .mi-perfil-top {
-    gap: 25px;
-    padding: 30px 40px;
+    gap: 20px;
   }
 }
 main .container-main .container-mi-perfil .mi-perfil-top img {
@@ -3853,11 +3867,6 @@ main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil 
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil {
     gap: 20px;
-  }
-}
-@media (min-width: 1440px) {
-  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil {
-    gap: 30px;
   }
 }
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .editar-eliminar-mi-perfil p {
@@ -3924,11 +3933,6 @@ main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil 
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil {
     gap: 20px;
-  }
-}
-@media (min-width: 1440px) {
-  main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil {
-    gap: 30px;
   }
 }
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil .crear-publicacion-cerrar-sesion-mi-perfil .boton-crear-publicacion {

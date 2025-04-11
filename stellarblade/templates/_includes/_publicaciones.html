@@ -2,17 +2,10 @@
     <div class="imagen-hora-titulo">
         <div class="imagen">
             {% if publicacion.autor.imagen_perfil %}
-                {% if request.user.perfil == publicacion.autor %}
-                    <a href="{% url 'usuarios:mi_perfil' publicacion.autor.pk %}">
-                        <img class="imagen-perfil-movil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}">
-                        <img class="imagen-perfil-tablet" src="{{publicacion.autor.imagen_perfil.thumbnails.large.url}}" alt="{{publicacion.autor.usuario}}">
-                    </a>
-                {% else %}
-                    <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
-                        <img class="imagen-perfil-movil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}">
-                        <img class="imagen-perfil-tablet" src="{{publicacion.autor.imagen_perfil.thumbnails.large.url}}" alt="{{publicacion.autor.usuario}}">
-                    </a>
-                {% endif %}
+                <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
+                    <img class="imagen-perfil-movil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}">
+                    <img class="imagen-perfil-tablet" src="{{publicacion.autor.imagen_perfil.thumbnails.large.url}}" alt="{{publicacion.autor.usuario}}">
+                </a>
             {% endif %}
         </div>
         <div class="hora-autor-titulo">

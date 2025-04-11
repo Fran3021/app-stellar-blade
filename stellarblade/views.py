@@ -49,6 +49,10 @@ class LoginView(FormView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
+        recuerdame = self.request.POST.get('recuerdame')
+        if recuerdame:
+            self.request.session.set_expiry(1209600)
+
         user = form.get_user()
         login(self.request, user)
         messages.success(self.request, 'Inicion de sesion exitoso.')

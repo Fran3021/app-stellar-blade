@@ -75,8 +75,7 @@ main{
                     padding: 20px 30px;
                 }
                 @include abs.breakpoint(desktopxl){
-                    gap: 25px;
-                    padding: 30px 40px;
+                    gap: 20px;
                 }
                 img{
                     width: 30%;
@@ -97,9 +96,6 @@ main{
                         align-items: center;
                         @include abs.breakpoint(tablet){
                             gap: 20px;
-                        }
-                        @include abs.breakpoint(desktopxl){
-                            gap: 30px;
                         }
                         p{
                             font-size: 10px;
@@ -152,9 +148,6 @@ main{
                         align-items: center;
                         @include abs.breakpoint(tablet){
                             gap: 20px;
-                        }
-                        @include abs.breakpoint(desktopxl){
-                            gap: 30px;
                         }
                         .boton-crear-publicacion{
                             text-decoration: none;

@@ -28,6 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#duracion de incio sesion si no pincha el checkbox de recuerdame
+SESSION_COOKIE_AGE = 604800#una semana en segundos
+
+# Si es True, la sesión expira al cerrar el navegador (solo si no hay checkbox personalizado)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 # Application definition
 
