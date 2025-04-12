@@ -1,62 +1,49 @@
 from django.conf import settings
 from .models import NotificacionPublicacion, NotificacionComentario, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta, NotificacionMensaje
+from itertools import chain
 
-def notificaciones_publicacion(request):
+
+def notificaciones_totales(request):
     if request.user.is_authenticated:
-        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatario=request.user.perfil).exclude(autor=request.user.perfil).order_by('-fecha_notificacion')
+        notificaciones_publicacion = NotificacionPublicacion.objects.filter(destinatario=request.user.perfil).exclude(autor=request.user.perfil)
+
+        notificaciones_comentarios = NotificacionComentario.objects.filter(destinatario=request.user.perfil).exclude(autor=request.user.perfil)
+
+        notificaciones_seguir = NotificacionSeguir.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil)
+
+        notificaciones_respuesta_comentario = NotificacionRespuestaComentario.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil)
+
+        notificaciones_me_gusta = NotificacionMeGusta.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil)
+
+        notificaciones_mensajes = NotificacionMensaje.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil)
+
+        for n in notificaciones_publicacion:
+            n.tipo = 'publicacion'
+        for n in notificaciones_comentarios:
+            n.tipo = 'comentario'
+        for n in notificaciones_seguir:
+            n.tipo = 'seguir'
+        for n in notificaciones_respuesta_comentario:
+            n.tipo = 'respuesta_comentario'
+        for n in notificaciones_me_gusta:
+            n.tipo = 'me_gusta'
+        for n in notificaciones_mensajes:
+            n.tipo = 'mensaje'
+
+        todas_las_notificaciones = list(chain(
+            notificaciones_publicacion,
+            notificaciones_comentarios,
+            notificaciones_seguir,
+            notificaciones_respuesta_comentario,
+            notificaciones_me_gusta,
+            notificaciones_mensajes,
+        ))
+
+        # Ordena por fecha_notificacion (del más reciente al más antiguo)
+        todas_las_notificaciones.sort(key=lambda x: x.fecha_notificacion, reverse=True)
     else:
-        notificaciones_publicacion = []
+        todas_las_notificaciones = []
 
     return {
-        'notificacion_publicacion': notificaciones_publicacion
-    }
-
-def notificaciones_comentario(request):
-    if request.user.is_authenticated:
-        notificaciones_comentarios = NotificacionComentario.objects.filter(destinatario=request.user.perfil).exclude(autor=request.user.perfil).order_by('-fecha_notificacion')
-    else:
-        notificaciones_comentarios = []
-
-    return {
-        'notificacion_comentarios': notificaciones_comentarios
-    }
-
-def notificaciones_seguir(request):
-    if request.user.is_authenticated:
-        notificaciones_seguir = NotificacionSeguir.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil).order_by('-fecha_notificacion')
-    else:
-        notificaciones_seguir = []
-
-    return {
-        'notificacion_seguir': notificaciones_seguir
-    }
-
-def notificaciones_respuesta_comentario(request):
-    if request.user.is_authenticated:
-        notificaciones_respuesta_comentario = NotificacionRespuestaComentario.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil).order_by('-fecha_notificacion')
-    else:
-        notificaciones_respuesta_comentario = []
-
-    return {
-        'notificacion_respuesta_comentario': notificaciones_respuesta_comentario
-    }
-
-def notificaciones_me_gusta(request):
-    if request.user.is_authenticated:
-        notificaciones_me_gusta = NotificacionMeGusta.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil).order_by('-fecha_notificacion')
-    else:
-        notificaciones_me_gusta = []
-
-    return {
-        'notificacion_me_gusta': notificaciones_me_gusta
-    }
-
-def notificaciones_mensajes(request):
-    if request.user.is_authenticated:
-        notificaciones_mensajes = NotificacionMensaje.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil).order_by('-fecha_notificacion')
-    else:
-        notificaciones_mensajes= []
-
-    return {
-        'notificacion_mensajes': notificaciones_mensajes
+        'notificaciones_totales': todas_las_notificaciones,
     }

@@ -1,37 +1,13 @@
+
 <ul class="notificaciones">
-    {% if notificacion_publicacion %}
-    {% for noti in notificacion_publicacion %}
-        <li><a data-href="{% url 'notificaciones:marcar_leida_publicacion' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}. Hace: {{noti.fecha_notificacion | timesince}}</a></li>
+    {% for noti in notificaciones_totales %}
+    <li>
+        <a data-href="{% url 'notificaciones:marcar_leida_'|add:noti.tipo noti.pk %}" 
+        data-leida = "{{noti.leida}}" 
+        class="notificacion" id="notificacion-{{noti.pk}}" 
+        data-noti-pk="{{noti.pk}}" 
+        href="{{noti.url}}">{{noti}}. Hace: {{noti.fecha_notificacion | timesince}}
+        </a>
+    </li>
     {% endfor %}
-
-    {% endif %}
-    {% if notificacion_comentarios %}
-{% for noti in notificacion_comentarios %}
-    <li><a data-href="{% url 'notificaciones:marcar_leida_comentario' noti.pk %}" data-leida = "{{noti.leida}}"  class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}. Hace: {{noti.fecha_notificacion | timesince}}</a></li>
-{% endfor %}
-{% endif %}
-
-    {% if notificacion_seguir %}
-{% for noti in notificacion_seguir %}
-    <li><a data-href="{% url 'notificaciones:marcar_leida_seguir' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}. Hace:{{noti.fecha_notificacion | timesince}}</a></li>
-{% endfor %}
-{% endif %}
-
-    {% if notificacion_respuesta_comentario %}
-{% for noti in notificacion_respuesta_comentario %}
-    <li><a data-href="{% url 'notificaciones:marcar_leida_respuesta_comentario' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}. Hace: {{noti.fecha_notificacion | timesince}}</a></li>
-{% endfor %}
-    {% endif %}
-
-    {% if notificacion_me_gusta%}
-{% for noti in notificacion_me_gusta %}
-    <li><a data-href="{% url 'notificaciones:marcar_leida_me_gusta' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}. Hace: {{noti.fecha_notificacion | timesince}}</a></li>
-{% endfor %}
-{% endif %}
-
-{% if notificacion_mensajes%}
-{% for noti in notificacion_mensajes %}
-    <li><a data-href="{% url 'notificaciones:marcar_leida_mensaje' noti.pk %}" data-leida = "{{noti.leida}}" class="notificacion" id="notificacion-{{noti.pk}}" data-noti-pk="{{noti.pk}}" href="{{noti.url}}">{{noti}}. Hace: {{noti.fecha_notificacion | timesince}}</a></li>
-{% endfor %}
-{% endif %}
 </ul>

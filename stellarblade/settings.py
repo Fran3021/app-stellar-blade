@@ -11,17 +11,26 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / 'stellarblade' / 'templates'
 
 
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-cwdmbjq5sft7j=-2+ll4$3f-548r7$+1)mv3^vw4&31fs74c^v'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,12 +93,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'usuarios.custom_processors.current_user',
                 'usuarios.custom_processors.all_users',
-                'notificaciones.custom_processors.notificaciones_publicacion',
-                'notificaciones.custom_processors.notificaciones_comentario',
-                'notificaciones.custom_processors.notificaciones_seguir',
-                'notificaciones.custom_processors.notificaciones_respuesta_comentario',
-                'notificaciones.custom_processors.notificaciones_me_gusta',
-                'notificaciones.custom_processors.notificaciones_mensajes',
+                'notificaciones.custom_processors.notificaciones_totales',
                 'publicaciones.custom_processors.formulario_contestar_comentario',
                 'publicaciones.custom_processors.all_publicaciones',
                 'mensajes.custom_processors.formulario_contestar_mensaje',
@@ -107,11 +111,11 @@ WSGI_APPLICATION = 'stellarblade.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'STELLAR_BLADE',
-        'USER': 'FRAN2115',
-        'PASSWORD': 'ducati999',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': env('NAME_DB'),
+        'USER': env('USER_DB'),
+        'PASSWORD': env('PASSWORD_DB'),
+        'HOST': env('HOST_DB'),
+        'PORT': env('PORT_DB'),
         'OPTION':{
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         }
@@ -152,7 +156,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
-import os
+
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
