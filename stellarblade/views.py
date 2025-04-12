@@ -10,6 +10,7 @@ from publicaciones.models import Publicacion, Comentario, RespuestaComentario
 from usuarios.models import Follow, PerfilUsuario
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import PasswordResetView
 
 
 class HomeView(ListView):
@@ -91,6 +92,11 @@ def search_view(request):
 
         return render(request, 'general/busqueda.html', context)
 
+
+class PersonalizarReseteoContraseña(PasswordResetView):
+    email_template_name = 'registration/password_reset_email.html'
+    success_url = reverse_lazy('password_reset_done')
+    template_name = 'registration/password_reset_form.html'
 
 
 

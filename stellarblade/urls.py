@@ -17,9 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from debug_toolbar.toolbar import debug_toolbar_urls
-from .views import legal_view, logout_view, RegisterView, LoginView, HomeView, search_view
+from .views import legal_view, logout_view, RegisterView, LoginView, HomeView, search_view, PersonalizarReseteoContraseña
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', HomeView.as_view(), name = 'home'),
@@ -32,5 +33,9 @@ urlpatterns = [
     path('publicaciones/', include('publicaciones.urls', namespace = 'publicaciones')),
     path('notificaciones/', include('notificaciones.urls', namespace = 'notificaciones')),
     path('mensajes/', include('mensajes.urls', namespace = 'mensajes')),
+    path('password_reset/', PersonalizarReseteoContraseña.as_view(), name='password_reset'),
+    path('password_reset_done/', auth_views.PasswordResetDoneView.as_view(template_name='registration/password_reset_done.html'), name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
+    path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
     path('admin/', admin.site.urls),
 ] + debug_toolbar_urls() + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
