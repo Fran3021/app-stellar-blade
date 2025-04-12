@@ -6,6 +6,10 @@
                     <img class="imagen-perfil-movil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}">
                     <img class="imagen-perfil-tablet" src="{{publicacion.autor.imagen_perfil.thumbnails.large.url}}" alt="{{publicacion.autor.usuario}}">
                 </a>
+            {% else %}
+                <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
+                    <i class="bi bi-person-circle"></i>
+                </a>
             {% endif %}
         </div>
         <div class="hora-autor-titulo">

@@ -5,6 +5,10 @@
                 <img class="imagen-perfiles-movil" src="{{perfil.imagen_perfil.thumbnails.small.url}}" alt="{{perfil.usuario}}">
                 <img class="imagen-perfiles-tablet" src="{{perfil.imagen_perfil.thumbnails.large.url}}" alt="{{perfil.usuario}}">
             </a>
+        {% else %}
+            <a href="{% url 'usuarios:detail' perfil.pk %}">
+                <i class="bi bi-person-circle"></i>
+            </a>
         {% endif %}
         <div class="usuario-seguidores">
             <h2>{{perfil.usuario}}</h2>

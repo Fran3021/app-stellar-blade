@@ -95,6 +95,15 @@
                             }
                         }
                     }
+                    i{
+                        font-size: 45px;
+                        @include breakpoint(tablet){
+                            font-size: 55px;
+                        }
+                        @include breakpoint(desktopxl){
+                            font-size: 65px;
+                        }
+                    }
                 }
             }
             .hora-autor-titulo{
@@ -309,6 +318,15 @@
                     &:hover{
                         box-shadow: 0px 0px 5px 3px var.$azul-neon;
                     }
+                }
+            }
+            i{
+                font-size: 55px;
+                @include breakpoint(tablet){
+                    font-size: 75px;
+                }
+                @include breakpoint(desktopxl){
+                    font-size: 95px;
                 }
             }
         }

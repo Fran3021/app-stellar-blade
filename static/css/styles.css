@@ -539,6 +539,19 @@ main .container-main .container-home .publicacion .imagen-hora-titulo .imagen a 
     box-shadow: 0px 0px 5px 3px #FF007F;
   }
 }
+main .container-main .container-home .publicacion .imagen-hora-titulo .imagen a i {
+  font-size: 45px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-home .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 55px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-home .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 65px;
+  }
+}
 main .container-main .container-home .publicacion .imagen-hora-titulo .hora-autor-titulo {
   width: 80%;
 }
@@ -950,6 +963,19 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
     box-shadow: 0px 0px 5px 3px #FF007F;
   }
 }
+main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .imagen a i {
+  font-size: 45px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 55px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 65px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .hora-autor-titulo {
   width: 80%;
 }
@@ -1244,6 +1270,19 @@ main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda 
     box-shadow: 0px 0px 5px 3px #00BFFF;
   }
 }
+main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a i {
+  font-size: 55px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a i {
+    font-size: 75px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario a i {
+    font-size: 95px;
+  }
+}
 main .container-main .container-busqueda .resultado-busqueda .usuarios-busqueda .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores {
   width: 80%;
 }
@@ -1464,6 +1503,19 @@ main .container-main .container-busqueda .sugerencias .perfiles-sugeridos sectio
     box-shadow: 0px 0px 5px 3px #00BFFF;
   }
 }
+main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a i {
+  font-size: 55px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a i {
+    font-size: 75px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario a i {
+    font-size: 95px;
+  }
+}
 main .container-main .container-busqueda .sugerencias .perfiles-sugeridos section .container-perfiles-includes .perfiles-includes-imagen-usuario .usuario-seguidores {
   width: 80%;
 }
@@ -1659,6 +1711,19 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
 @media (min-width: 1280px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .imagen a .imagen-perfil-tablet:hover {
     box-shadow: 0px 0px 5px 3px #FF007F;
+  }
+}
+main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .imagen a i {
+  font-size: 45px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 55px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 65px;
   }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .hora-autor-titulo {
@@ -2029,6 +2094,7 @@ main .container-main .container-conversaciones h3 {
   }
 }
 main .container-main .container-conversaciones .conversacion {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -2054,6 +2120,19 @@ main .container-main .container-conversaciones .conversacion img {
   width: 10%;
   height: 10%;
   border-radius: 50%;
+}
+main .container-main .container-conversaciones .conversacion i {
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones .conversacion i {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones .conversacion i {
+    font-size: 60px;
+  }
 }
 main .container-main .container-conversaciones .conversacion .conversacion-enlace {
   width: 80%;
@@ -2150,6 +2229,19 @@ main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje
     box-shadow: 0px 0px 2px 2px #FFFFFF;
   }
 }
+main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje a i {
+  font-size: 30px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje a i {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje a i {
+    font-size: 50px;
+  }
+}
 main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje p {
   font-size: 10px;
   background-color: #00BFFF;
@@ -2238,6 +2330,19 @@ main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen
 @media (min-width: 1280px) {
   main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen a img:hover {
     box-shadow: 0px 0px 2px 2px #FFFFFF;
+  }
+}
+main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen a i {
+  font-size: 30px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen a i {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen a i {
+    font-size: 50px;
   }
 }
 main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen p {
@@ -2659,6 +2764,19 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-
     box-shadow: 0px 0px 5px 5px #FFFFFF;
   }
 }
+main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle a i {
+  font-size: 45px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle a i {
+    font-size: 65px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .imagen-publicacion-detalle a i {
+    font-size: 85px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-imagen-descripcion .descripcion-publicacion-detalle {
   width: 80%;
   display: flex;
@@ -2867,6 +2985,19 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
     box-shadow: 0px 0px 3px 2px #FFFFFF;
   }
 }
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi a i {
+  font-size: 28px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi a i {
+    font-size: 35px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi a i {
+    font-size: 42px;
+  }
+}
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi {
   display: flex;
   flex-direction: column;
@@ -2995,6 +3126,19 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
 @media (min-width: 1280px) {
   main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a img:hover {
     box-shadow: 0px 0px 3px 2px #FFFFFF;
+  }
+}
+main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a i {
+  font-size: 28px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a i {
+    font-size: 35px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a i {
+    font-size: 42px;
   }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta {
@@ -3618,6 +3762,19 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .imagen
     box-shadow: 0px 0px 5px 3px #FF007F;
   }
 }
+main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen a i {
+  font-size: 45px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 55px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 65px;
+  }
+}
 main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .hora-autor-titulo {
   width: 80%;
 }
@@ -3851,6 +4008,19 @@ main .container-main .container-mi-perfil .mi-perfil-top img {
 @media (min-width: 1280px) {
   main .container-main .container-mi-perfil .mi-perfil-top img {
     border: 1px solid #00BFFF;
+  }
+}
+main .container-main .container-mi-perfil .mi-perfil-top i {
+  font-size: 65px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .mi-perfil-top i {
+    font-size: 95px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-mi-perfil .mi-perfil-top i {
+    font-size: 130px;
   }
 }
 main .container-main .container-mi-perfil .mi-perfil-top .descripcion-mi-perfil {
@@ -4131,6 +4301,19 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
 @media (min-width: 1280px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .imagen a .imagen-perfil-tablet:hover {
     box-shadow: 0px 0px 5px 3px #FF007F;
+  }
+}
+main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .imagen a i {
+  font-size: 45px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 55px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 65px;
   }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .hora-autor-titulo {
@@ -4566,6 +4749,19 @@ main .container-main .container-perfiles-detail .perfiles-detail img {
     border: 1px solid #00BFFF;
   }
 }
+main .container-main .container-perfiles-detail .perfiles-detail #icon-user {
+  font-size: 65px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .perfiles-detail #icon-user {
+    font-size: 95px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-perfiles-detail .perfiles-detail #icon-user {
+    font-size: 130px;
+  }
+}
 main .container-main .container-perfiles-detail .perfiles-detail .descripcion-perfiles-detail {
   width: 70%;
   display: flex;
@@ -4853,6 +5049,19 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
 @media (min-width: 1280px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen a .imagen-perfil-tablet:hover {
     box-shadow: 0px 0px 5px 3px #FF007F;
+  }
+}
+main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen a i {
+  font-size: 45px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 55px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen a i {
+    font-size: 65px;
   }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .hora-autor-titulo {

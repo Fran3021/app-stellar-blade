@@ -6,6 +6,8 @@
     <article class="perfiles-detail" >
         {% if perfil.imagen_perfil %}
                 <img src="{{perfil.imagen_perfil.thumbnails.medium.url}}" alt="{{perfil.usuario}}">
+        {% else %}
+            <i id="icon-user" class="bi bi-person-circle"></i>
         {% endif %}
         <div class="descripcion-perfiles-detail">
             <div class="seguidores-siguiendo-mensaje">

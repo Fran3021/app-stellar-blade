@@ -7,7 +7,11 @@
     {% if conversaciones %}
     {% for conversacion in conversaciones %}
         <article class="conversacion" id="conversacion-{{conversacion.pk}}" data-pk-conversacion="{{conversacion.pk}}">
-            <img src="{{conversacion.usuario1.imagen_perfil.thumbnails.xs.url}}" alt="">
+            {% if conversacion.usuario1.imagen_perfil %}
+                <img src="{{conversacion.usuario1.imagen_perfil.thumbnails.xs.url}}" alt="{{conversacion.usuario1.usuario}}">
+            {% else %}
+                <i class="bi bi-person-circle"></i>
+            {% endif %}
             <div class="conversacion-enlace">
                 <p>{{conversacion}}</p>
                 <a class="boton-ir-conversacion" href="{% url 'mensajes:conversaciones_detail' conversacion.pk %}">Ir a la conversacion</a>

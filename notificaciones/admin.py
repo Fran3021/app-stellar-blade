@@ -8,6 +8,7 @@ class NotificacionPublicacionAdmin(admin.ModelAdmin):
     list_display = [
         'autor',
         'publicacion',
+        'fecha_notificacion',
         'leida'
     ]
     ordering = ['leida']
@@ -16,6 +17,7 @@ class NotificacionPublicacionAdmin(admin.ModelAdmin):
 class NotificacionComentarioAdmin(admin.ModelAdmin):
     list_display = [
         'destinatario',
+        'fecha_notificacion',
         'leida'
     ]
     ordering = ['leida']
@@ -25,6 +27,7 @@ class NotificacionSeguirAdmin(admin.ModelAdmin):
     list_display = [
         'usuario',
         'destinatario',
+        'fecha_notificacion',
         'leida'
     ]
     ordering = ['leida']
@@ -34,6 +37,7 @@ class NotificacionRespuestaComentarioAdmin(admin.ModelAdmin):
     list_display = [
         'usuario',
         'destinatario',
+        'fecha_notificacion',
         'leida'
     ]
     ordering = ['leida']
@@ -44,6 +48,7 @@ class NotificacionMegustaAdmin(admin.ModelAdmin):
     list_display = [
         'usuario',
         'destinatario',
+        'fecha_notificacion',
         'leida'
     ]
     ordering = ['leida']
@@ -54,6 +59,7 @@ class NotificacionMensajeAdmin(admin.ModelAdmin):
     list_display = [
         'usuario',
         'destinatario',
+        'fecha_notificacion',
         'leida'
     ]
     ordering = ['leida']

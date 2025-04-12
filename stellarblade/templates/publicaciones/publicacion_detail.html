@@ -8,6 +8,10 @@
         <div class="imagen-publicacion-detalle">
             {% if publicacion.autor.imagen_perfil %}
                 <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
+            {% else %}
+            <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
+                <i class="bi bi-person-circle"></i>
+            </a>
             {% endif %}
         </div>
         <div class="descripcion-publicacion-detalle" >
@@ -57,7 +61,11 @@
                 <div class="container-comentarios" id="container-comentario-{{comentario.pk}}">
                     <div class="imagen-autor-fecha-publi">
                         <a href="{% url 'usuarios:detail' comentario.autor.pk %}">
-                            <img src="{{comentario.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
+                            {% if comentario.autor.imagen_perfil %}
+                                <img src="{{comentario.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
+                            {% else %}
+                                <i class="bi bi-person-circle"></i>
+                            {% endif %}
                         </a>
                         <div class="autor-fecha-publi">
                             <p class="autor">{{comentario.autor.usuario}}</p>
@@ -82,7 +90,11 @@
                         <div id="container-respuesta-{{respuesta.pk}}">
                             <div class="imagen-autor-fecha-respuesta">
                                 <a href="{% url 'usuarios:detail' respuesta.autor.pk %}">
-                                    <img src="{{respuesta.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
+                                    {% if respuesta.autor.imagen_perfil %}
+                                        <img src="{{respuesta.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{comentario.autor.usuario}}">
+                                    {% else %}
+                                        <i class="bi bi-person-circle"></i>
+                                    {% endif %}
                                 </a>
                                 <div class="autor-fecha-respuesta">
                                     <p class="autor">{{respuesta.autor.usuario}}</p>

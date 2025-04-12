@@ -5,7 +5,9 @@
 <div class="container-mi-perfil">
     <article class="mi-perfil-top" >
         {% if perfil.imagen_perfil %}
-            <img src="{{perfil.imagen_perfil.thumbnails.medium.url}}" alt="">
+            <img src="{{perfil.imagen_perfil.thumbnails.medium.url}}" alt="{{perfil.usuario}}">
+        {% else %}
+            <i class="bi bi-person-circle"></i>
         {% endif %}
         <div class="descripcion-mi-perfil">
             <div class="editar-eliminar-mi-perfil">

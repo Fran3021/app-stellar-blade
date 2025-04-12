@@ -2,6 +2,7 @@ from django.db import models
 from usuarios.models import PerfilUsuario
 from publicaciones.models import Publicacion, Comentario
 from mensajes.models import Mensaje, Conversacion
+from django.utils import timezone
 
 class NotificacionPublicacion(models.Model):
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='notificacion_publicacion')
@@ -10,6 +11,7 @@ class NotificacionPublicacion(models.Model):
     destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Destinatario:', on_delete=models.CASCADE, related_name='notificaciones_publicaciones')
     leida = models.BooleanField(verbose_name='¿Leida?:', default=False)
     url = models.URLField(verbose_name='URL de la nueva publicacion',null=True, blank=True)
+    fecha_notificacion = models.DateTimeField(verbose_name="Fecha notificacion:", auto_now_add=True)
 
     class Meta:
         verbose_name = 'Notificacion publicacion'
@@ -26,6 +28,7 @@ class NotificacionComentario(models.Model):
     destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Destinatario:', on_delete=models.CASCADE, related_name='notificaciones_comentarios')
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
     url = models.URLField(verbose_name='URL de la publicacion comentada:',null=True, blank=True)
+    fecha_notificacion = models.DateTimeField(verbose_name="Fecha notificacion:", auto_now_add=True)
 
     class Meta:
         verbose_name = 'Notificacion comentario'
@@ -40,6 +43,7 @@ class NotificacionSeguir(models.Model):
     destinatario = models.ForeignKey(PerfilUsuario, verbose_name='Usuario que ha empezado a seguir:', on_delete=models.CASCADE, related_name='notificacion_destinatario')
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
     url = models.URLField(verbose_name='url del perfil que empieza a seguir:', null=True, blank=True)
+    fecha_notificacion = models.DateTimeField(verbose_name="Fecha notificacion:", auto_now_add=True)
 
     class Meta:
         verbose_name = 'Notificacion seguir'
@@ -56,6 +60,7 @@ class NotificacionRespuestaComentario(models.Model):
     publicacion = models.ForeignKey(Publicacion, verbose_name="Publicacion que pertenece la respuesta:", on_delete=models.CASCADE)
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
     url = models.URLField(verbose_name='url de la publicacion:', null=True, blank=True)
+    fecha_notificacion = models.DateTimeField(verbose_name="Fecha notificacion:", auto_now_add=True)
 
     class Meta:
         verbose_name = 'Notificacion de respuesta a comentario'
@@ -71,7 +76,7 @@ class NotificacionMeGusta(models.Model):
     publicacion = models.ForeignKey(Publicacion, verbose_name="Publicacion que pertenece el me gusta:", on_delete=models.CASCADE)
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
     url = models.URLField(verbose_name='url de la publicacion:', null=True, blank=True)
-
+    fecha_notificacion = models.DateTimeField(verbose_name="Fecha notificacion:", auto_now_add=True)
     class Meta:
         verbose_name = 'Notificacion de me gusta'
         verbose_name_plural = 'Notificaciones de me gusta'
@@ -87,6 +92,7 @@ class NotificacionMensaje(models.Model):
     conversacion = models.ForeignKey(Conversacion, verbose_name='Conversacion que pertenece el mensaje:', on_delete=models.CASCADE)
     leida = models.BooleanField(verbose_name='¿Leida?', default=False)
     url = models.URLField(verbose_name='URL de la conversacion', null=True, blank=True)
+    fecha_notificacion = models.DateTimeField(verbose_name="Fecha notificacion:", auto_now_add=True)
 
     class Meta:
         verbose_name = 'Notificacion de mensaje'

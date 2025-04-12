@@ -85,6 +85,15 @@ main{
                         border: 1px solid abs.$azul-neon;
                     }
                 }
+                i{
+                    font-size: 65px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 95px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 130px;
+                    }
+                }
                 .descripcion-mi-perfil{
                     width: 70%;
                     display: flex;
@@ -440,6 +449,15 @@ main{
                     border-radius: 50%;
                     @include abs.breakpoint(desktop){
                         border: 1px solid abs.$azul-neon;
+                    }
+                }
+                #icon-user{
+                    font-size: 65px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 95px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 130px;
                     }
                 }
                 .descripcion-perfiles-detail{
