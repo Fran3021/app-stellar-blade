@@ -38,6 +38,41 @@ main{
             @include abs.breakpoint(desktopxl){
                 gap: 120px
             }
+            .container-eres-nuevo{
+                position: absolute;
+                text-align: center;
+                padding: 3px;
+                border-radius: 5px;
+                width: 100px;
+                height: 45px;
+                top: 105px;
+                left: 7%;
+                animation: eresNuevo infinite 5s linear;
+                border: 1px solid abs.$azul-neon;
+                box-shadow: 0px 0px 2px 1px abs.$blanco;
+                @include abs.breakpoint(tablet){
+                    width: 150px;
+                    height: 55px;
+                    top: 150px;
+                }
+                @include abs.breakpoint(desktop){
+                    top: 270px;
+                }
+                p{
+                    font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    font-size: 10px;
+                    text-shadow: 0px 0px 5px abs.$rojo-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px
+                    }
+                }
+            }
             .publicacion{
                 @include abs.publicacion;
             }
@@ -257,11 +292,28 @@ main{
                 width: 100%;
                 display: flex;
                 flex-direction: column;
-                .checkbox-login{
-                    margin-bottom: 10px;
+                .container-checkbox-recuperar{
+                    width: 100%;
                     display: flex;
                     align-items: center;
-                    gap: 5px;
+                    justify-content: space-between;
+                    margin-bottom: 10px;
+                    .checkbox-login{
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                    }
+                    .recuperar-contraseña{
+                        text-decoration: none;
+                        font-size: 10px;
+                        text-shadow: 0px 0px 5px abs.$azul-neon;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 20px;
+                        }
+                    }
                 }
                 label{
                     font-size: 10px;
@@ -359,6 +411,278 @@ main{
                     font-size: 10px;
                     @include abs.breakpoint(tablet){
                         font-size: 15px;
+                    }
+                }
+            }
+        }
+        .container-recuperacion-contraseña{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            @include abs.breakpoint(tablet){
+                gap: 30px;
+            }
+            @include abs.breakpoint(desktopxl){
+                gap: 40px;
+            }
+            .title-recuperacion-contraseña{
+                font-size: 20px;
+                text-align: center;
+                margin-bottom: 35px;
+                @include abs.breakpoint(tablet){
+                    font-size: 30px;
+                    margin-bottom: 45px;
+                }
+                @include abs.breakpoint(desktop){
+                    text-shadow:1px 1px 0px abs.$rosa-neon,
+                    2px 2px 2px abs.$rosa-neon, 
+                    3px 3px 0px abs.$rosa-neon, 
+                    4px 4px 0px abs.$rosa-neon,
+                    5px 5px 0px abs.$rosa-neon;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 40px;
+                    margin-bottom: 70px;
+                }
+            }
+            .boton-inicia-sesion{
+                color: abs.$blanco;
+                text-decoration: none;
+                padding: 5px 10px;
+                background-color: abs.$azul-neon;
+                border-radius: 5px;
+                font-size: 10px;
+                @include abs.breakpoint(tablet){
+                    padding: 10px 15px;
+                    font-size: 13px;
+                    &:hover{
+                        box-shadow: 0px 0px 5px 2px abs.$rosa-neon;
+                    }
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 16px;
+                }
+            }
+            p{
+                font-size: 15px;
+                @include abs.breakpoint(tablet){
+                    font-size: 20px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 25px;
+                }
+            }
+            .formulario-recuperacion-contraseña{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                label{
+                    font-size: 10px;
+                    text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
+                }
+                input{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border:1px solid  abs.$azul-neon;
+                    font-size: 10px;
+                    border-radius: 5px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                .boton-recuperar-contraseña{
+                    color: abs.$blanco;
+                    border: 0;
+                    padding: 5px 10px;
+                    background-color: abs.$azul-neon;
+                    border-radius: 5px;
+                    font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        padding: 10px 15px;
+                        font-size: 13px;
+                        &:hover{
+                            box-shadow: 0px 0px 5px 2px abs.$rosa-neon;
+                        }
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
+                    }
+                }
+            }
+            .formulario-cambio-contraseña{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    li{
+                        font-size: 10px;
+                        border-bottom: 1px solid abs.$rosa-neon;
+                        @include abs.breakpoint(tablet){
+                            font-size: 15px;
+                        }
+                        @include abs.breakpoint(desktopxl){
+                            font-size: 18px;
+                        }
+                    }
+                }
+                label{
+                    font-size: 10px;
+                    text-shadow: 0px 0px 5px abs.$azul-neon;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
+                }
+                input{
+                    background-color: abs.$negro-espacial;
+                    color: abs.$blanco;
+                    border:1px solid  abs.$azul-neon;
+                    font-size: 10px;
+                    border-radius: 5px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 15px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
+                    &:focus{
+                        box-shadow: 0px 0px 5px 2px abs.$gris-claro;
+                    }
+                }
+                .helptext{
+                    display: none;
+                }
+                .boton-cambiar-contraseña{
+                    color: abs.$blanco;
+                    border: 0;
+                    padding: 5px 10px;
+                    background-color: abs.$azul-neon;
+                    border-radius: 5px;
+                    font-size: 10px;
+                    @include abs.breakpoint(tablet){
+                        padding: 10px 15px;
+                        font-size: 13px;
+                        &:hover{
+                            box-shadow: 0px 0px 5px 2px abs.$rosa-neon;
+                        }
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .container-info-del-juego{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            border: 1px solid abs.$azul-neon;
+            border-radius: 10px;
+            padding: 20px;
+            @include abs.breakpoint(tablet){
+                gap: 50px;
+                padding: 20px 40px 20px 40px;
+                box-shadow: 0px 0px 5px 5px abs.$azul-neon;
+                border: none;
+            }
+            @include abs.breakpoint(desktopxl){
+                padding: 30px 50px 30px 50px;
+            }
+            p{
+                font-size: 13px;
+                @include abs.breakpoint(tablet){
+                    font-size: 17px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 21px;
+                }
+            }
+            img{
+                width: 100%;
+                border: 1px solid abs.$azul-neon;
+                border-radius: 10px;
+            }
+            .parte-1{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                a{
+                    text-decoration: none;
+                    color: abs.$rosa-neon;
+                    text-shadow: 0px 0px 2px abs.$gris-claro;
+                    @include abs.breakpoint(desktop){
+                        &:hover{
+                            color: abs.$azul-neon;
+                        }
+                    }
+                }
+            }
+            .parte-2{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                @include abs.breakpoint(tablet){
+                    gap: 30px;
+                }
+            }
+            .parte-3{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                @include abs.breakpoint(tablet){
+                    gap: 30px;
+                }
+            }
+            .parte-4{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                @include abs.breakpoint(tablet){
+                    gap: 30px;
+                }
+            }
+        }
+        .container-error-403{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            p{
+                font-size: 13px;
+                @include abs.breakpoint(tablet){
+                    font-size: 17px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 21px;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: abs.$rosa-neon;
+                text-shadow: 0px 0px 2px abs.$gris-claro;
+                @include abs.breakpoint(desktop){
+                    &:hover{
+                        color: abs.$azul-neon;
                     }
                 }
             }

@@ -8,11 +8,13 @@
         {% csrf_token %}
         {{form.username | as_crispy_field}}
         {{form.password | as_crispy_field}}
-        <label class="checkbox-login">
-            <input type="checkbox" name="recuerdame">
-            Recúerdame
-        </label>
-        <a href="{% url 'password_reset' %}">¿Has olvidado la contraseña?</a>
+        <div class="container-checkbox-recuperar">
+            <label class="checkbox-login">
+                <input type="checkbox" name="recuerdame">
+                Recúerdame
+            </label>
+            <a class="recuperar-contraseña" href="{% url 'password_reset' %}">¿Has olvidado la contraseña?</a>
+        </div>
         <button class="boton-login">Acceder</button>
     </form>
 </div>

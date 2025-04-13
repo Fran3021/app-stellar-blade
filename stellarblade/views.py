@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import RegisterForm, SearchForm
 from django.views.generic import CreateView, FormView, ListView
 from django.contrib import messages
@@ -11,6 +11,7 @@ from usuarios.models import Follow, PerfilUsuario
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetView
+from django.core.exceptions import PermissionDenied
 
 
 class HomeView(ListView):
@@ -39,6 +40,12 @@ class RegisterView(CreateView):
     template_name = 'general/registro.html'
     success_url = reverse_lazy('login')
 
+    def dispatch(self, request, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            pk = self.request.user.perfil.pk
+            return redirect(reverse_lazy('usuarios:mi_perfil' , kwargs={'pk': pk}))
+        return super().dispatch(request, *args, **kwargs)
+
     def form_valid(self, form):
         messages.success(self.request, 'Usuario creado correctamente')
         return super().form_valid(form)
@@ -48,6 +55,12 @@ class LoginView(FormView):
     template_name = 'general/login.html'
     form_class = AuthenticationForm
     success_url = reverse_lazy('home')
+
+    def dispatch(self, request, *args, **kwargs):
+        if self.request.user.is_authenticated:
+            pk = self.request.user.perfil.pk
+            return redirect(reverse_lazy('usuarios:mi_perfil' , kwargs={'pk': pk}))
+        return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         recuerdame = self.request.POST.get('recuerdame')
@@ -99,6 +112,7 @@ class PersonalizarReseteoContraseña(PasswordResetView):
     template_name = 'registration/password_reset_form.html'
 
 
-
+def info_del_juego(request):
+    return render(request, 'general/info_del_juego.html')
 
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @keyframes titulo-pagina {
   50% {
     text-shadow: 0px 0px 2px #00BFFF;
@@ -20,6 +21,28 @@
   }
   to {
     text-shadow: 0 0 15px #FF073A, 0 0 25px #FF073A;
+  }
+}
+@keyframes eresNuevo {
+  0% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
   }
 }
 * {
@@ -465,6 +488,49 @@ main .container-main .container-home {
 @media (min-width: 1440px) {
   main .container-main .container-home {
     gap: 120px;
+  }
+}
+main .container-main .container-home .container-eres-nuevo {
+  position: absolute;
+  text-align: center;
+  padding: 3px;
+  border-radius: 5px;
+  width: 100px;
+  height: 45px;
+  top: 105px;
+  left: 7%;
+  animation: eresNuevo infinite 5s linear;
+  border: 1px solid #00BFFF;
+  box-shadow: 0px 0px 2px 1px #FFFFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-home .container-eres-nuevo {
+    width: 150px;
+    height: 55px;
+    top: 150px;
+  }
+}
+@media (min-width: 1280px) {
+  main .container-main .container-home .container-eres-nuevo {
+    top: 270px;
+  }
+}
+main .container-main .container-home .container-eres-nuevo p {
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-home .container-eres-nuevo p {
+    font-size: 15px;
+  }
+}
+main .container-main .container-home .container-eres-nuevo a {
+  text-decoration: none;
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #FF073A;
+}
+@media (min-width: 768px) {
+  main .container-main .container-home .container-eres-nuevo a {
+    font-size: 15px;
   }
 }
 main .container-main .container-home .publicacion {
@@ -1935,11 +2001,32 @@ main .container-main .container-login .formulario-login {
   display: flex;
   flex-direction: column;
 }
-main .container-main .container-login .formulario-login .checkbox-login {
+main .container-main .container-login .formulario-login .container-checkbox-recuperar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
+}
+main .container-main .container-login .formulario-login .container-checkbox-recuperar .checkbox-login {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+main .container-main .container-login .formulario-login .container-checkbox-recuperar .recuperar-contraseña {
+  text-decoration: none;
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-login .formulario-login .container-checkbox-recuperar .recuperar-contraseña {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-login .formulario-login .container-checkbox-recuperar .recuperar-contraseña {
+    font-size: 20px;
+  }
 }
 main .container-main .container-login .formulario-login label {
   font-size: 10px;
@@ -2063,6 +2150,338 @@ main .container-main .container-registro .formulario-crear-cuenta .form-text {
 @media (min-width: 768px) {
   main .container-main .container-registro .formulario-crear-cuenta .form-text {
     font-size: 15px;
+  }
+}
+main .container-main .container-recuperacion-contraseña {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña {
+    gap: 30px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña {
+    gap: 40px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .title-recuperacion-contraseña {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .title-recuperacion-contraseña {
+    font-size: 30px;
+    margin-bottom: 45px;
+  }
+}
+@media (min-width: 1280px) {
+  main .container-main .container-recuperacion-contraseña .title-recuperacion-contraseña {
+    text-shadow: 1px 1px 0px #FF007F, 2px 2px 2px #FF007F, 3px 3px 0px #FF007F, 4px 4px 0px #FF007F, 5px 5px 0px #FF007F;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .title-recuperacion-contraseña {
+    font-size: 40px;
+    margin-bottom: 70px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .boton-inicia-sesion {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #00BFFF;
+  border-radius: 5px;
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .boton-inicia-sesion {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  main .container-main .container-recuperacion-contraseña .boton-inicia-sesion:hover {
+    box-shadow: 0px 0px 5px 2px #FF007F;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .boton-inicia-sesion {
+    font-size: 16px;
+  }
+}
+main .container-main .container-recuperacion-contraseña p {
+  font-size: 15px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña p {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña p {
+    font-size: 25px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña label {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña label {
+    font-size: 20px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña input {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border: 1px solid #00BFFF;
+  font-size: 10px;
+  border-radius: 5px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña input {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña input {
+    font-size: 20px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña .boton-recuperar-contraseña {
+  color: #FFFFFF;
+  border: 0;
+  padding: 5px 10px;
+  background-color: #00BFFF;
+  border-radius: 5px;
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña .boton-recuperar-contraseña {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña .boton-recuperar-contraseña:hover {
+    box-shadow: 0px 0px 5px 2px #FF007F;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .formulario-recuperacion-contraseña .boton-recuperar-contraseña {
+    font-size: 16px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña ul li {
+  font-size: 10px;
+  border-bottom: 1px solid #FF007F;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña ul li {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña ul li {
+    font-size: 18px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña label {
+  font-size: 10px;
+  text-shadow: 0px 0px 5px #00BFFF;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña label {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña label {
+    font-size: 20px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña input {
+  background-color: #0D0D0D;
+  color: #FFFFFF;
+  border: 1px solid #00BFFF;
+  font-size: 10px;
+  border-radius: 5px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña input {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña input {
+    font-size: 20px;
+  }
+}
+main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña input:focus {
+  box-shadow: 0px 0px 5px 2px #CCCCCC;
+}
+main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña .helptext {
+  display: none;
+}
+main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña .boton-cambiar-contraseña {
+  color: #FFFFFF;
+  border: 0;
+  padding: 5px 10px;
+  background-color: #00BFFF;
+  border-radius: 5px;
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña .boton-cambiar-contraseña {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña .boton-cambiar-contraseña:hover {
+    box-shadow: 0px 0px 5px 2px #FF007F;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-recuperacion-contraseña .formulario-cambio-contraseña .boton-cambiar-contraseña {
+    font-size: 16px;
+  }
+}
+main .container-main .container-info-del-juego {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border: 1px solid #00BFFF;
+  border-radius: 10px;
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-info-del-juego {
+    gap: 50px;
+    padding: 20px 40px 20px 40px;
+    box-shadow: 0px 0px 5px 5px #00BFFF;
+    border: none;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-info-del-juego {
+    padding: 30px 50px 30px 50px;
+  }
+}
+main .container-main .container-info-del-juego p {
+  font-size: 13px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-info-del-juego p {
+    font-size: 17px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-info-del-juego p {
+    font-size: 21px;
+  }
+}
+main .container-main .container-info-del-juego img {
+  width: 100%;
+  border: 1px solid #00BFFF;
+  border-radius: 10px;
+}
+main .container-main .container-info-del-juego .parte-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .container-main .container-info-del-juego .parte-1 a {
+  text-decoration: none;
+  color: #FF007F;
+  text-shadow: 0px 0px 2px #CCCCCC;
+}
+@media (min-width: 1280px) {
+  main .container-main .container-info-del-juego .parte-1 a:hover {
+    color: #00BFFF;
+  }
+}
+main .container-main .container-info-del-juego .parte-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-info-del-juego .parte-2 {
+    gap: 30px;
+  }
+}
+main .container-main .container-info-del-juego .parte-3 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-info-del-juego .parte-3 {
+    gap: 30px;
+  }
+}
+main .container-main .container-info-del-juego .parte-4 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-info-del-juego .parte-4 {
+    gap: 30px;
+  }
+}
+main .container-main .container-error-403 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main .container-main .container-error-403 p {
+  font-size: 13px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-error-403 p {
+    font-size: 17px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-error-403 p {
+    font-size: 21px;
+  }
+}
+main .container-main .container-error-403 a {
+  text-decoration: none;
+  color: #FF007F;
+  text-shadow: 0px 0px 2px #CCCCCC;
+}
+@media (min-width: 1280px) {
+  main .container-main .container-error-403 a:hover {
+    color: #00BFFF;
   }
 }
 

@@ -26,3 +26,26 @@
     from { text-shadow: 0 0 5px abs.$rojo-neon, 0 0 10px abs.$rojo-neon; }
     to   { text-shadow: 0 0 15px abs.$rojo-neon, 0 0 25px abs.$rojo-neon; }
     }
+
+@keyframes eresNuevo{
+    0%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    25%{
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    50%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    75%{
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+    100%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}

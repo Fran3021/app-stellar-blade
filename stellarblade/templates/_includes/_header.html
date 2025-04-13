@@ -2,6 +2,7 @@
 
     <nav class="menu-header-movil">
         <ul>
+            <li><a href="{% url 'info_del_juego' %}"><i class="bi bi-info-square"></i></a></li>
             <li><a href="{% url 'home' %}"><i class="bi bi-house"></i></a></li>
             {% if request.user.is_authenticated %}
                 <li><a href="{% url 'usuarios:mis_contactos' %}"><i class="bi bi-person-add"></i></a></li>
@@ -37,6 +38,7 @@
             </a>
         </li>
         <ul>
+            <li><a href="{% url 'info_del_juego' %}"><i class="bi bi-info-square"></i>Info</a></li>
             <li><a href="{% url 'home' %}"><i class="bi bi-house"></i>Inicio</a></li>
             {% if request.user.is_authenticated %}
                 <li><a href="{% url 'usuarios:mis_contactos' %}"><i class="bi bi-person-add"></i>Mi red</a></li>
@@ -58,8 +60,8 @@
                     {% endif %}
                 </li>
             {% else %}
-                <li><a href="{% url 'registro' %}">Registrate</a></li>
-                <li><a href="{% url 'login' %}">Accede a tu cuenta</a></li>
+                <li><a href="{% url 'registro' %}"><i class="bi bi-plus-circle"></i>Registrate</a></li>
+                <li><a href="{% url 'login' %}"><i class="bi bi-rocket-takeoff"></i>Accede a tu cuenta</a></li>
             {% endif %}
         </ul>
     </nav>

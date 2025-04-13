@@ -4,6 +4,10 @@
 {% block page_content %}
 <h2 class="title-home" >Ultimas publicaciones</h2>
 <div class="container-home">
+    <div class="container-eres-nuevo">
+        <p>¿Eres nuevo?</p>
+        <a href="{% url 'info_del_juego' %}">Pincha aqui</a>
+    </div>
     {% for publicacion in publicaciones %}
         {% include "_includes/_publicaciones.html" %}
     {% endfor %}
