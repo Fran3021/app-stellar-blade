@@ -162,6 +162,32 @@
   display: none;
 }
 
+footer {
+  padding-bottom: 50px;
+}
+footer .container-footer p {
+  font-size: 12px;
+}
+@media (min-width: 768px) {
+  footer .container-footer p {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  footer .container-footer p {
+    font-size: 18px;
+  }
+}
+footer .container-footer p a {
+  color: #00BFFF;
+  text-decoration: none;
+}
+@media (min-width: 1280px) {
+  footer .container-footer p a:hover {
+    text-shadow: 0px 0px 3px #FFFFFF;
+  }
+}
+
 .FormRespuesta {
   display: none;
 }
@@ -513,6 +539,9 @@ main .container-main .container-home .container-eres-nuevo {
 @media (min-width: 1280px) {
   main .container-main .container-home .container-eres-nuevo {
     top: 270px;
+  }
+  main .container-main .container-home .container-eres-nuevo:hover {
+    box-shadow: 0px 0px 5px 5px #FFFFFF;
   }
 }
 main .container-main .container-home .container-eres-nuevo p {
@@ -2482,6 +2511,128 @@ main .container-main .container-error-403 a {
 @media (min-width: 1280px) {
   main .container-main .container-error-403 a:hover {
     color: #00BFFF;
+  }
+}
+main .container-main .container-politica-legal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (min-width: 1440px) {
+  main .container-main .container-politica-legal {
+    gap: 50px;
+  }
+}
+main .container-main .container-politica-legal h2 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-politica-legal h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 1280px) {
+  main .container-main .container-politica-legal h2 {
+    text-shadow: 1px 1px 0px #FF007F, 2px 2px 2px #FF007F, 3px 3px 0px #FF007F, 4px 4px 0px #FF007F, 5px 5px 0px #FF007F;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-politica-legal h2 {
+    font-size: 40px;
+    margin-bottom: 25px;
+  }
+}
+main .container-main .container-politica-legal h3 {
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  main .container-main .container-politica-legal h3 {
+    font-size: 20px;
+    margin-bottom: 0px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-politica-legal h3 {
+    font-size: 25px;
+    margin-bottom: 0px;
+  }
+}
+main .container-main .container-politica-legal p {
+  font-size: 13px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-politica-legal p {
+    font-size: 17px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-politica-legal p {
+    font-size: 21px;
+  }
+}
+main .container-main .container-politica-legal ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .container-main .container-politica-legal ul li {
+  font-size: 12px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-politica-legal ul li {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1440px) {
+  main .container-main .container-politica-legal ul li {
+    font-size: 20px;
+  }
+}
+main .container-main .container-politica-legal .aviso-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-politica-legal .aviso-legal {
+    gap: 20px;
+  }
+}
+main .container-main .container-politica-legal .politica-privacidad {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-politica-legal .politica-privacidad {
+    gap: 20px;
+  }
+}
+main .container-main .container-politica-legal .politica-cookies {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-politica-legal .politica-cookies {
+    gap: 20px;
+  }
+}
+main .container-main .container-politica-legal .condiciones-uso {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media (min-width: 768px) {
+  main .container-main .container-politica-legal .condiciones-uso {
+    gap: 20px;
   }
 }
 

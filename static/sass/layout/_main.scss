@@ -57,6 +57,9 @@ main{
                 }
                 @include abs.breakpoint(desktop){
                     top: 270px;
+                    &:hover{
+                        box-shadow: 0px 0px 5px 5px abs.$blanco;
+                    }
                 }
                 p{
                     font-size: 10px;
@@ -684,6 +687,104 @@ main{
                     &:hover{
                         color: abs.$azul-neon;
                     }
+                }
+            }
+        }
+        .container-politica-legal{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            @include abs.breakpoint(desktopxl){
+                gap: 50px;
+            }
+            h2{
+                font-size: 20px;
+                text-align: center;
+                margin-bottom: 20px;
+                @include abs.breakpoint(tablet){
+                    font-size: 30px;
+                    margin-bottom: 15px;
+                }
+                @include abs.breakpoint(desktop){
+                    text-shadow:1px 1px 0px abs.$rosa-neon,
+                    2px 2px 2px abs.$rosa-neon, 
+                    3px 3px 0px abs.$rosa-neon, 
+                    4px 4px 0px abs.$rosa-neon,
+                    5px 5px 0px abs.$rosa-neon;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 40px;
+                    margin-bottom: 25px;
+                }
+            }
+            h3{
+                font-size: 15px;
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: bold;
+                @include abs.breakpoint(tablet){
+                    font-size: 20px;
+                    margin-bottom: 0px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 25px;
+                    margin-bottom: 0px;
+                }
+            }
+            p{
+                font-size: 13px;
+                @include abs.breakpoint(tablet){
+                    font-size: 17px;
+                }
+                @include abs.breakpoint(desktopxl){
+                    font-size: 21px;
+                }
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                li{
+                    font-size: 12px;
+                    @include abs.breakpoint(tablet){
+                        font-size: 16px;
+                    }
+                    @include abs.breakpoint(desktopxl){
+                        font-size: 20px;
+                    }
+                }
+            }
+            .aviso-legal{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                @include abs.breakpoint(tablet){
+                    gap: 20px;
+                }
+            }
+            .politica-privacidad{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                @include abs.breakpoint(tablet){
+                    gap: 20px;
+                }
+            }
+            .politica-cookies{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                @include abs.breakpoint(tablet){
+                    gap: 20px;
+                }
+            }
+            .condiciones-uso{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                @include abs.breakpoint(tablet){
+                    gap: 20px;
                 }
             }
         }

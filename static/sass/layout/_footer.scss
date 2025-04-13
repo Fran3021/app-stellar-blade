@@ -1,3 +1,28 @@
 @use '../abstracts/abstracts' as abs;
 @use '../base/base' as base;
 @use '../components/components' as comp;
+
+
+footer{
+    padding-bottom: 50px;
+    .container-footer{
+        p{
+            font-size: 12px;
+            @include abs.breakpoint(tablet){
+                font-size: 15px;
+            }
+            @include abs.breakpoint(desktopxl){
+                font-size: 18px;
+            }
+            a{
+                color: abs.$azul-neon;
+                text-decoration: none;
+                @include abs.breakpoint(desktop){
+                    &:hover{
+                        text-shadow: 0px 0px 3px abs.$blanco;
+                    }
+                }
+            }
+        }
+    }
+}

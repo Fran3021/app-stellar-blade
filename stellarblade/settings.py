@@ -110,7 +110,7 @@ WSGI_APPLICATION = 'stellarblade.wsgi.application'
 
 DATABASES = {
     'default':{
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': env('ENGINE'),
         'NAME': env('NAME_DB'),
         'USER': env('USER_DB'),
         'PASSWORD': env('PASSWORD_DB'),

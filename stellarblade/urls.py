@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from debug_toolbar.toolbar import debug_toolbar_urls
-from .views import legal_view, logout_view, RegisterView, LoginView, HomeView, search_view, PersonalizarReseteoContraseña, info_del_juego
+from .views import legal_view, logout_view, RegisterView, LoginView, HomeView, search_view, PersonalizarReseteoContraseña, info_del_juego, politica_legal
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth import views as auth_views
@@ -25,7 +25,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('', HomeView.as_view(), name = 'home'),
     path('informacion-stellar-blade/', info_del_juego, name = 'info_del_juego'),
-    path('legal/', legal_view, name = 'legal'),
+    path('politica-legal/', politica_legal, name = 'politica_legal'),
     path('logout/', logout_view, name = 'logout'),
     path('search/', search_view, name = 'search'),
     path('registro/', RegisterView.as_view(), name = 'registro'),

@@ -115,4 +115,5 @@ class PersonalizarReseteoContraseña(PasswordResetView):
 def info_del_juego(request):
     return render(request, 'general/info_del_juego.html')
 
-
+def politica_legal(request):
+    return render(request, 'general/politica_legal.html')
