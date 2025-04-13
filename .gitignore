@@ -1,6 +1,98 @@
-*.env
+# Byte-compiled / optimized / DLL files
 __pycache__/
-db.sqlite3
-*.pyc
+*.py[cod]
+*$py.class
+
+# Entorno virtual
+env/
+venv/
+ENV/
+.venv/
+.Python
+
+# Archivos de entorno y variables sensibles
+.env
+*.env
+.env.*
+
+# Archivos del editor o sistema
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*.bak
+
+# Archivos de bases de datos locales
+*.sqlite3
+
+# Archivos de log y temporales
 *.log
-media/
+*.pot~
+*.tmp
+*.temp
+
+# Archivos de configuración de deployment opcionales
+local_settings.py
+secrets.json
+
+# Archivos de cobertura y pruebas
+htmlcov/
+.tox/
+.coverage
+coverage.xml
+nosetests.xml
+pytest_cache/
+.pytest_cache/
+.cache
+
+# Archivos de compilación
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+
+# Archivos estáticos y media generados
+/staticfiles/
+/media/
+/static/
+
+# Archivos de migrations innecesarios (opcional, si no quieres ignorarlos comenta esta línea)
+# **/migrations/*.pyc
+# **/migrations/__pycache__/
+
+# Archivos de compilación de frontend (si usas algo como npm o yarn)
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Archivos de configuración de gunicorn, nginx, etc. (si no quieres que estén en Git)
+*.pid
+*.sock
+
+# Archivos SSH o de claves privadas (¡nunca deben ir al repo!)
+*.pem
+*.key
+*.crt
+
+# Archivos comprimidos
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Archivos de docker (si usas docker y no quieres subirlos)
+*.tar
+docker-compose.override.yml
+
+# Otros
+__MACOSX/
