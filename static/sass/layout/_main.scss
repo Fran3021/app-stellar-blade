@@ -755,6 +755,15 @@ main{
                     }
                 }
             }
+            a{
+                text-decoration: none;
+                color: abs.$azul-neon;
+                @include abs.breakpoint(desktop){
+                    &:hover{
+                        text-shadow: 0px 0px 3px abs.$blanco;
+                    }
+                }
+            }
             .aviso-legal{
                 display: flex;
                 flex-direction: column;

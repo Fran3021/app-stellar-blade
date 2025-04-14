@@ -3,8 +3,8 @@
         <div class="imagen">
             {% if publicacion.autor.imagen_perfil %}
                 <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
-                    <img class="imagen-perfil-movil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}">
-                    <img class="imagen-perfil-tablet" src="{{publicacion.autor.imagen_perfil.thumbnails.large.url}}" alt="{{publicacion.autor.usuario}}">
+                    <img loading="lazy" class="imagen-perfil-movil" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}">
+                    <img loading="lazy" class="imagen-perfil-tablet" src="{{publicacion.autor.imagen_perfil.thumbnails.large.url}}" alt="{{publicacion.autor.usuario}}">
                 </a>
             {% else %}
                 <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
