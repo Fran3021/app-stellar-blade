@@ -1,14 +1,17 @@
 asgiref==3.8.1
 asttokens==3.0.0
 crispy-bootstrap5==2024.10
+da-vinci==0.5.0
 decorator==5.2.1
 Django==5.1.6
 django-appconf==1.1.0
 django-compressor==4.5.1
 django-crispy-forms==2.3
 django-debug-toolbar==5.0.1
+django-environ==0.12.0
 django-extensions==3.2.3
 django-libsass==0.9
+django-thumbnails==0.8.0
 executing==2.2.0
 ipdb==0.13.13
 ipython==9.0.2
@@ -26,6 +29,7 @@ pure_eval==0.2.3
 Pygments==2.19.1
 rcssmin==1.1.2
 rjsmin==1.2.2
+shortuuid==1.0.13
 sqlparse==0.5.3
 stack-data==0.6.3
 traitlets==5.14.3

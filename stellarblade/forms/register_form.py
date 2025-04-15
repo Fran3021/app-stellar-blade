@@ -11,12 +11,14 @@ class RegisterForm(forms.ModelForm):
         model = User
         fields = [
             'username',
-            'first_name',
-            'last_name',
             'email',
             'password',
             'password_confirm',
         ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['email'].required = False
 
     def clean(self):
         cleaned_data = super().clean()

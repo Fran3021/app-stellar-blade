@@ -10,6 +10,7 @@ from publicaciones.models import Publicacion
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from notificaciones.models import NotificacionSeguir
+from stellarblade.forms import PerfilUsuarioForm
 
 class MyPerfilView(DetailView):
     model = PerfilUsuario
@@ -32,12 +33,7 @@ class MyPerfilView(DetailView):
 class UpdatePerfilView(UpdateView):
     template_name = 'usuarios/perfil_update.html'
     model = PerfilUsuario
-    fields = [
-        'imagen_perfil',
-        'biografia',
-        'fecha_nacimiento',
-    ]
-
+    form_class = PerfilUsuarioForm
 
     def dispatch(self, request, *args, **kwargs):
         usuario_perfil = self.get_object()
@@ -45,6 +41,11 @@ class UpdatePerfilView(UpdateView):
             raise PermissionDenied
         return super().dispatch(request, *args, **kwargs)
     
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user#pasamos el usuario al formulario
+        return kwargs
 
     def form_valid(self, form):
         messages.success(self.request, 'Usuario editado correctamente.')
@@ -95,7 +96,7 @@ def follow_perfiles_ajax(request, pk):
     perfil = PerfilUsuario.objects.get(pk = pk)
     if Follow.objects.filter(seguidor = request.user.perfil, siguiendo = perfil).count():
         request.user.perfil.unfollow(perfil)
-        NotificacionSeguir.objects.filter(destinatario=perfil, usuario=request.user.perfil, url=reverse_lazy('usuarios:detail', kwargs={'pk': request.user.perfil.pk}))
+        NotificacionSeguir.objects.filter(destinatario=perfil, usuario=request.user.perfil, url=reverse_lazy('usuarios:detail', kwargs={'pk': request.user.perfil.pk})).delete()
         return JsonResponse({
             'mensaje': f'Se ha dejado de seguir al usuario {perfil.usuario}',
             'follow': False,

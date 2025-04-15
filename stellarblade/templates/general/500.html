@@ -1,0 +1,9 @@
+{% extends "general/layout.html" %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}500 - Error del servidor{% endblock  %}
+{% block page_content %}
+<div class="container-errores">
+    <p>Ha ocurrido un error interno. Inténtalo de nuevo más tarde.</p>
+    <a href="{% url 'home' %}">Volver al inicio</a>
+</div>
+{% endblock  %}

@@ -44,8 +44,6 @@ class StellarBladeViewsTest(TestCase):
             url = reverse_lazy('registro')
             response = self.client.post(url,
                 {'username': 'kito',
-                'first_name': 'kirito',
-                'last_name': 'kirigaya',
                 'email': 'k@k.com',
                 'password': '1369',
                 'password_confirm': '1369'}, follow=True)

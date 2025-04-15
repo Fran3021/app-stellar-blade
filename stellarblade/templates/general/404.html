@@ -1,0 +1,9 @@
+{% extends "general/layout.html" %}
+{% block head_title %}Stellar Blade{% endblock  %}
+{% block page_title %}404 - Página no encontrada{% endblock  %}
+{% block page_content %}
+<div class="container-errores">
+    <p>La página que estás buscando no existe o fue eliminada.</p>
+    <a href="{% url 'home' %}">Volver al inicio</a>
+</div>
+{% endblock  %}
