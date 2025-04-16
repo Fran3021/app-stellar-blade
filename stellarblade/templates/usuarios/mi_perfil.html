@@ -1,5 +1,6 @@
 {% extends "general/layout.html" %}
 {% block head_title %}Stellar Blade{% endblock  %}
+{% block description %}{{perfil.usuario}}- {{perfil.biografia|truncatechars:20}}{% endblock %}
 {% block page_title %}MI PERFIL{% endblock  %}
 {% block page_content %}
 <div class="container-mi-perfil">
