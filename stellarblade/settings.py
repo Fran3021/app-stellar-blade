@@ -54,14 +54,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
     #apps de terceros
     'django_extensions',
     'crispy_forms',
     'crispy_bootstrap5',
     'django_libsass',
     'thumbnails',
-
     #apps de la aplicacion
     'publicaciones',
     'usuarios',
