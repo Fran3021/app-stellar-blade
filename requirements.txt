@@ -3,7 +3,7 @@ asttokens==3.0.0
 crispy-bootstrap5==2024.10
 da-vinci==0.5.0
 decorator==5.2.1
-Django==5.1.6
+Django==5.2
 django-appconf==1.1.0
 django-compressor==4.5.1
 django-crispy-forms==2.3
