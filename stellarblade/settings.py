@@ -158,6 +158,11 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #Varible y directorio de los archivos media, para que nos permitanb añadir al crear un nuevo blog o curso
