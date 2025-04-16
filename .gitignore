@@ -60,9 +60,9 @@ parts/
 sdist/
 var/
 
-# Archivos  media generados
+# Archivos estáticos y media generados
+/staticfiles/
 /media/
-
 
 # Archivos de migrations innecesarios (opcional, si no quieres ignorarlos comenta esta línea)
 # **/migrations/*.pyc
