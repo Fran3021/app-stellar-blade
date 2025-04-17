@@ -3,13 +3,9 @@ import environ
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from django.core.mail.backends.base import BaseEmailBackend
-from django.conf import settings
 
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, False)
-)
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+env = environ.Env()
+environ.Env.read_env()
 
 
 class SendGridEmailBackend(BaseEmailBackend):
@@ -18,10 +14,10 @@ class SendGridEmailBackend(BaseEmailBackend):
             return 0
 
         sent_count = 0
-        sg = SendGridAPIClient(api_key=env("SENDGRID_API_KEY"))
+        sg = SendGridAPIClient(env("SENDGRID_API_KEY"))
 
         for message in email_messages:
-            from_email = message.from_email or settings.DEFAULT_FROM_EMAIL
+            from_email = env('DEFAULT_FROM_EMAIL')
             content = message.body
             to_emails = message.to
 
@@ -29,7 +25,7 @@ class SendGridEmailBackend(BaseEmailBackend):
                 from_email=from_email,
                 to_emails=to_emails,
                 subject=message.subject,
-                plain_text_content=content,
+                html_content=content,
             )
 
             try:
