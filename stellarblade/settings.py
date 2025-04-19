@@ -243,6 +243,10 @@ THUMBNAILS = {
     }
 }
 
+# Tamaño máximo de subida de archivos (20 MB)
+DATA_UPLOAD_MAX_MEMORY_SIZE = 20 * 1024 * 1024  # 20 MB 
+FILE_UPLOAD_MAX_MEMORY_SIZE = 20 * 1024 * 1024  # por seguridad
+
 #variables necesarias para opcion de recuperar contraseña
 EMAIL_BACKEND = env('EMAIL_BACKEND')
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')

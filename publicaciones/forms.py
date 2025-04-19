@@ -1,6 +1,7 @@
 from django import forms
 from .models import Publicacion, Comentario, RespuestaComentario
 
+#formulario para editar una publicacion
 class CreatePublicacionForm(forms.ModelForm):
     class Meta:
         model = Publicacion
@@ -11,6 +12,7 @@ class CreatePublicacionForm(forms.ModelForm):
         ]
 
 
+#formulario para crear comentario en publicacion
 class CreateComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
@@ -18,6 +20,7 @@ class CreateComentarioForm(forms.ModelForm):
             'texto',
         ]
 
+#formulario para contestar comentario de una publicacion
 class ContestarComentarioForm(forms.ModelForm):
     class Meta:
         model = RespuestaComentario

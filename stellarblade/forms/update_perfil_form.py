@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from usuarios.models import PerfilUsuario
 
 
-
+#clase para poder editar el perfil en la edicion del perfil del usuario logeado
 class PerfilUsuarioForm(forms.ModelForm):
     email = forms.EmailField(required=False, label='Email (opcional)')
 

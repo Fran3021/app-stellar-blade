@@ -23,6 +23,7 @@ class PerfilUsuario(models.Model):
     def unlike_pub(self, publicacion):
         publicacion.unlike(self)
 
+    #funcion que devuelve el numero total de notificaciones del usuario logeado
     def total_notificaciones(self):
         from notificaciones.models import NotificacionComentario, NotificacionPublicacion, NotificacionSeguir, NotificacionRespuestaComentario, NotificacionMeGusta, NotificacionMensaje
         

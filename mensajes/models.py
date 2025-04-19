@@ -7,7 +7,7 @@ class Conversacion(models.Model):
     fecha_inicio = models.DateTimeField(verbose_name='Fecha de inicio de la conversacion:', auto_now_add=True)
 
     class Meta:
-        unique_together = ('usuario1', 'usuario2')
+        unique_together = ('usuario1', 'usuario2')#nos aseguramos que no se repita
         verbose_name = 'Conversacion'
         verbose_name_plural = 'Conversaciones'
 

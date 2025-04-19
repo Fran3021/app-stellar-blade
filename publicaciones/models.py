@@ -17,6 +17,7 @@ class Publicacion(models.Model):
     def unlike(self, usuario):
         self.likes.remove(usuario)
 
+    #funcion que nos cuenta los comentarios totales, incluyendo respuesta comentarios
     def total_comentarios(self):
         comentarios = Comentario.objects.filter(publicacion=self).count()
         respuestas = RespuestaComentario.objects.filter(publicacion=self).count()

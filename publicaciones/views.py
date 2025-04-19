@@ -23,7 +23,7 @@ class CrearPublicacionView(CreateView):
     def form_valid(self, form):
         nueva_publicacion = form.save(commit=False)
         nueva_publicacion.autor = self.request.user.perfil
-        nueva_publicacion.save()
+        nueva_publicacion.save()#nos aseguramos de redirigir al usuario a la nueva publicacion creada en succes_url
         titulo = nueva_publicacion.titulo
         perfil_usuario = self.request.user.perfil
         seguidores = perfil_usuario.siguiendo.all()
@@ -49,7 +49,8 @@ class DetailPublicacionView(DetailView, CreateView):
         perfil_usuario = self.request.user.perfil
         publicacion = self.get_object()
         destinatario = publicacion.autor
-        NotificacionComentario.objects.create(autor=perfil_usuario, destinatario=destinatario, publicacion=publicacion, url=reverse_lazy('publicaciones:detalle', kwargs= {'pk': publicacion.pk}))
+        if self.request.user.perfil != publicacion.autor:
+            NotificacionComentario.objects.create(autor=perfil_usuario, destinatario=destinatario, publicacion=publicacion, url=reverse_lazy('publicaciones:detalle', kwargs= {'pk': publicacion.pk}))
         messages.success(self.request ,'Comentario añadido correctamente')
         return super().form_valid(form)
     
@@ -67,6 +68,7 @@ class UpdatePublicacionView(UpdateView):
         'contenido',
     ]
 
+    #solo se puede editar si el usuario logeado es el autor de la publicacion
     def dispatch(self, request, *args, **kwargs):
         usuario_perfil = self.get_object()
         if usuario_perfil.autor != self.request.user.perfil:
@@ -140,7 +142,8 @@ def like_ajax(request, pk):
         })
     else:
         request.user.perfil.like_pub(publicacion)
-        NotificacionMeGusta.objects.create(publicacion=publicacion, destinatario=publicacion.autor, usuario=request.user.perfil, url= reverse_lazy('publicaciones:detalle', kwargs={'pk': publicacion.pk}))
+        if request.user.perfil != publicacion.autor:
+            NotificacionMeGusta.objects.create(publicacion=publicacion, destinatario=publicacion.autor, usuario=request.user.perfil, url= reverse_lazy('publicaciones:detalle', kwargs={'pk': publicacion.pk}))
         return JsonResponse({
             'like': True,
             'mensaje': f'Se ha dado like en la siguiente publicacion: {publicacion.titulo}',

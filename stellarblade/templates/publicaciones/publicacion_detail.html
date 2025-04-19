@@ -77,8 +77,10 @@
                     {% if comentario.autor == request.user.perfil %}
                         <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">Eliminar</button>
                     {% endif %}
-                    {% if comentario.autor != request.user.perfil %}
-                        <button data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button>
+                    {% if request.user.is_authenticated %}
+                        {% if comentario.autor != request.user.perfil %}
+                            <button data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button>
+                        {% endif %}
                     {% endif %}
                     {% if comentario.respuestas.count %}
                         <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button>

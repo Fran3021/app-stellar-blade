@@ -7,6 +7,8 @@ def current_user(request):
         'current_user': request.user,
     }
 
+
+#funcion para el template de usuarios sugeridos en base de si esta logeado o si el usuario logeado lo tiene en seguidores
 def all_users(request):
     if request.user.is_authenticated:
         perfil_usuario = request.user.perfil

@@ -163,7 +163,7 @@
 }
 
 footer {
-  padding-bottom: 50px;
+  padding-bottom: 70px;
 }
 footer .container-footer p {
   font-size: 12px;
@@ -285,6 +285,8 @@ header .menu-header-movil ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 header .menu-header-movil ul li {
   flex: 1;
@@ -297,13 +299,13 @@ header .menu-header-movil ul a {
 }
 header .menu-header-movil ul a i {
   color: #00BFFF;
-  font-size: 15px;
+  font-size: 18px;
 }
 header .menu-header-movil ul .avatar-menu {
   border-radius: 50%;
-  width: 40%;
-  height: 40%;
-  margin-bottom: 3px;
+  width: 48%;
+  height: 48%;
+  margin-bottom: 5px;
 }
 header .menu-header-movil ul .numero-notificacion-container {
   position: relative;

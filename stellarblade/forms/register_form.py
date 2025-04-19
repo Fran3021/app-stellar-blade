@@ -18,7 +18,7 @@ class RegisterForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['email'].required = False
+        self.fields['email'].required = False#ponemos que el email no sea obligatorio
 
     def clean(self):
         cleaned_data = super().clean()
@@ -32,7 +32,7 @@ class RegisterForm(forms.ModelForm):
 
     def save(self, commit = True):
         user = super().save(commit=False)
-        user.set_password(self.cleaned_data['password'])
+        user.set_password(self.cleaned_data['password'])#encriptamoos la contraseña
 
         if commit:
             user.save()

@@ -17,6 +17,7 @@ def notificaciones_totales(request):
 
         notificaciones_mensajes = NotificacionMensaje.objects.filter(destinatario=request.user.perfil).exclude(usuario=request.user.perfil)
 
+        # le añadimos el tipo de notificacion para poder ordenarlas
         for n in notificaciones_publicacion:
             n.tipo = 'publicacion'
         for n in notificaciones_comentarios:
@@ -30,6 +31,8 @@ def notificaciones_totales(request):
         for n in notificaciones_mensajes:
             n.tipo = 'mensaje'
 
+
+        #las pasamos a una lista
         todas_las_notificaciones = list(chain(
             notificaciones_publicacion,
             notificaciones_comentarios,
@@ -39,7 +42,7 @@ def notificaciones_totales(request):
             notificaciones_mensajes,
         ))
 
-        # Ordena por fecha_notificacion (del más reciente al más antiguo)
+        # Ordena por fecha_notificacion del mas reciente al mas antiguo
         todas_las_notificaciones.sort(key=lambda x: x.fecha_notificacion, reverse=True)
     else:
         todas_las_notificaciones = []

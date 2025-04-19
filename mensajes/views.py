@@ -57,7 +57,7 @@ class ConversacionesView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["conversaciones"] = Conversacion.objects.filter(
-            Q(usuario1 = self.request.user.perfil) | Q(usuario2 = self.request.user.perfil)
+            Q(usuario1 = self.request.user.perfil) | Q(usuario2 = self.request.user.perfil)#obtenemos todas las conversaciones, ya seamos el que la ha iniciado o no
             )
         
         return context
@@ -90,7 +90,7 @@ def contestar_mensaje(request, pk):
 
             autor_mensaje = request.user.perfil
 
-            destinatario_respuesta = (
+            destinatario_respuesta = (#comprobamos que siempre se envie al destinatario correspondiente segun el ultimo usuario en contestar
                 conversacion.usuario1 if autor_mensaje == conversacion.usuario2 else conversacion.usuario2
             )
             mensaje_respuesta = Mensaje.objects.create(conversacion=conversacion, autor=autor_mensaje, destinatario=destinatario_respuesta, contenido=respuesta_mensaje)
@@ -131,7 +131,7 @@ def eliminar_conversacion(request, pk):
     if request.method == 'DELETE':
         conversacion = Conversacion.objects.get(pk = pk)
         perfil_usuario = request.user.perfil
-        if conversacion.usuario1 == perfil_usuario or conversacion.usuario2 == perfil_usuario:
+        if conversacion.usuario1 == perfil_usuario or conversacion.usuario2 == perfil_usuario:#comprobamos que el algunos de usuarios de la conversacion para poder borrarla
             conversacion.delete()
             return JsonResponse({
                 'success': True,

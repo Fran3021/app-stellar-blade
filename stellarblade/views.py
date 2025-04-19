@@ -40,6 +40,8 @@ class RegisterView(CreateView):
     template_name = 'general/registro.html'
     success_url = reverse_lazy('login')
 
+
+    #redirigimos al usuario a su perfil en caso de que este logeado
     def dispatch(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
             pk = self.request.user.perfil.pk
@@ -56,6 +58,7 @@ class LoginView(FormView):
     form_class = AuthenticationForm
     success_url = reverse_lazy('home')
 
+    #redirigimos al usuario a su perfil en caso de que este logeado
     def dispatch(self, request, *args, **kwargs):
         if self.request.user.is_authenticated:
             pk = self.request.user.perfil.pk
@@ -67,6 +70,7 @@ class LoginView(FormView):
         if recuerdame:
             self.request.session.set_expiry(1209600)
 
+        #obtenemos el usuario y comprobamos que ese usuario y contraseña coincide con alguno en la base de datos
         user = form.get_user()
         login(self.request, user)
         messages.success(self.request, 'Inicion de sesion exitoso.')
@@ -106,6 +110,7 @@ def search_view(request):
         return render(request, 'general/busqueda.html', context)
 
 
+#clase para personalizar los templates de recuperacion de contraseña
 class PersonalizarReseteoContraseña(PasswordResetView):
     email_template_name = 'registration/password_reset_email.html'
     success_url = reverse_lazy('password_reset_done')
