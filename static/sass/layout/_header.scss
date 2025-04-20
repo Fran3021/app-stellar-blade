@@ -7,29 +7,21 @@ header{
     padding-top: 20px;
     margin-bottom: 20px;
     @include abs.breakpoint(tablet){
-        padding-top: 80px;
+        padding-top: 100px;
     }
     .logo-movil{
         display: flex;
         justify-content: center;
-        width: max-content;
-        margin-left: auto;
-        margin-right: auto;
         margin-bottom: 20px;
         @include abs.breakpoint(tablet){
             margin-bottom: 50px;
         }
         .logo{
-            width: 100%;
             text-decoration: none;
             display: flex;
             justify-content: center;
             img{
                 animation: zoomIn 3s ease-out;
-                width: 70%;
-                @include abs.breakpoint(desktop){
-                    width: 80%;
-                }
             }
         }
         @include abs.breakpoint(desktop){
@@ -38,25 +30,21 @@ header{
     }
     .logo-desktop{
         display: none;
-        justify-content: center;
-        width: max-content;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px;
+        @include abs.breakpoint(desktop){
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
         @include abs.breakpoint(desktopxl){
             margin-bottom: 100px;
         }
         .logo{
-            width: 100%;
             text-decoration: none;
             display: flex;
             justify-content: center;
             img{
                 animation: zoomIn 3s ease-out;
             }
-        }
-        @include abs.breakpoint(desktop){
-            display: flex;
         }
     }
     .menu-header-movil{
@@ -119,15 +107,13 @@ header{
         width: 100%;
         position: fixed;
         top: 0;
-        .logo-desktop{
+        .logo-desktop-header{
             display: none;
-            width: 115px;
-            height: 50px;
             @include abs.breakpoint(desktop){
                 display: block;
                 position:absolute;
                 left: 5%;
-                top: 13%;
+                top: 25%;
             }
         }
         ul{

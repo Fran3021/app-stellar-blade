@@ -31,14 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
         fetch(buttonFollow.href)
           .then((response) => response.json())
           .then((data) => {
-            nSeguidores.innerHTML = `<h3>Seguidores: ${data.numero_seguidores} </h3>`;
+            nSeguidores.innerHTML = `Seguidores:<span>${data.numero_seguidores}</span>`;
             if (data.follow) {
               buttonFollow.innerHTML =
-                '<button type="button" class="btn btn-outline-primary btn-sm">Dejar de seguir</button>';
+                '<button class="boton-dejar-de-seguir">Dejar de seguir</button>';
               mensajeFollow.innerHTML = `<p class="alert alert-primary">${data.mensaje}</p>`;
             } else {
               buttonFollow.innerHTML =
-                ' <button type="button" class="btn btn-outline-dark btn-sm">Seguir</button>';
+                '<button class="boton-seguir">Seguir</button>';
               mensajeFollow.innerHTML = `<p class="alert alert-danger">${data.mensaje}</p>`;
             }
           });

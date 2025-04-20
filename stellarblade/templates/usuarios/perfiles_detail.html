@@ -28,9 +28,9 @@
             <div class="botones-seguir-dejar-de-seguir">
                 <a class='ButtonFollows' data-perfil-id='{{perfil.pk}}' href="{% url 'usuarios:follow' perfil.pk %}">
                     {% if request.user.perfil in perfil.siguiendo.all %}
-                        <button type="button" class="boton-dejar-de-seguir">Dejar de seguir</button>
+                        <button class="boton-dejar-de-seguir">Dejar de seguir</button>
                     {% else %}
-                        <button type="button" class="boton-seguir">Seguir</button>
+                        <button class="boton-seguir">Seguir</button>
                     {% endif %}
                 </a>
             </div>

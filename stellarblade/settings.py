@@ -27,9 +27,9 @@ env = environ.Env(
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 #seguridad https, ponerlo en true solo en produccion, en desarrollo siempre false
-SECURE_SSL_REDIRECT = True
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
@@ -206,8 +206,8 @@ THUMBNAILS = {
         #vista movil
         'small': {
             'PROCESSORS': [
-                {'PATH': 'thumbnails.processors.resize', 'width': 150, 'height': 150, 'method': 'fill'},
-                {'PATH': 'thumbnails.processors.crop', 'width': 125, 'height': 125},
+                {'PATH': 'thumbnails.processors.resize', 'width': 250, 'height': 250, 'method': 'fill'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 240, 'height': 240},
             ],
         },
         'xs': {
@@ -224,20 +224,20 @@ THUMBNAILS = {
         },
         'large': {
             'PROCESSORS': [
-                {'PATH': 'thumbnails.processors.resize', 'width': 500, 'height': 500, 'method': 'fit'},
-                {'PATH': 'thumbnails.processors.crop', 'width': 250, 'height': 250},
+                {'PATH': 'thumbnails.processors.resize', 'width': 500, 'height': 500, 'method': 'fill'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 490, 'height': 490},
             ],
         },
         'largepublicacion': {
             'PROCESSORS': [
-                {'PATH': 'thumbnails.processors.resize', 'width': 520, 'height': 600, 'method': 'fill'},
-                {'PATH': 'thumbnails.processors.crop', 'width': 520, 'height': 600},
+                {'PATH': 'thumbnails.processors.resize', 'width': 1000, 'height': 1000, 'method': 'fill'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 900, 'height': 900},
             ],
         },
         'movilpublicacion': {
             'PROCESSORS': [
-                {'PATH': 'thumbnails.processors.resize', 'width': 300, 'height': 420, 'method': 'fill'},
-                {'PATH': 'thumbnails.processors.crop', 'width': 280, 'height': 380},
+                {'PATH': 'thumbnails.processors.resize', 'width': 800, 'height': 800, 'method': 'fill'},
+                {'PATH': 'thumbnails.processors.crop', 'width': 700, 'height': 700},
             ],
         },
     }

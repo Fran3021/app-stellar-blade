@@ -69,10 +69,7 @@
                 gap: 20px;
             }
             .imagen{
-                width: 20%;
-                @include breakpoint(tablet){
-                    width: 10%;
-                }
+                width: 10%;
                 a{
                     text-decoration: none;
                     .imagen-perfil-movil{
@@ -107,10 +104,7 @@
                 }
             }
             .hora-autor-titulo{
-                width: 80%;
-                @include breakpoint(tablet){
-                    width: 90%;
-                }
+                width: 90%;
                 .hora-autor{
                     @include breakpoint(tablet){
                         margin-bottom: 10px;

@@ -45,7 +45,7 @@ main{
                 border-radius: 5px;
                 width: 100px;
                 height: 45px;
-                top: 95px;
+                top: 110px;
                 left: 7%;
                 animation: eresNuevo infinite 5s linear;
                 border: 1px solid abs.$azul-neon;
@@ -53,7 +53,7 @@ main{
                 @include abs.breakpoint(tablet){
                     width: 150px;
                     height: 55px;
-                    top: 150px;
+                    top: 200px;
                 }
                 @include abs.breakpoint(desktop){
                     top: 270px;
