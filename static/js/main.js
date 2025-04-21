@@ -393,3 +393,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+//funcion para crear modal al pinchar sobre la imagen
+const modal = document.getElementById("image-modal")
+const modalImage = document.getElementById("image-in-modal")
+
+// Creamos el modal al hacer click en la imagen
+document.querySelectorAll(".zoom-modal").forEach(img => {
+    img.addEventListener("click", function() {
+      modal.style.display = "block"
+      modalImage.src = img.src
+  });
+});
+
+// Cerramos el modal al hacer click en la X
+function closeModal() {
+    modal.style.display = "none"
+}
+
+// Cerramos el modal al hacer click fuera de la imagen
+window.onclick = function(event) {
+  if (event.target === modal) {
+      modal.style.display = "none"
+  }
+};
