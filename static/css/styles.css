@@ -3534,6 +3534,7 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 5px;
 }
 @media (min-width: 768px) {
   main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi {
@@ -3597,6 +3598,7 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-comentarios .imagen-autor-fecha-publi .autor-fecha-publi .fecha-publi {
+  color: #00BFFF;
   font-size: 8px;
 }
 @media (min-width: 768px) {
@@ -3674,7 +3676,7 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas {
-  width: 100%;
+  width: 85%;
   margin-left: 15%;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta {
@@ -3682,6 +3684,7 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 5px;
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta a {
   width: 10%;
@@ -3740,6 +3743,7 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .imagen-autor-fecha-respuesta .autor-fecha-respuesta .fecha-respuesta {
+  color: #00BFFF;
   font-size: 8px;
 }
 @media (min-width: 768px) {
@@ -3766,6 +3770,7 @@ main .container-main .container-detalle-publicacion .publicacion-detalle-comenta
   }
 }
 main .container-main .container-detalle-publicacion .publicacion-detalle-comentarios-respuestas .container-comentarios-respuestas .container-respuestas .eliminarRespuesta {
+  margin-left: 0;
   font-size: 8px;
   background-color: #FF073A;
   padding: 3px 5px;

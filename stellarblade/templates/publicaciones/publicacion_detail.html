@@ -24,12 +24,12 @@
     <div class="publicacion-detalle-imagen-large">
         {% if publicacion.imagen %}
             <img class="zoom-modal" src="{{publicacion.imagen.url}}" alt="{{publicaicon.titulo}}">
+            <div id="image-modal" class="modal">
+                <span class="close" onclick="closeModal()">X</span>
+                <a class="descargar-imagen" href="{{publicacion.imagen.url}}" download><i class="bi bi-download"></i></a>
+                <img class="contenido-modal" id="image-in-modal">
+            </div>
         {% endif %}
-        <div id="image-modal" class="modal">
-            <span class="close" onclick="closeModal()">X</span>
-            <a class="descargar-imagen" href="{{publicacion.imagen.url}}" download><i class="bi bi-download"></i></a>
-            <img class="contenido-modal" id="image-in-modal">
-        </div>
     </div>
 
     <div class="publicacion-detalle-contenido">

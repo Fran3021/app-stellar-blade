@@ -325,6 +325,7 @@ main{
                             display: flex;
                             align-items: center;
                             gap: 10px;
+                            margin-bottom: 5px;
                             @include abs.breakpoint(tablet){
                                 margin-bottom: 5px;
                             }
@@ -372,6 +373,7 @@ main{
                                     }
                                 }
                                 .fecha-publi{
+                                    color: abs.$azul-neon;
                                     font-size: 8px;
                                     @include abs.breakpoint(tablet){
                                         font-size: 11px;
@@ -432,13 +434,14 @@ main{
                         }
                     }
                     .container-respuestas{
-                        width: 100%;
+                        width: 85%;
                         margin-left: 15%;
                         .imagen-autor-fecha-respuesta{
                             width: 100%;
                             display: flex;
                             align-items: center;
                             gap: 10px;
+                            margin-bottom: 5px;
                             a{
                                 width: 10%;
                                 text-decoration: none;
@@ -483,6 +486,7 @@ main{
                                     }
                                 }
                                 .fecha-respuesta{
+                                    color: abs.$azul-neon;
                                     font-size: 8px;
                                     @include abs.breakpoint(tablet){
                                         font-size: 11px;
@@ -503,6 +507,7 @@ main{
                             }
                         }
                         .eliminarRespuesta{
+                            margin-left: 0;
                             font-size: 8px;
                             background-color: abs.$rojo-neon;
                             padding: 3px 5px;

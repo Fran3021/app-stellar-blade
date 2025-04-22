@@ -248,8 +248,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let buttonNotificacion = document.querySelectorAll(".notificacion");
   buttonNotificacion.forEach((button) => {
     let notificacionPk = button.dataset.notiPk;
+    let tipo = button.getAttribute('data-tipo')
     const buttonNoti = document.getElementById(
-      `notificacion-${notificacionPk}`
+      `notificacion-${tipo}-${notificacionPk}`
     );
     button.addEventListener("click", () => {
       let urlMarcarLeida = button.getAttribute("data-href");
