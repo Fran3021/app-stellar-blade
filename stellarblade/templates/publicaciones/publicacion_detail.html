@@ -8,7 +8,7 @@
     <div class="publicacion-detalle-imagen-descripcion">
         <div class="imagen-publicacion-detalle">
             {% if publicacion.autor.imagen_perfil %}
-                <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
+                <a href="{% url 'usuarios:detail' publicacion.autor.pk %}"><img loading="lazy" src="{{publicacion.autor.imagen_perfil.thumbnails.small.url}}" alt="{{publicacion.autor.usuario}}"></a>
             {% else %}
             <a href="{% url 'usuarios:detail' publicacion.autor.pk %}">
                 <i class="bi bi-person-circle"></i>
@@ -21,15 +21,26 @@
         </div>
     </div>
 
-    <div class="publicacion-detalle-imagen-large">
-        {% if publicacion.imagen %}
-            <img class="zoom-modal" src="{{publicacion.imagen.url}}" alt="{{publicaicon.titulo}}">
-            <div id="image-modal" class="modal">
-                <span class="close" onclick="closeModal()">X</span>
-                <a class="descargar-imagen" href="{{publicacion.imagen.url}}" download><i class="bi bi-download"></i></a>
-                <img class="contenido-modal" id="image-in-modal">
-            </div>
-        {% endif %}
+    <div class="container-media-detalle-publicacion">
+        <div class="publicacion-detalle-imagen-large">
+            {% if publicacion.imagen %}
+                <img loading="lazy" class="zoom-modal" src="{{publicacion.imagen.url}}" alt="{{publicacion.titulo}}">
+                <div id="image-modal" class="modal">
+                    <span class="close" onclick="closeModal()">X</span>
+                    <a class="descargar-imagen" href="{{publicacion.imagen.url}}" download><i class="bi bi-download"></i></a>
+                    <img loading="lazy" class="contenido-modal" id="image-in-modal">
+                </div>
+            {% endif %}
+        </div>
+    
+        <div class="publicacion-detalle-video">
+            {% if publicacion.video %}
+            <video class="video-publicacion-detalle" controls>
+                <source src="{{publicacion.video.url}}" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+            {% endif %}
+        </div>
     </div>
 
     <div class="publicacion-detalle-contenido">

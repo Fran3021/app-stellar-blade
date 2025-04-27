@@ -65,6 +65,7 @@ class UpdatePublicacionView(UpdateView):
     fields = [
         'titulo',
         'imagen',
+        'video',
         'contenido',
     ]
 

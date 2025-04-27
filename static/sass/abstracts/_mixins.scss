@@ -176,6 +176,15 @@
                 margin-bottom: 30px;
             }
         }
+        .video-publicacion-include{
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid var.$azul-neon;
+            margin-bottom: 10px;
+            @include breakpoint(desktopxl){
+                margin-bottom: 30px;
+            }
+        }
         .contenido-publicacion{
             font-size: 10px;
             width: 100%;

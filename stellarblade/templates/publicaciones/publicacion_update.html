@@ -9,6 +9,7 @@
         {% csrf_token %}
         {{form.titulo | as_crispy_field}}
         {{form.imagen | as_crispy_field}}
+        {{form.video | as_crispy_field}}
         {{form.contenido | as_crispy_field}}
         <button class="boton-editar">Editar</button>
         <a class="boton-cancelar" href="{% url 'publicaciones:detalle' object.pk %}">Cancelar</a>

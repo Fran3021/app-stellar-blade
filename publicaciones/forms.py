@@ -8,6 +8,7 @@ class CreatePublicacionForm(forms.ModelForm):
         fields = [
             'titulo',
             'imagen',
+            'video',
             'contenido',
         ]
 

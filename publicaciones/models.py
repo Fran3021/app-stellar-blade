@@ -3,10 +3,10 @@ from usuarios.models import PerfilUsuario
 from thumbnails.fields import ImageField
 
 class Publicacion(models.Model):
-    titulo = models.CharField(verbose_name='Titulo de la publicacion:', max_length=50, blank=True, null=False)
+    titulo = models.CharField(verbose_name='Titulo de la publicacion:', max_length=50, blank=False, null=False)
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='publicaciones')
-    imagen = ImageField(verbose_name='Imagen del post:', upload_to='publicaciones/img/')
-    video = models.FileField(verbose_name='Video de la publicacion:', upload_to='publicaciones/video/', null=True)
+    imagen = ImageField(verbose_name='Imagen del post:', upload_to='publicaciones/img/', null=True, blank=True)
+    video = models.FileField(verbose_name='Video de la publicacion:', upload_to='publicaciones/video/', null=True, blank=True)
     contenido = models.TextField(verbose_name='Contenido de la publicacion', max_length=300, blank=True)
     fecha_publicacion = models.DateTimeField(verbose_name='Fecha de creacion:', auto_now_add=True)
     likes = models.ManyToManyField(PerfilUsuario, verbose_name='Likes de la publicacion:', related_name='likes_publicacion')

@@ -24,10 +24,11 @@ class PublicacionesViewsTest(TestCase):
             response = self.client.post(url,
                 {'titulo': 'prueba',
                 'contenido': 'contenido',
-                })
+                }, follow=True)
             self.assertEqual(response.status_code, 200)
             self.publicacion = Publicacion.objects.first()
             self.assertIsNotNone(self.publicacion)
+            self.assertEqual(Publicacion.objects.count(), 2)
             self.assertEqual(self.publicacion.titulo, 'prueba')
             self.assertEqual(self.publicacion.contenido, 'contenido')
             self.assertEqual(self.publicacion.autor, self.perfil2)

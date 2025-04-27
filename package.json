@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "bootstrap-icons": "^1.11.3"
+    "bootstrap-icons": "^1.11.3",
+    "swiper": "^11.2.6"
   }
 }

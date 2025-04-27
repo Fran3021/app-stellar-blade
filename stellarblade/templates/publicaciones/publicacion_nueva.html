@@ -9,6 +9,7 @@
         {% csrf_token %}
         {{form.titulo | as_crispy_field}}
         {{form.imagen | as_crispy_field}}
+        {{form.video | as_crispy_field}}
         {{form.contenido | as_crispy_field}}
         <button class="boton-crear">Crear publicacion</button>
     </form>
