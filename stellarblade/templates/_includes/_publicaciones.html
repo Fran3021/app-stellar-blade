@@ -27,7 +27,7 @@
         <img loading="lazy" class="imagen_publicacion_tablet" src="{{publicacion.imagen.thumbnails.largepublicacion.url}}" alt="{{publicacion.autor.usuario}}">
     {% endif %}
     {% if publicacion.video %}
-    <video class="video-publicacion-include" controls>
+    <video class="video-publicacion-include" controls autoplay muted>
         <source src="{{publicacion.video.url}}" type="video/mp4">
         Tu navegador no soporta el video.
     </video>

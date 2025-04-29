@@ -35,7 +35,7 @@
     
         <div class="publicacion-detalle-video">
             {% if publicacion.video %}
-            <video class="video-publicacion-detalle" controls>
+            <video class="video-publicacion-detalle" controls autoplay muted>
                 <source src="{{publicacion.video.url}}" type="video/mp4">
                 Tu navegador no soporta el video.
             </video>

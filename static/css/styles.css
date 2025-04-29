@@ -2811,6 +2811,7 @@ main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje
   }
 }
 main .container-main .container-conversaciones-detail .mensaje-1 .imagen-mensaje p {
+  width: 90%;
   font-size: 10px;
   background-color: #00BFFF;
   padding: 10px;
