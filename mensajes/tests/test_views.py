@@ -5,6 +5,7 @@ from publicaciones.models import Publicacion, Comentario, RespuestaComentario
 from notificaciones.models import NotificacionComentario, NotificacionMeGusta, NotificacionMensaje, NotificacionPublicacion, NotificacionRespuestaComentario, NotificacionSeguir
 from django.contrib.auth.models import User
 from django.urls import reverse, reverse_lazy
+from django.utils import translation
 
 class MensajesViewsTest(TestCase):
         def setUp(self):
@@ -37,17 +38,27 @@ class MensajesViewsTest(TestCase):
 
         def test_contestar_mensaje(self):
             self.client.login(username='paqui', password='5678')
-            url = reverse_lazy('mensajes:contestar_mensaje', kwargs={'pk': self.mensaje1.pk})
-            response = self.client.post(
-                url,
-                {'contenido': self.mensaje2},
-                HTTP_X_REQUESTED_WITH='XMLHttpRequest')
-            self.assertEqual(response.status_code, 200)
-            self.assertEqual(response['Content-Type'], 'application/json')
-            self.assertJSONEqual(
-            str(response.content, encoding='utf8'),
-            {'success': True}
-            )
+
+            with translation.override('es-es'):
+                # Forzamos el idioma en la sesión
+                session = self.client.session
+                session['django_language'] = 'es-es'
+                session.save()
+
+                # Generamos la URL traducida
+                url = reverse('mensajes:contestar_mensaje', kwargs={'pk': self.mensaje1.pk})
+
+                response = self.client.post(
+                    url,
+                    {'contenido': self.mensaje2.contenido},
+                    HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+                )
+
+                self.assertEqual(response.status_code, 200)
+                self.assertJSONEqual(
+                    str(response.content, encoding='utf8'),
+                    {'success': True}
+                )
 
         def test_eliminar_mensaje(self):
             self.client.login(username='palillo', password='1234')

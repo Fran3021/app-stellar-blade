@@ -1,34 +1,35 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load static %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Informacion sobre el juego y el mundo de stellar blade para jugadores nuevos{% endblock %}
-{% block page_title %}¿Eres nuevo en <em>Stellar Blade</em>?{% endblock  %}
+{% block description %} {% trans "Informacion sobre el juego y el mundo de stellar blade para jugadores nuevos" %}{% endblock %}
+{% block page_title %}¿ {% trans "Eres nuevo en" %} <em>Stellar Blade</em>?{% endblock  %}
 {% block page_content %}
 <div class="container-info-del-juego">
     <div class="parte-1">
         <p>
-            Entonces esta breve introducción te pondrá al día.<br>
-            Si ya eres un experto, te animo a que explores la web, y si te gusta, no dudes en crearte una cuenta para acceder a todas las funcionalidades de la página.
+            {% trans "Entonces esta breve introducción te pondrá al día." %}<br>
+            {% trans "Si ya eres un experto, te animo a que explores la web, y si te gusta, no dudes en crearte una cuenta para acceder a todas las funcionalidades de la página." %}
         </p>
-        <p>Empieza a navegar <a href="{% url 'home' %}">aqui</a></p>
+        <p> {% trans "Empieza a navegar" %} <a href="{% url 'home' %}">{% trans "aqui" %}</a></p>
         {% if not request.user.is_authenticated %}
-            <p>Create una cuenta <a href="{% url 'registro' %}">aqui</a></p>
-            <p>Accede a tu cuenta <a href="{% url 'login' %}">aqui</a></p>
+            <p>{% trans "Create una cuenta" %} <a href="{% url 'registro' %}">{% trans "aqui" %}</a></p>
+            <p>{% trans "Accede a tu cuenta" %} <a href="{% url 'login' %}">{% trans "aqui" %}</a></p>
         {% endif %}
     </div>
     <div class="parte-2">
         <p>
-            Lo primero que quiero destacar es el estudio responsable de este videojuego: Shift Up, una desarrolladora de Corea del Sur. En mi opinión, es un estudio que cuida mucho a su comunidad, ofreciendo contenido gratuito y mimando cada detalle de su juego. Si queréis seguirles de cerca, aquí tenéis el enlace a su cuenta oficial en X: <a href="https://x.com/StellarBlade" target="_blank">@StellarBlade.</a>
+            {% trans "Lo primero que quiero destacar es el estudio responsable de este videojuego: Shift Up, una desarrolladora de Corea del Sur. En mi opinión, es un estudio que cuida mucho a su comunidad, ofreciendo contenido gratuito y mimando cada detalle de su juego. Si queréis seguirles de cerca, aquí tenéis el enlace a su cuenta oficial en X" %}: <a href="https://x.com/StellarBlade" target="_blank">@StellarBlade.</a>
         </p>
 
         <p>
-            <em>Stellar Blade</em> es un juego ambientado en un mundo postapocalíptico. En la Tierra solo quedan unas criaturas llamadas <strong>Naytibos</strong>, seres que aparecieron de la nada, cuya procedencia se desconoce, y que ganaron la guerra contra la humanidad.
+            <em>Stellar Blade</em> {% trans "es un juego ambientado en un mundo postapocalíptico. En la Tierra solo quedan unas criaturas llamadas" %} <strong>Naytibos</strong>, {% trans "seres que aparecieron de la nada, cuya procedencia se desconoce, y que ganaron la guerra contra la humanidad." %}
         </p>
 
         <img src="{% static "images/fondo-stellar-blade.jpeg" %}" alt="fondo-stellar-blade">
 
         <p>
-            Nuestra misión es acabar con el <strong>Naytibo Anciano</strong>, el más poderoso de todos. En esta aventura tomamos el papel de <strong>Eve</strong>, una miembro del escuadrón de ataque del Séptimo Escuadrón Aéreo enviada a la Tierra con ese objetivo. Pero no estaremos solos: contaremos con la ayuda de nuestros compañeros y de personajes con los que iremos interactuando a lo largo de la historia.
+            {% trans "Nuestra misión es acabar con el" %}<strong>Naytibo Anciano</strong>, {% trans "el más poderoso de todos. En esta aventura tomamos el papel de" %} <strong>Eve</strong>, {% trans "una miembro del escuadrón de ataque del Séptimo Escuadrón Aéreo enviada a la Tierra con ese objetivo. Pero no estaremos solos: contaremos con la ayuda de nuestros compañeros y de personajes con los que iremos interactuando a lo largo de la historia." %}
         </p>
     </div>
 
@@ -36,24 +37,24 @@
 
     <div class="parte-3">
         <p>
-            Recorreremos zonas repletas de enemigos, donde habrá que explorar a fondo, eliminar Naytibos y mejorar tanto nuestro equipo como nuestras habilidades. También podremos encontrar objetos coleccionables que desbloquean cosméticos, y realizar misiones secundarias muy entretenidas que, además, nos cuentan más sobre el mundo del juego. ¡Te animo a hacerlas!
+            {% trans "Recorreremos zonas repletas de enemigos, donde habrá que explorar a fondo, eliminar Naytibos y mejorar tanto nuestro equipo como nuestras habilidades. También podremos encontrar objetos coleccionables que desbloquean cosméticos, y realizar misiones secundarias muy entretenidas que, además, nos cuentan más sobre el mundo del juego. ¡Te animo a hacerlas!" %}
         </p>
         <img src="{% static "images/eve-xion.JPG" %}" alt="eve-xion">
         <p>
-            El sistema de combate es adictivo y muy bien trabajado. El <em>sparring</em> es clave para sobrevivir y disfrutar al máximo la experiencia. Desde mi punto de vista, es fácil pillarle el <em>timing</em> y se vuelve muy satisfactorio.
+            {% trans "El sistema de combate es adictivo y muy bien trabajado. El" %}<em>sparring</em> {% trans "es clave para sobrevivir y disfrutar al máximo la experiencia. Desde mi punto de vista, es fácil pillarle el" %} <em>timing</em> {% trans "y se vuelve muy satisfactorio." %}
         </p>
     </div>
 
     <div class="parte-4">
         <p>
-            Durante la aventura nos acompañará un dron que será de gran ayuda en más de una ocasión.
+            {% trans "Durante la aventura nos acompañará un dron que será de gran ayuda en más de una ocasión." %}
         </p>
         <img src="{% static "images/eve-dron.JPG" %}" alt="eve-dron">
         <p>
-            Si te ha entrado curiosidad por este mundo, échale un vistazo a la página de inicio, donde encontrarás publicaciones, guías y todo tipo de contenido relacionado con <em>Stellar Blade</em>.
+            {% trans "Si te ha entrado curiosidad por este mundo, échale un vistazo a la página de inicio, donde encontrarás publicaciones, guías y todo tipo de contenido relacionado con " %} <em>Stellar Blade</em>.
         </p>
     </div>
 
-    <p><strong>¡Disfruta!</strong></p>
+    <p><strong>{% trans "!Disfruta¡" %}</strong></p>
 </div>
 {% endblock %}

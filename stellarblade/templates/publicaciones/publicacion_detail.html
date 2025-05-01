@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block description %}{{publicacion.titulo}} - {{publicacion.contenido | truncatechars:20}}{% endblock %}
-{% block page_title %}DETALLE PUBLICACION{% endblock %}
+{% block page_title %}{% trans "DETALLE PUBLICACION" %}{% endblock %}
 {% block page_content %}
 <div class="container-detalle-publicacion">
     <div class="publicacion-detalle-imagen-descripcion">
@@ -16,7 +17,7 @@
             {% endif %}
         </div>
         <div class="descripcion-publicacion-detalle" >
-            <p class="autor-fecha" >{{publicacion.autor}} - Hace: {{publicacion.fecha_publicacion | timesince}}</p>
+            <p class="autor-fecha" >{{publicacion.autor}} - {% trans "Hace" %}: {{publicacion.fecha_publicacion | timesince}}</p>
             <p class="titulo" >{{publicacion.titulo}}</p>
         </div>
     </div>
@@ -37,7 +38,7 @@
             {% if publicacion.video %}
             <video class="video-publicacion-detalle" controls autoplay muted>
                 <source src="{{publicacion.video.url}}" type="video/mp4">
-                Tu navegador no soporta el video.
+                {% trans "Tu navegador no soporta el video." %}
             </video>
             {% endif %}
         </div>
@@ -71,7 +72,7 @@
 
     {% if publicacion.comentarios.count %}
         <div class="publicacion-detalle-comentarios-respuestas">
-            <h3>Comentarios de la publicacion</h3>
+            <h3>{% trans "Comentarios de la publicación" %}</h3>
             {% for comentario in publicacion.comentarios.all %}
             <article class="container-comentarios-respuestas">
                 
@@ -86,20 +87,20 @@
                         </a>
                         <div class="autor-fecha-publi">
                             <p class="autor">{{comentario.autor.usuario}}</p>
-                            <p class="fecha-publi">Hace: {{comentario.fecha_comentario | timesince}}</p>
+                            <p class="fecha-publi">{% trans "Hace" %}: {{comentario.fecha_comentario | timesince}}</p>
                         </div>
                     </div>
                     <p class="TextoComentario" >{{comentario.texto}}</p>
                     {% if comentario.autor == request.user.perfil %}
-                        <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">Eliminar</button>
+                        <button data-comentario-pk="{{comentario.pk}}" class="EliminarComentario" data-href="{% url 'publicaciones:eliminar_comentario' pk=comentario.pk %}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">{% trans "Eliminar" %}</button>
                     {% endif %}
                     {% if request.user.is_authenticated %}
                         {% if comentario.autor != request.user.perfil %}
-                            <button data-comentario-pk={{comentario.pk}} class="BotonResponder" >Responder</button>
+                            <button data-comentario-pk={{comentario.pk}} class="BotonResponder" >{% trans "Responder" %}</button>
                         {% endif %}
                     {% endif %}
                     {% if comentario.respuestas.count %}
-                        <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">Ver respuestas</button>
+                        <button class="VerRespuestas" data-comentario-pk="{{comentario.pk}}">{% trans "Ver respuestas" %}</button>
                     {% endif %}
                 </div>
 
@@ -117,12 +118,12 @@
                                 </a>
                                 <div class="autor-fecha-respuesta">
                                     <p class="autor">{{respuesta.autor.usuario}}</p>
-                                    <p class="fecha-respuesta">Hace: {{respuesta.fecha_respuesta | timesince}}</p>
+                                    <p class="fecha-respuesta">{% trans "Hace" %}: {{respuesta.fecha_respuesta | timesince}}</p>
                                 </div>
                             </div>
                             <p class="TextoRespuesta">{{respuesta}}</p>
                             {% if request.user.perfil == respuesta.autor %}
-                                <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">Eliminar</button>
+                                <button class="eliminarRespuesta" data-respuesta-pk="{{respuesta.pk}}" data-href="{% url 'publicaciones:eliminar_respuesta' respuesta.pk %}" data-redirect-url="{% url 'publicaciones:detalle' publicacion.pk %}">{% trans "Eliminar" %}</button>
                             {% endif %}
                         </div>
                     {% endfor %}
@@ -133,13 +134,13 @@
                     {% csrf_token %}
                     <input type="hidden" name="publicacion_pk" value="{{publicacion.pk}}">
                     {{contestar_form.respuesta | as_crispy_field}}
-                    <button class="boton-responder">Responder</button>
+                    <button class="boton-responder">{% trans "Responder" %}</button>
                 </form>
             </article>
             {% endfor %}
         </div>
     {% else %}
-        <h3 class="title-no-hay-comentarios">En esta publicacion todavia no hay comentarios</h3>
+        <h3 class="title-no-hay-comentarios">{% trans "En esta publicación todavía no hay comentarios" %}</h3>
     {% endif %}
 
     {% if request.user.is_authenticated %}
@@ -147,15 +148,15 @@
         <form class="formulario-comentar" action="" method='POST' >
             {% csrf_token %}
             {{form.texto | as_crispy_field}}
-            <button class="boton-comentar" >Comentar</button>
+            <button class="boton-comentar" >{% trans "Comentar" %}</button>
         </form>
     </div>
     {% endif %}
 
     {% if publicacion.autor == request.user.perfil %}
         <div class="botones-editar-eliminar-publicacion-detalle">
-            <a class="boton-editar" href="{% url 'publicaciones:editar' publicacion.pk %}">Editar</a>
-            <a class="boton-eliminar" href="{% url 'publicaciones:delete' publicacion.pk %}">Eliminar</a>
+            <a class="boton-editar" href="{% url 'publicaciones:editar' publicacion.pk %}">{% trans "Editar" %}</a>
+            <a class="boton-eliminar" href="{% url 'publicaciones:delete' publicacion.pk %}">{% trans "Eliminar" %}</a>
         </div>
     {% endif %}
 </div>

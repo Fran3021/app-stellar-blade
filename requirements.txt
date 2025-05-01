@@ -1,5 +1,7 @@
 asgiref==3.8.1
 asttokens==3.0.0
+certifi==2025.4.26
+charset-normalizer==3.4.1
 crispy-bootstrap5==2024.10
 da-vinci==0.5.0
 decorator==5.2.1
@@ -10,8 +12,10 @@ django-crispy-forms==2.3
 django-environ==0.12.0
 django-extensions==3.2.3
 django-libsass==0.9
+django-rosetta==0.10.2
 django-thumbnails==0.8.0
 executing==2.2.0
+idna==3.10
 ipdb==0.13.13
 ipython==9.0.2
 ipython_pygments_lexers==1.1.1
@@ -22,12 +26,14 @@ mysqlclient==2.2.7
 parso==0.8.4
 pexpect==4.9.0
 pillow==11.1.0
+polib==1.2.0
 prompt_toolkit==3.0.50
 ptyprocess==0.7.0
 pure_eval==0.2.3
 Pygments==2.19.1
 python-http-client==3.3.7
 rcssmin==1.1.2
+requests==2.32.3
 rjsmin==1.2.2
 sendgrid==6.11.0
 shortuuid==1.0.13
@@ -35,4 +41,5 @@ sqlparse==0.5.3
 stack-data==0.6.3
 starkbank-ecdsa==2.2.0
 traitlets==5.14.3
+urllib3==2.4.0
 wcwidth==0.2.13

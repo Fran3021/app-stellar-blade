@@ -3,6 +3,7 @@ from usuarios.models import PerfilUsuario
 from publicaciones.models import Publicacion, Comentario
 from mensajes.models import Mensaje, Conversacion
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 class NotificacionPublicacion(models.Model):
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='notificacion_publicacion')
@@ -18,7 +19,10 @@ class NotificacionPublicacion(models.Model):
         verbose_name_plural = 'Notificaciones de publicaciones'
 
     def __str__(self):
-        return f'{self.autor} ha publicaco una nueva publicacion:{self.publicacion}'
+        return _('%(autor)s ha publicado una nueva publicacion: %(publicacion)s') % {
+            'autor': self.autor,
+            'publicacion': self.publicacion,
+        }
 
 
 class NotificacionComentario(models.Model):
@@ -35,7 +39,10 @@ class NotificacionComentario(models.Model):
         verbose_name_plural = 'Notificaciones de comentarios'
 
     def __str__(self):
-        return f'{self.autor} ha escrito un comentario en tu publicacion: {self.publicacion}'
+        return _('%(autor)s ha escrito un comentario en tu publicacion: %(publicacion)s') % {
+            'autor': self.autor,
+            'publicacion': self.publicacion,
+        }
 
 
 class NotificacionSeguir(models.Model):
@@ -50,7 +57,9 @@ class NotificacionSeguir(models.Model):
         verbose_name_plural = 'Notificaciones de seguir'
 
     def __str__(self):
-        return f'El usuario {self.usuario} ha empezado a seguirte.'
+        return _('El usuario %(usuario)s ha empezado a seguirte.') % {
+            'usuario': self.usuario
+        }
 
 
 class NotificacionRespuestaComentario(models.Model):
@@ -67,7 +76,10 @@ class NotificacionRespuestaComentario(models.Model):
         verbose_name_plural = 'Notificaciones de respuestas a comentarios'
 
     def __str__(self):
-        return f'{self.usuario} ha contestado a tu comentario:{self.comentario}'
+        return _('%(usuario)s ha contestado a tu comentario: %(comentario)s') % {
+            'usuario': self.usuario,
+            'comentario': self.comentario,
+        }
 
 
 class NotificacionMeGusta(models.Model):
@@ -82,7 +94,10 @@ class NotificacionMeGusta(models.Model):
         verbose_name_plural = 'Notificaciones de me gusta'
 
     def __str__(self):
-        return f'{self.usuario} ha dado a me gusta a tu publicacion:{self.publicacion}'
+        return _('%(usuario)s ha dado a me gusta a tu publicacion:%(publicacion)s') % {
+            'usuario': self.usuario,
+            'publicacion': self.publicacion,
+        }
 
 
 class NotificacionMensaje(models.Model):
@@ -99,4 +114,6 @@ class NotificacionMensaje(models.Model):
         verbose_name_plural = 'Notificaciones de mensajes'
 
     def __str__(self):
-        return f'{self.usuario} te ha enviado un mensaje'
+        return _('%(usuario)s te ha enviado un mensaje') % {
+            'usuario': self.usuario,
+        }

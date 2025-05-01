@@ -2,11 +2,12 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from usuarios.models import PerfilUsuario
+from django.utils.translation import gettext_lazy as _
 
 
 class RegisterForm(forms.ModelForm):
-    password = forms.CharField(widget = forms.PasswordInput(), label= 'Escriba su contraseña')
-    password_confirm = forms.CharField(widget = forms.PasswordInput(), label= 'Repita su contraseña su contraseña')
+    password = forms.CharField(widget = forms.PasswordInput(), label= _('Escriba su contraseña'))
+    password_confirm = forms.CharField(widget = forms.PasswordInput(), label= _('Repita su contraseña'))
     class Meta:
         model = User
         fields = [
@@ -26,7 +27,7 @@ class RegisterForm(forms.ModelForm):
         password_confirm = cleaned_data.get('password_confirm')
 
         if password != password_confirm and password != '':
-            self.add_error('password_confirm','Las contraseñas no coinciden')
+            self.add_error('password_confirm',_('Las contraseñas no coinciden'))
 
         return cleaned_data
 

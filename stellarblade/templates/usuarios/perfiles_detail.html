@@ -1,7 +1,8 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% block head_title %}Stellar Blade{% endblock  %}
 {% block description %}{{perfil.usuario}} - {{perfil.biografia}}{% endblock %}
-{% block page_title %}DETALLE DE PERFIL{% endblock %}
+{% block page_title %}{% trans "DETALLE DE PERFIL" %}{% endblock %}
 {% block page_content %}
 <div class="container-perfiles-detail">
     <article class="perfiles-detail" >
@@ -12,14 +13,14 @@
         {% endif %}
         <div class="descripcion-perfiles-detail">
             <div class="seguidores-siguiendo-mensaje">
-                <p class='seguidores' id="Nseguidores-{{perfil.pk}}">Seguidores:<span>{{perfil.siguiendo.count}}</span></p>
-                <p class="siguiendo">Siguiendo<span>{{perfil.seguidores.count}}</span></p>
+                <p class='seguidores' id="Nseguidores-{{perfil.pk}}">{% trans "Seguidores:" %}<span>{{perfil.siguiendo.count}}</span></p>
+                <p class="siguiendo">{% trans "Siguiendo:" %}<span>{{perfil.seguidores.count}}</span></p>
                 <a class="mensaje" href="{% url 'mensajes:nuevo' perfil.pk %}"><i class="bi bi-envelope"></i></a>
             </div>
             <div class="nombre-te-sigue">
                 <p><strong>{{perfil.usuario}}</strong></p>
                 {% if perfil in request.user.perfil.siguiendo.all  %}
-                    <span>Te sigue</span>
+                    <span>{% trans "Te sigue" %}</span>
                 {% endif %}
             </div>
             <div class="biografia-perfiles-detail">
@@ -28,16 +29,16 @@
             <div class="botones-seguir-dejar-de-seguir">
                 <a class='ButtonFollows' data-perfil-id='{{perfil.pk}}' href="{% url 'usuarios:follow' perfil.pk %}">
                     {% if request.user.perfil in perfil.siguiendo.all %}
-                        <button class="boton-dejar-de-seguir">Dejar de seguir</button>
+                        <button class="boton-dejar-de-seguir">{% trans "Dejar de seguir" %}</button>
                     {% else %}
-                        <button class="boton-seguir">Seguir</button>
+                        <button class="boton-seguir">{% trans "Seguir" %}</button>
                     {% endif %}
                 </a>
             </div>
         </div>
     </article>
     <div class="container-ultimas-publicaciones-perfiles-detail">
-        <h3 class="title-ultimas-publicaciones-perfiles-detail">Ultimas publicaciones</h3>
+        <h3 class="title-ultimas-publicaciones-perfiles-detail">{% trans "Ultimas publicaciones" %}</h3>
         <div class="ultimas-publicaciones-perfiles-detail">
             {% for publicacion in perfil.publicaciones.all %}
                     {% include "_includes/_publicaciones.html" %}

@@ -11,6 +11,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from notificaciones.models import NotificacionSeguir
 from stellarblade.forms import PerfilUsuarioForm
+from django.utils.translation import gettext_lazy as _
 
 class MyPerfilView(DetailView):
     model = PerfilUsuario
@@ -48,7 +49,7 @@ class UpdatePerfilView(UpdateView):
         return kwargs
 
     def form_valid(self, form):
-        messages.success(self.request, 'Usuario editado correctamente.')
+        messages.success(self.request, _('Usuario editado correctamente.'))
         return super().form_valid(form)
     
     def get_success_url(self):
@@ -70,7 +71,7 @@ class DeletePerfilView(DeleteView):
     def form_valid(self, form):
         usuario = User.objects.get(username = self.object.usuario)
         usuario.delete()
-        messages.success(self.request, 'Perfil eliminado correctamente')
+        messages.success(self.request, _('Perfil eliminado correctamente'))
         return super().form_valid(form)
 
 
@@ -98,7 +99,9 @@ def follow_perfiles_ajax(request, pk):
         request.user.perfil.unfollow(perfil)
         NotificacionSeguir.objects.filter(destinatario=perfil, usuario=request.user.perfil, url=reverse_lazy('usuarios:detail', kwargs={'pk': request.user.perfil.pk})).delete()
         return JsonResponse({
-            'mensaje': f'Se ha dejado de seguir al usuario {perfil.usuario}',
+            'mensaje': _('Se ha dejado de seguir al usuario: %(usuario)s') % {
+                'usuario': perfil.usuario
+            },
             'follow': False,
             'numero_seguidores': perfil.siguiendo.count()
         })
@@ -106,7 +109,9 @@ def follow_perfiles_ajax(request, pk):
         request.user.perfil.follow(perfil)
         NotificacionSeguir.objects.create(destinatario=perfil, usuario=request.user.perfil, url=reverse_lazy('usuarios:detail', kwargs={'pk': request.user.perfil.pk}))
         return JsonResponse ({
-            'mensaje': f'Se ha empezado a seguir al usuario {perfil.usuario}',
+            'mensaje': _('Se ha empezado a seguir al usuario: %(usuario)s') % {
+                'usuario': perfil.usuario
+            },
             'follow': True,
             'numero_seguidores': perfil.siguiendo.count()
         })

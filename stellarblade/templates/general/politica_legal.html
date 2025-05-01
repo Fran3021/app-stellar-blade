@@ -1,66 +1,67 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% block head_title %}Stellar Blade{% endblock %}
-{% block description %}Pagina de politica legal de la web{% endblock %}
-{% block page_title %}Política Legal{% endblock  %}
+{% block description %}{% trans "Pagina de politica legal de la web" %}{% endblock %}
+{% block page_title %}{% trans "Política Legal" %}{% endblock  %}
 {% block page_content %}
 <div class="container-politica-legal">
     <div class="aviso-legal">
-        <h2>Aviso Legal</h2>
-        <p>En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa:</p>
-        <p>Esta página web es un foro independiente creado por un particular, sin ánimo de lucro, dedicado al videojuego Stellar Blade y otros temas generales propuestos por la comunidad.</p>
-        <p><strong>Responsable del sitio web:</strong> Francisco García  
-        <br><strong>Email de contacto:</strong> <a href="mailto:contacto@frangarciadev.com">Envíame un correo</a> 
-        <br><strong>Ubicación:</strong> España</p>
-        <p>El responsable no se hace responsable del contenido publicado por los usuarios, aunque se reserva el derecho de eliminar cualquier publicación que infrinja las normas de la web o la legalidad vigente.</p>
+        <h2>{% trans "Aviso Legal" %}</h2>
+        <p>{% trans "En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, se informa" %}:</p>
+        <p>{% trans "Esta página web es un foro independiente creado por un particular, sin ánimo de lucro, dedicado al videojuego Stellar Blade y otros temas generales propuestos por la comunidad." %}</p>
+        <p><strong>{% trans "Responsable del sitio web" %}:</strong> Francisco García  
+        <br><strong>{% trans "Email de contacto" %}:</strong> <a href="mailto:contacto@frangarciadev.com">{% trans "Envíame un correo" %}</a> 
+        <br><strong>{% trans "Ubicación" %}:</strong> {% trans "España" %}</p>
+        <p>{% trans "El responsable no se hace responsable del contenido publicado por los usuarios, aunque se reserva el derecho de eliminar cualquier publicación que infrinja las normas de la web o la legalidad vigente." %}</p>
     </div>
     
     <div class="politica-privacidad">
-        <h2>Política de Privacidad</h2>
-        <p>En esta web se respetan y protegen los datos personales de los usuarios. Como usuario debes saber que tus derechos están garantizados.</p>
+        <h2>{% trans "Política de Privacidad" %}</h2>
+        <p>{% trans "En esta web se respetan y protegen los datos personales de los usuarios. Como usuario debes saber que tus derechos están garantizados." %}</p>
     
-        <h3>1. Responsable del tratamiento</h3>
-        <p><strong>Responsable:</strong> Francisco García
-        <br><strong>Email de contacto: </strong><a href="mailto:contacto@frangarciadev.com">Envíame un correo</a>
-        <br><strong>Ubicación:</strong> España</p>
+        <h3>1. {% trans "Responsable del tratamiento" %}</h3>
+        <p><strong>{% trans "Responsable" %}:</strong> Francisco García
+        <br><strong>{% trans "Email de contacto" %}: </strong><a href="mailto:contacto@frangarciadev.com">{% trans "Envíame un correo" %} </a>
+        <br><strong>{% trans "Ubicación" %}:</strong> {% trans "España" %}</p>
     
-        <h3>2. Datos que se recogen</h3>
-        <p>Los únicos datos personales recogidos son los necesarios para crear una cuenta de usuario: nombre de usuario, correo electrónico y contraseña. También se almacena el contenido que el usuario publique (posts, comentarios, mensajes privados).</p>
+        <h3>2. {% trans "Datos que se recogen" %}</h3>
+        <p>{% trans "Los únicos datos personales recogidos son los necesarios para crear una cuenta de usuario: nombre de usuario, correo electrónico y contraseña. También se almacena el contenido que el usuario publique (posts, comentarios, mensajes privados)" %}.</p>
     
-        <h3>3. Finalidad</h3>
-        <p>Los datos se usan exclusivamente para el funcionamiento de la plataforma, como el inicio de sesión, la publicación de contenido o el envío de notificaciones internas.</p>
+        <h3>3. {% trans "Finalidad" %}</h3>
+        <p>{% trans "Los datos se usan exclusivamente para el funcionamiento de la plataforma, como el inicio de sesión, la publicación de contenido o el envío de notificaciones internas." %}</p>
     
-        <h3>4. Conservación de los datos</h3>
-        <p>Los datos se conservan mientras el usuario mantenga su cuenta activa o hasta que solicite su eliminación.</p>
+        <h3>4. {% trans "Conservación de los datos" %}</h3>
+        <p>{% trans "Los datos se conservan mientras el usuario mantenga su cuenta activa o hasta que solicite su eliminación" %}.</p>
     
-        <h3>5. Derechos del usuario</h3>
-        <p>En cualquier momento puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición escribiendo a: <a href="mailto:contacto@frangarciadev.com">Envíame un correo</a></p>
+        <h3>5. {% trans "Derechos del usuario" %}</h3>
+        <p>{% trans "En cualquier momento puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición escribiendo a" %}: <a href="mailto:contacto@frangarciadev.com">{% trans "Envíame un correo" %}</a></p>
     
-        <h3>6. Seguridad</h3>
-        <p>Los datos están almacenados en servidores seguros dentro del Espacio Económico Europeo, en cumplimiento con el RGPD.</p>
+        <h3>6. {% trans "Seguridad" %}</h3>
+        <p>{% trans "Los datos están almacenados en servidores seguros dentro del Espacio Económico Europeo, en cumplimiento con el RGPD" %}.</p>
     </div>
     
     <div class="politica-cookies">
-        <h2>Política de Cookies</h2>
-        <p>Este sitio web solo utiliza cookies técnicas necesarias para su funcionamiento (inicio de sesión, mantenimiento de sesiones de usuario, etc.).</p>
-        <p>No se utilizan cookies analíticas, de seguimiento ni publicitarias de terceros.</p>
-        <p>Si en el futuro se implementan otras cookies, se actualizará esta política y se solicitará el consentimiento correspondiente.</p>
+        <h2>{% trans "Política de Cookies" %}</h2>
+        <p>{% trans "Este sitio web solo utiliza cookies técnicas necesarias para su funcionamiento (inicio de sesión, mantenimiento de sesiones de usuario, etc.)" %}.</p>
+        <p>{% trans "No se utilizan cookies analíticas, de seguimiento ni publicitarias de terceros" %}.</p>
+        <p>{% trans "Si en el futuro se implementan otras cookies, se actualizará esta política y se solicitará el consentimiento correspondiente" %}.</p>
     </div>
     
     <div class="condiciones-uso">
-        <h2>Condiciones de Uso</h2>
-        <p>Este sitio web es una comunidad donde los usuarios pueden publicar contenido relacionado con el videojuego Stellar Blade y otros temas generales.</p>
+        <h2>{% trans "Condiciones de Uso" %}</h2>
+        <p>{% trans "Este sitio web es una comunidad donde los usuarios pueden publicar contenido relacionado con el videojuego Stellar Blade y otros temas generales" %}.</p>
     
-        <h3>Normas básicas de uso</h3>
+        <h3>{% trans "Normas básicas de uso" %}</h3>
         <ul>
-            <li>No se permite contenido ofensivo, ilegal, difamatorio, violento o de odio.</li>
-            <li>No se permite spam ni autopromoción excesiva.</li>
-            <li>Está prohibido suplantar identidades o publicar información personal de terceros.</li>
+            <li>{% trans "No se permite contenido ofensivo, ilegal, difamatorio, violento o de odio" %}.</li>
+            <li>{% trans "No se permite spam ni autopromoción excesiva." %}</li>
+            <li>{% trans "Está prohibido suplantar identidades o publicar información personal de terceros." %}</li>
         </ul>
     
-        <p>El equipo administrador se reserva el derecho de editar o eliminar contenido que incumpla estas normas, así como de suspender cuentas de usuario si es necesario.</p>
+        <p>{% trans "El equipo administrador se reserva el derecho de editar o eliminar contenido que incumpla estas normas, así como de suspender cuentas de usuario si es necesario." %}</p>
     
-        <h3>Responsabilidad del contenido</h3>
-        <p>Cada usuario es responsable del contenido que publique. La web no se hace responsable del uso indebido del servicio por parte de los usuarios.</p>
+        <h3>{% trans "Responsabilidad del contenido" %}</h3>
+        <p>{% trans "Cada usuario es responsable del contenido que publique. La web no se hace responsable del uso indebido del servicio por parte de los usuarios." %}</p>
     </div>
 </div>
 {% endblock %}

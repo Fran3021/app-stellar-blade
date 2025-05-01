@@ -1,19 +1,20 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Busqueda de publicaciones y usuarios junto con sugerencias de los mismos{% endblock %}
-{% block page_title %}BUSQUEDA{% endblock  %}
+{% block description %} {% trans "Busqueda de publicaciones y usuarios junto con sugerencias de los mismos" %} {% endblock %}
+{% block page_title %} {% trans "BUSQUEDA" %} {% endblock  %}
 {% block page_content %}
-<h2 class="title-busqueda" >Búsqueda y sugerencias</h2>
+<h2 class="title-busqueda" >{% trans "Búsqueda y sugerencias" %}</h2>
 <div class="container-busqueda">
     <div class="resultado-busqueda">
         <form class="formulario-busqueda" action="" method="GET">
             {{formulario.value| as_crispy_field}}
-            <button class="boton-buscar" >Buscar</button>
+            <button class="boton-buscar" >{% trans "Buscar" %}</button>
         </form>
         <section class="publicaciones-busqueda">
             {% if publicaciones %}
-                <h3>Publicaciones encontradas</h3>
+                <h3>{% trans "Publicaciones encontradas" %}</h3>
             {% endif %}
             {% for publicacion in publicaciones %}
                 {% include "_includes/_publicaciones.html" %}
@@ -22,7 +23,7 @@
     
         <section class="usuarios-busqueda" >
             {% if usuarios %}
-                <h3>Usuarios encontrados</h3>
+                <h3>{% trans "Usuarios encontrados" %}</h3>
             {% endif %}
             {% for perfil in usuarios %}
                 {% include "_includes/_perfiles.html" %}
@@ -33,7 +34,7 @@
     <div class="sugerencias">
         {% if all_users %}
             <section class="perfiles-sugeridos">
-                <h3>Perfiles sugeridos</h3>
+                <h3>{% trans "Perfiles sugeridos" %}</h3>
                 <section>
                     {% for perfil in all_users %}
                         {% include "_includes/_perfiles.html" %}
@@ -41,12 +42,12 @@
                 </section>
             </section>
         {% else %}
-            <h3>No hay sugerencias de perfiles</h3>
+            <h3>{% trans "No hay sugerencias de perfiles" %}</h3>
         {% endif %}
 
         {% if all_publicaciones %}
             <section class="publicaciones-sugeridas">
-                <h3>Publicaciones sugeridas</h3>
+                <h3>{% trans "Publicaciones sugeridas" %}</h3>
                 <section>
                     {% for publicacion in all_publicaciones %}
                         {% include "_includes/_publicaciones.html" %}
@@ -54,7 +55,7 @@
                 </section>
             </section>
         {% else %}
-            <h3>No hay sugerencias de publicaciones</h3>
+            <h3>{% trans "No hay sugerencias de publicaciones" %}</h3>
         {% endif %}
     </div>
 </div>

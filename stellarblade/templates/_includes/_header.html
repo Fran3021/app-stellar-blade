@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
     <nav class="menu-header-movil">
         <ul>
@@ -38,30 +39,30 @@
             </a>
         </li>
         <ul>
-            <li><a href="{% url 'info_del_juego' %}"><i class="bi bi-info-square"></i>Info</a></li>
-            <li><a href="{% url 'home' %}"><i class="bi bi-house"></i>Inicio</a></li>
+            <li><a href="{% url 'info_del_juego' %}"><i class="bi bi-info-square"></i>{% trans "Info" %}</a></li>
+            <li><a href="{% url 'home' %}"><i class="bi bi-house"></i>{% trans "Inicio" %}</a></li>
             {% if request.user.is_authenticated %}
-                <li><a href="{% url 'usuarios:mis_contactos' %}"><i class="bi bi-person-add"></i>Mi red</a></li>
-                <li><a href="{% url 'search' %}"><i class="bi bi-search"></i>Búsqueda</a></li>
+                <li><a href="{% url 'usuarios:mis_contactos' %}"><i class="bi bi-person-add"></i>{% trans "Mi red" %}</a></li>
+                <li><a href="{% url 'search' %}"><i class="bi bi-search"></i>{% trans "Busqueda" %}</a></li>
                 <li><a href="{% url 'usuarios:mi_perfil' request.user.perfil.pk %}">
                     {% if request.user.perfil.imagen_perfil %}
                         <img class="avatar-menu" src="{{request.user.perfil.imagen_perfil.thumbnails.xs.url}}" alt="">
                     {% else %}
                     <i class="bi bi-person-circle"></i>
                     {% endif %}
-                    Mi perfil</a></li>
-                <li><a href="{% url 'mensajes:conversaciones' %}"><i class="bi bi-envelope"></i>Mensajes</a></li>
+                    {% trans "Mi Perfil" %}</a></li>
+                <li><a href="{% url 'mensajes:conversaciones' %}"><i class="bi bi-envelope"></i>{% trans "Mensajes" %}</a></li>
                 <li class="numero-notificacion-container">
                     <a href="{% url 'notificaciones:lista' %}">
                         <i class="bi bi-bell"></i>
-                        Notificaciones</a>
+                        {% trans "Notificaciones" %}</a>
                     {% if request.user.perfil.total_notificaciones %}
                         <span class="numero-notificaciones">{{request.user.perfil.total_notificaciones}}</span>
                     {% endif %}
                 </li>
             {% else %}
-                <li><a href="{% url 'registro' %}"><i class="bi bi-plus-circle"></i>Registrate</a></li>
-                <li><a href="{% url 'login' %}"><i class="bi bi-rocket-takeoff"></i>Accede a tu cuenta</a></li>
+                <li><a href="{% url 'registro' %}"><i class="bi bi-plus-circle"></i>{% trans "Registrate" %}</a></li>
+                <li><a href="{% url 'login' %}"><i class="bi bi-rocket-takeoff"></i>{% trans "Accede a tu cuenta" %}</a></li>
             {% endif %}
         </ul>
     </nav>

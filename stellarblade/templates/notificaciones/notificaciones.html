@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Pagina donde el usuario puede ver sus notificaciones{% endblock %}
-{% block page_title %}NOTIFICACIONES{% endblock  %}
+{% block description %}{% trans "Pagina donde el usuario puede ver sus notificaciones" %}{% endblock %}
+{% block page_title %}{% trans "NOTIFICACIONES" %}{% endblock  %}
 {% block page_content %}
 <nav class="container-notificaciones">
     {% include "_includes/_notificaciones.html" %}

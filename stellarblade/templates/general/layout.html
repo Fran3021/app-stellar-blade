@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!doctype html>
 <html lang="es">
 
@@ -58,6 +59,19 @@
       <div class="container-header">
         <h2 class="page-title" >{% block page_title %}Titulo de la pagina{% endblock  %}</h2>
       </div>
+
+      <form class="cambio-idioma" method="POST" action="{% url 'set_language' %}">
+        {% csrf_token %}
+        {% get_current_language as LANGUAGE_CODE %}
+        {% if LANGUAGE_CODE == 'es' %}
+            <input type="hidden" name="language" value="en">
+            <button type="submit">ES</button>
+        {% else %}
+            <input type="hidden" name="language" value="es">
+            <button type="submit">EN</button>
+        {% endif %}
+        <input type="hidden" name="next" value="{{ request.path }}">
+      </form>
     </header>
 
     <main>

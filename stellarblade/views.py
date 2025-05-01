@@ -12,6 +12,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import PasswordResetView
 from django.core.exceptions import PermissionDenied
+from django.utils.translation import gettext_lazy as _
 
 
 class HomeView(ListView):
@@ -32,7 +33,7 @@ def legal_view(request):
 @login_required
 def logout_view(request):
     logout(request)
-    messages.success(request, 'Sesion cerrada con exito')
+    messages.success(request, _('Sesion cerrada con exito'))
     return HttpResponseRedirect(reverse_lazy('login'))
 
 class RegisterView(CreateView):
@@ -49,7 +50,7 @@ class RegisterView(CreateView):
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
-        messages.success(self.request, 'Usuario creado correctamente')
+        messages.success(self.request, _('Usuario creado correctamente'))
         return super().form_valid(form)
 
 
@@ -73,11 +74,11 @@ class LoginView(FormView):
         #obtenemos el usuario y comprobamos que ese usuario y contraseña coincide con alguno en la base de datos
         user = form.get_user()
         login(self.request, user)
-        messages.success(self.request, 'Inicion de sesion exitoso.')
+        messages.success(self.request, _('Inicion de sesion exitoso.'))
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        messages.error(self.request, 'Contraseña o usuario incorrectos.')
+        messages.error(self.request, _('Contraseña o usuario incorrectos.'))
         return HttpResponseRedirect(reverse_lazy('login'))
         super().form_invalid(form)
 

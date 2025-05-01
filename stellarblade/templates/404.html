@@ -1,9 +1,10 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block page_title %}404 - Página no encontrada{% endblock  %}
+{% block page_title %}{% trans "404 - Página no encontrada" %}{% endblock  %}
 {% block page_content %}
 <div class="container-errores">
-    <p>La página que estás buscando no existe o fue eliminada.</p>
-    <a href="{% url 'home' %}">Volver al inicio</a>
+    <p>{% trans "La página que estás buscando no existe o fue eliminada." %}</p>
+    <a href="{% url 'home' %}">{% trans "Volver al inicio" %}</a>
 </div>
 {% endblock  %}

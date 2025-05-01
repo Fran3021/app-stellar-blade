@@ -1,13 +1,14 @@
 from django.db import models
 from usuarios.models import PerfilUsuario
 from thumbnails.fields import ImageField
+from django.utils.translation import gettext_lazy as _
 
 class Publicacion(models.Model):
-    titulo = models.CharField(verbose_name='Titulo de la publicacion:', max_length=50, blank=False, null=False)
+    titulo = models.CharField(verbose_name=_('Titulo de la publicacion:'), max_length=50, blank=False, null=False)
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='publicaciones')
-    imagen = ImageField(verbose_name='Imagen del post:', upload_to='publicaciones/img/', null=True, blank=True)
-    video = models.FileField(verbose_name='Video de la publicacion:', upload_to='publicaciones/video/', null=True, blank=True)
-    contenido = models.TextField(verbose_name='Contenido de la publicacion', max_length=300, blank=True)
+    imagen = ImageField(verbose_name=_('Imagen del post:'), upload_to='publicaciones/img/', null=True, blank=True)
+    video = models.FileField(verbose_name=_('Video de la publicacion:'), upload_to='publicaciones/video/', null=True, blank=True)
+    contenido = models.TextField(verbose_name=_('Contenido de la publicacion'), max_length=300, blank=True)
     fecha_publicacion = models.DateTimeField(verbose_name='Fecha de creacion:', auto_now_add=True)
     likes = models.ManyToManyField(PerfilUsuario, verbose_name='Likes de la publicacion:', related_name='likes_publicacion')
 
@@ -34,7 +35,7 @@ class Publicacion(models.Model):
 class Comentario(models.Model):
     publicacion = models.ForeignKey(Publicacion, verbose_name='Publicacion a comentar:', on_delete=models.CASCADE, related_name='comentarios')
     autor = models.ForeignKey(PerfilUsuario, verbose_name='Autor:', on_delete=models.CASCADE, related_name='comentarios')
-    texto = models.TextField(verbose_name='Nuevo comentario:', max_length=500)
+    texto = models.TextField(verbose_name=_('Nuevo comentario:'), max_length=500)
     fecha_comentario = models.DateTimeField(verbose_name='Fecha del comentario:', auto_now_add=True)
     
     class Meta:
@@ -49,7 +50,7 @@ class RespuestaComentario(models.Model):
     publicacion = models.ForeignKey(Publicacion, verbose_name='Publicacion:', on_delete=models.CASCADE, related_name='respuestas_publicacion')
     comentario = models.ForeignKey(Comentario, verbose_name='Comentario a responder:', on_delete=models.CASCADE, related_name='respuestas')
     autor = models.ForeignKey(PerfilUsuario, verbose_name="Autor:", on_delete=models.CASCADE, related_name='respuestas')
-    respuesta = models.TextField(verbose_name='Responder comentario:', max_length=300)
+    respuesta = models.TextField(verbose_name=_('Responder comentario:'), max_length=300)
     fecha_respuesta = models.DateTimeField(verbose_name='Fecha de respuesta:', auto_now_add=True)
 
     class Meta:

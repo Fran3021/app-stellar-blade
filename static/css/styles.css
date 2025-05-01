@@ -616,7 +616,7 @@ main .container-main .container-home .publicacion .imagen-hora-titulo .imagen a 
   }
 }
 main .container-main .container-home .publicacion .imagen-hora-titulo .imagen a i {
-  font-size: 45px;
+  font-size: 25px;
 }
 @media (min-width: 768px) {
   main .container-main .container-home .publicacion .imagen-hora-titulo .imagen a i {
@@ -1041,7 +1041,7 @@ main .container-main .container-busqueda .resultado-busqueda .publicaciones-busq
   }
 }
 main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .imagen a i {
-  font-size: 45px;
+  font-size: 25px;
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .resultado-busqueda .publicaciones-busqueda .publicacion .imagen-hora-titulo .imagen a i {
@@ -1792,7 +1792,7 @@ main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas s
   }
 }
 main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .imagen a i {
-  font-size: 45px;
+  font-size: 25px;
 }
 @media (min-width: 768px) {
   main .container-main .container-busqueda .sugerencias .publicaciones-sugeridas section .publicacion .imagen-hora-titulo .imagen a i {
@@ -2915,6 +2915,7 @@ main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen
   }
 }
 main .container-main .container-conversaciones-detail .mensaje-2 .mensaje-imagen p {
+  width: 90%;
   font-size: 10px;
   background-color: #1E1E1E;
   padding: 10px;
@@ -4389,7 +4390,7 @@ main .container-main .container-publicaciones-mis-contactos .publicacion .imagen
   }
 }
 main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen a i {
-  font-size: 45px;
+  font-size: 25px;
 }
 @media (min-width: 768px) {
   main .container-main .container-publicaciones-mis-contactos .publicacion .imagen-hora-titulo .imagen a i {
@@ -4931,7 +4932,7 @@ main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .
   }
 }
 main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .imagen a i {
-  font-size: 45px;
+  font-size: 25px;
 }
 @media (min-width: 768px) {
   main .container-main .container-mi-perfil .container-mis-ultimas-publicaciones .mis-ultimas-publicaciones .publicacion .imagen-hora-titulo .imagen a i {
@@ -5680,7 +5681,7 @@ main .container-main .container-perfiles-detail .container-ultimas-publicaciones
   }
 }
 main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen a i {
-  font-size: 45px;
+  font-size: 25px;
 }
 @media (min-width: 768px) {
   main .container-main .container-perfiles-detail .container-ultimas-publicaciones-perfiles-detail .ultimas-publicaciones-perfiles-detail .publicacion .imagen-hora-titulo .imagen a i {
@@ -5931,6 +5932,24 @@ main {
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+
+.cambio-idioma button {
+  border: 0;
+  background-color: transparent;
+  color: #00BFFF;
+  padding: 5px;
+  border-radius: 10px;
+  position: fixed;
+  top: 1%;
+  right: 5%;
+  font-size: 13px;
+  text-shadow: 0px 0px 2px #FFFFFF;
+}
+@media (min-width: 1280px) {
+  .cambio-idioma button {
+    font-size: 18px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

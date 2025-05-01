@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'django_libsass',
     'thumbnails',
+    'rosetta',
     #apps de la aplicacion
     'publicaciones',
     'usuarios',
@@ -70,6 +71,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',#tiene que ir antes de CSRF y despues de SessionMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -90,6 +92,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',#añadido para disponer de LANGUAGES en las plantillas
                 'usuarios.custom_processors.current_user',
                 'usuarios.custom_processors.all_users',
                 'notificaciones.custom_processors.notificaciones_totales',
@@ -144,13 +147,37 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'es-ES'
 
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'es-es'#idioma predeterminado
+
+TIME_ZONE = 'Europe/Madrid'
 
 USE_I18N = True
 
 USE_TZ = True
+
+USE_L10N = True
+
+PREFIX_DEFAULT_LANGUAGE = True#nos pone el prefijo del idioma en el que este nuestra pagina(en--> ingles/ es --> español)
+
+#idiomas que queramo traduccion
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+    ('es-es', 'Español España'),#para que la url nos funcione al hacer los test despues de traducir con rosetta
+]
+MODELTRANSLATION_LANGUAGES = ('es', 'en')#de todos los idiomas que tengo en LANGUAGES, en cuantos quiero traducir
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'es'#idioma originial de nuestro proyecto
+MODELTRANSLATION_FALLBACK_LANGUAGES = ('es', )#en caso de que no este traducido algo, en que idioma me lo va a mostrar
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'es'#en que idioma me lo muestra en el admin
+
+#valor por defecto del nombre  de la cookie del lenguaje
+LANGUAGE_COOKIE_NAME = 'django_language'
+
+#ruta donde se guardan las traducciones
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 
 # Static files (CSS, JavaScript, Images)

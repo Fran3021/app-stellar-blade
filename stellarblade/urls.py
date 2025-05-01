@@ -15,13 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from .views import legal_view, logout_view, RegisterView, LoginView, HomeView, search_view, PersonalizarReseteoContraseña, info_del_juego, politica_legal
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.auth import views as auth_views
+from django.conf.urls.i18n import i18n_patterns#tenemos que importar esto para que funcione la traduccion
 
-urlpatterns = [
+
+urlpatterns = [#aqui metemos las que no queremos que sean traducibles
+    path('i18n/', include('django.conf.urls.i18n')),#esto nos incluye la vista set_language,viene propia de django
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+urlpatterns += i18n_patterns (
     path('', HomeView.as_view(), name = 'home'),
     path('informacion-stellar-blade/', info_del_juego, name = 'info_del_juego'),
     path('politica-legal/', politica_legal, name = 'politica_legal'),
@@ -38,4 +45,10 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
     path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)
+
+#para que solo se pueda acceder a rosetta si esta instalada en el proyecto
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        re_path(r'^rosetta/', include('rosetta.urls'))
+    ]

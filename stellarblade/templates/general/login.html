@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock %}
-{% block description %}Pagina de inicio de sesion{% endblock %}
-{% block page_title %}ACCEDE A TU CUENTA{% endblock  %}
+{% block description %}{% trans "Pagina de inicio de sesion" %}{% endblock %}
+{% block page_title %}{% trans "ACCEDE A TU CUENTA" %}{% endblock  %}
 {% block page_content %}
 <div class="container-login">
     <form class="formulario-login" action="" method = 'POST'>
@@ -12,11 +13,11 @@
         <div class="container-checkbox-recuperar">
             <label class="checkbox-login">
                 <input type="checkbox" name="recuerdame">
-                Recúerdame
+                {% trans "Recúerdame" %}
             </label>
-            <a class="recuperar-contraseña" href="{% url 'password_reset' %}">¿Has olvidado la contraseña?</a>
+            <a class="recuperar-contraseña" href="{% url 'password_reset' %}">{% trans "¿Has olvidado la contraseña?" %}</a>
         </div>
-        <button class="boton-login">Acceder</button>
+        <button class="boton-login">{% trans "Acceder" %}</button>
     </form>
 </div>
 {% endblock %}

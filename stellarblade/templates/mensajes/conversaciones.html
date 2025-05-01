@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Pagina donde se encuentras las conversaciones, con el que puedes ir directo a los mensajes{% endblock %}
-{% block page_title %}CONVERSACIONES{% endblock  %}
+{% block description %}{% trans "Pagina donde se encuentras las conversaciones, con el que puedes ir directo a los mensajes" %}{% endblock %}
+{% block page_title %}{% trans "CONVERSACIONES" %}{% endblock  %}
 {% block page_content %}
 <div class="container-conversaciones">
     {% if conversaciones %}
@@ -15,12 +16,12 @@
             {% endif %}
             <div class="conversacion-enlace">
                 <p>{{conversacion}}</p>
-                <a class="boton-ir-conversacion" href="{% url 'mensajes:conversaciones_detail' conversacion.pk %}">Ir a la conversacion</a>
+                <a class="boton-ir-conversacion" href="{% url 'mensajes:conversaciones_detail' conversacion.pk %}">{% trans "Ir a la conversación" %}</a>
             </div>
         </article>
     {% endfor %}
     {% else %}
-        <h3>Aún no tienes conversaciones</h3>
+        <h3>{% trans "Aún no tienes conversaciones" %}</h3>
     {% endif %}
 </div>
 {% endblock  %}

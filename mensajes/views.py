@@ -14,6 +14,7 @@ from .models import Mensaje, Conversacion
 from .forms import CreateMensajeForm
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+from django.utils.translation import gettext_lazy as _
 
 @method_decorator(login_required, name='dispatch')
 class CreateMensajeView(CreateView):
@@ -42,7 +43,7 @@ class CreateMensajeView(CreateView):
 
         NotificacionMensaje.objects.create(destinatario=destinatario, usuario=self.request.user.perfil, mensaje=nuevo_mensaje, conversacion=conversacion, url= reverse_lazy('mensajes:conversaciones_detail', kwargs={'pk': conversacion.pk}))
 
-        messages.success(self.request, 'Mensaje enviado correctamente')
+        messages.success(self.request, _('Mensaje enviado correctamente'))
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -117,12 +118,12 @@ def eliminar_mensaje(request, pk):
             mensaje.delete()
             return JsonResponse({
                 'success': True,
-                'message': 'Mensaje eliminado corectamente',
+                'message': _('Mensaje eliminado corectamente'),
             })
         else:
             return JsonResponse({
                 'success': False,
-                'message': 'No se ha podido borrar el mensaje',
+                'message': _('No se ha podido borrar el mensaje'),
             })
 
 
@@ -135,10 +136,10 @@ def eliminar_conversacion(request, pk):
             conversacion.delete()
             return JsonResponse({
                 'success': True,
-                'message': 'Conversacion eliminida correctamente',
+                'message': _('Conversacion eliminida correctamente'),
             })
         else:
             return JsonResponse({
                 'success': True,
-                'message': 'No se ha podido eliminar la conversacion',
+                'message': _('No se ha podido eliminar la conversacion'),
             })

@@ -1,1 +1,3 @@
-<p> &copy Todos los derechos reservados - Consulta condiciones <a href="{% url 'politica_legal' %}">aqui</a></p>
+{% load i18n %}
+
+<p> &copy {% trans "Todos los derechos reservados - Consulta condiciones" %} <a href="{% url 'politica_legal' %}">{% trans "aqui" %}</a></p>

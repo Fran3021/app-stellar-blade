@@ -1,12 +1,13 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block page_title %}INICIO{% endblock  %}
+{% block page_title %}{% trans "INICIO" %}{% endblock  %}
 {% block page_content %}
-<h2 class="title-home" >Ultimas publicaciones</h2>
+<h2 class="title-home" >{% trans "Ultimas publicaciones" %}</h2>
 <div class="container-home">
     <div class="container-eres-nuevo">
-        <p>¿Eres nuevo?</p>
-        <a href="{% url 'info_del_juego' %}">Pincha aqui</a>
+        <p> {% trans "¿Eres nuevo?" %} </p>
+        <a href="{% url 'info_del_juego' %}"> {% trans "Pincha aqui" %} </a>
     </div>
     {% for publicacion in publicaciones %}
         {% include "_includes/_publicaciones.html" %}

@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Pagina de creacion de publicacion{% endblock %}
-{% block page_title %}PUBLICACION NUEVA{% endblock  %}
+{% block description %}{% trans "Pagina de creacion de publicación" %}{% endblock %}
+{% block page_title %}{% trans "PUBLICACION NUEVA" %}{% endblock  %}
 {% block page_content %}
 <div class="container-publicacion-nueva">
     <form class="formulario-para-crear-publicacion" action="" method = 'POST' enctype='multipart/form-data'>
@@ -11,7 +12,7 @@
         {{form.imagen | as_crispy_field}}
         {{form.video | as_crispy_field}}
         {{form.contenido | as_crispy_field}}
-        <button class="boton-crear">Crear publicacion</button>
+        <button class="boton-crear">{% trans "Crear publicación" %}</button>
     </form>
 </div>
 {% endblock  %}

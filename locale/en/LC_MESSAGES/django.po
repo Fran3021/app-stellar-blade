@@ -1,0 +1,2352 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-01 16:39+0200\n"
+"PO-Revision-Date: 2025-05-01 16:43+0200\n"
+"Last-Translator:   <aroasendas@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.10.2\n"
+
+#: mensajes/models.py:17
+#, python-format
+msgid "Conversación entre %(u1)s y %(u2)s"
+msgstr "Conversation between %(u1)s and %(u2)s"
+
+#: mensajes/models.py:27
+msgid "Contenido del mensaje:"
+msgstr "Message content:"
+
+#: mensajes/views.py:46
+msgid "Mensaje enviado correctamente"
+msgstr "Message sent successfully"
+
+#: mensajes/views.py:121
+msgid "Mensaje eliminado corectamente"
+msgstr "Message successfully deleted"
+
+#: mensajes/views.py:126
+msgid "No se ha podido borrar el mensaje"
+msgstr "The message could not be deleted."
+
+#: mensajes/views.py:139
+msgid "Conversacion eliminida correctamente"
+msgstr "Conversation successfully deleted"
+
+#: mensajes/views.py:144
+msgid "No se ha podido eliminar la conversacion"
+msgstr "The conversation could not be deleted."
+
+#: notificaciones/models.py:22
+#, python-format
+msgid "%(autor)s ha publicado una nueva publicacion: %(publicacion)s"
+msgstr "%(autor)s has published a new post: %(publicacion)s"
+
+#: notificaciones/models.py:42
+#, python-format
+msgid "%(autor)s ha escrito un comentario en tu publicacion: %(publicacion)s"
+msgstr "%(autor)s has written a comment on your post: %(publicacion)s"
+
+#: notificaciones/models.py:60
+#, python-format
+msgid "El usuario %(usuario)s ha empezado a seguirte."
+msgstr "User %(usuario)s has started following you."
+
+#: notificaciones/models.py:79
+#, python-format
+msgid "%(usuario)s ha contestado a tu comentario: %(comentario)s"
+msgstr "%(usuario)s has replied to your comment: %(comentario)s"
+
+#: notificaciones/models.py:97
+#, python-format
+msgid "%(usuario)s ha dado a me gusta a tu publicacion:%(publicacion)s"
+msgstr "%(usuario)s liked your post:%(publicacion)s"
+
+#: notificaciones/models.py:117
+#, python-format
+msgid "%(usuario)s te ha enviado un mensaje"
+msgstr "%(usuario)s has sent you a message"
+
+#: publicaciones/models.py:7
+msgid "Titulo de la publicacion:"
+msgstr "Title of the publication:"
+
+#: publicaciones/models.py:9
+msgid "Imagen del post:"
+msgstr "Post image:"
+
+#: publicaciones/models.py:10
+msgid "Video de la publicacion:"
+msgstr "Video of the publication:"
+
+#: publicaciones/models.py:11
+msgid "Contenido de la publicacion"
+msgstr "Content of the publication"
+
+#: publicaciones/models.py:38
+msgid "Nuevo comentario:"
+msgstr "New comment:"
+
+#: publicaciones/models.py:53
+msgid "Responder comentario:"
+msgstr "Reply comment:"
+
+#: publicaciones/views.py:34
+msgid "Publicacion creada correctamente"
+msgstr "Publication created successfully"
+
+#: publicaciones/views.py:55
+msgid "Comentario añadido correctamente"
+msgstr "Comment added successfully"
+
+#: publicaciones/views.py:82
+msgid "Publicacion editada correctamente"
+msgstr "Post edited successfully"
+
+#: publicaciones/views.py:104
+msgid "Publicacion eliminada correctamente."
+msgstr "Post successfully deleted."
+
+#: publicaciones/views.py:124
+#, python-format
+msgid "Se ha contestado al comentario de: %(autor)s"
+msgstr "The comment from: %(autor)s has been replied to."
+
+#: publicaciones/views.py:132
+#, python-format
+msgid "No se ha podido contestar al comentario de: %(autor)s"
+msgstr "Could not reply to comment by: %(autor)s"
+
+#: publicaciones/views.py:146
+#, python-format
+msgid "Se ha quitado like en la siguiente publicacion: %(publicacion)s"
+msgstr "The following post has been disliked: %(publicacion)s"
+
+#: publicaciones/views.py:157
+#, python-format
+msgid "Se ha dado like a la siguiente publicacion: %(publicacion)s"
+msgstr "The following post has been liked: %(publicacion)s"
+
+#: publicaciones/views.py:173
+msgid "Se ha eliminado el comentario"
+msgstr "The comment has been deleted"
+
+#: publicaciones/views.py:178
+msgid "No se ha podido eliminar el comentario"
+msgstr "The comment could not be deleted."
+
+#: publicaciones/views.py:191
+msgid "Se ha eliminado la respuesta"
+msgstr "The answer has been deleted"
+
+#: publicaciones/views.py:196
+msgid "No se ha podido eliminar la respuesta"
+msgstr "The response could not be deleted."
+
+#: stbdenv/lib/python3.13/site-packages/django/contrib/messages/apps.py:16
+msgid "Messages"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: stbdenv/lib/python3.13/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/paginator.py:32
+msgid "That page number is not an integer"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/paginator.py:33
+msgid "That page number is less than 1"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/paginator.py:34
+msgid "That page contains no results"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:153
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:775
+msgid "Enter a valid URL."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:309
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:318
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:332
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:320
+#: stbdenv/lib/python3.13/site-packages/django/utils/ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:514
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:366
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:405
+msgid "Enter a number."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/core/validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/base.py:1600
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:908
+msgid "and"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/base.py:1602
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/constraints.py:22
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1163
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1165
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1215
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1217
+msgid "String (unlimited)"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1326
+msgid "Comma-separated integers"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1427
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1431
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1566
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1435
+msgid "Date (without time)"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1562
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1570
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1575
+msgid "Date (with time)"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1702
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1704
+msgid "Decimal number"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1868
+msgid "Duration"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1920
+msgid "Email address"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2067
+msgid "Integer"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2188
+msgid "IPv4 address"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2219
+msgid "IP address"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2310
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2446
+msgid "Text"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/files.py:244
+msgid "File"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/files.py:420
+msgid "Image"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/related.py:978
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/related.py:981
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/related.py:1275
+msgid "One-to-one relationship"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/related.py:1332
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/related.py:1334
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/db/models/fields/related.py:1382
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the
+#. label
+#: stbdenv/lib/python3.13/site-packages/django/forms/boundfield.py:185
+msgid ":?.!"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:95
+msgid "This field is required."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:315
+msgid "Enter a whole number."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:486
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:1267
+msgid "Enter a valid date."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:509
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:1268
+msgid "Enter a valid time."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:536
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:570
+msgid "Enter a valid duration."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:571
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:640
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:641
+msgid "No file was submitted."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:642
+msgid "The submitted file is empty."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:644
+#, python-format
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:649
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:717
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:889
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:975
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:1592
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:977
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:1096
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:1590
+msgid "Enter a list of values."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:1097
+msgid "Enter a complete value."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:1339
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/fields.py:1369
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: stbdenv/lib/python3.13/site-packages/django/forms/forms.py:97
+msgid ":"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/formsets.py:484
+#: stbdenv/lib/python3.13/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:901
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:906
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:913
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:922
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:1359
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:1450
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/models.py:1594
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/widgets.py:527
+msgid "Clear"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/widgets.py:528
+msgid "Currently"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/widgets.py:529
+msgid "Change"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/widgets.py:866
+msgid "Unknown"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/widgets.py:867
+msgid "Yes"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/forms/widgets.py:868
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: stbdenv/lib/python3.13/site-packages/django/template/defaultfilters.py:873
+msgid "yes,no,maybe"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/template/defaultfilters.py:903
+#: stbdenv/lib/python3.13/site-packages/django/template/defaultfilters.py:920
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/template/defaultfilters.py:922
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/template/defaultfilters.py:924
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/template/defaultfilters.py:926
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/template/defaultfilters.py:928
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/template/defaultfilters.py:930
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/text.py:67
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/text.py:278
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: stbdenv/lib/python3.13/site-packages/django/utils/text.py:297
+#: stbdenv/lib/python3.13/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:64
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:115
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:353
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/generic/list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/static.py:68
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/directory_index.html:8
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:7
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/django/views/templates/default_urlconf.html:236
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/shortuuid/django_fields.py:12
+msgid "A short UUID field."
+msgstr ""
+
+#: stbdenv/lib/python3.13/site-packages/test/integ/test_sendgrid.py:333
+#: stbdenv/lib/python3.13/site-packages/test/integ/test_sendgrid.py:340
+#: stbdenv/lib/python3.13/site-packages/test/integ/test_sendgrid.py:347
+msgid "global"
+msgstr ""
+
+#: stellarblade/forms/register_form.py:9
+msgid "Escriba su contraseña"
+msgstr "Enter your password"
+
+#: stellarblade/forms/register_form.py:10
+msgid "Repita su contraseña"
+msgstr "Repeat your password"
+
+#: stellarblade/forms/register_form.py:30
+msgid "Las contraseñas no coinciden"
+msgstr "Passwords do not match"
+
+#: stellarblade/forms/search_form.py:5
+msgid "Introduce la palabra a buscar"
+msgstr "Enter the word to search for"
+
+#: stellarblade/forms/update_perfil_form.py:9
+msgid "Email (opcional)"
+msgstr "Email (optional)"
+
+#: stellarblade/templates/403.html:4
+msgid "403 - Acceso no permitido"
+msgstr "403 - Access not permitted"
+
+#: stellarblade/templates/403.html:7
+msgid "No tienes permiso para acceder a esta página."
+msgstr "You do not have permission to access this page."
+
+#: stellarblade/templates/403.html:8
+msgid "Si crees que esto es un error"
+msgstr "If you think this is a mistake"
+
+#: stellarblade/templates/403.html:8
+msgid "vuelve al inicio"
+msgstr "go back to the home"
+
+#: stellarblade/templates/403.html:8
+msgid "o contacta con el administrador."
+msgstr "or contact the administrator."
+
+#: stellarblade/templates/404.html:4
+msgid "404 - Página no encontrada"
+msgstr "404 - Page not found"
+
+#: stellarblade/templates/404.html:7
+msgid "La página que estás buscando no existe o fue eliminada."
+msgstr "The page you are looking for does not exist or has been deleted."
+
+#: stellarblade/templates/404.html:8 stellarblade/templates/500.html:8
+msgid "Volver al inicio"
+msgstr "Back to home"
+
+#: stellarblade/templates/500.html:4
+msgid "500 - Error del servidor"
+msgstr "500 - Server Error"
+
+#: stellarblade/templates/500.html:7
+msgid "Ha ocurrido un error interno. Inténtalo de nuevo más tarde."
+msgstr "An internal error has occurred. Please try again later."
+
+#: stellarblade/templates/_includes/_footer.html:3
+msgid "Todos los derechos reservados - Consulta condiciones"
+msgstr "All rights reserved - See conditions"
+
+#: stellarblade/templates/_includes/_footer.html:3
+#: stellarblade/templates/general/info_del_juego.html:14
+#: stellarblade/templates/general/info_del_juego.html:16
+#: stellarblade/templates/general/info_del_juego.html:17
+msgid "aqui"
+msgstr "here"
+
+#: stellarblade/templates/_includes/_header.html:42
+msgid "Info"
+msgstr "Info"
+
+#: stellarblade/templates/_includes/_header.html:43
+msgid "Inicio"
+msgstr "Home"
+
+#: stellarblade/templates/_includes/_header.html:45
+msgid "Mi red"
+msgstr "Network"
+
+#: stellarblade/templates/_includes/_header.html:46
+msgid "Busqueda"
+msgstr "Search"
+
+#: stellarblade/templates/_includes/_header.html:53
+msgid "Mi Perfil"
+msgstr "Profile"
+
+#: stellarblade/templates/_includes/_header.html:54
+msgid "Mensajes"
+msgstr "Messages"
+
+#: stellarblade/templates/_includes/_header.html:58
+msgid "Notificaciones"
+msgstr "Notifications"
+
+#: stellarblade/templates/_includes/_header.html:64
+msgid "Registrate"
+msgstr "Register"
+
+#: stellarblade/templates/_includes/_header.html:65
+#: stellarblade/templates/general/info_del_juego.html:17
+msgid "Accede a tu cuenta"
+msgstr "Access"
+
+#: stellarblade/templates/_includes/_notificaciones.html:11
+#: stellarblade/templates/publicaciones/publicacion_detail.html:20
+#: stellarblade/templates/publicaciones/publicacion_detail.html:90
+#: stellarblade/templates/publicaciones/publicacion_detail.html:121
+msgid "Hace"
+msgstr "Since"
+
+#: stellarblade/templates/_includes/_perfiles.html:17
+msgid "Seguidores"
+msgstr "Followers"
+
+#: stellarblade/templates/_includes/_perfiles.html:23
+#: stellarblade/templates/usuarios/perfiles_detail.html:32
+msgid "Dejar de seguir"
+msgstr "Unfollow"
+
+#: stellarblade/templates/_includes/_perfiles.html:25
+#: stellarblade/templates/usuarios/perfiles_detail.html:34
+msgid "Seguir"
+msgstr "Follow"
+
+#: stellarblade/templates/_includes/_publicaciones.html:34
+msgid "Tu navegador no soporta el vídeo."
+msgstr "Your browser does not support video."
+
+#: stellarblade/templates/_includes/_publicaciones.html:59
+msgid "Detalle de publicación"
+msgstr "Publication details"
+
+#: stellarblade/templates/general/busqueda.html:5
+msgid ""
+"Busqueda de publicaciones y usuarios junto con sugerencias de los mismos"
+msgstr "Search for posts and users along with suggestions from them"
+
+#: stellarblade/templates/general/busqueda.html:6
+msgid "BUSQUEDA"
+msgstr "SEARCH"
+
+#: stellarblade/templates/general/busqueda.html:8
+msgid "Búsqueda y sugerencias"
+msgstr "Search and suggestions"
+
+#: stellarblade/templates/general/busqueda.html:13
+msgid "Buscar"
+msgstr "Search"
+
+#: stellarblade/templates/general/busqueda.html:17
+msgid "Publicaciones encontradas"
+msgstr "Posts found"
+
+#: stellarblade/templates/general/busqueda.html:26
+msgid "Usuarios encontrados"
+msgstr "Users found"
+
+#: stellarblade/templates/general/busqueda.html:37
+msgid "Perfiles sugeridos"
+msgstr "Suggested profiles"
+
+#: stellarblade/templates/general/busqueda.html:45
+msgid "No hay sugerencias de perfiles"
+msgstr "There are no profile suggestions."
+
+#: stellarblade/templates/general/busqueda.html:50
+msgid "Publicaciones sugeridas"
+msgstr "Suggested publications"
+
+#: stellarblade/templates/general/busqueda.html:58
+msgid "No hay sugerencias de publicaciones"
+msgstr "There are no post suggestions."
+
+#: stellarblade/templates/general/home.html:4
+msgid "INICIO"
+msgstr "HOME"
+
+#: stellarblade/templates/general/home.html:6
+#: stellarblade/templates/usuarios/perfiles_detail.html:41
+msgid "Ultimas publicaciones"
+msgstr "Latest publications"
+
+#: stellarblade/templates/general/home.html:9
+msgid "¿Eres nuevo?"
+msgstr "Are you new?"
+
+#: stellarblade/templates/general/home.html:10
+msgid "Pincha aqui"
+msgstr "Click here"
+
+#: stellarblade/templates/general/info_del_juego.html:5
+msgid ""
+"Informacion sobre el juego y el mundo de stellar blade para jugadores nuevos"
+msgstr ""
+"Information about the game and the world of Stellar Blade for new players"
+
+#: stellarblade/templates/general/info_del_juego.html:6
+msgid "Eres nuevo en"
+msgstr "You are new in"
+
+#: stellarblade/templates/general/info_del_juego.html:11
+msgid "Entonces esta breve introducción te pondrá al día."
+msgstr "Then this brief introduction will get you up to speed."
+
+#: stellarblade/templates/general/info_del_juego.html:12
+msgid ""
+"Si ya eres un experto, te animo a que explores la web, y si te gusta, no "
+"dudes en crearte una cuenta para acceder a todas las funcionalidades de la "
+"página."
+msgstr ""
+"If you're already an expert, I encourage you to explore the website, and if "
+"you like it, feel free to create an account to access all of the site's "
+"features."
+
+#: stellarblade/templates/general/info_del_juego.html:14
+msgid "Empieza a navegar"
+msgstr "Start browsing"
+
+#: stellarblade/templates/general/info_del_juego.html:16
+msgid "Create una cuenta"
+msgstr "Create an account"
+
+#: stellarblade/templates/general/info_del_juego.html:22
+msgid ""
+"Lo primero que quiero destacar es el estudio responsable de este videojuego:"
+" Shift Up, una desarrolladora de Corea del Sur. En mi opinión, es un estudio"
+" que cuida mucho a su comunidad, ofreciendo contenido gratuito y mimando "
+"cada detalle de su juego. Si queréis seguirles de cerca, aquí tenéis el "
+"enlace a su cuenta oficial en X"
+msgstr ""
+"The first thing I want to highlight is the studio responsible for this video"
+" game: Shift Up, a developer from South Korea. In my opinion, they're a "
+"studio that takes great care of their community, offering free content and "
+"pampering every detail of their game. If you want to keep up with them, "
+"here's the link to their official X account."
+
+#: stellarblade/templates/general/info_del_juego.html:26
+msgid ""
+"es un juego ambientado en un mundo postapocalíptico. En la Tierra solo "
+"quedan unas criaturas llamadas"
+msgstr ""
+"It is a game set in a post-apocalyptic world. On Earth, only creatures "
+"called"
+
+#: stellarblade/templates/general/info_del_juego.html:26
+msgid ""
+"seres que aparecieron de la nada, cuya procedencia se desconoce, y que "
+"ganaron la guerra contra la humanidad."
+msgstr ""
+"beings that appeared out of nowhere, whose origin is unknown, and who won "
+"the war against humanity."
+
+#: stellarblade/templates/general/info_del_juego.html:32
+msgid "Nuestra misión es acabar con el"
+msgstr "Our mission is to end the"
+
+#: stellarblade/templates/general/info_del_juego.html:32
+msgid "el más poderoso de todos. En esta aventura tomamos el papel de"
+msgstr "the most powerful of all. In this adventure we take the role of"
+
+#: stellarblade/templates/general/info_del_juego.html:32
+msgid ""
+"una miembro del escuadrón de ataque del Séptimo Escuadrón Aéreo enviada a la"
+" Tierra con ese objetivo. Pero no estaremos solos: contaremos con la ayuda "
+"de nuestros compañeros y de personajes con los que iremos interactuando a lo"
+" largo de la historia."
+msgstr ""
+"A member of the Seventh Airborne Squadron's attack squadron, sent to Earth "
+"with that goal in mind. But we won't be alone: ​​we'll have the help of our "
+"teammates and characters with whom we'll interact throughout the story."
+
+#: stellarblade/templates/general/info_del_juego.html:40
+msgid ""
+"Recorreremos zonas repletas de enemigos, donde habrá que explorar a fondo, "
+"eliminar Naytibos y mejorar tanto nuestro equipo como nuestras habilidades. "
+"También podremos encontrar objetos coleccionables que desbloquean "
+"cosméticos, y realizar misiones secundarias muy entretenidas que, además, "
+"nos cuentan más sobre el mundo del juego. ¡Te animo a hacerlas!"
+msgstr ""
+"We'll explore enemy-filled areas, where we'll have to explore thoroughly, "
+"eliminate Naytibos, and improve both our equipment and our skills. We'll "
+"also be able to find collectibles that unlock cosmetics and complete "
+"entertaining side quests that also tell us more about the game's world. I "
+"encourage you to try them out!"
+
+#: stellarblade/templates/general/info_del_juego.html:44
+msgid "El sistema de combate es adictivo y muy bien trabajado. El"
+msgstr "The combat system is addictive and very well done."
+
+#: stellarblade/templates/general/info_del_juego.html:44
+msgid ""
+"es clave para sobrevivir y disfrutar al máximo la experiencia. Desde mi "
+"punto de vista, es fácil pillarle el"
+msgstr ""
+"is key to surviving and enjoying the experience to the fullest. From my "
+"point of view, it's easy to get the hang of it"
+
+#: stellarblade/templates/general/info_del_juego.html:44
+msgid "y se vuelve muy satisfactorio."
+msgstr "and it becomes very satisfying."
+
+#: stellarblade/templates/general/info_del_juego.html:50
+msgid ""
+"Durante la aventura nos acompañará un dron que será de gran ayuda en más de "
+"una ocasión."
+msgstr ""
+"During the adventure we will be accompanied by a drone that will be of great"
+" help on more than one occasion."
+
+#: stellarblade/templates/general/info_del_juego.html:54
+msgid ""
+"Si te ha entrado curiosidad por este mundo, échale un vistazo a la página de"
+" inicio, donde encontrarás publicaciones, guías y todo tipo de contenido "
+"relacionado con "
+msgstr ""
+"If you are curious about this world, take a look at the home page, where you"
+" will find publications, guides and all kinds of content related to"
+
+#: stellarblade/templates/general/info_del_juego.html:58
+msgid "!Disfruta¡"
+msgstr "!Enjoy"
+
+#: stellarblade/templates/general/layout.html:72
+msgid "Cambiar"
+msgstr "Change"
+
+#: stellarblade/templates/general/login.html:5
+msgid "Pagina de inicio de sesion"
+msgstr "Login page"
+
+#: stellarblade/templates/general/login.html:6
+msgid "ACCEDE A TU CUENTA"
+msgstr "ACCESS YOUR ACCOUNT"
+
+#: stellarblade/templates/general/login.html:16
+msgid "Recúerdame"
+msgstr "Remember me"
+
+#: stellarblade/templates/general/login.html:18
+msgid "¿Has olvidado la contraseña?"
+msgstr "Forgot your password?"
+
+#: stellarblade/templates/general/login.html:20
+msgid "Acceder"
+msgstr "Access"
+
+#: stellarblade/templates/general/politica_legal.html:4
+msgid "Pagina de politica legal de la web"
+msgstr "Legal policy page of the website"
+
+#: stellarblade/templates/general/politica_legal.html:5
+msgid "Política Legal"
+msgstr "Legal Policy"
+
+#: stellarblade/templates/general/politica_legal.html:9
+msgid "Aviso Legal"
+msgstr "Legal Notice"
+
+#: stellarblade/templates/general/politica_legal.html:10
+msgid ""
+"En cumplimiento con el deber de información recogido en el artículo 10 de la"
+" Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información "
+"y del Comercio Electrónico, se informa"
+msgstr ""
+"In compliance with the duty of information contained in article 10 of Law "
+"34/2002, of July 11, on Information Society Services and Electronic "
+"Commerce, it is reported"
+
+#: stellarblade/templates/general/politica_legal.html:11
+msgid ""
+"Esta página web es un foro independiente creado por un particular, sin ánimo"
+" de lucro, dedicado al videojuego Stellar Blade y otros temas generales "
+"propuestos por la comunidad."
+msgstr ""
+"This website is an independent, non-profit forum created by an individual "
+"dedicated to the Stellar Blade video game and other general topics suggested"
+" by the community."
+
+#: stellarblade/templates/general/politica_legal.html:12
+msgid "Responsable del sitio web"
+msgstr "Website Manager"
+
+#: stellarblade/templates/general/politica_legal.html:13
+#: stellarblade/templates/general/politica_legal.html:24
+msgid "Email de contacto"
+msgstr "Contact email"
+
+#: stellarblade/templates/general/politica_legal.html:13
+#: stellarblade/templates/general/politica_legal.html:24
+#: stellarblade/templates/general/politica_legal.html:37
+msgid "Envíame un correo"
+msgstr "Send me email"
+
+#: stellarblade/templates/general/politica_legal.html:14
+#: stellarblade/templates/general/politica_legal.html:25
+msgid "Ubicación"
+msgstr "Location"
+
+#: stellarblade/templates/general/politica_legal.html:14
+#: stellarblade/templates/general/politica_legal.html:25
+msgid "España"
+msgstr "Spain"
+
+#: stellarblade/templates/general/politica_legal.html:15
+msgid ""
+"El responsable no se hace responsable del contenido publicado por los "
+"usuarios, aunque se reserva el derecho de eliminar cualquier publicación que"
+" infrinja las normas de la web o la legalidad vigente."
+msgstr ""
+"The controller is not responsible for the content posted by users, although "
+"it reserves the right to remove any post that violates the website's rules "
+"or current legislation."
+
+#: stellarblade/templates/general/politica_legal.html:19
+msgid "Política de Privacidad"
+msgstr "Privacy Policy"
+
+#: stellarblade/templates/general/politica_legal.html:20
+msgid ""
+"En esta web se respetan y protegen los datos personales de los usuarios. "
+"Como usuario debes saber que tus derechos están garantizados."
+msgstr ""
+"This website respects and protects users' personal data. As a user, you "
+"should know that your rights are guaranteed."
+
+#: stellarblade/templates/general/politica_legal.html:22
+msgid "Responsable del tratamiento"
+msgstr "Data controller"
+
+#: stellarblade/templates/general/politica_legal.html:23
+msgid "Responsable"
+msgstr "Responsible"
+
+#: stellarblade/templates/general/politica_legal.html:27
+msgid "Datos que se recogen"
+msgstr "Data collected"
+
+#: stellarblade/templates/general/politica_legal.html:28
+msgid ""
+"Los únicos datos personales recogidos son los necesarios para crear una "
+"cuenta de usuario: nombre de usuario, correo electrónico y contraseña. "
+"También se almacena el contenido que el usuario publique (posts, "
+"comentarios, mensajes privados)"
+msgstr ""
+"The only personal data collected is that necessary to create a user account:"
+" username, email address, and password. Content published by the user "
+"(posts, comments, private messages) is also stored."
+
+#: stellarblade/templates/general/politica_legal.html:30
+msgid "Finalidad"
+msgstr "Purpose"
+
+#: stellarblade/templates/general/politica_legal.html:31
+msgid ""
+"Los datos se usan exclusivamente para el funcionamiento de la plataforma, "
+"como el inicio de sesión, la publicación de contenido o el envío de "
+"notificaciones internas."
+msgstr ""
+"The data is used exclusively for the operation of the platform, such as "
+"logging in, posting content, or sending internal notifications."
+
+#: stellarblade/templates/general/politica_legal.html:33
+msgid "Conservación de los datos"
+msgstr "Data retention"
+
+#: stellarblade/templates/general/politica_legal.html:34
+msgid ""
+"Los datos se conservan mientras el usuario mantenga su cuenta activa o hasta"
+" que solicite su eliminación"
+msgstr ""
+"Data is retained as long as the user keeps their account active or until "
+"they request its deletion."
+
+#: stellarblade/templates/general/politica_legal.html:36
+msgid "Derechos del usuario"
+msgstr "User rights"
+
+#: stellarblade/templates/general/politica_legal.html:37
+msgid ""
+"En cualquier momento puedes ejercer tus derechos de acceso, rectificación, "
+"cancelación y oposición escribiendo a"
+msgstr ""
+"At any time you can exercise your rights of access, rectification, "
+"cancellation and opposition by writing to"
+
+#: stellarblade/templates/general/politica_legal.html:39
+msgid "Seguridad"
+msgstr "Security"
+
+#: stellarblade/templates/general/politica_legal.html:40
+msgid ""
+"Los datos están almacenados en servidores seguros dentro del Espacio "
+"Económico Europeo, en cumplimiento con el RGPD"
+msgstr ""
+"The data is stored on secure servers within the European Economic Area, in "
+"compliance with the GDPR."
+
+#: stellarblade/templates/general/politica_legal.html:44
+msgid "Política de Cookies"
+msgstr "Cookies Policy"
+
+#: stellarblade/templates/general/politica_legal.html:45
+msgid ""
+"Este sitio web solo utiliza cookies técnicas necesarias para su "
+"funcionamiento (inicio de sesión, mantenimiento de sesiones de usuario, "
+"etc.)"
+msgstr ""
+"This website only uses technical cookies necessary for its operation (login,"
+" user session maintenance, etc.)"
+
+#: stellarblade/templates/general/politica_legal.html:46
+msgid ""
+"No se utilizan cookies analíticas, de seguimiento ni publicitarias de "
+"terceros"
+msgstr "No third-party analytical, tracking, or advertising cookies are used."
+
+#: stellarblade/templates/general/politica_legal.html:47
+msgid ""
+"Si en el futuro se implementan otras cookies, se actualizará esta política y"
+" se solicitará el consentimiento correspondiente"
+msgstr ""
+"If other cookies are implemented in the future, this policy will be updated "
+"and the corresponding consent will be requested."
+
+#: stellarblade/templates/general/politica_legal.html:51
+msgid "Condiciones de Uso"
+msgstr "Conditions of Use"
+
+#: stellarblade/templates/general/politica_legal.html:52
+msgid ""
+"Este sitio web es una comunidad donde los usuarios pueden publicar contenido"
+" relacionado con el videojuego Stellar Blade y otros temas generales"
+msgstr ""
+"This website is a community where users can post content related to the "
+"video game Stellar Blade and other general topics."
+
+#: stellarblade/templates/general/politica_legal.html:54
+msgid "Normas básicas de uso"
+msgstr "Basic rules of use"
+
+#: stellarblade/templates/general/politica_legal.html:56
+msgid ""
+"No se permite contenido ofensivo, ilegal, difamatorio, violento o de odio"
+msgstr ""
+"Offensive, illegal, defamatory, violent or hateful content is not allowed."
+
+#: stellarblade/templates/general/politica_legal.html:57
+msgid "No se permite spam ni autopromoción excesiva."
+msgstr "No spam or excessive self-promotion allowed."
+
+#: stellarblade/templates/general/politica_legal.html:58
+msgid ""
+"Está prohibido suplantar identidades o publicar información personal de "
+"terceros."
+msgstr ""
+"Impersonating or publishing personal information of third parties is "
+"prohibited."
+
+#: stellarblade/templates/general/politica_legal.html:61
+msgid ""
+"El equipo administrador se reserva el derecho de editar o eliminar contenido"
+" que incumpla estas normas, así como de suspender cuentas de usuario si es "
+"necesario."
+msgstr ""
+"The admin team reserves the right to edit or remove content that violates "
+"these rules, as well as to suspend user accounts if necessary."
+
+#: stellarblade/templates/general/politica_legal.html:63
+msgid "Responsabilidad del contenido"
+msgstr "Responsibility for content"
+
+#: stellarblade/templates/general/politica_legal.html:64
+msgid ""
+"Cada usuario es responsable del contenido que publique. La web no se hace "
+"responsable del uso indebido del servicio por parte de los usuarios."
+msgstr ""
+"Each user is responsible for the content they publish. The website is not "
+"responsible for any misuse of the service by users."
+
+#: stellarblade/templates/general/registro.html:5
+msgid "Pagina de creacion de una cuenta en la web"
+msgstr "Account creation page on the website"
+
+#: stellarblade/templates/general/registro.html:6
+msgid "REGISTRATE"
+msgstr "REGISTER"
+
+#: stellarblade/templates/general/registro.html:15
+msgid "Crear cuenta"
+msgstr "Create account"
+
+#: stellarblade/templates/mensajes/conversaciones.html:5
+msgid ""
+"Pagina donde se encuentras las conversaciones, con el que puedes ir directo "
+"a los mensajes"
+msgstr ""
+"Page where the conversations are located, with which you can go directly to "
+"the messages"
+
+#: stellarblade/templates/mensajes/conversaciones.html:6
+msgid "CONVERSACIONES"
+msgstr "CONVERSATIONS"
+
+#: stellarblade/templates/mensajes/conversaciones.html:19
+msgid "Ir a la conversación"
+msgstr "Go to conversation"
+
+#: stellarblade/templates/mensajes/conversaciones.html:24
+msgid "Aún no tienes conversaciones"
+msgstr "You still don't have conversations"
+
+#: stellarblade/templates/mensajes/conversaciones_detail.html:5
+msgid ""
+"Pagina que contiene las conversaciones activas del usuario y sus mensajes"
+msgstr "Page containing the user's active conversations and messages"
+
+#: stellarblade/templates/mensajes/conversaciones_detail.html:6
+msgid "DETALLE CONVERSACIONES"
+msgstr "DETAIL CONVERSATIONS"
+
+#: stellarblade/templates/mensajes/conversaciones_detail.html:26
+#: stellarblade/templates/mensajes/conversaciones_detail.html:51
+msgid "Hace:"
+msgstr "Since:"
+
+#: stellarblade/templates/mensajes/conversaciones_detail.html:60
+#: stellarblade/templates/mensajes/nuevo_mensaje.html:12
+msgid "Enviar"
+msgstr "Send"
+
+#: stellarblade/templates/mensajes/conversaciones_detail.html:63
+msgid "Se han borrado los mensajes de esta conversacion"
+msgstr "The messages in this conversation have been deleted."
+
+#: stellarblade/templates/mensajes/conversaciones_detail.html:64
+msgid "Eliminar conversación"
+msgstr "Delete conversation"
+
+#: stellarblade/templates/mensajes/nuevo_mensaje.html:5
+msgid "Creacion de un mensaje nuevo"
+msgstr "Creating a new message"
+
+#: stellarblade/templates/mensajes/nuevo_mensaje.html:6
+msgid "NUEVO MENSAJE"
+msgstr "NEW MESSAGE"
+
+#: stellarblade/templates/notificaciones/notificaciones.html:5
+msgid "Pagina donde el usuario puede ver sus notificaciones"
+msgstr "Page where the user can see their notifications"
+
+#: stellarblade/templates/notificaciones/notificaciones.html:6
+msgid "NOTIFICACIONES"
+msgstr "NOTIFICATIONS"
+
+#: stellarblade/templates/publicaciones/publicacion_delete.html:5
+msgid "Pagina donde se eliminar una publicación deseada"
+msgstr "Page where you can delete a desired post"
+
+#: stellarblade/templates/publicaciones/publicacion_delete.html:6
+msgid "Eliminar publicación"
+msgstr "Delete post"
+
+#: stellarblade/templates/publicaciones/publicacion_delete.html:9
+msgid "Seguro que desea eliminar la publicacion"
+msgstr "Are you sure you want to delete this post"
+
+#: stellarblade/templates/publicaciones/publicacion_delete.html:13
+#: stellarblade/templates/publicaciones/publicacion_detail.html:95
+#: stellarblade/templates/publicaciones/publicacion_detail.html:126
+#: stellarblade/templates/publicaciones/publicacion_detail.html:159
+#: stellarblade/templates/usuarios/perfil_delete.html:13
+msgid "Eliminar"
+msgstr "Eliminate"
+
+#: stellarblade/templates/publicaciones/publicacion_delete.html:14
+#: stellarblade/templates/publicaciones/publicacion_update.html:16
+#: stellarblade/templates/usuarios/perfil_delete.html:14
+#: stellarblade/templates/usuarios/perfil_update.html:16
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: stellarblade/templates/publicaciones/publicacion_detail.html:6
+msgid "DETALLE PUBLICACION"
+msgstr "PUBLICATION DETAILS"
+
+#: stellarblade/templates/publicaciones/publicacion_detail.html:41
+#, fuzzy
+#| msgid "Tu navegador no soporta el vídeo."
+msgid "Tu navegador no soporta el video."
+msgstr "Your browser does not support video."
+
+#: stellarblade/templates/publicaciones/publicacion_detail.html:75
+msgid "Comentarios de la publicación"
+msgstr "Post comments"
+
+#: stellarblade/templates/publicaciones/publicacion_detail.html:99
+#: stellarblade/templates/publicaciones/publicacion_detail.html:137
+msgid "Responder"
+msgstr "Reply"
+
+#: stellarblade/templates/publicaciones/publicacion_detail.html:103
+msgid "Ver respuestas"
+msgstr "See answers"
+
+#: stellarblade/templates/publicaciones/publicacion_detail.html:143
+msgid "En esta publicación todavía no hay comentarios"
+msgstr "There are no comments on this post yet."
+
+#: stellarblade/templates/publicaciones/publicacion_detail.html:151
+msgid "Comentar"
+msgstr "Comment"
+
+#: stellarblade/templates/publicaciones/publicacion_detail.html:158
+#: stellarblade/templates/publicaciones/publicacion_update.html:15
+msgid "Editar"
+msgstr "Edit"
+
+#: stellarblade/templates/publicaciones/publicacion_nueva.html:5
+msgid "Pagina de creacion de publicación"
+msgstr "Post creation page"
+
+#: stellarblade/templates/publicaciones/publicacion_nueva.html:6
+msgid "PUBLICACION NUEVA"
+msgstr "NEW PUBLICATION"
+
+#: stellarblade/templates/publicaciones/publicacion_nueva.html:15
+#: stellarblade/templates/usuarios/mi_perfil.html:24
+msgid "Crear publicación"
+msgstr "Create post"
+
+#: stellarblade/templates/publicaciones/publicacion_update.html:5
+msgid "Pagina de edición de una publicación existente"
+msgstr "Edit page of an existing post"
+
+#: stellarblade/templates/publicaciones/publicacion_update.html:6
+msgid "Editar Publicación"
+msgstr "Edit Post"
+
+#: stellarblade/templates/registration/password_reset_complete.html:4
+msgid "Pagina de confirmación de cambio de contraseña"
+msgstr "Password change confirmation page"
+
+#: stellarblade/templates/registration/password_reset_complete.html:5
+#: stellarblade/templates/registration/password_reset_confirm.html:5
+#: stellarblade/templates/registration/password_reset_done.html:5
+#: stellarblade/templates/registration/password_reset_form.html:5
+msgid "RECUPERACION DE CONTRASEÑA"
+msgstr "PASSWORD RECOVERY"
+
+#: stellarblade/templates/registration/password_reset_complete.html:8
+msgid "Contraseña cambiada"
+msgstr "Password changed"
+
+#: stellarblade/templates/registration/password_reset_complete.html:9
+msgid ""
+"Tu contraseña ha sido restablecida con éxito. Ya puedes iniciar sesión."
+msgstr "Your password has been successfully reset. You can now log in."
+
+#: stellarblade/templates/registration/password_reset_complete.html:10
+msgid "Iniciar sesión"
+msgstr "Login"
+
+#: stellarblade/templates/registration/password_reset_confirm.html:4
+msgid "Pagina de cambio de contraseña"
+msgstr "Password change page"
+
+#: stellarblade/templates/registration/password_reset_confirm.html:8
+msgid "Restablecer contraseña"
+msgstr "Reset password"
+
+#: stellarblade/templates/registration/password_reset_confirm.html:12
+msgid "Cambiar contraseña"
+msgstr "Change password"
+
+#: stellarblade/templates/registration/password_reset_done.html:4
+msgid "Pagina de solicitud de cambio de contraseña"
+msgstr "Password Change Request Page"
+
+#: stellarblade/templates/registration/password_reset_done.html:8
+msgid "Correo enviado"
+msgstr "Email sent"
+
+#: stellarblade/templates/registration/password_reset_done.html:9
+msgid ""
+"Si existe una cuenta asociada a ese correo, recibirás instrucciones para "
+"restablecer tu contraseña."
+msgstr ""
+"If an account exists with that email, you'll receive instructions on how to "
+"reset your password."
+
+#: stellarblade/templates/registration/password_reset_email.html:3
+msgid "Hola,"
+msgstr "Hello,"
+
+#: stellarblade/templates/registration/password_reset_email.html:5
+msgid ""
+"Has solicitado restablecer tu contraseña. Haz clic en el siguiente enlace "
+"para continuar:"
+msgstr ""
+"You've requested a password reset. Click the following link to continue:"
+
+#: stellarblade/templates/registration/password_reset_email.html:9
+msgid "Si tú no solicitaste esto, ignora este mensaje."
+msgstr "If you did not request this, please ignore this message."
+
+#: stellarblade/templates/registration/password_reset_email.html:11
+msgid "Gracias"
+msgstr "Thank you"
+
+#: stellarblade/templates/registration/password_reset_form.html:4
+msgid "Pagina de recordar contraseña"
+msgstr "Password reminder page"
+
+#: stellarblade/templates/registration/password_reset_form.html:8
+msgid ""
+"Introduce tu correo electrónico y te enviaremos un enlace para restablecer "
+"tu contraseña."
+msgstr ""
+"Enter your email address and we'll send you a link to reset your password."
+
+#: stellarblade/templates/registration/password_reset_form.html:12
+msgid "Envíar correo"
+msgstr "Send mail"
+
+#: stellarblade/templates/usuarios/mi_perfil.html:5
+msgid "MI PERFIL"
+msgstr "MY PROFILE"
+
+#: stellarblade/templates/usuarios/mi_perfil.html:18
+msgid "Editar Perfil"
+msgstr "Edit Profile"
+
+#: stellarblade/templates/usuarios/mi_perfil.html:19
+msgid "Eliminar perfil"
+msgstr "Delete profile"
+
+#: stellarblade/templates/usuarios/mi_perfil.html:25
+msgid "Cerrar sesión"
+msgstr "Sign out"
+
+#: stellarblade/templates/usuarios/mi_perfil.html:29
+#: stellarblade/templates/usuarios/perfiles_detail.html:16
+msgid "Seguidores:"
+msgstr "Followers:"
+
+#: stellarblade/templates/usuarios/mi_perfil.html:30
+#: stellarblade/templates/usuarios/perfiles_detail.html:17
+msgid "Siguiendo:"
+msgstr "Following:"
+
+#: stellarblade/templates/usuarios/mi_perfil.html:38
+msgid "Mis últimas publicaciones"
+msgstr "My latest posts"
+
+#: stellarblade/templates/usuarios/perfil_delete.html:5
+msgid "Pagina de eliminación de perfil de usuario"
+msgstr "User profile deletion page"
+
+#: stellarblade/templates/usuarios/perfil_delete.html:6
+msgid "ELIMINAR PERFIL"
+msgstr "DELETE PROFILE"
+
+#: stellarblade/templates/usuarios/perfil_delete.html:9
+msgid "¿Seguro que desea eliminar su perfil:"
+msgstr "Are you sure you want to delete your profile"
+
+#: stellarblade/templates/usuarios/perfil_update.html:5
+msgid "Pagina de edición de perfil de usuario"
+msgstr "User profile editing page"
+
+#: stellarblade/templates/usuarios/perfil_update.html:6
+msgid "EDITA TU PERFIL"
+msgstr "EDIT YOUR PROFILE"
+
+#: stellarblade/templates/usuarios/perfil_update.html:15
+msgid "Actualizar usuario"
+msgstr "Update user"
+
+#: stellarblade/templates/usuarios/perfiles_detail.html:5
+msgid "DETALLE DE PERFIL"
+msgstr "PROFILE DETAIL"
+
+#: stellarblade/templates/usuarios/perfiles_detail.html:23
+msgid "Te sigue"
+msgstr "Follows you"
+
+#: stellarblade/templates/usuarios/publicaciones_mis_contactos.html:4
+msgid "Pagina de ultimas publicaciones de mis contactos"
+msgstr "Page of my contacts' latest posts"
+
+#: stellarblade/templates/usuarios/publicaciones_mis_contactos.html:5
+msgid "MI RED"
+msgstr "MY NETWORK"
+
+#: stellarblade/templates/usuarios/publicaciones_mis_contactos.html:8
+msgid "Publicaciones de mis contactos"
+msgstr "Posts from my contacts"
+
+#: stellarblade/templates/usuarios/publicaciones_mis_contactos.html:15
+msgid "Aún no sigues a nadie"
+msgstr "You don't follow anyone yet."
+
+#: stellarblade/views.py:36
+msgid "Sesion cerrada con exito"
+msgstr "Session closed successfully"
+
+#: stellarblade/views.py:53
+msgid "Usuario creado correctamente"
+msgstr "Successfully created user"
+
+#: stellarblade/views.py:77
+msgid "Inicion de sesion exitoso."
+msgstr "Login successful."
+
+#: stellarblade/views.py:81
+msgid "Contraseña o usuario incorrectos."
+msgstr "Incorrect password or username."
+
+#: usuarios/models.py:10
+msgid "Imagen de perfil:"
+msgstr "Profile image:"
+
+#: usuarios/models.py:11
+msgid "Biografia del ususario:"
+msgstr "User biography:"
+
+#: usuarios/models.py:12
+msgid "Fecha de nacimiento:"
+msgstr "Birthdate:"
+
+#: usuarios/views.py:52
+#| msgid "Usuario creado correctamente"
+msgid "Usuario editado correctamente."
+msgstr "User edited successfully."
+
+#: usuarios/views.py:74
+#| msgid "Mensaje eliminado corectamente"
+msgid "Perfil eliminado correctamente"
+msgstr "Profile deleted successfully"
+
+#: usuarios/views.py:102
+#, python-format
+#| msgid "Se ha dado like a la siguiente publicacion: %(publicacion)s"
+msgid "Se ha dejado de seguir al usuario: %(usuario)s"
+msgstr "User has been unfollowed: %(usuario)s"
+
+#: usuarios/views.py:112
+#, python-format
+msgid "Se ha empezado a seguir al usuario: %(usuario)s"
+msgstr "User has started following: %(usuario)s"
+
+#, fuzzy
+#~ msgid "RECUPERACION DE COPNTRASEÑA"
+#~ msgstr "PASSWORD RECOVERY"

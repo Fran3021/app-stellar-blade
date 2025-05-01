@@ -1,3 +1,4 @@
+{% load i18n %}
 
 <ul class="notificaciones">
     {% for noti in notificaciones_totales %}
@@ -7,7 +8,7 @@
         class="notificacion" id="notificacion-{{noti.tipo}}-{{noti.pk}}" 
         data-noti-pk="{{noti.pk}}" 
         data-tipo = '{{noti.tipo}}'
-        href="{{noti.url}}">{{noti}}. Hace: {{noti.fecha_notificacion | timesince}}
+        href="{{noti.url}}">{{noti}}. {% trans "Hace" %}:{{noti.fecha_notificacion | timesince}}
         </a>
     </li>
     {% endfor %}

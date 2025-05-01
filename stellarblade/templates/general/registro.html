@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock %}
-{% block description %}Pagina de creacion de una cuenta en la web{% endblock %}
-{% block page_title %}REGISTRATE{% endblock  %}
+{% block description %}{% trans "Pagina de creacion de una cuenta en la web" %}{% endblock %}
+{% block page_title %}{% trans "REGISTRATE" %}{% endblock  %}
 {% block page_content %}
 <div class="container-registro">
     <form class="formulario-crear-cuenta" action="" method = 'POST'>
@@ -11,7 +12,7 @@
         {{form.email | as_crispy_field}}
         {{form.password | as_crispy_field}}
         {{form.password_confirm | as_crispy_field}}
-        <button class="boton-registro">Crear cuenta</button>
+        <button class="boton-registro">{% trans "Crear cuenta" %}</button>
     </form>
 </div>
 {% endblock %}

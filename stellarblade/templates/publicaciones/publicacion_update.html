@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Pagina de edicion de una publicacion existente{% endblock %}
-{% block page_title %}Editar Publicacion{% endblock  %}
+{% block description %}{% trans "Pagina de edición de una publicación existente" %}{% endblock %}
+{% block page_title %}{% trans "Editar Publicación" %}{% endblock  %}
 {% block page_content %}
 <div class="container-editar-publicacion">
     <form class="formulario-editar-publicacion" action="" method = 'POST' enctype='multipart/form-data'>
@@ -11,8 +12,8 @@
         {{form.imagen | as_crispy_field}}
         {{form.video | as_crispy_field}}
         {{form.contenido | as_crispy_field}}
-        <button class="boton-editar">Editar</button>
-        <a class="boton-cancelar" href="{% url 'publicaciones:detalle' object.pk %}">Cancelar</a>
+        <button class="boton-editar">{% trans "Editar" %}</button>
+        <a class="boton-cancelar" href="{% url 'publicaciones:detalle' object.pk %}">{% trans "Cancelar" %}</a>
     </form>
 </div>
 {% endblock  %}

@@ -12,6 +12,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from notificaciones.models import NotificacionPublicacion, NotificacionComentario, NotificacionRespuestaComentario, NotificacionMeGusta
 from django.shortcuts import get_object_or_404
+from django.utils.translation import gettext_lazy as _
 
 
 @method_decorator(login_required, name='dispatch')
@@ -30,7 +31,7 @@ class CrearPublicacionView(CreateView):
         for seguidor in seguidores:
             NotificacionPublicacion.objects.create(autor=perfil_usuario, publicacion=nueva_publicacion, destinatario=seguidor, url= reverse_lazy('publicaciones:detalle', kwargs= {'pk': nueva_publicacion.pk}))
 
-        messages.success(self.request, 'Publicacion creada correctamente')
+        messages.success(self.request, _('Publicacion creada correctamente'))
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -51,7 +52,7 @@ class DetailPublicacionView(DetailView, CreateView):
         destinatario = publicacion.autor
         if self.request.user.perfil != publicacion.autor:
             NotificacionComentario.objects.create(autor=perfil_usuario, destinatario=destinatario, publicacion=publicacion, url=reverse_lazy('publicaciones:detalle', kwargs= {'pk': publicacion.pk}))
-        messages.success(self.request ,'Comentario añadido correctamente')
+        messages.success(self.request ,_('Comentario añadido correctamente'))
         return super().form_valid(form)
     
     def get_success_url(self):
@@ -78,7 +79,7 @@ class UpdatePublicacionView(UpdateView):
     
 
     def form_valid(self, form):
-        messages.success(self.request, 'Publicacion editada correctamente')
+        messages.success(self.request, _('Publicacion editada correctamente'))
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -100,7 +101,7 @@ class DeletePublicacionView(DeleteView):
         publicacion = Publicacion.objects.get(pk = self.object.pk)
         NotificacionPublicacion.objects.filter(publicacion=publicacion).delete()
         publicacion.delete()
-        messages.success(self.request, 'Publicacion eliminada correctamente.')
+        messages.success(self.request, _('Publicacion eliminada correctamente.'))
         return super().form_valid(form)
 
     def get_success_url(self):
@@ -120,13 +121,17 @@ def contestar_comentario_ajax(request, pk):
             NotificacionRespuestaComentario.objects.create(comentario=comentario, destinatario=comentario.autor, usuario=request.user.perfil, publicacion=publicacion, url=reverse_lazy('publicaciones:detalle', kwargs={'pk': pkPublicacion}))
 
             return JsonResponse({
-            'mensaje': f'Se ha contestado al comentario de: {comentario.autor}',
+            'mensaje': _('Se ha contestado al comentario de: %(autor)s') % {
+                'autor': comentario.autor
+            },
             'respuesta': respuesta,
             'autor': request.user.username,
             })
         else:
             return JsonResponse({
-                'mensaje': f'No se ha podido contestar al comentario de: {comentario.autor}'
+            'mensaje': _('No se ha podido contestar al comentario de: %(autor)s') % {
+                'autor': comentario.autor
+            }
             })
 
 
@@ -138,7 +143,9 @@ def like_ajax(request, pk):
         NotificacionMeGusta.objects.filter(publicacion=publicacion, destinatario=publicacion.autor, usuario=request.user.perfil, url= reverse_lazy('publicaciones:detalle', kwargs={'pk': publicacion.pk})).delete()
         return JsonResponse({
             'like': False,
-            'mensaje': f'Se ha quitado el like en la siguiente publicacion: {publicacion.titulo}',
+            'mensaje': _('Se ha quitado like en la siguiente publicacion: %(publicacion)s') % {
+                'publicacion': publicacion.titulo
+            },
             'numero_likes': publicacion.likes.all().count()
         })
     else:
@@ -147,7 +154,9 @@ def like_ajax(request, pk):
             NotificacionMeGusta.objects.create(publicacion=publicacion, destinatario=publicacion.autor, usuario=request.user.perfil, url= reverse_lazy('publicaciones:detalle', kwargs={'pk': publicacion.pk}))
         return JsonResponse({
             'like': True,
-            'mensaje': f'Se ha dado like en la siguiente publicacion: {publicacion.titulo}',
+            'mensaje': _('Se ha dado like a la siguiente publicacion: %(publicacion)s') % {
+                'publicacion': publicacion.titulo
+            },
             'numero_likes': publicacion.likes.all().count()
         })
 
@@ -161,12 +170,12 @@ def eliminar_comentario(request, pk):
             comentario.delete()
             return JsonResponse({
                 'success': True,
-                'mensaje': 'Se ha eliminado el comentario'
+                'mensaje': _('Se ha eliminado el comentario')
             })
         else:
             return JsonResponse({
                 'success': False,
-                'mensaje': 'No se ha podido eliminar el comentario'
+                'mensaje': _('No se ha podido eliminar el comentario')
             })
 
 
@@ -179,12 +188,12 @@ def eliminar_respuesta_comentario(request, pk):
             respuesta_comentario.delete()
             return JsonResponse({
                 'success': True,
-                'mensaje': 'Se ha eliminado la respuesta',
+                'mensaje': _('Se ha eliminado la respuesta'),
             })
         else:
             return JsonResponse({
                 'success': False,
-                'mensaje': 'No se ha podido eliminar la respuesta',
+                'mensaje': _('No se ha podido eliminar la respuesta'),
             })
 
 

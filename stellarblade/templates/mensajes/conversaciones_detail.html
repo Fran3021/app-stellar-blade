@@ -1,8 +1,9 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Pagina que contiene las conversaciones activas del usuario y sus mensajes{% endblock %}
-{% block page_title %}DETALLE CONVERSACIONES{% endblock  %}
+{% block description %}{% trans "Pagina que contiene las conversaciones activas del usuario y sus mensajes" %}{% endblock %}
+{% block page_title %}{% trans "DETALLE CONVERSACIONES" %}{% endblock  %}
 {% block page_content %}
 <h2 class="title-conversaciones-detalle">{{conversacion}}</h2>
 <div class="container-conversaciones-detail">
@@ -22,7 +23,7 @@
                 <p>{{mensajes.contenido}}</p>
             </div>
             <div class="fecha-borrar-mensaje">
-                <span>Hace: {{mensajes.fecha_mensaje | timesince}}</span>
+                <span>{% trans "Hace:" %} {{mensajes.fecha_mensaje | timesince}}</span>
                 {% if request.user.perfil == mensajes.autor %}
                 <button data-redirect-url="{% url 'mensajes:conversaciones_detail' conversacion.pk %}" data-href="{% url 'mensajes:eliminar_mensaje' mensajes.pk %}" class="eliminar-mensajes" data-mensaje-pk="{{mensajes.pk}}" id="eliminar-mensaje-{{mensajes.pk}}"><i class="bi bi-trash3"></i></button>
                 {% endif %}
@@ -37,7 +38,7 @@
                     <img src="{{mensajes.autor.imagen_perfil.thumbnails.xs.url}}" alt="{{mensajes.autor.usuario}}" class="imagen-perfil-usuario">
                 </a>
             {% else %}
-                <a href="{% url 'usuarios:detail' mensajes.autor %}">
+                <a href="{% url 'usuarios:detail' mensajes.autor.pk %}">
                     <i class="bi bi-person-circle"></i>
                 </a>
             {% endif %}
@@ -47,7 +48,7 @@
             {% if request.user.perfil == mensajes.autor %}
             <button data-redirect-url="{% url 'mensajes:conversaciones_detail' conversacion.pk %}" data-href="{% url 'mensajes:eliminar_mensaje' mensajes.pk %}" class="eliminar-mensajes" data-mensaje-pk="{{mensajes.pk}}" id="eliminar-mensaje-{{mensajes.pk}}"><i class="bi bi-trash3"></i></button>
             {% endif %}
-            <span>Hace: {{mensajes.fecha_mensaje | timesince}}</span>
+            <span>{% trans "Hace:" %} {{mensajes.fecha_mensaje | timesince}}</span>
         </div>
     </div>
     {% endif %}
@@ -56,11 +57,11 @@
         <form class="form-contestar-mensaje" action="{% url 'mensajes:contestar_mensaje' conversacion.mensajes.last.pk %}" method='POST' data-redirect-url="{% url 'mensajes:conversaciones_detail' conversacion.pk %}">
             {% csrf_token %}
             {{contestar_mensaje.contenido | as_crispy_field}}
-            <button class="boton-contestar">Envíar</button>
+            <button class="boton-contestar">{% trans "Enviar" %}</button>
         </form>
     {% else %}
-        <h3 class="title-borrado-conversaciones">Se han borrado los mensajes de esta conversacion</h3>
-        <button data-href="{% url 'mensajes:eliminar_conversacion' conversacion.pk %}" class="eliminar-conversaciones" data-conversacion-pk="{{conversacion.pk}}" id="eliminar-conversacion-{{conversacion.pk}}" data-redirect-url="{% url 'mensajes:conversaciones' %}" >Eliminar conversacion</button>
+        <h3 class="title-borrado-conversaciones">{% trans "Se han borrado los mensajes de esta conversacion" %}</h3>
+        <button data-href="{% url 'mensajes:eliminar_conversacion' conversacion.pk %}" class="eliminar-conversaciones" data-conversacion-pk="{{conversacion.pk}}" id="eliminar-conversacion-{{conversacion.pk}}" data-redirect-url="{% url 'mensajes:conversaciones' %}" >{% trans "Eliminar conversación" %}</button>
     {% endif %}
 </div>
 {% endblock  %}

@@ -1,16 +1,17 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Pagina de eliminacion de perfil de usuario{% endblock %}
-{% block page_title %}ELIMINAR PERFIL{% endblock  %}
+{% block description %}{% trans "Pagina de eliminación de perfil de usuario" %}{% endblock %}
+{% block page_title %}{% trans "ELIMINAR PERFIL" %}{% endblock  %}
 {% block page_content %}
 <div class="container-eliminar-perfil">
-    <h4 class="title-eliminar-perfil" >¿Seguro que desea eliminar su perfil: <strong>{{object.usuario}}</strong>?</h4>
+    <h4 class="title-eliminar-perfil" >{% trans "¿Seguro que desea eliminar su perfil:" %} <strong>{{object.usuario}}</strong>?</h4>
     <form class="formulario-borrar-perfil" action="" method = 'POST'>
     {% csrf_token %}
     {{form}}
-    <button class="boton-eliminar">Eliminar</button>
-    <a class="boton-cancelar" href="{% url 'usuarios:mi_perfil' object.pk %}">Cancelar</a>
+    <button class="boton-eliminar">{% trans "Eliminar" %}</button>
+    <a class="boton-cancelar" href="{% url 'usuarios:mi_perfil' object.pk %}">{% trans "Cancelar" %}</a>
     </form>
 </div>
 {% endblock  %}

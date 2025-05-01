@@ -1,16 +1,17 @@
 {% extends "general/layout.html" %}
+{% load i18n %}
 {% load crispy_forms_tags %}
 {% block head_title %}Stellar Blade{% endblock  %}
-{% block description %}Pagina donde se eliminar una publicacion deseada{% endblock %}
-{% block page_title %}Eliminar Publicacion{% endblock  %}
+{% block description %}{% trans "Pagina donde se eliminar una publicación deseada" %}{% endblock %}
+{% block page_title %}{% trans "Eliminar publicación" %}{% endblock  %}
 {% block page_content %}
 <div class="container-eliminar-publicacion">
-    <h4 class="title-eliminar-publicacion">¿Seguro que desea eliminar la publicacion: <strong>{{object.titulo}}</strong>?</h4>
+    <h4 class="title-eliminar-publicacion">¿{% trans "Seguro que desea eliminar la publicacion" %}: <strong>{{object.titulo}}</strong>?</h4>
     <form class="formulario-eliminar-publicacion" action="" method = 'POST'>
         {% csrf_token %}
         {{form}}
-        <button class="boton-eliminar">Eliminar</button>
-        <a class="boton-cancelar" href="{% url 'publicaciones:detalle' object.pk %}">Cancelar</a>
+        <button class="boton-eliminar">{% trans "Eliminar" %}</button>
+        <a class="boton-cancelar" href="{% url 'publicaciones:detalle' object.pk %}">{% trans "Cancelar" %}</a>
     </form>
 </div>
 {% endblock  %}
