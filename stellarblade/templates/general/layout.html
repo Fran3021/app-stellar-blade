@@ -65,10 +65,10 @@
         {% get_current_language as LANGUAGE_CODE %}
         {% if LANGUAGE_CODE == 'es' %}
             <input type="hidden" name="language" value="en">
-            <button type="submit">ES</button>
+            <button type="submit">EN</button>
         {% else %}
             <input type="hidden" name="language" value="es">
-            <button type="submit">EN</button>
+            <button type="submit">ES</button>
         {% endif %}
         <input type="hidden" name="next" value="{{ request.path }}">
       </form>
