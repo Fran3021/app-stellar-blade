@@ -33,7 +33,7 @@ pure_eval==0.2.3
 Pygments==2.19.1
 python-http-client==3.3.7
 rcssmin==1.1.2
-requests==2.32.3
+requests==2.32.4
 rjsmin==1.2.2
 sendgrid==6.11.0
 shortuuid==1.0.13
