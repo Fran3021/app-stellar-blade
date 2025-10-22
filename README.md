@@ -24,8 +24,5 @@ Algunas funciones son las siguientes:
 
 Aclaro que para la mayoría de las funciones es necesario registrarse. Actualmente no verifico el correo electrónico, pero en caso de querer recuperar la contraseña, sí sería necesario. Puedes añadir tu correo cuando quieras desde la edición de tu perfil.
 
-## Visita la web totalmente desplegada aquí:
-- https://stellarblade.frangarciadev.com/es/
-
 ## Contribución:
 Cualquier sugerencia que tengáis, no dudéis en decírmelo. ¡Muchas gracias!
